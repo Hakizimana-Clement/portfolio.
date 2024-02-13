@@ -1,3 +1,10 @@
+:root {
+  --clr-main: #091733;
+  --clr-dark-text: #2c2c2c;
+  --clr-light: #fff;
+  ---clr-blue-hover: #5161f1;
+}
+
 * {
   margin: 0;
   line-height: calc(1em +0.5rem);
@@ -9,6 +16,8 @@ html {
 
 body {
   font-family: "League Spartan", sans-serif;
+  background-color: var(--clr-light);
+  color: var(--clr-dark-text);
   /* font-family: "inter", sans-serif; */
 }
 
@@ -27,4 +36,10 @@ button {
   padding: 0;
   border: none;
   background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: var(--clr-light);
 }
