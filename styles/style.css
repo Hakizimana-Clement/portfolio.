@@ -1,13 +1,35 @@
 :root {
+  /* colors */
   --clr-main: #091733;
-  --clr-dark-text: #2c2c2c;
   --clr-light: #fff;
-  ---clr-blue-hover: #5161f1;
+  --clr-text: #2c2c2c;
+  --clr-hover: #5161f1;
+
+  /* box shadow value in rgb*/
+  /* --clr-main: rgb(9, 23, 51); */
+  /* --clr-hover: rgb(81, 97, 241); */
+
+  /* sizes */
+  --size-xxs: 0.5rem;
+  --size-xs: 0.75rem;
+  --size-sm: 0.875rem;
+  --size-base: 1rem;
+  --size-lg: 1.125rem;
+  --size-xl: 1.25rem;
+  --size-2xl: 1.5rem;
+  --size-3xl: 1.875rem;
+  --size-4xl: 2.25rem;
+  --size-5xl: 3rem;
+  --size-6xl: 3.75rem;
+  --size-7xl: 4.5rem;
+  --size-8xl: 6rem;
+  --size-9xl: 8rem;
+  --size-10xl: 10rem;
 }
 
 * {
   margin: 0;
-  line-height: calc(1em +0.5rem);
+  line-height: calc(1em + 0.5rem);
 }
 
 html {
@@ -15,17 +37,21 @@ html {
 }
 
 body {
-  font-family: "League Spartan", sans-serif;
+  /* font-family: "League Spartan", sans-serif; */
+  /* font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; */
+  font-family: "Inter", sans-serif;
   background-color: var(--clr-light);
-  color: var(--clr-dark-text);
-  /* font-family: "inter", sans-serif; */
+  color: var(--clr-text);
+  font-weight: normal;
 }
 
 img,
 picture,
+video,
 svg,
-canvas,
-video {
+canvas {
   display: block;
   max-width: 100%;
   user-select: none;
@@ -36,10 +62,11 @@ button {
   padding: 0;
   border: none;
   background: none;
-  color: inherit;
   cursor: pointer;
+  color: inherit;
 }
 
 a {
-  color: var(--clr-light);
+  color: var(--clr-hover);
+  font-weight: 600;
 }
