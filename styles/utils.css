@@ -21,7 +21,9 @@
   font-weight: 600;
   text-decoration: none;
   letter-spacing: -0.05em;
-  background-color: var(--clr-main);
+  /* background-color: var(--clr-main); */
+
+  background-color: var(--clr-hover);
   color: var(--clr-light);
   /* padding: 8px 39px; */
   border-radius: 6px;

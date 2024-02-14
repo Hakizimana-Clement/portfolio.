@@ -20,18 +20,240 @@
     <!-- styles -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/components/header.css" />
+    <link rel="stylesheet" href="styles/components/hero.css" />
+    <link rel="stylesheet" href="styles/components/about.css" />
     <link rel="stylesheet" href="styles/utils.css" />
+    <!-- icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+ "
+    ></script>
     <!-- web title -->
     <title>My portfolio</title>
   </head>
   <body>
-    <h1>Heading</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-      tenetur voluptas sunt maiores quaerat laboriosam, assumenda veniam
-      quibusdam! Corporis est reprehenderit necessitatibus voluptatem fugit
-      neque aliquam ducimus minima nesciunt explicabo.
-    </p>
-    <button>test</button>
+    <header class="header container">
+      <nav class="header__navbar">
+        <!-- Start link Area -->
+        <ul class="header__menu">
+          <li>
+            <a class="header__link" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="header__link" href="#about">About</a>
+          </li>
+          <li>
+            <a class="header__link" href="#skills">Skills</a>
+          </li>
+          <li>
+            <a class="header__link" href="#works">Works</a>
+          </li>
+          <li>
+            <a class="header__link" href="contact">Contact</a>
+          </li>
+          <li>
+            <a class="header__link" href="#blogs">Blogs</a>
+          </li>
+          <!-- <li>
+            <a class="header__link" href="#signin">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+
+                <span>Sign</span>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+        <!-- End link Area -->
+
+        <!-- Start login button -->
+        <a class="header__link" href="#signin">
+          <button class="login-btn btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="header__signin--user-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+            <span class="login-btn--text">Sign In</span>
+          </button>
+        </a>
+        <!-- End login button -->
+
+        <!-- Start menu icon button -->
+        <button class="header__bars">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <!-- End menu icon button -->
+      </nav>
+    </header>
+    <main>
+      <!-- ################################################## -->
+      <!-- ################ hero section ################### -->
+      <!-- ################################################## -->
+      <section class="hero container">
+        <!-- start hero container -->
+        <div class="hero__container">
+          <h1 class="hero___container--title">Clement HAKIZIMANA</h1>
+          <h2 class="hero___container--subtitle">Junior Fullstack Developer</h2>
+          <!-- Start Icon -->
+          <div class="hero___container--img">
+            <ul class="hero___container--img-list">
+              <li>
+                <a class="hero__link" href="#">
+                  <img
+                    class="hero___container--img--icon"
+                    src="images/twitter.svg"
+                    alt="twitter icon"
+                  />
+                  <!-- <ion-icon name="logo-twitter"></ion-icon> -->
+                </a>
+              </li>
+              <li>
+                <a class="hero__link" href="#">
+                  <img
+                    class="hero___container--img--icon"
+                    src="images/github-filled.svg"
+                    alt="github icon"
+                  />
+                </a>
+              </li>
+
+              <li>
+                <a class="hero__link" href="#">
+                  <img
+                    class="hero___container--img--icon"
+                    src="images/social_linkedin.svg"
+                    alt="linkedIn icon"
+                  />
+                </a>
+              </li>
+              <li>
+                <a class="hero__link" href="#">
+                  <img
+                    class="hero___container--img--icon"
+                    src="images/instagram.svg"
+                    alt="instagram icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- End Icon -->
+        </div>
+        <!--End hero container -->
+      </section>
+      <!-- Error: this should not be here -->
+      <!-- Start scroll down button -->
+      <div class="scroll-btn__container">
+        <button class="scroll-btn__btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </button>
+        <span class="scroll-btn__text"> Scroll </span>
+      </div>
+      <!-- End scroll down button -->
+      <!-- ################################################## -->
+      <!-- ################ ABOUT SECTION ################### -->
+      <!-- ################################################## -->
+      <section class="about section container">
+        <div>
+          <div class="about__container">
+            <img
+              class="about__container--img"
+              src="./images/profile-picture.jpg"
+              alt="profile picture"
+            />
+            <div class="about-container--text">
+              <h2 class="about-container--text__title">About Me</h2>
+              <p class="about-container--text__description">
+                An inquisitive Computer Science Engineering student, skilled in
+                leadership, seeking to leverage solid development skills with
+                focus on collaboration, communication and passion.
+              </p>
+              <button class="about-btn btn">Download CV</button>
+            </div>
+          </div>
+          <div class="scroll-btn__container">
+            <button class="scroll-btn__btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </button>
+            <span class="scroll-btn__text">Scroll </span>
+          </div>
+        </div>
+      </section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+    </main>
+    <!-- <footer></footer> -->
   </body>
 </html>
