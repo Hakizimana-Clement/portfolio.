@@ -41,6 +41,10 @@ body {
   /* font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal; */
+  /* background-position: left; */
+
+  background-image: url(../../images/background-image.svg);
+  background-repeat: no-repeat;
   font-family: "Inter", sans-serif;
   background-color: var(--clr-light);
   color: var(--clr-text);
@@ -67,6 +71,7 @@ button {
 }
 
 a {
-  color: var(--clr-hover);
-  font-weight: 600;
+  /* color: var(--clr-hover); */
+  color: var(--clr-light);
+  font-weight: 400;
 }
