@@ -1,0 +1,132 @@
+.header {
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.header__menu,
+.header__signin {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  list-style: none;
+  /* border: 1px solid blue; */
+  padding: 0;
+}
+.header__link {
+  font-size: var(--size-xs);
+  text-decoration: none;
+  font-weight: 600;
+  /* color: var(--clr-light); */
+  letter-spacing: -0.05em;
+  transition: color 0.3s;
+}
+
+.header__link:hover {
+  color: var(--clr-hover);
+}
+
+/* sign in button */
+.header__signin {
+  text-decoration: none;
+  justify-content: flex-end;
+}
+/* 
+.header__signin-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+} */
+
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+.header__signin--user-icon {
+  /* width: 9%; */
+  width: 23%;
+  display: block;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  /* width: 110px; */
+  width: 100px;
+  align-items: center;
+  padding: 6px 3px;
+  gap: 0.4rem;
+}
+
+.login-btn--text {
+  font-size: var(--size-xs);
+}
+
+/* control navbar to display none except menu button */
+.header__menu {
+  display: flex;
+}
+.header__link {
+  display: none;
+}
+
+/* menu bar icon */
+.header__bars {
+  color: var(--clr-main);
+
+  /* width: var(--size-2xl);
+  height: var(--size-2xl); */
+  width: var(--size-4xl);
+  height: var(--size-4xl);
+  display: block;
+}
+
+/* xs */
+/* @media(min-width:475px){} */
+
+/* sm */
+/* @media(min-width:640px){} */
+
+/* md */
+/* @media (min-width: 768px) {
+} */
+
+/* lg*/
+@media (min-width: 1024px) {
+  .header__link {
+    font-size: var(--size-sm);
+  }
+
+  .header__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+  }
+  .header__signin--user-icon {
+    /* width: 9%; */
+    /* width: 23%; */
+    width: var(--size-2xl);
+    height: var(--size-2xl);
+  }
+
+  /* control navbar to display */
+  .header__bars {
+    display: none;
+  }
+  .header__menu {
+    display: flex;
+  }
+  .header__link {
+    display: flex;
+  }
+}
+
+/* xl*/
+/* @media(min-width:1280px){} */
+
+/* 2xl */
+/* @media(min-width:1536px){} */
