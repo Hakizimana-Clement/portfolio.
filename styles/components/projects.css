@@ -248,6 +248,7 @@
 @media (min-width: 1280px) {
   .projects-container {
     align-items: center;
+    gap: 5rem;
   }
 
   /* container image */

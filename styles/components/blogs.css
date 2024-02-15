@@ -1,0 +1,75 @@
+.blogs {
+  /* padding: 0 1.5rem; */
+  /* text-align: center; */
+}
+
+/* blog title */
+.blog-title {
+  text-align: center;
+  color: var(--clr-light);
+  font-size: var(--size-4xl);
+}
+/* container blog */
+.blogs-container {
+  margin-top: var(--size-3xl);
+}
+
+/* blog card container */
+.blogs-container__cards {
+  border: 2px solid red;
+  padding: 0 3rem;
+  position: relative;
+}
+/* one card */
+.blogs-container__cards-card {
+  border: 2px solid rebeccapurple;
+}
+.blogs-container__card-title {
+  font-size: var(--size-2xl);
+  color: var(--clr-light);
+  font-weight: 500;
+  /*  color: var(--clr-hover);
+  margin-top: var(--size-4xl); */
+}
+
+/* next button */
+/* .slide-button-container { */
+.slide-button-container-left {
+  position: absolute;
+  /* left: 17px; */
+  top: 208px;
+  left: 6px;
+
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+/* span text for previous button */
+
+.slide-button-container-left__prev {
+  /* display: inline-block; */
+  /* font-size: var(--size-sm); */
+  /* padding: 0.4rem; */
+  /* padding: 1rem; */
+  /* border: 1px solid white; */
+  /* border-radius: 50%; */
+}
+.right {
+  position: absolute;
+  top: 208px;
+  right: 0;
+  padding: 0.5rem;
+  border: 1px solid;
+  border-radius: 50%;
+}
+/* right not working */
+/* .slide-button-container-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #b9b9b9;
+  padding: 12px;
+}
+.slide-button-container-right__next {
+  width: 12%;
+} */
