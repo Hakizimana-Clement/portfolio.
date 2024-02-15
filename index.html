@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="styles/components/hero.css" />
 
     <link rel="stylesheet" href="styles/components/about.css" />
+
     <link rel="stylesheet" href="styles/components/skills.css" />
+    <link rel="stylesheet" href="styles/components/projects.css" />
     <link rel="stylesheet" href="styles/utils.css" />
     <!-- icons -->
     <script
@@ -259,6 +261,7 @@
         <div class="skills__container">
           <!-- text and icon container -->
           <div class="skills__container--main-container">
+            <!-- start text container -->
             <div class="skills__container-text">
               <h2 class="skills__container-text--title">Skills</h2>
               <p class="skills__container-text--description">
@@ -266,6 +269,8 @@
                 be websites, applications, or anything in between.
               </p>
             </div>
+            <!-- End text container -->
+            <!-- Start skills container -->
             <div class="skills__container-img">
               <ul class="skills__container-img--list">
                 <!-- html icon -->
@@ -320,17 +325,21 @@
                 </li>
               </ul>
             </div>
+            <!--End skills container -->
           </div>
-          <!-- main image -->
+          <!-- Start main image -->
           <div class="skills__container--second-container">
+            <!-- start image -->
             <img
               class="skills__container--second-container--image"
               src="./images/skills-image.svg"
               alt="skills image"
             />
+            <!-- End image -->
           </div>
+          <!-- End main image -->
         </div>
-        <!-- scroll down button -->
+        <!-- Start scroll down button -->
         <div class="scroll-btn__container">
           <button class="scroll-btn__btn">
             <svg
@@ -349,8 +358,179 @@
           </button>
           <span class="scroll-btn__text">Scroll </span>
         </div>
+        <!-- End scroll down button -->
       </section>
-      <section></section>
+
+      <!-- ################################################## -->
+      <!-- ################ PROJECT SECTION ################### -->
+      <!-- ################# -->
+      <section class="projects section container">
+        <h2 class="projects-container__tex-title--mobile">Projects</h2>
+
+        <!-- Start project container -->
+        <div class="projects-container">
+          <!-- Start project container image -->
+          <div class="projects-container__image">
+            <!-- img -->
+            <img
+              class="projects-container__image-img"
+              src="images/project-1.svg"
+              alt="simon game project"
+            />
+            <!-- next button -->
+            <button class="projects-container__image-btn btn">
+              <!-- <span class="projects-container__image-btn-arrow"> &rarr; </span> -->
+              <!-- 
+              <span class="projects-container__image-btn-arrow"> -->
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="projects-container__image-btn-arrow"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <!-- End project container image -->
+          <!-- this div holder all text container and next button container -->
+          <div>
+            <!-- Start project containerText -->
+            <div class="projects-container__text">
+              <h2 class="projects-container__tex-title">Projects</h2>
+              <h3 class="projects-container__tex-subtitle">Simon Game</h3>
+              <p class="projects-container__tex-description">
+                An inquisitive Computer Science Engineering student, skilled in
+                leadership, seeking to leverage solid development skills with
+                focus on collaboration, communication and passion.
+              </p>
+              <!-- Start language build with -->
+              <ul class="projects-container__tex-ul-container">
+                <li class="projects-container__tex-list">
+                  <span class="projects-container__tex-list--text">HTML</span>
+                </li>
+                <li class="projects-container__tex-list">
+                  <span class="projects-container__tex-list--text">CSS3</span>
+                </li>
+                <li class="projects-container__tex-list">
+                  <span class="projects-container__tex-list--text"
+                    >JavaScript</span
+                  >
+                </li>
+                <li class="projects-container__tex-list">
+                  <span class="projects-container__tex-list--text"
+                    >ReactJS</span
+                  >
+                </li>
+              </ul>
+              <!-- End language build with -->
+
+              <!-- Start Github link -->
+              <div class="projects-container__tex-github-link-container">
+                <ul class="projects-container__tex-github-link-container--list">
+                  <!-- github link -->
+                  <li>
+                    <a
+                      class="projects-container__tex-github-link-container--github-link"
+                      href="#"
+                    >
+                      <img src="images/github-liink.svg" alt="github link"
+                    /></a>
+                  </li>
+                  <!-- live web link -->
+                  <li>
+                    <a
+                      class="projects-container__tex-github-link-container--live-web-link"
+                      href="#"
+                      ><img src="images/live-web-link.svg" alt="live web link"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+              <!-- End Github link -->
+            </div>
+            <!-- End project container -->
+
+            <!-- Start next button container -->
+            <div class="projects-container__text-next-btn-containers">
+              <!-- Start next button -->
+              <div class="projects-container__text-next-btn-container">
+                <span
+                  class="projects-container__text-next-btn-container--number next-one"
+                  >01</span
+                >
+                <button
+                  class="projects-container__text-next-btn-container--btn"
+                ></button>
+              </div>
+              <!-- Start next button -->
+              <div class="projects-container__text-next-btn-container">
+                <span
+                  class="projects-container__text-next-btn-container--number"
+                  >02</span
+                >
+                <button
+                  class="projects-container__text-next-btn-container--btn no-yet-next"
+                ></button>
+              </div>
+
+              <!-- Start next button -->
+              <div class="projects-container__text-next-btn-container">
+                <span
+                  class="projects-container__text-next-btn-container--number"
+                  >03</span
+                >
+                <button
+                  class="projects-container__text-next-btn-container--btn no-yet-next"
+                ></button>
+              </div>
+              <!-- End next button -->
+              <!-- Start next button -->
+              <div class="projects-container__text-next-btn-container">
+                <span
+                  class="projects-container__text-next-btn-container--number"
+                  >04</span
+                >
+                <button
+                  class="projects-container__text-next-btn-container--btn no-yet-next"
+                ></button>
+              </div>
+              <!-- End next button -->
+            </div>
+          </div>
+        </div>
+        <!-- End next button container -->
+
+        <!-- Start scroll down button -->
+        <div class="scroll-btn__container">
+          <button class="scroll-btn__btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+          </button>
+          <span class="scroll-btn__text">Scroll </span>
+        </div>
+
+        <!-- End scroll down button -->
+      </section>
       <section></section>
       <section></section>
     </main>
