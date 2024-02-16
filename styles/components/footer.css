@@ -1,0 +1,23 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: var(--clr-light) 0.5px solid;
+}
+
+.footer-container__title {
+  margin-top: 1.3rem;
+  font-size: var(--size-xl);
+  font-weight: normal;
+}
+
+.footer-icons {
+  margin-top: var(--size-base);
+}
+.footer-container__copyright {
+  margin: var(--size-lg) var(--size-base);
+}
+
+.footer-icon {
+  width: 83%;
+}
