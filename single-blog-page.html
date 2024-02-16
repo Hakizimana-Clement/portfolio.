@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./images/profile-picture.jpg"
+      type="image/jpg"
+    />
+
+    <!-- google font [inter and spartan] -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/components/header.css" />
+
+    <link rel="stylesheet" href="styles/components/hero.css" />
+    <link rel="stylesheet" href="styles/components/single-blog-page.css" />
+    <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/utils.css" />
+    <!-- icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+ "
+    ></script>
+    <!-- web title -->
+    <title>My portfolio</title>
+  </head>
+  <body>
+    <header class="header container">
+      <nav class="header__navbar">
+        <!-- Start link Area -->
+        <ul class="header__menu">
+          <li>
+            <a class="header__link" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="header__link" href="#about">About</a>
+          </li>
+          <li>
+            <a class="header__link" href="#skills">Skills</a>
+          </li>
+          <li>
+            <a class="header__link" href="#works">Works</a>
+          </li>
+          <li>
+            <a class="header__link" href="contact">Contact</a>
+          </li>
+          <li>
+            <a class="header__link" href="#blogs">Blogs</a>
+          </li>
+          <!-- <li>
+            <a class="header__link" href="#signin">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+
+                <span>Sign</span>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+        <!-- End link Area -->
+
+        <!-- Start login button -->
+        <a class="header__link" href="#signin">
+          <button class="login-btn btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="header__signin--user-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+            <span class="login-btn--text">Sign In</span>
+          </button>
+        </a>
+        <!-- End login button -->
+
+        <!-- Start menu icon button -->
+        <button class="header__bars">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <!-- End menu icon button -->
+      </nav>
+    </header>
+    <main>
+      <section class="blog container">
+        <!-- Start blog container -->
+        <div class="blog-container">
+          <!-- start blog date container -->
+          <div class="blog-container__date">
+            <!-- start date -->
+            <div>
+              <p class="blog-container__date-year">Jan 02 2024</p>
+            </div>
+            <!-- end date -->
+            <div class="comment-likes__main-container">
+              <!-- start comment and like date -->
+              <!-- likes -->
+              <div class="comment-likes__container">
+                <img
+                  class="blog-icons like-icon"
+                  src="images/like-heart-icon.svg"
+                  alt="like"
+                />
+                <span>250</span>
+              </div>
+              <!-- comment-->
+              <div class="comment-likes__container">
+                <img
+                  class="blog-icons comment-icon"
+                  src="images/comment.svg"
+                  alt="comment"
+                />
+                <span>27</span>
+              </div>
+              <!-- End comment and like date -->
+            </div>
+          </div>
+          <!-- end date container -->
+
+          <!-- start blog content -->
+          <div class="blog-content">
+            <!-- start blog title -->
+            <h1 class="blog-content__title">Did you Know? 🙄</h1>
+            <!-- end blog title -->
+
+            <!-- start blog paragraph-->
+            <p class="blog-content__paragraph">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
+              voluptate sunt, molestiae quae incidunt enim magnam eveniet.
+            </p>
+            <!-- end blog paragraph-->
+
+            <!-- start blog image -->
+            <img
+              class="blog-content__img"
+              src="images/blog-large-image-.svg"
+              alt="technology"
+            />
+            <!-- end blog image -->
+
+            <p class="blog-content__paragraph">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <img
+              class="blog-content__img"
+              src="images/blog-large-image-2.svg"
+              alt="office"
+            />
+            <!-- start blog paragraph-->
+            <p class="blog-content__paragraph">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <!-- end blog paragraph-->
+            <!-- start blog paragraph-->
+            <p class="blog-content__paragraph">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Et
+              magnis dis parturient montes nascetur ridiculus mus mauris.
+              Blandit volutpat maecenas volutpat blandit aliquam etiam. Non enim
+              praesent elementum facilisis leo vel fringilla. Pharetra pharetra
+              massa massa Lacus viverra vitae congue eu c
+            </p>
+            <!-- end blog paragraph-->
+            <!-- start blog paragraph-->
+            <p class="blog-content__paragraph">
+              et aliquam id diam maecensi vitae suscipit tellus. Nunc
+              scelerisque viverra mauris in aliquam. Urna duis convallis
+              convallis tellus id interdum velit laoreet id. Cum sociis natoque
+              penatibus et magnis. Pretium viverra suspendisse potenti nullam ac
+              tortor vitae. Nisi quis eleifend quam adipiscing vitae proin
+              sagittis nisl. Sollicitudin tempor id eu nisl nunc mi ipsum
+              faucibus. Turpis nunc eget lorem dolor sed. Ipsum a arcu cursus
+              vitae congue mauris.
+            </p>
+            <!-- end blog paragraph-->
+
+            <!-- start writer and like button -->
+            <div class="blog-content__writer-and-like-button">
+              <div class="blog-content__writer-and-like-button--write">
+                <img
+                  class="blog-content__writer-and-like-button--write-img"
+                  src="images/blog-writer.svg"
+                  alt="Migeli"
+                />
+                <p>Written By Migeli</p>
+              </div>
+              <div class="blog-content__writer-and-like-button--like-button">
+                <a
+                  class="blog-content__writer-and-like-button--like-button-link"
+                  href="#"
+                >
+                  <img
+                    class="blog-content__writer-and-like-button--like-img"
+                    src="images/like-heart-icon.svg"
+                    alt="like"
+                  />
+                  <p
+                    class="blog-content__writer-and-like-button--like-button-text"
+                  >
+                    Like
+                  </p>
+                </a>
+              </div>
+            </div>
+            <!-- end write and like button -->
+          </div>
+          <!-- end blog content -->
+        </div>
+
+        <!-- start comment section -->
+        <div class="blog-comments-container">
+          <h3 class="comment-title">Comments</h3>
+          <div class="comments-colors">
+            <!-- start comment bubble -->
+            <!-- start comment 1 -->
+            <div class="blog-comment__main-container">
+              <!-- start comment img -->
+              <div class="blog-comments-container__img">
+                <img
+                  class="blog-comments-container__img-img"
+                  src="images/avatar-1.svg"
+                  alt="mike"
+                />
+              </div>
+              <!-- end comment img -->
+              <!-- start comment  -->
+              <div class="">
+                <!-- bubble comment -->
+                <div class="comment-buble">
+                  <h4 class="comment-buble__title">Karimu</h4>
+                  <p class="comment-buble__paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tempora rem quibusdam sed aut.
+                  </p>
+                </div>
+
+                <!-- like and reply button -->
+                <div class="comment-bubble__reply-or-like">
+                  <!-- like -->
+                  <img
+                    class="comment-bubble__reply-or-like--img"
+                    src="images/like-heart-icon.svg"
+                    alt=""
+                  />
+                  <p>Reply</p>
+                </div>
+              </div>
+            </div>
+            <!-- end comment 1 -->
+            <!-- start comment 2 -->
+            <div class="blog-comment__main-container">
+              <!-- start comment img -->
+              <div class="blog-comments-container__img">
+                <img
+                  class="blog-comments-container__img-img"
+                  src="images/avatar-1.svg"
+                  alt="mike"
+                />
+              </div>
+              <!-- end comment img -->
+              <!-- start comment  -->
+              <div class="">
+                <!-- bubble comment -->
+                <div class="comment-buble">
+                  <h4 class="comment-buble__title">Karimu</h4>
+                  <p class="comment-buble__paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tempora rem quibusdam sed aut.
+                  </p>
+                </div>
+
+                <!-- like and reply button -->
+                <div class="comment-bubble__reply-or-like">
+                  <!-- like -->
+                  <img
+                    class="comment-bubble__reply-or-like--img"
+                    src="images/like-heart-icon.svg"
+                    alt=""
+                  />
+                  <p>Reply</p>
+                </div>
+              </div>
+            </div>
+            <!-- end comment 1 -->
+            <!-- start comment 1 -->
+            <div class="blog-comment__main-container">
+              <!-- start comment img -->
+              <div class="blog-comments-container__img">
+                <img
+                  class="blog-comments-container__img-img"
+                  src="images/avatar-1.svg"
+                  alt="mike"
+                />
+              </div>
+              <!-- end comment img -->
+              <!-- start comment  -->
+              <div class="">
+                <!-- bubble comment -->
+                <div class="comment-buble">
+                  <h4 class="comment-buble__title">Karimu</h4>
+                  <p class="comment-buble__paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tempora rem quibusdam sed aut.
+                  </p>
+                </div>
+
+                <!-- like and reply button -->
+                <div class="comment-bubble__reply-or-like">
+                  <!-- like -->
+                  <img
+                    class="comment-bubble__reply-or-like--img"
+                    src="images/like-heart-icon.svg"
+                    alt=""
+                  />
+                  <p>Reply</p>
+                </div>
+              </div>
+            </div>
+            <!-- end comment 1 -->
+            <!-- end comment bubble -->
+          </div>
+        </div>
+        <!-- end comment section -->
+
+        <!-- start leave comment -->
+        <div class="leave-comment-container">
+          <h3 class="leave-comment-container__title">Leave a comment</h3>
+          <div class="leave-comment__form">
+            <form class="leave-comment__form-and-input">
+              <input
+                class="leave-comment__input"
+                type="text"
+                placeholder="Name"
+              />
+              <input
+                class="leave-comment__input"
+                type="text"
+                placeholder="Email"
+              />
+              <textarea
+                class="leave-comment__input textarea"
+                name="leave-comment"
+                id="leave-comment"
+                placeholder="Content"
+              ></textarea>
+              <button class="btn post-btn">Post Comment</button>
+            </form>
+          </div>
+        </div>
+        <!-- End leave comment -->
+        <!-- End blog container -->
+      </section>
+    </main>
+    <footer class="footer section container">
+      <!-- start footer container -->
+      <div class="footer-container">
+        <h4 class="footer-container__title">H.Clement</h4>
+        <!-- Start Icon -->
+        <div class="hero___container--img footer-icons">
+          <ul class="hero___container--img-list">
+            <li>
+              <a class="hero__link" href="#">
+                <img
+                  class="hero___container--img--icon footer-icon"
+                  src="images/twitter.svg"
+                  alt="twitter icon"
+                />
+                <!-- <ion-icon name="logo-twitter"></ion-icon> -->
+              </a>
+            </li>
+            <li>
+              <a class="hero__link" href="#">
+                <img
+                  class="hero___container--img--icon footer-icon"
+                  src="images/github-filled.svg"
+                  alt="github icon"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a class="hero__link" href="#">
+                <img
+                  class="hero___container--img--icon footer-icon"
+                  src="images/social_linkedin.svg"
+                  alt="linkedIn icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a class="hero__link" href="#">
+                <img
+                  class="hero___container--img--icon footer-icon"
+                  src="images/instagram.svg"
+                  alt="instagram icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Icon -->
+        <small class="footer-container__copyright">
+          All Rights Reserved &#169; 2021 _H.Clement ❤
+        </small>
+      </div>
+      <!-- End footer container -->
+    </footer>
+  </body>
+</html>
