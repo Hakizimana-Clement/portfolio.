@@ -1,0 +1,188 @@
+/* container */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  /* margin: 10rem 0; */
+  margin: 1rem 0;
+}
+/* image */
+.signup-container__img {
+  display: none;
+  /* height: 100px; */
+}
+
+.signup-container__main-form {
+  padding: 1rem 3rem;
+  border: 1px solid;
+  border-radius: 6px;
+}
+.signup-container__form-form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  gap: 1.8rem;
+  margin-top: 1rem;
+}
+.signup-container__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 2rem 5rem; */
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+}
+
+.forms input {
+  padding: 0.5rem 0;
+  border-radius: 3px;
+  border: none;
+}
+.remember-me-form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.forget-password__link {
+  text-decoration: none;
+  font-weight: normal;
+}
+.form-login-btn {
+  padding: 0.8rem 0;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* text */
+.signup-container__form-title {
+  color: var(--clr-light);
+  font-size: var(--size-4xl);
+  margin: var(--size-base) 0 var(--size-5xl);
+}
+label {
+  color: var(--clr-text);
+  font-size: var(--size-lg);
+}
+.forms input {
+  /* padding: 1rem; */
+
+  padding: 0.78rem;
+
+  border: none;
+  margin-top: var(--size-sm);
+}
+/* create new account */
+.form__create-new-account {
+  margin: var(--size-6xl) 0 var(--size-2xl);
+}
+.form__create-new-account--link {
+  color: var(--clr-hover);
+  text-decoration: none;
+}
+
+.form__create-new-account--link:hover {
+  text-decoration: underline;
+}
+/* xs */
+@media (min-width: 475px) {
+  /* .signup-container__form { */
+  /* padding: 1rem 3rem; */
+  /* } */
+
+  .forms input,
+  .form-login-btn {
+    /* padding: 0.78rem 4rem; */
+    padding: 1rem 4rem;
+  }
+  .form-login-btn {
+    margin-top: 2rem;
+  }
+}
+
+/* sm */
+/* @media(min-width:640px){} */
+
+/* md */
+@media (min-width: 768px) {
+  .forms input,
+  .form-login-btn {
+    padding: 1.4rem 10rem;
+  }
+  label,
+  .form-login-btn {
+    font-size: var(--size-2xl);
+  }
+  .form__create-new-account {
+    font-size: var(--size-2xl);
+    margin: var(--size-8xl) 0 var(--size-2xl);
+  }
+}
+
+/* lg*/
+@media (min-width: 1024px) {
+  /* image */
+  .signup-container__img {
+    display: block;
+    flex: 0 1 57%;
+  }
+  /* form and login button */
+  .forms input,
+  .form-login-btn {
+    padding: 1rem 4rem;
+  }
+  /* signup form */
+  .signup-container__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* text */
+  .signup-container__form-title {
+    font-size: var(--size-3xl);
+  }
+
+  label,
+  .form-login-btn {
+    font-size: var(--size-base);
+  }
+}
+/* xl*/
+@media (min-width: 1280px) {
+  /* .signup-container {
+    align-items: center;
+  } */
+  .signup-container__form-form {
+    margin-top: 0;
+    gap: 0.7rem;
+  }
+  /* image container */
+  .signup-container__img {
+    flex: 0 1 32%;
+  }
+  /* form */
+  .forms input {
+    margin-top: var(--size-xxs);
+  }
+
+  .forms input,
+  .form-login-btn {
+    padding: 0.7rem 2rem;
+  }
+
+  .signup-container__form-title {
+    font-size: var(--size-2xl);
+    margin: var(--size-base) 0 var(--size-2xl);
+  }
+  .form__create-new-account {
+    font-size: var(--size-base);
+    margin: var(--size-4xl) 0 var(--size-2xl);
+  }
+}
+
+/* 2xl */
+/* @media(min-width:1536px){} */

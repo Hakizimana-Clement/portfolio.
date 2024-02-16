@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./images/profile-picture.jpg"
+      type="image/jpg"
+    />
+
+    <!-- google font [inter and spartan] -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/components/header.css" />
+
+    <link rel="stylesheet" href="styles/components/hero.css" />
+    <link rel="stylesheet" href="styles/components/signin.css" />
+    <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/utils.css" />
+    <!-- icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+ "
+    ></script>
+    <!-- web title -->
+    <title>My portfolio</title>
+  </head>
+  <body>
+    <header class="header container">
+      <nav class="header__navbar">
+        <!-- Start link Area -->
+        <ul class="header__menu">
+          <li>
+            <a class="header__link" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="header__link" href="#about">About</a>
+          </li>
+          <li>
+            <a class="header__link" href="#skills">Skills</a>
+          </li>
+          <li>
+            <a class="header__link" href="#works">Works</a>
+          </li>
+          <li>
+            <a class="header__link" href="contact">Contact</a>
+          </li>
+          <li>
+            <a class="header__link" href="#blogs">Blogs</a>
+          </li>
+          <!-- <li>
+            <a class="header__link" href="#signin">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+
+                <span>Sign</span>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+        <!-- End link Area -->
+
+        <!-- Start login button -->
+        <a class="header__link" href="#signin">
+          <button class="login-btn btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="header__signin--user-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+            <span class="login-btn--text">Sign In</span>
+          </button>
+        </a>
+        <!-- End login button -->
+
+        <!-- Start menu icon button -->
+        <button class="header__bars">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <!-- End menu icon button -->
+      </nav>
+    </header>
+    <main>
+      <section class="signup container">
+        <!-- start signup container -->
+        <div class="signup-container">
+          <!-- start signup img -->
+          <div class="signup-container__img">
+            <img
+              class="signup-container__img-image"
+              src="images/signup-img.svg"
+              alt="sign up image"
+            />
+          </div>
+          <!-- <div> -->
+          <!-- End signup img -->
+          <!-- Start form main container -->
+          <div class="signup-container__main-form">
+            <!-- start signup form-->
+            <div class="signup-container__form">
+              <h1 class="signup-container__form-title">Sign Up</h1>
+              <!-- start form -->
+              <div class="signup-container__form-form">
+                <!-- name -->
+                <div class="signup-container__form-form--name forms">
+                  <label for="name">Full Name: </label>
+                  <input type="text" id="name" required />
+                </div>
+                <!-- email -->
+                <div class="signup-container__form-form--name forms">
+                  <label for="email">Email: </label>
+                  <input type="text" id="email" required />
+                </div>
+
+                <!-- password-->
+                <div class="signup-container__form-form--password forms">
+                  <label for="password">Confirm Password: </label>
+                  <input type="password" id="name" required />
+                </div>
+                <!-- password-->
+                <div class="signup-container__form-form--password forms">
+                  <label for="password">Password: </label>
+                  <input type="password" id="name" required />
+                </div>
+
+                <button class="btn form-login-btn">Sign Up</button>
+              </div>
+              <p class="form__create-new-account">
+                Already have account?
+                <a class="form__create-new-account--link" href="#"> Login </a>
+              </p>
+              <!-- end form -->
+            </div>
+            <!-- end signup form-->
+          </div>
+          <!-- End form main container -->
+          <!-- </div> -->
+          <!-- End signup container -->
+        </div>
+      </section>
+    </main>
+    <footer class="footer section container">
+      <!-- start footer container -->
+      <div class="footer-container">
+        <h4 class="footer-container__title">H.Clement</h4>
+        <!-- Start Icon -->
+        <div class="hero___container--img footer-icons">
+          <ul class="hero___container--img-list">
+            <li>
+              <a class="hero__link" href="#">
+                <img
+                  class="hero___container--img--icon footer-icon"
+                  src="images/twitter.svg"
+                  alt="twitter icon"
+                />
+                <!-- <ion-icon name="logo-twitter"></ion-icon> -->
+              </a>
+            </li>
+            <li>
+              <a class="hero__link" href="#">
+                <img
+                  class="hero___container--img--icon footer-icon"
+                  src="images/github-filled.svg"
+                  alt="github icon"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a class="hero__link" href="#">
+                <img
+                  class="hero___container--img--icon footer-icon"
+                  src="images/social_linkedin.svg"
+                  alt="linkedIn icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a class="hero__link" href="#">
+                <img
+                  class="hero___container--img--icon footer-icon"
+                  src="images/instagram.svg"
+                  alt="instagram icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Icon -->
+        <small class="footer-container__copyright">
+          All Rights Reserved &#169; 2021 _H.Clement ❤
+        </small>
+      </div>
+      <!-- End footer container -->
+    </footer>
+  </body>
+</html>
