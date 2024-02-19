@@ -46,6 +46,7 @@
   text-align: center;
   color: var(--clr-light);
   font-size: var(--size-4xl);
+  font-weight: 400;
 }
 /* project title */
 .projects-container__tex-subtitle {
@@ -162,7 +163,8 @@
 @media (min-width: 1024px) {
   .projects-container {
     flex-direction: row;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    align-items: center;
     gap: 2.3rem;
   }
   /* display off on mobile */
@@ -177,9 +179,9 @@
   /* title on small screen */
   /* say project title */
   .projects-container__tex-title {
+    font-size: var(--size-5xl);
+    font-weight: 300;
     display: block;
-    font-size: var(--size-4xl);
-    font-weight: 200;
     color: var(--clr-light);
   }
   /* project name */
@@ -194,8 +196,12 @@
 
   /* paragraph */
   .projects-container__tex-description {
+    /* width: 77%; */
+    font-size: var(--size-base);
+    font-weight: 300;
     padding: 0;
-    width: 77%;
+    width: 89%;
+    /* width: 74%; */
   }
   /* language build with */
   .projects-container__tex-ul-container {
@@ -242,6 +248,9 @@
     /* top: 264px; on other screen */
     top: 188px;
   }
+  .projects-container__text-next-btn-containers {
+    margin-top: var(--size-4xl);
+  }
 }
 
 /* xl*/
@@ -265,7 +274,11 @@
 
   /* paragraph */
   .projects-container__tex-description {
-    margin-top: var(--size-5xl);
+    /* margin-top: var(--size-5xl); */
+    font-size: var(--size-base);
+    font-weight: 200;
+    margin-top: var(--size-xl);
+    width: 69%;
   }
   /* gihub link */
   .projects-container__tex-github-link-container--list {
