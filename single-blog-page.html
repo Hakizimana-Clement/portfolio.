@@ -140,7 +140,9 @@
           <!-- start blog date container -->
           <div class="blog-container__date">
             <!-- start date -->
-            <div>
+            <div class="blog-container__date-text-and-icon">
+              <!-- date icon -->
+              <ion-icon name="calendar">date</ion-icon>
               <p class="blog-container__date-year">Jan 02 2024</p>
             </div>
             <!-- end date -->
@@ -299,7 +301,8 @@
                 </div>
 
                 <!-- like and reply button -->
-                <div class="comment-bubble__reply-or-like">
+                <!-- <div class="comment-bubble__reply-or-like"> -->
+                <a class="comment-bubble__reply-or-like" href="#">
                   <!-- like -->
                   <img
                     class="comment-bubble__reply-or-like--img"
@@ -307,7 +310,8 @@
                     alt=""
                   />
                   <p>Reply</p>
-                </div>
+                  <!-- </a> -->
+                </a>
               </div>
             </div>
             <!-- end comment 1 -->
@@ -317,7 +321,7 @@
               <div class="blog-comments-container__img">
                 <img
                   class="blog-comments-container__img-img"
-                  src="images/avatar-1.svg"
+                  src="images/writer-image-1.svg"
                   alt="mike"
                 />
               </div>
@@ -326,7 +330,7 @@
               <div class="">
                 <!-- bubble comment -->
                 <div class="comment-buble">
-                  <h4 class="comment-buble__title">Karimu</h4>
+                  <h4 class="comment-buble__title">Mike</h4>
                   <p class="comment-buble__paragraph">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Tempora rem quibusdam sed aut.
@@ -334,15 +338,16 @@
                 </div>
 
                 <!-- like and reply button -->
-                <div class="comment-bubble__reply-or-like">
+                <a class="comment-bubble__reply-or-like" href="#">
                   <!-- like -->
                   <img
                     class="comment-bubble__reply-or-like--img"
                     src="images/like-heart-icon.svg"
-                    alt=""
+                    alt="like"
                   />
                   <p>Reply</p>
-                </div>
+                  <!-- </a> -->
+                </a>
               </div>
             </div>
             <!-- end comment 1 -->
@@ -352,7 +357,7 @@
               <div class="blog-comments-container__img">
                 <img
                   class="blog-comments-container__img-img"
-                  src="images/avatar-1.svg"
+                  src="images/blog-writer.svg"
                   alt="mike"
                 />
               </div>
@@ -361,7 +366,7 @@
               <div class="">
                 <!-- bubble comment -->
                 <div class="comment-buble">
-                  <h4 class="comment-buble__title">Karimu</h4>
+                  <h4 class="comment-buble__title">Somi</h4>
                   <p class="comment-buble__paragraph">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Tempora rem quibusdam sed aut.
@@ -369,7 +374,7 @@
                 </div>
 
                 <!-- like and reply button -->
-                <div class="comment-bubble__reply-or-like">
+                <a class="comment-bubble__reply-or-like" href="#">
                   <!-- like -->
                   <img
                     class="comment-bubble__reply-or-like--img"
@@ -377,7 +382,8 @@
                     alt=""
                   />
                   <p>Reply</p>
-                </div>
+                  <!-- </a> -->
+                </a>
               </div>
             </div>
             <!-- end comment 1 -->
@@ -391,23 +397,31 @@
           <h3 class="leave-comment-container__title">Leave a comment</h3>
           <div class="leave-comment__form">
             <form class="leave-comment__form-and-input">
-              <input
-                class="leave-comment__input"
-                type="text"
-                placeholder="Name"
-              />
-              <input
-                class="leave-comment__input"
-                type="text"
-                placeholder="Email"
-              />
+              <div class="leave-comment__form-two-input">
+                <input
+                  class="leave-comment__input"
+                  type="text"
+                  placeholder="Name"
+                />
+                <input
+                  class="leave-comment__input"
+                  type="text"
+                  placeholder="Email"
+                />
+              </div>
               <textarea
                 class="leave-comment__input textarea"
                 name="leave-comment"
                 id="leave-comment"
                 placeholder="Content"
               ></textarea>
-              <button class="btn post-btn">Post Comment</button>
+
+              <p class="leave-comment__form__note-text">
+                All comments are moderated before being published
+              </p>
+              <div class="leave-comment__input-btn-container">
+                <button class="btn post-btn">Post Comment</button>
+              </div>
             </form>
           </div>
         </div>
@@ -415,12 +429,13 @@
         <!-- End blog container -->
       </section>
     </main>
+
     <footer class="footer section container">
       <!-- start footer container -->
       <div class="footer-container">
         <h4 class="footer-container__title">H.Clement</h4>
         <!-- Start Icon -->
-        <div class="hero___container--img footer-icons">
+        <!-- <div class="hero___container--img footer-icons">
           <ul class="hero___container--img-list">
             <li>
               <a class="hero__link" href="#">
@@ -429,7 +444,6 @@
                   src="images/twitter.svg"
                   alt="twitter icon"
                 />
-                <!-- <ion-icon name="logo-twitter"></ion-icon> -->
               </a>
             </li>
             <li>
@@ -461,8 +475,39 @@
               </a>
             </li>
           </ul>
+        </div> -->
+        <!-- End Icon -->
+        <!-- Start Icon -->
+        <div class="hero___container--img">
+          <ul class="hero___container--img-list">
+            <!-- twitter icon -->
+            <li>
+              <a class="hero__link" href="#">
+                <ion-icon name="logo-twitter" class="icons"></ion-icon>
+              </a>
+            </li>
+            <!-- github icon -->
+            <li>
+              <a class="hero__link" href="#">
+                <ion-icon name="logo-github" class="icons"></ion-icon>
+              </a>
+            </li>
+            <!-- linkedin icon -->
+            <li>
+              <a class="hero__link" href="#">
+                <ion-icon name="logo-linkedin" class="icons"></ion-icon>
+              </a>
+            </li>
+            <!-- instagram icon -->
+            <li>
+              <a class="hero__link" href="#">
+                <ion-icon name="logo-instagram" class="icons"></ion-icon>
+              </a>
+            </li>
+          </ul>
         </div>
         <!-- End Icon -->
+
         <small class="footer-container__copyright">
           All Rights Reserved &#169; 2021 _H.Clement ❤
         </small>
