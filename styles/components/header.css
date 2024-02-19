@@ -97,10 +97,19 @@
 
 /* lg*/
 @media (min-width: 1024px) {
+  /* start font size */
+  /* all link */
   .header__link {
-    font-size: var(--size-sm);
+    /* font-size: var(--size-sm); */
+    font-size: var(--size-base);
+    font-weight: 400;
   }
-
+  /* button text signin */
+  .login-btn--text {
+    font-size: var(--size-sm);
+    font-weight: 400;
+  }
+  /* end font size */
   .header__navbar {
     display: flex;
     justify-content: space-between;

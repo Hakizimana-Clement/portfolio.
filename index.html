@@ -69,7 +69,7 @@
             <a class="header__link" href="#works">Works</a>
           </li>
           <li>
-            <a class="header__link" href="contact">Contact</a>
+            <a class="header__link" href="#contact">Contact</a>
           </li>
           <li>
             <a class="header__link" href="#blogs">Blogs</a>
@@ -100,7 +100,7 @@
         <!-- End link Area -->
 
         <!-- Start login button -->
-        <a class="header__link" href="#signin">
+        <a class="header__link" href="/signin.html">
           <button class="login-btn btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -152,42 +152,49 @@
           <!-- Start Icon -->
           <div class="hero___container--img">
             <ul class="hero___container--img-list">
+              <!-- twitter icon -->
               <li>
-                <a class="hero__link" href="#">
-                  <img
+                <a>
+                  <!-- <img
                     class="hero___container--img--icon"
                     src="images/twitter.svg"
                     alt="twitter icon"
-                  />
+                  /> -->
                   <!-- <ion-icon name="logo-twitter"></ion-icon> -->
+                  <ion-icon name="logo-twitter" class="icons"></ion-icon>
                 </a>
               </li>
+              <!-- github icon -->
               <li>
                 <a class="hero__link" href="#">
-                  <img
+                  <!-- <img
                     class="hero___container--img--icon"
                     src="images/github-filled.svg"
                     alt="github icon"
-                  />
+                  /> -->
+                  <ion-icon name="logo-github" class="icons"></ion-icon>
                 </a>
               </li>
-
+              <!-- linkedin icon -->
               <li>
                 <a class="hero__link" href="#">
-                  <img
+                  <!-- <img
                     class="hero___container--img--icon"
                     src="images/social_linkedin.svg"
                     alt="linkedIn icon"
-                  />
+                  /> -->
+                  <ion-icon name="logo-linkedin" class="icons"></ion-icon>
                 </a>
               </li>
+              <!-- instagram icon -->
               <li>
                 <a class="hero__link" href="#">
-                  <img
+                  <!-- <img
                     class="hero___container--img--icon"
                     src="images/instagram.svg"
                     alt="instagram icon"
-                  />
+                  /> -->
+                  <ion-icon name="logo-instagram" class="icons"></ion-icon>
                 </a>
               </li>
             </ul>
@@ -220,7 +227,7 @@
       <!-- ################################################## -->
       <!-- ################ ABOUT SECTION ################### -->
       <!-- ################################################## -->
-      <section class="about section container">
+      <section id="about" class="about section container">
         <div>
           <div class="about__container">
             <img
@@ -262,7 +269,7 @@
       <!-- ################################################## -->
       <!-- ################ SKILLS SECTION ################### -->
       <!-- ################# -->
-      <section class="skills section container">
+      <section id="skills" class="skills section container">
         <div class="skills__container">
           <!-- text and icon container -->
           <div class="skills__container--main-container">
@@ -282,7 +289,7 @@
                 <li>
                   <img
                     class="skills__container-img--list-icon"
-                    src="images/html-icon.svg"
+                    src="images/html-icon-1.svg"
                     alt="html icon"
                   />
                 </li>
@@ -290,7 +297,7 @@
                 <li>
                   <img
                     class="skills__container-img--list-icon"
-                    src="images/css-icon.svg"
+                    src="images/css-icon-2.svg"
                     alt="css icon"
                   />
                 </li>
@@ -299,7 +306,7 @@
                 <li>
                   <img
                     class="skills__container-img--list-icon"
-                    src="images/javascript-icon.svg"
+                    src="images/javascript-icon-1.svg"
                     alt="javascript icon "
                   />
                 </li>
@@ -307,7 +314,7 @@
                 <li>
                   <img
                     class="skills__container-img--list-icon"
-                    src="images/React-js-icon.svg"
+                    src="images/React-js-1.svg"
                     alt="React JS icon "
                   />
                 </li>
@@ -315,7 +322,7 @@
                 <li>
                   <img
                     class="skills__container-img--list-icon"
-                    src="images/express-js-icon.svg"
+                    src="/images/white-and-black-expressjs-icon.svg"
                     alt="Express JS icon "
                   />
                 </li>
@@ -324,7 +331,7 @@
                 <li>
                   <img
                     class="skills__container-img--list-icon"
-                    src="images/typescript-icon.svg"
+                    src="images/white-typescript.svg"
                     alt="Typescript icon "
                   />
                 </li>
@@ -369,7 +376,7 @@
       <!-- ################################################## -->
       <!-- ################ PROJECT SECTION ################### -->
       <!-- ################# -->
-      <section class="projects section container">
+      <section id="works" class="projects section container">
         <h2 class="projects-container__tex-title--mobile">Projects</h2>
 
         <!-- Start project container -->
@@ -540,7 +547,7 @@
       <!-- ################################################## -->
       <!-- ################ BLOGS SECTION ################### -->
       <!-- ################# -->
-      <section class="blogs section container">
+      <section id="blogs" class="blogs section container">
         <h2 class="blog-title">Blogs</h2>
         <!-- Start blog container -->
         <div class="blogs-container">
@@ -560,7 +567,7 @@
                 <div class="blogs-container__cards-card--texts-container">
                   <!-- title -->
                   <h3 class="blogs-container__card-title">
-                    This is heading text
+                    <a href="./single-blog-page.html"> This is heading text </a>
                   </h3>
 
                   <!-- description -->
@@ -893,7 +900,7 @@
       <!-- ################################################## -->
       <!-- ################ CONTACT ME SECTION ################### -->
       <!-- ################# -->
-      <section class="contact-me section container">
+      <section id="contact" class="contact-me section container">
         <div class="contact-me__main-container">
           <h2 class="contact-me__title">Contact Me</h2>
           <div class="contact-me__control-form-width">
