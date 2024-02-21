@@ -1,0 +1,75 @@
+/* header */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1rem;
+  padding: 0.4rem 0;
+
+  color: var(--clr-text);
+}
+/* bell notification and user image */
+.header-container__notify-and-img {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  fill: white;
+}
+/* user image */
+.notification-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* title */
+
+.header-container__title {
+  /* font-size: var(--size-4xl); */
+  /* font-weight: 400; */
+  font-size: var(--size-2xl);
+  font-weight: 300;
+}
+
+.header-container__notify-like:hover {
+  color: var(--clr-hover);
+}
+.notification-img__link:hover {
+  border: 2px solid var(--clr-hover);
+  border-radius: 50%;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .header-container {
+    padding: 1rem 0;
+  }
+
+  .notification-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* bell icon */
+  .notification-bell-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .header-container__notify-and-img {
+    gap: 0.6rem;
+  }
+}
+
+/* sm */
+/* @media(min-width:640px){} */
+
+/* md */
+/* @media(min-width:768px){} */
+
+/* lg*/
+/* @media(min-width:1024px){} */
+
+/* xl*/
+/* @media(min-width:1280px){} */
+
+/* 2xl */
+/* @media(min-width:1536px){} */

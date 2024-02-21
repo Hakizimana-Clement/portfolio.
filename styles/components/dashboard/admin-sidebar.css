@@ -1,0 +1,122 @@
+/* @media (min-width: 1280px) { */
+@media (min-width: 1024px) {
+  /* sidebar container */
+  .sidebar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 1.5rem; */
+    gap: 0.5rem;
+    /* margin-top: 2rem; */
+    margin: 1.4rem 0 2rem;
+  }
+  /* horizontal line */
+  .sidebar-container__horizontal {
+    font-weight: 100;
+    width: 70%;
+  }
+  /* *************************************8 */
+  /* ****************** Dashboard *******************8 */
+  /* *************************************8 */
+  /* link text */
+  .sidebar-container__dashboard-link-container {
+    display: flex;
+    align-items: center;
+    /* gap: 0.4rem; */
+    /* gap: 0.5rem; */
+    gap: 0.7rem;
+  }
+  /* dashboard links container */
+  .sidebar-container__links-container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-top: 1rem;
+    gap: 2rem;
+  }
+
+  /* ************* icons ***************** */
+  /* dashboard icon */
+
+  /* .icons {
+  width: 29px;
+  height: 29px;
+}
+
+.dashboard-icon{
+
+  width: 29px;
+  height: 29px;
+} */
+
+  /****************** text ***************/
+  /* title */
+  .sidebar-container__title {
+    font-size: var(--size-xl);
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
+  .sidebar-container__horizontal {
+    font-weight: 200;
+  }
+
+  /* text or paragraph in link */
+  .sidebar-container__dashboard-link-text {
+    /* font-size: var(--size-lg); */
+    font-size: var(--size-base);
+    font-weight: 300;
+  }
+
+  /* dashboard link */
+  .sidebar-container__dashboard-link {
+    /* padding: 12px 31px; */
+    padding: 11px 30px;
+    border-radius: 4px;
+    background-color: var(--clr-dashboard-bg);
+    text-decoration: none;
+  }
+  .sidebar-container__dashboard-link:hover {
+    color: var(--clr-light);
+    background-color: var(--clr-hover);
+  }
+
+  /* active link */
+  /* .sidebar-container__dashboard-link {
+  padding: 12px 31px;
+  border-radius: 4px;
+  background-color: var(--clr-dashboard-bg);
+} */
+  /* active link coming soon */
+  .active-link {
+    /* padding: 12px 31px; */
+    /* background-color: var(--clr-dashboard-bg); */
+    padding: 11px 30px;
+    border-radius: 4px;
+
+    color: var(--clr-light);
+    background-color: var(--clr-hover);
+  }
+  /* new icon package */
+  .iconify-icons {
+    width: 30px;
+    height: 30px;
+  }
+}
+/* xs */
+/* @media(min-width:475px){} */
+
+/* sm */
+/* @media(min-width:640px){} */
+
+/* md */
+/* @media(min-width:768px){} */
+
+/* lg*/
+/* @media(min-width:1024px){} */
+
+/* xl*/
+/* @media(min-width:1280px){} */
+
+/* 2xl */
+/* @media(min-width:1536px){} */
