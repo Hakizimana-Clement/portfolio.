@@ -97,6 +97,18 @@
 
 /* lg*/
 @media (min-width: 1024px) {
+  /* header container */
+  .header {
+    background: #091733;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0px 0px 4px #5161f1;
+    /* for controlling shadow side */
+    -webkit-clip-path: inset(-5px 0px -5px 1px);
+    clip-path: inset(-5px 0px -5px 1px);
+  }
+
   /* start font size */
   /* all link */
   .header__link {

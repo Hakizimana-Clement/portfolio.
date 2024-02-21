@@ -4,6 +4,7 @@ body {
   display: grid;
   grid-template-columns: 0.3fr 1fr;
   column-gap: 1rem;
+  row-gap: 0.8rem;
   margin: 1.5rem 0;
 }
 
@@ -15,7 +16,10 @@ body {
 }
 
 .main-container__header {
-  background-color: #254e25;
+  /* background-color: #254e25; */
+
+  background-color: var(--clr-header-and-sidebar);
+  padding: 0.3rem 0;
 }
 
 aside {
@@ -43,7 +47,8 @@ aside,
 /* mobile link */
 /* main container */
 .mobile-menu {
-  background: olive;
+  /* background: olive; */
+  background-color: var(--clr-header-and-sidebar);
   grid-column: 1 / -1;
   padding: 0.5rem 0;
 }
