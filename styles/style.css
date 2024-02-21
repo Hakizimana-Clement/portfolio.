@@ -23,7 +23,15 @@
   --clr-dashboard-bg: #000c24;
   --clr-header-and-sidebar: #2b313c;
   --clr-text: #ececec;
-
+  /* main color inside dashboard */
+  --clr-inside-dashboard: #152545;
+  /* small stats boxs */
+  --clr-dashboard-box: #283c63;
+  /* -querries box */
+  --clr-dashboard-box--querries: #d802dc7a;
+  --clr-dashboard-box--like: #87081959;
+  --clr-dashboard-box--blog: rgba(70 220 181 / 20%);
+  --clr-dashboard-box--comment: rgba(216 168 0 / 23%);
   /* box shadow value in rgb*/
   /* --clr-main: rgb(9, 23, 51); */
   /* --clr-hover: rgb(81, 97, 241); */

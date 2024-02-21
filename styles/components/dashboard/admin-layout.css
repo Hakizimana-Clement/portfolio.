@@ -13,6 +13,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  /* height: 100vh; */
+  /* height: 100%; */
+  /* overflow: hidden; */
 }
 
 .main-container__header {
@@ -27,7 +30,8 @@ aside {
   background-color: var(--clr-header-and-sidebar);
 }
 .main-container__content {
-  background-color: #471c3a;
+  /* background-color: #471c3a; */
+  background-color: var(--clr-inside-dashboard);
 }
 
 aside {

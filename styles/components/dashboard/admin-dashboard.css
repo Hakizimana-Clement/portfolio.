@@ -1,0 +1,99 @@
+/* dashboard container */
+.main-container__content--dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin: 1rem 0.5rem 0;
+  padding-bottom: 2rem;
+}
+/* box container */
+.main-container__content--dashboard-box {
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: flex-start; */
+  /* gap: 1.3rem; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* box */
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* padding: 0.9375rem 1.5rem; */
+  /* padding: 0.8rem 1.5rem; */
+  /* padding: 8px 33px; */
+  height: 118px;
+  width: 140px;
+  padding: 0.9rem 1.5rem;
+  background: var(--clr-dashboard-box);
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+/* querries box icon container */
+.querries-box--icon {
+  padding: 0.8rem;
+  border-radius: 50%;
+  border: #ffffffb7 1px solid;
+}
+/* ******** querries ********** */
+/* querries icon */
+.querries-icon {
+  background: var(--clr-dashboard-box--querries);
+}
+/* shadow */
+.querries-box {
+  box-shadow: 0px 5px 8px rgb(216 2 220 / 26%);
+}
+/* ****************** */
+/* ******** like ********** */
+/* like icon */
+.like-icon {
+  background-color: var(--clr-dashboard-box--like);
+}
+/* shadow */
+.like-box {
+  box-shadow: 0px 5px 8px rgba(220, 2, 57, 0.26);
+}
+/* ****************** */
+/* ******** blog ********** */
+/* blog icon */
+.blog-icon {
+  background-color: var(--clr-dashboard-box--blog);
+}
+
+/* shadow */
+.blog-box {
+  box-shadow: 0px 5px 8px rgba(2, 220, 111, 0.281);
+}
+/* ****************** */
+/* ******** comment ********** */
+/* comment icon */
+.comment-icon {
+  background-color: var(--clr-dashboard-box--comment);
+}
+
+/* shadow */
+.comment-box {
+  box-shadow: 0px 5px 8px rgba(198, 220, 2, 0.281);
+}
+
+/* ****************** */
+.querries-box--icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+/* text */
+/* paragraph */
+.querries-box--paragraph {
+  font-size: var(--size-sm);
+  font-weight: 400;
+}
