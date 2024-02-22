@@ -47,6 +47,7 @@
 
 /* form button container */
 .add-new-blog-btn {
+  margin-top: 2rem;
   /* align-self: flex-end; */
 }
 
@@ -67,6 +68,23 @@ body.mceContentBody {
   color: yellow;
 }
 
+/* button container */
+.buttons-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+}
+
+.delete-btn {
+  background: #d5d5d5;
+  color: black;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.delete-btn:hover {
+  background: #969494;
+}
 /* xs */
 /* @media(min-width:475px){} */
 
@@ -74,7 +92,11 @@ body.mceContentBody {
 /* @media(min-width:640px){} */
 
 /* md */
-/* @media(min-width:768px){} */
+@media (min-width: 768px) {
+  .buttons-container {
+    flex-direction: row;
+  }
+}
 
 /* lg*/
 @media (min-width: 1024px) {
@@ -86,8 +108,10 @@ body.mceContentBody {
 
   /* form button */
   .new-blog-container-form__input-btn {
-    padding: 0.93rem;
-    padding: 0.9rem 4rem;
+    /* padding: 0.93rem; */
+    /* padding: 0.9rem 4rem; */
+    padding: 0.6rem 2rem;
+    font-size: var(--size-sm);
   }
 }
 
