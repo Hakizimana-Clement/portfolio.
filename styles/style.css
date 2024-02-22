@@ -43,6 +43,9 @@
   /* --clr-main: rgb(9, 23, 51); */
   /* --clr-hover: rgb(81, 97, 241); */
 
+  /* delete btn */
+  /* --clr-delete-btn: #a90000; */
+  --clr-delete-btn: #851313;
   /* sizes */
   --size-xxs: 0.5rem;
   --size-xs: 0.75rem;

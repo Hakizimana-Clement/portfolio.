@@ -85,6 +85,22 @@ body.mceContentBody {
 .delete-btn:hover {
   background: #969494;
 }
+
+/* ************ back button ************/
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  text-decoration: none;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+/* ************************/
+
 /* xs */
 /* @media(min-width:475px){} */
 

@@ -30,10 +30,10 @@
       href="../styles/components/dashboard/admin-header.css"
     />
 
-    <!--edit blog style-->
+    <!--delete confirm message blog style-->
     <link
       rel="stylesheet"
-      href="../styles/components/dashboard/admin-edit-blog.css"
+      href="../styles/components/dashboard/admin-delete-confirm-message-blog.css"
     />
 
     <!-- sidebar -->
@@ -334,112 +334,28 @@
         <div class="main-container__content">
           <!-- start dasboard wrapper -->
           <div class="main-container__content--dashboard-wrapper">
-            <h2 class="search-title">Edit blog</h2>
+            <div class="confirm-message-container">
+              <div class="confirm-dialog-message">
+                <p class="confirm-dialog-message__description">
+                  Are you sure you want to delete this article ?
+                </p>
+
+                <div class="confirm-dialog-message__btn-container">
+                  <a class="btn-cancel" href="./admin-panel--delete-blog.html"
+                    >No</a
+                  >
+                  <a
+                    class="btn-remove confirm-btn"
+                    href="./admin-panel--delete-blog.html"
+                    >Yes</a
+                  >
+                </div>
+              </div>
+            </div>
+            <h2 class="search-title">Delete Post</h2>
             <!-- start create edit blog container -->
-            <p class="edit-container__subtitle">All blog</p>
+            <!-- <p class="edit-container__subtitle">All blog</p> -->
             <!-- start edit container -->
-            <!-- start card 1 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/dashboard-blog-img.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="blog image"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p>
-                  <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p>
-                  <p class="edit-text edit-text__written">
-                    <strong>Written: </strong> U. Maniyozimukondiyako
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
-                  >Edit</a
-                >
-              </div>
-            </div>
-            <!-- end card 1 -->
-            <!-- start card 1 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/dashboard-blog-img.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="blog image"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p>
-                  <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p>
-                  <p class="edit-text edit-text__written">
-                    <strong>Written: </strong> U. Maniyozimukondiyako
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
-                  >Edit</a
-                >
-              </div>
-            </div>
-            <!-- end card 1 -->
-            <!-- start card 1 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/dashboard-blog-img.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="blog image"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p>
-                  <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p>
-                  <p class="edit-text edit-text__written">
-                    <strong>Written: </strong> U. Maniyozimukondiyako
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
-                  >Edit</a
-                >
-              </div>
-            </div>
-            <!-- end card 1 -->
 
             <!-- start card 1 -->
             <div class="edit-container">
@@ -469,13 +385,159 @@
               </div>
               <!-- end image and text container -->
               <div class="edit-btn-container">
-                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove edit-btn"
                   >Edit</a
                 >
               </div>
             </div>
             <!-- end card 1 -->
 
+            <!-- start card 2 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/dashboard-blog-img.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="blog image"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">
+                    <strong>Title: </strong> Did you know?
+                  </p>
+                  <p class="edit-text edit-text__body">
+                    <strong>Body: </strong>Lorem ipsum dolor sit amet
+                    consectetur...
+                  </p>
+                  <p class="edit-text edit-text__written">
+                    <strong>Written: </strong> U. Maniyozimukondiyako
+                  </p>
+                </div>
+              </div>
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove edit-btn"
+                  >Edit</a
+                >
+              </div>
+            </div>
+            <!-- end card 2 -->
+            <!-- start card 1 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/dashboard-blog-img.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="blog image"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">
+                    <strong>Title: </strong> Did you know?
+                  </p>
+                  <p class="edit-text edit-text__body">
+                    <strong>Body: </strong>Lorem ipsum dolor sit amet
+                    consectetur...
+                  </p>
+                  <p class="edit-text edit-text__written">
+                    <strong>Written: </strong> U. Maniyozimukondiyako
+                  </p>
+                </div>
+              </div>
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove edit-btn"
+                  >Edit</a
+                >
+              </div>
+            </div>
+            <!-- end card 3 -->
+            <!-- start card 1 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/dashboard-blog-img.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="blog image"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">
+                    <strong>Title: </strong> Did you know?
+                  </p>
+                  <p class="edit-text edit-text__body">
+                    <strong>Body: </strong>Lorem ipsum dolor sit amet
+                    consectetur...
+                  </p>
+                  <p class="edit-text edit-text__written">
+                    <strong>Written: </strong> U. Maniyozimukondiyako
+                  </p>
+                </div>
+              </div>
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove edit-btn"
+                  >Edit</a
+                >
+              </div>
+            </div>
+            <!-- end card 4 -->
+            <!-- start card 5 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/dashboard-blog-img.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="blog image"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">
+                    <strong>Title: </strong> Did you know?
+                  </p>
+                  <p class="edit-text edit-text__body">
+                    <strong>Body: </strong>Lorem ipsum dolor sit amet
+                    consectetur...
+                  </p>
+                  <p class="edit-text edit-text__written">
+                    <strong>Written: </strong> U. Maniyozimukondiyako
+                  </p>
+                </div>
+              </div>
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove edit-btn"
+                  >Edit</a
+                >
+              </div>
+            </div>
+            <!-- end card 5 -->
             <!-- end edit container -->
             <!-- end create new blog container -->
           </div>

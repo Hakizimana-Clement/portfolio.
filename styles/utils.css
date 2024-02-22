@@ -37,6 +37,25 @@
   box-shadow: 0 14px 35px rgba(81, 97, 241, 0.25),
     0 9px 20px rgba(81, 97, 241, 0.22), 0 0 120px -94px var(--clr-hover);
 }
+
+.btn-remove {
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+
+  background-color: var(--clr-delete-btn);
+  color: var(--clr-light);
+  border-radius: 6px;
+  /* box-shadow: 0 4px 27px rgba(81, 97, 241, 0.5),
+    0 3px 10px rgba(81, 97, 241, 0.5), 0 0 100px -94px var(--clr-delete-btn); */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-remove:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(241, 81, 169, 0.25);
+}
+
 /* gap between section */
 .section {
   /* margin-top: 5rem; */
