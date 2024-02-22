@@ -29,7 +29,7 @@
   /* padding: 0.8rem 1.5rem; */
   /* padding: 8px 33px; */
   height: 118px;
-  width: 140px;
+  width: 145px;
   padding: 0.9rem 1.5rem;
   background: var(--clr-dashboard-box);
   border-radius: 10px;
@@ -97,3 +97,45 @@
   font-size: var(--size-sm);
   font-weight: 400;
 }
+
+/* charts */
+.main-container__content--charts-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* width: 75vw; */
+  /* height: 40vh; */
+  height: 60vh;
+  width: auto;
+  cursor: pointer;
+}
+
+/* style="position: relative; height: 40vh; width: 80vw" */
+
+/* xs */
+/* @media(min-width:475px){} */
+
+/* sm */
+/* @media(min-width:640px){} */
+
+/* md */
+@media (min-width: 768px) {
+  .myChart {
+    width: 30%;
+  }
+  canvas {
+    width: 40%;
+  }
+}
+
+/* lg*/
+@media (min-width: 1024px) {
+  .main-container__content--charts-wrapper {
+    width: 65vw;
+  }
+}
+/* xl*/
+/* @media(min-width:1280px){} */
+
+/* 2xl */
+/* @media(min-width:1536px){} */

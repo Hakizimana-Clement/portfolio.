@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Place the first <script> tag in your HTML's <head> -->
-    <script
+    <!-- <script
       src="https://cdn.tiny.cloud/1/964vlttb0ciaqe0gr9g28j27qesxwii0a1deyaykh2v0bkhc/tinymce/6/tinymce.min.js"
       referrerpolicy="origin"
-    ></script>
+    ></script> -->
 
     <title>test</title>
   </head>
   <body>
-    <script>
+    <!-- <script>
       tinymce.init({
         selector: "textarea",
         plugins:
@@ -33,7 +33,66 @@
     </script>
     <textarea>
   Welcome to TinyMCE!
-</textarea
+</textarea -->
     >
+
+    <div class="test">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- script -->
+    <script>
+      // const ctx = document.getElementById("myChart");
+      // new Chart(ctx, {
+      //   type: "bar",
+      //   data: {
+      //     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      //     datasets: [
+      //       {
+      //         label: "# of Votes",
+      //         data: [12, 19, 3, 5, 2, 3],
+      //         borderWidth: 1,
+      //       },
+      //     ],
+      //   },
+      //   options: {
+      //     scales: {
+      //       y: {
+      //         beginAtZero: true,
+      //       },
+      //     },
+      //   },
+      // });
+
+      // data block
+
+      const data = {
+        labels: ["Querries", "Likes", "Blogs", "Comments"],
+        datasets: [
+          {
+            label: "# of Votes",
+            data: [37, 208, 92, 29],
+            borderWidth: 1,
+            backgroundColor: ["#ae33bc", "#a30303", "#a5a801", "#46dcb5"],
+          },
+        ],
+      };
+      // configuration block
+      const config = {
+        data,
+        type: "pie",
+
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+          },
+        },
+      };
+
+      // Render init block
+      const myChart = new Chart(document.getElementById("myChart"), config);
+    </script>
   </body>
 </html>

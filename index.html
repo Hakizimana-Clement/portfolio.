@@ -17,6 +17,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- swipper styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- styles -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/style.css" />
@@ -30,7 +36,9 @@
     <link rel="stylesheet" href="styles/components/projects.css" />
 
     <link rel="stylesheet" href="styles/components/blogs.css" />
+
     <link rel="stylesheet" href="styles/components/contact-me.css" />
+
     <link rel="stylesheet" href="styles/components/footer.css" />
     <link rel="stylesheet" href="styles/utils.css" />
     <!-- icons -->
@@ -889,6 +897,44 @@
           <!-- ------------------- End next slide part  ----------------- -->
         </div>
         <!-- End blog container -->
+
+        <!--****************** TESTING ************************** -->
+        <!-- Slider main container
+        <div class="swiper swiper-container">
+          Additional required wrapper
+          <div class="swiper-wrapper">
+            Slides
+            <div class="swiper-slide">
+              start card 1
+              <div class="swiper-card">
+                <img src="./images/blog-image-1.svg" alt="" />
+                <div class="swiper-card--content">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Adipisci voluptas veritatis ratione, aperiam voluptatem
+                    ducimus totam earum odit at, fuga eligendi laudantium quam
+                    eaque commodi modi fugit aspernatur laboriosam. Beatae.
+                  </p>
+                </div>
+              </div>
+              end  card 1
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            ...
+          </div>
+          If we need pagination
+          <div class="swiper-pagination"></div>
+
+          If we need navigation buttons
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          If we need scrollbar
+          <div class="swiper-scrollbar"></div>
+        </div> -->
+        <!-- **************************************************** -->
+
         <!-- Start scroll down button -->
         <div class="scroll-btn__container">
           <button class="scroll-btn__btn">
@@ -908,7 +954,6 @@
           </button>
           <span class="scroll-btn__text">Scroll </span>
         </div>
-
         <!-- end scroll down button -->
       </section>
 
@@ -1099,5 +1144,9 @@
       </div>
       <!-- End footer container -->
     </footer>
+    <!-- swipper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./src/slider-function.js"></script>
   </body>
 </html>

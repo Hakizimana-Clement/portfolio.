@@ -273,3 +273,12 @@
 
 /* 2xl */
 /* @media(min-width:1536px){} */
+.swiper-container {
+  height: 500px;
+  background-color: black;
+}
+.swiper-card {
+  width: 31%;
+  border: 1px solid;
+  padding: 1rem;
+}
