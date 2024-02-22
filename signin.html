@@ -156,13 +156,13 @@
               <form class="signup-container__form-form">
                 <!-- name -->
                 <div class="signup-container__form-form--name forms">
-                  <label for="name">Name: </label>
-                  <input type="text" id="name" required />
+                  <label for="email">Email: </label>
+                  <input type="text" id="email" />
                 </div>
                 <!-- password-->
                 <div class="signup-container__form-form--password forms">
                   <label for="password">Password: </label>
-                  <input type="password" id="name" required />
+                  <input type="password" id="password" />
                 </div>
                 <!-- Start remember and forget password  -->
                 <div
@@ -188,6 +188,11 @@
                   >Create one
                 </a>
               </p>
+
+              <!-- start error message -->
+              <div id="error"></div>
+              <!-- end error message -->
+
               <!-- end form -->
             </div>
             <!-- end signup form-->
@@ -252,5 +257,7 @@
       </div>
       <!-- End footer container -->
     </footer>
+    <!-- login script -->
+    <script src="./src/login.js"></script>
   </body>
 </html>

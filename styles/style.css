@@ -38,6 +38,9 @@
   --clr-dashboard-search-result: #000d28;
   /* new blog page */
   --clr-dashboard-new-blog-input: #1c3668;
+  /* table color */
+
+  --clr-dashboard-comment-and-like: #142952;
 
   /* box shadow value in rgb*/
   /* --clr-main: rgb(9, 23, 51); */

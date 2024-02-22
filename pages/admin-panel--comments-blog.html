@@ -30,10 +30,10 @@
       href="../styles/components/dashboard/admin-header.css"
     />
 
-    <!--delete blog style-->
+    <!--comments blog style-->
     <link
       rel="stylesheet"
-      href="../styles/components/dashboard/admin-delete-blog.css"
+      href="../styles/components/dashboard/admin-comments-blog.css"
     />
 
     <!-- sidebar -->
@@ -163,10 +163,7 @@
           <!-- End New post (blog)-->
 
           <!-- Start Edit post (blog)-->
-          <a
-            href="./admin-panel--edit-blog.html"
-            class="sidebar-container__dashboard-link"
-          >
+          <a href="#" class="sidebar-container__dashboard-link">
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <ion-icon name="create-outline" size="large"></ion-icon>
@@ -181,7 +178,7 @@
           <!-- Start Delete post (blog)-->
           <a
             href="./admin-panel--delete-blog.html"
-            class="sidebar-container__dashboard-link active-link"
+            class="sidebar-container__dashboard-link"
           >
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
@@ -220,10 +217,7 @@
           <!-- End message post (blog)-->
 
           <!-- Start comment post (blog)-->
-          <a
-            href="./admin-panel--comments-blog.html"
-            class="sidebar-container__dashboard-link"
-          >
+          <a href="#" class="sidebar-container__dashboard-link active-link">
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <svg
@@ -340,195 +334,73 @@
         <div class="main-container__content">
           <!-- start dasboard wrapper -->
           <div class="main-container__content--dashboard-wrapper">
-            <h2 class="search-title">Delete Post</h2>
-            <!-- start create edit blog container -->
-            <!-- <p class="edit-container__subtitle">All blog</p> -->
-            <!-- start edit container -->
+            <h2 class="search-title">Comments and likes</h2>
+            <!-- start comment and like blog container -->
+            <!-- <div class="comments-and-likes-container"> -->
+            <!-- start heading-->
+            <!-- <div class="comments-and-likes-container__header">
+                <p>Blog Title</p>
+                <p>Comments</p>
+                <p>Likes</p>
+              </div> -->
+            <!-- end heading-->
 
-            <!-- start card 1 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/dashboard-blog-img.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="blog image"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p>
-                  <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p>
-                  <p class="edit-text edit-text__written">
-                    <strong>Written: </strong> U. Maniyozimukondiyako
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a
-                  href="./admin-panel--delete-blog-confirm-message.html"
-                  class="btn-remove edit-btn"
-                  >Edit</a
-                >
-              </div>
-            </div>
-            <!-- end card 1 -->
+            <!-- start  comment and like card 1-->
+            <!-- <div class="comments-and-likes-container__header">
+                <h3>Did you know?</h3>
+                <h3>4</h3>
+                <h3>13</h3>
+              </div> -->
+            <!-- end comment and like card 1-->
+            <!-- </div> -->
 
-            <!-- start card 2 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/dashboard-blog-img.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="blog image"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p>
-                  <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p>
-                  <p class="edit-text edit-text__written">
-                    <strong>Written: </strong> U. Maniyozimukondiyako
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a
-                  href="./admin-panel--delete-blog-confirm-message.html"
-                  class="btn-remove edit-btn"
-                  >Edit</a
-                >
-              </div>
-            </div>
-            <!-- end card 2 -->
-            <!-- start card 3 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/dashboard-blog-img.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="blog image"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p>
-                  <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p>
-                  <p class="edit-text edit-text__written">
-                    <strong>Written: </strong> U. Maniyozimukondiyako
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a
-                  href="./admin-panel--delete-blog-confirm-message.html"
-                  class="btn-remove edit-btn"
-                  >Edit</a
-                >
-              </div>
-            </div>
-            <!-- end card 3 -->
-            <!-- start card 4 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/dashboard-blog-img.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="blog image"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p>
-                  <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p>
-                  <p class="edit-text edit-text__written">
-                    <strong>Written: </strong> U. Maniyozimukondiyako
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a
-                  href="./admin-panel--delete-blog-confirm-message.html"
-                  class="btn-remove edit-btn"
-                  >Edit</a
-                >
-              </div>
-            </div>
-            <!-- end card 4 -->
-            <!-- start card 5 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/dashboard-blog-img.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="blog image"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p>
-                  <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p>
-                  <p class="edit-text edit-text__written">
-                    <strong>Written: </strong> U. Maniyozimukondiyako
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a
-                  href="./admin-panel--delete-blog-confirm-message.html"
-                  class="btn-remove edit-btn"
-                  >Edit</a
-                >
-              </div>
-            </div>
-            <!-- end card 5 -->
+            <div class="comments-and-likes-container">
+              <!-- <div style="overflow-x: auto"> -->
+              <table>
+                <tr>
+                  <th>Blog title</th>
+                  <th>Comments</th>
+                  <th>Likes</th>
+                </tr>
+                <a href="#">
+                  <tr class="table-data">
+                    <td>Did you know?</td>
+                    <td>4</td>
+                    <td>13</td>
+                  </tr>
+                </a>
+                <tr class="table-data">
+                  <td>How Technology Can Help ...</td>
+                  <td>87</td>
+                  <td>82</td>
+                </tr>
+                <tr class="table-data">
+                  <td>The Future of Gaming: What ...</td>
+                  <td>102</td>
+                  <td>96</td>
+                </tr>
 
-            <!-- end edit container -->
-            <!-- end create new blog container -->
+                <tr class="table-data">
+                  <td>How to Protect Your Privacy ...</td>
+                  <td>3</td>
+                  <td>7</td>
+                </tr>
+
+                <tr class="table-data">
+                  <td>The Future of Gaming: What ...</td>
+                  <td>62</td>
+                  <td>81</td>
+                </tr>
+
+                <tr class="table-data">
+                  <td>The Future of Gaming: What ...</td>
+                  <td>32</td>
+                  <td>12</td>
+                </tr>
+              </table>
+              <!-- </div> -->
+            </div>
+            <!--end comment and like blog container -->
           </div>
           <!-- end dasboard wrapper -->
         </div>

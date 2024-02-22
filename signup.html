@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="styles/components/header.css" />
 
     <link rel="stylesheet" href="styles/components/hero.css" />
+    <!-- signin -->
     <link rel="stylesheet" href="styles/components/signin.css" />
     <link rel="stylesheet" href="styles/components/footer.css" />
     <link rel="stylesheet" href="styles/utils.css" />
@@ -153,31 +154,31 @@
             <div class="signup-container__form">
               <h1 class="signup-container__form-title">Sign Up</h1>
               <!-- start form -->
-              <div class="signup-container__form-form">
+              <form class="signup-container__form-form">
                 <!-- name -->
                 <div class="signup-container__form-form--name forms">
                   <label for="name">Full Name: </label>
-                  <input type="text" id="name" required />
+                  <input type="text" id="name" />
                 </div>
                 <!-- email -->
                 <div class="signup-container__form-form--name forms">
                   <label for="email">Email: </label>
-                  <input type="text" id="email" required />
+                  <input type="text" id="email" />
                 </div>
 
-                <!-- password-->
-                <div class="signup-container__form-form--password forms">
-                  <label for="password">Confirm Password: </label>
-                  <input type="password" id="name" required />
-                </div>
                 <!-- password-->
                 <div class="signup-container__form-form--password forms">
                   <label for="password">Password: </label>
-                  <input type="password" id="name" required />
+                  <input type="password" id="password" />
+                </div>
+                <!-- password-->
+                <div class="signup-container__form-form--password forms">
+                  <label for="confirm-password">Confirm Password: </label>
+                  <input type="password" id="confirm-password" />
                 </div>
 
                 <button class="btn form-login-btn">Sign Up</button>
-              </div>
+              </form>
               <p class="form__create-new-account">
                 Already have account?
                 <a class="form__create-new-account--link" href="/signin.html">
@@ -185,6 +186,7 @@
                 </a>
               </p>
               <!-- end form -->
+              <div id="error"></div>
             </div>
             <!-- end signup form-->
           </div>
@@ -248,5 +250,8 @@
       </div>
       <!-- End footer container -->
     </footer>
+
+    <!-- script -->
+    <script src="./src/signup.js"></script>
   </body>
 </html>

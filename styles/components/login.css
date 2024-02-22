@@ -74,7 +74,7 @@ label {
 }
 /* create new account */
 .form__create-new-account {
-  margin: var(--size-6xl) 0 var(--size-2xl);
+  margin: var(--size-4xl) 0 var(--size-2xl);
 }
 .form__create-new-account--link {
   color: var(--clr-hover);
@@ -84,6 +84,13 @@ label {
 .form__create-new-account--link:hover {
   text-decoration: underline;
 }
+
+#error {
+  color: red;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
 /* xs */
 @media (min-width: 475px) {
   .signup-container__form {

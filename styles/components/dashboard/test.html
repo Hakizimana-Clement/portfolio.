@@ -3,96 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Place the first <script> tag in your HTML's <head> -->
-    <!-- <script
-      src="https://cdn.tiny.cloud/1/964vlttb0ciaqe0gr9g28j27qesxwii0a1deyaykh2v0bkhc/tinymce/6/tinymce.min.js"
-      referrerpolicy="origin"
-    ></script> -->
-
-    <title>test</title>
+    <title>Title form validate</title>
   </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: gray;
+      font-family: sans-serif;
+    }
+    form {
+      background-color: rgb(214, 214, 214);
+      padding: 14px;
+      text-align: center;
+      border-radius: 15px;
+      width: 350px;
+    }
+
+    form input {
+      display: block;
+      background: none;
+      margin: 18px auto;
+      padding: 8px;
+      text-align: center;
+      border: 2px solid #4090db;
+      outline: none;
+      width: 180px;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+
+    form button {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 8px 27px;
+      background-color: #4090db;
+      color: #fff;
+    }
+    p {
+      color: red;
+      font-size: 17px;
+      font-weight: 600;
+    }
+  </style>
   <body>
-    <!-- <script>
-      tinymce.init({
-        selector: "textarea",
-        plugins:
-          "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
-        toolbar:
-          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
-        tinycomments_mode: "embedded",
-        tinycomments_author: "Author name",
-        mergetags_list: [
-          { value: "First.Name", title: "First Name" },
-          { value: "Email", title: "Email" },
-        ],
-        ai_request: (request, respondWith) =>
-          respondWith.string(() =>
-            Promise.reject("See docs to implement AI Assistant")
-          ),
-      });
-    </script>
-    <textarea>
-  Welcome to TinyMCE!
-</textarea -->
-    >
+    <form>
+      <h1>Login</h1>
 
-    <div class="test">
-      <canvas id="myChart"></canvas>
-    </div>
+      <input type="text" id="username" name="username" placeholder="Username" />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+      />
+      <p id="error-message" hidden></p>
+      <button>Submit</button>
+    </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- script -->
     <script>
-      // const ctx = document.getElementById("myChart");
-      // new Chart(ctx, {
-      //   type: "bar",
-      //   data: {
-      //     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      //     datasets: [
-      //       {
-      //         label: "# of Votes",
-      //         data: [12, 19, 3, 5, 2, 3],
-      //         borderWidth: 1,
-      //       },
-      //     ],
-      //   },
-      //   options: {
-      //     scales: {
-      //       y: {
-      //         beginAtZero: true,
-      //       },
-      //     },
-      //   },
-      // });
+      const username = document.querySelector("#username");
+      const password = document.querySelector("#password");
+      const form = document.querySelector("form");
+      const errorMessage = document.querySelector("#error-message");
 
-      // data block
+      form.addEventListener("submit", (e) => {
+        const errors = [];
 
-      const data = {
-        labels: ["Querries", "Likes", "Blogs", "Comments"],
-        datasets: [
-          {
-            label: "# of Votes",
-            data: [37, 208, 92, 29],
-            borderWidth: 1,
-            backgroundColor: ["#ae33bc", "#a30303", "#a5a801", "#46dcb5"],
-          },
-        ],
-      };
-      // configuration block
-      const config = {
-        data,
-        type: "pie",
-
-        options: {
-          legend: { display: false },
-          title: {
-            display: true,
-          },
-        },
-      };
-
-      // Render init block
-      const myChart = new Chart(document.getElementById("myChart"), config);
+        if (username.value.trim() === "") {
+          errors.push("Username required");
+        }
+        if (password.value.length <= 8) {
+          errors.push("Password must be at least 8 characters");
+        }
+        if (errors.length > 0) {
+          e.preventDefault();
+          errorMessage.toggleAttribute("hidden");
+          // errorMessage.innerHTML = errors.join(", ");
+        }
+      });
     </script>
   </body>
 </html>

@@ -1013,24 +1013,32 @@
               </div>
               <!-- End my info -->
               <!-- Start form -->
-              <div class="contact-me__form">
+              <form class="contact-me__form">
+                <p class="container-me__form--error" hidden></p>
+
                 <div>
-                  <input type="text" placeholder="Full Name" required />
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    id="name"
+                    required
+                  />
                 </div>
                 <div>
-                  <input type="text" placeholder="Full Name" required />
+                  <input type="email" placeholder="Email" id="email" required />
                 </div>
                 <div>
                   <textarea
                     name="message"
                     id="message"
-                    placeholder="Message"
+                    placeholder="Type a message"
+                    required
                   ></textarea>
                 </div>
                 <div class="submit-btn btn">
                   <button>Submit</button>
                 </div>
-              </div>
+              </form>
 
               <!-- End form -->
             </div>
@@ -1145,8 +1153,10 @@
       <!-- End footer container -->
     </footer>
     <!-- swipper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 
-    <script src="./src/slider-function.js"></script>
+    <!-- <script src="./src/slider-function.js"></script> -->
+    <!-- form validation on contact form -->
+    <script src="./src/contact-me-form-validation.js"></script>
   </body>
 </html>

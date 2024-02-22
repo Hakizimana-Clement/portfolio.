@@ -104,6 +104,14 @@ textarea {
   padding: 6%;
 }
 
+.container-me__form--error {
+  text-align: center;
+  font-size: 1rem;
+  padding: 3px;
+  background: red;
+  border-radius: 0px;
+}
+
 /* xs */
 @media (min-width: 475px) {
   .contact-me__info-number {
