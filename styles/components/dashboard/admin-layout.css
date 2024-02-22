@@ -14,9 +14,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  /* height problem here */
   /* height: 100vh; */
-  height: 100%;
-  overflow: hidden;
+  /* height: 100%; */
+  /* overflow: hidden; */
 }
 
 .main-container__header {
@@ -85,9 +86,10 @@ aside,
 }
 /* this make dashbaord container data be fully in height */
 .main-container__content {
-  /* height: 100vh; */
-  height: 100%;
-  overflow: hidden;
+  /* height: 100%; */
+  /* overflow: hidden; */
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 /* aside {
@@ -114,10 +116,15 @@ aside,
   main {
     grid-column: 2 / -1;
   }
+
+  .main-container__content {
+    height: 127vh;
+  }
 }
 
 /* xl*/
-/* @media(min-width:1280px){} */
+@media (min-width: 1280px) {
+}
 
 /* 2xl */
 /* @media(min-width:1536px){} */
