@@ -57,6 +57,16 @@
   width: 100%;
 }
 
+/* background: red; */
+/* text editor */
+/* body.mce-content-body {
+  background: #1c3668;
+} */
+body.mceContentBody {
+  background: green;
+  color: yellow;
+}
+
 /* xs */
 /* @media(min-width:475px){} */
 

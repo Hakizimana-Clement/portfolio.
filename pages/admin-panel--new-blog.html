@@ -65,21 +65,23 @@
  "
     ></script>
 
+    <!-- ******************************************************************** -->
     <!-- start rich text editor -->
-
     <script
       src="https://cdn.tiny.cloud/1/964vlttb0ciaqe0gr9g28j27qesxwii0a1deyaykh2v0bkhc/tinymce/6/tinymce.min.js"
       referrerpolicy="origin"
     ></script>
     <!--end  rich text editor -->
+    <!-- ******************************************************************** -->
 
     <!-- web title -->
     <title>Admin panel</title>
   </head>
 
-  <body class="container">
+  <!-- <body class="container"> -->
+  <body>
     <!-- Start mobile menu bar -->
-    <div class="mobile-menu">
+    <div class="mobile-menu container">
       <div class="mobile-menu__container">
         <!-- Start menu container -->
         <div class="menu">
@@ -114,7 +116,7 @@
     </div>
     <!-- End mobile menu bar -->
 
-    <aside>
+    <aside class="container">
       <div class="sidebar-container">
         <h2 class="sidebar-container__title">admin panel</h2>
         <hr class="sidebar-container__horizontal" />
@@ -285,7 +287,7 @@
         <!-- end all dashboard links -->
       </div>
     </aside>
-    <main>
+    <main class="container">
       <!-- start main container -->
       <div class="main-container">
         <!-- start header  -->
@@ -341,6 +343,14 @@
                 class="form-input new-blog-container-form__input-writter"
               />
               <!-- end title writter name-->
+              <!-- start upload image-->
+              <input
+                type="file"
+                accept="image/*"
+                placeholder="upload image"
+                class="form-input new-blog-container-form__input-writter"
+              />
+              <!-- end upload image-->
 
               <!--  start textarea  -->
               <textarea class="new-blog-container-form__input-textarea">
@@ -354,29 +364,7 @@
               <!-- *********************************** -->
               <!--******** start textarea with rich text editor************* -->
               <!-- *********************************** -->
-              <!-- <script>
-                tinymce.init({
-                  selector: "textarea",
-                  plugins:
-                    "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
-                  toolbar:
-                    "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
-                  tinycomments_mode: "embedded",
-                  tinycomments_author: "Author name",
-                  mergetags_list: [
-                    { value: "First.Name", title: "First Name" },
-                    { value: "Email", title: "Email" },
-                  ],
-                  ai_request: (request, respondWith) =>
-                    respondWith.string(() =>
-                      Promise.reject("See docs to implement AI Assistant")
-                    ),
-                });
-              </script>
-              <textarea>
-  Welcome to TinyMCE!
-</textarea
-              > -->
+
               <!-- *********************************** -->
               <!-- ******************** end textarea with rich text editor -->
               <!-- *********************************** -->
@@ -392,5 +380,8 @@
       <!-- end main container -->
     </main>
     <!-- </div> -->
+    <!-- start rich text editor js -->
+    <script src="../src/rich-text-editor.js"></script>
+    <!-- end rich text editor js -->
   </body>
 </html>
