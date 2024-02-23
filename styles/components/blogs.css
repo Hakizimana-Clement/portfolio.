@@ -282,3 +282,53 @@
   border: 1px solid;
   padding: 1rem;
 }
+
+/* ********************************************************************* */
+/* **************************** TESTING ***************************************** */
+/* ********************************************************************* */
+.blog {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(194, 194, 194); */
+  /* color; */
+  display: none;
+}
+.slide-container {
+  max-width: 1120px;
+  width: 100%;
+  background-color: grey;
+  padding: 40px 0;
+}
+
+.slide-content {
+  /* margin: 0 40px; */
+  /* margin: 0 298px; */
+  /* margin: 0 36%; */
+  /* margin: 0 31%; */
+  margin: 0 310px;
+}
+.card {
+  border-radius: 25px;
+  /* background-color: #fff; */
+  padding: 1rem;
+  border: 2px solid #2c467a;
+  padding: 12px;
+  border-radius: 13px;
+  box-shadow: 0px 2px 7px rgba(104, 116, 221, 0.25);
+}
+.card-image {
+  position: relative;
+
+  /* height: 150px;
+  width: 150px; */
+  /* width: 257px; */
+  height: 257px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

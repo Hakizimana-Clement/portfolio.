@@ -9,14 +9,7 @@ const mobileLinks = document.querySelectorAll(".mobile-nav__link");
 // state  => false
 let isMobileNavOpen = false;
 
-mobileLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    isMobileNavOpen = false;
-    mobileNav.style.display = "none";
-    document.body.style.overflowY = "auto";
-  });
-});
-
+// menu icon
 headerBtn.addEventListener("click", () => {
   // state => true
   isMobileNavOpen = !isMobileNavOpen;
@@ -29,3 +22,22 @@ headerBtn.addEventListener("click", () => {
     document.body.style.overflowY = "auto";
   }
 });
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    // Prevent the click event from bubbling up to parent elements
+    event.stopPropagation();
+
+    isMobileNavOpen = false;
+    mobileNav.style.display = "none";
+    document.body.style.overflowY = "auto";
+  });
+});
+
+// // link active when clicked
+// mobileLinks.forEach((link) => {
+//   link.addEventListener("click", () => {
+//     isMobileNavOpen = false;
+//     mobileNav.style.display = "none";
+//     document.body.style.overflowY = "auto";
+//   });
+// });

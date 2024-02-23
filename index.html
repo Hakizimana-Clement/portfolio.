@@ -59,6 +59,11 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
  "
     ></script>
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <!-- web title -->
     <title>My portfolio</title>
   </head>
@@ -111,7 +116,10 @@
         <!-- End link Area -->
 
         <!-- Start login button -->
-        <a class="header__link" href="/signin.html">
+        <a
+          class="header__link"
+          href="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/signin.html"
+        >
           <button class="login-btn btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1003,6 +1011,109 @@
         <!-- end scroll down button -->
       </section>
 
+      <!--****************** TESTING ************************** -->
+      <section id="blog" class="blog section container">
+        <div class="slide-container swipper">
+          <div class="slide-content">
+            <div class="card-wrapper swipper-wrapper">
+              <div class="card swipper-slide">
+                <div class="image-content">
+                  <div class="overlay"></div>
+                  <div class="card-image">
+                    <img
+                      src="./images/blog-image-1.svg"
+                      alt="blog image"
+                      class="card-img"
+                    />
+                  </div>
+                </div>
+                <div class="card-content">
+                  <h2 class="name">Did you know?</h2>
+
+                  <!-- description -->
+                  <p class="blogs-container__card-description description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit...
+                  </p>
+                  <!-- Start comment and like -->
+                  <div
+                    class="blogs-container__card-likes-and-comments-container"
+                  >
+                    <!-- writer -->
+                    <div
+                      class="blogs-container__card-likes-and-comments-container--writer"
+                    >
+                      <img
+                        class="writer writer-image"
+                        src="images/writer-image-1.svg"
+                        alt="dangote writer"
+                      />
+                      <span class="writer writer-name">Lorem ipsum dolor</span>
+                      <span class="writer writer-full-stop">|</span>
+                      <span class="writer writer-date">Jan 02 2024</span>
+                    </div>
+                    <div class="like-and-comment-container">
+                      <!-- likes and comment -->
+                      <div
+                        class="blogs-container__card-likes-and-comments-container--comments-likes"
+                      >
+                        <!-- <img
+                          class="like-icon"
+                          src="images/like-heart-icon.svg"
+                          alt="like icon"
+                        /> -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="like-icon"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                          />
+                        </svg>
+
+                        <span class="like-number">250</span>
+                      </div>
+                      <!-- comment -->
+                      <div class="comments">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="comment-icon"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 0 1 1.037-.443 48.282 48.282 0 0 0 5.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                          />
+                        </svg>
+
+                        <span class="comment-number">67</span>
+                      </div>
+                    </div>
+                    <!-- End comment and like -->
+                  </div>
+                  <!-- end comment and like -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <!--******************************************** -->
+
       <!-- ################################################## -->
       <!-- ################ CONTACT ME SECTION ################### -->
       <!-- ################# -->
@@ -1199,9 +1310,12 @@
       <!-- End footer container -->
     </footer>
     <!-- swipper JS -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
-
-    <!-- <script src="./src/slider-function.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    <!-- slide -->
+    <script src="./src/slider-function.js"></script>
+    <script src="./src/slider-testing-function.js"></script>
 
     <!-- start form validation on contact form -->
     <script src="./src/mobile-nav.js"></script>
