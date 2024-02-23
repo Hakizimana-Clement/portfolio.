@@ -40,6 +40,9 @@
     <link rel="stylesheet" href="styles/components/contact-me.css" />
 
     <link rel="stylesheet" href="styles/components/footer.css" />
+
+    <link rel="stylesheet" href="styles/components/mobile-nav.css" />
+
     <link rel="stylesheet" href="styles/utils.css" />
     <!-- icons -->
     <script
@@ -65,7 +68,7 @@
         <!-- Start link Area -->
         <ul class="header__menu">
           <li>
-            <a class="header__link" href="#home">Home</a>
+            <a class="header__link" href="#hero">Home</a>
           </li>
           <li>
             <a class="header__link" href="#about">About</a>
@@ -148,11 +151,54 @@
         <!-- End menu icon button -->
       </nav>
     </header>
+
+    <!-- ################################################## -->
+    <!-- ################ Mobile navigation ################### -->
+    <!-- ################################################## -->
+    <div class="mobile-nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li><a class="mobile-nav__link" href="#hero">Home</a></li>
+          <li><a class="mobile-nav__link" href="#about">About</a></li>
+          <li><a class="mobile-nav__link" href="#skills">SKills</a></li>
+          <li><a class="mobile-nav__link" href="#works">Works</a></li>
+          <li><a class="mobile-nav__link" href="#blogs">Blogs</a></li>
+          <li><a class="mobile-nav__link" href="#contact">Contact</a></li>
+          <li class="mobile-nav__link-line"></li>
+          <li>
+            <!-- Start login button -->
+            <!-- <a class="header__link" href="/signin.html"> -->
+            <a class="header__link-mobile mobile-nav__link" href="/signin.html">
+              <button class="login-btn btn login-btn-mobile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="header__signin--user-icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+                <span class="login-btn--text">Sign In</span>
+              </button>
+            </a>
+            <!-- End login button -->
+          </li>
+          <!-- <li><a class="mobile-nave__link" href="./signin.html">Sign in</a></li> -->
+        </ul>
+      </nav>
+    </div>
+
     <main>
       <!-- ################################################## -->
       <!-- ################ hero section ################### -->
       <!-- ################################################## -->
-      <section class="hero container">
+      <section id="hero" class="hero container">
         <!-- start hero container -->
         <div class="hero__container">
           <div></div>
@@ -1156,7 +1202,13 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 
     <!-- <script src="./src/slider-function.js"></script> -->
-    <!-- form validation on contact form -->
+
+    <!-- start form validation on contact form -->
+    <script src="./src/mobile-nav.js"></script>
+    <!-- end form validation on contact form -->
+
+    <!-- start form validation on contact form -->
     <script src="./src/contact-me-form-validation.js"></script>
+    <!-- end form validation on contact form -->
   </body>
 </html>
