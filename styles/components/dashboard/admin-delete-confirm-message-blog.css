@@ -80,7 +80,8 @@
 }
 .confirm-message-container {
   position: absolute;
-  background: #0000009c;
+  /* background: #0000009c; */
+  background: #000000ed;
 
   height: 100vh;
   width: 95%;

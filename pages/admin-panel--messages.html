@@ -30,16 +30,16 @@
       href="../styles/components/dashboard/admin-header.css"
     />
 
-    <!--comment and like blog style-->
+    <!--edit blog style-->
     <link
       rel="stylesheet"
-      href="../styles/components/dashboard/admin-comments-blog.css"
+      href="../styles/components/dashboard/admin-edit-blog.css"
     />
 
-    <!--comment and like blog style-->
+    <!--message blog style-->
     <link
       rel="stylesheet"
-      href="../styles/components/dashboard/comment-and-like-page.css"
+      href="../styles/components/dashboard/admin-messages-page.css"
     />
 
     <!-- sidebar -->
@@ -169,10 +169,7 @@
           <!-- End New post (blog)-->
 
           <!-- Start Edit post (blog)-->
-          <a
-            href="./admin-panel--edit-blog.html"
-            class="sidebar-container__dashboard-link"
-          >
+          <a href="#" class="sidebar-container__dashboard-link active-link">
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <ion-icon name="create-outline" size="large"></ion-icon>
@@ -201,10 +198,7 @@
           <!-- End Delete post (blog)-->
 
           <!-- Start message post (blog)-->
-          <a
-            href="./admin-panel--messages.html"
-            class="sidebar-container__dashboard-link"
-          >
+          <a href="#" class="sidebar-container__dashboard-link">
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <svg
@@ -229,10 +223,7 @@
           <!-- End message post (blog)-->
 
           <!-- Start comment post (blog)-->
-          <a
-            href="./admin-panel--comments-blog.html"
-            class="sidebar-container__dashboard-link active-link"
-          >
+          <a href="#" class="sidebar-container__dashboard-link">
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <svg
@@ -349,298 +340,226 @@
         <div class="main-container__content">
           <!-- start dasboard wrapper -->
           <div class="main-container__content--dashboard-wrapper">
-            <!-- start go back button -->
-            <div class="back-btn-container">
-              <a href="./admin-panel--comments-blog.html" class="back-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="none"
-                    stroke="white"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="48"
-                    d="M244 400L100 256l144-144M120 256h292"
-                  />
-                </svg>
-                <span> back </span>
+            <div class="main-container__content--titles-wraper">
+              <!-- start go back button -->
+              <div class="back-btn-container">
+                <a href="./admin-panel--comments-blog.html" class="back-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      fill="none"
+                      stroke="white"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="48"
+                      d="M244 400L100 256l144-144M120 256h292"
+                    />
+                  </svg>
+                  <span> back </span>
+                </a>
+              </div>
+              <!-- end go back button -->
+
+              <!-- start title -->
+              <h2 class="search-title">Message</h2>
+              <!-- end title -->
+
+              <!-- <div class="search-message-wrapper"> -->
+              <a href="#" class="search-message-wrapper">
+                <p class="search-message-wrapper__unread-number">350</p>
+                <span class="search-message-wrapper__unread-text">Unread</span>
               </a>
+              <!-- </div> -->
             </div>
-            <!-- end go back button -->
+            <!-- start create edit blog container -->
+            <p class="edit-container__subtitle">All messages</p>
+            <!-- start edit container -->
+            <!-- start card 1 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/message-user-1.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="user message"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">Karimu</p>
 
-            <h2 class="blog-title">
-              <span class="blog-title--heading"> Blog Title</span>
-              <span class="blog-title--title"> : Did You Know?</span>
-            </h2>
+                  <p class="edit-text edit-text__written">Git is easy?</p>
+                </div>
+              </div>
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
+                  >Reply</a
+                >
 
-            <!--start comment and like blog container -->
-            <!-- start comment 1 -->
-            <div class="comments-and-likes-container">
-              <!-- <div class=""> -->
-              <!-- start delete button -->
-              <div>
-                <a href="#" class="btn-remove delete-comment-btn">
-                  <!-- delete -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="delete-icon"
-                  >
-                    <path
-                      fill="white"
-                      d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
-                    />
-                  </svg>
+                <a
+                  href="./admin-panel--delete-blog-confirm-message.html"
+                  class="btn-remove delete-btn"
+                  >Delete
                 </a>
               </div>
-              <!-- end delete button -->
-              <!-- start comment and like icon wrapper -->
-              <div class="comments-and-likes-container__wrapper">
-                <!-- start comment bubble container-->
-                <div class="comments-and-likes-container__bubble-comment">
-                  <h4
-                    class="comments-and-likes-container__bubble-comment--title"
-                  >
-                    Karimu
-                  </h4>
-                  <p
-                    class="comments-and-likes-container__bubble-comment--description"
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur ipsa dolore ab suscipit asperiores molestiae
-                    vero error amet mollitia, quia nobis vitae doloribus
-                    architecto cum ipsum placeat distinctio recusandae sint.
+            </div>
+            <hr class="card-horizontal-line" />
+            <!-- end card 1 -->
+            <!-- start card 2 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/message-user-2.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="user message"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">Mutuyi</p>
+
+                  <p class="edit-text edit-text__written">
+                    This is awesome idea
                   </p>
                 </div>
-                <!-- End comment bubble container-->
-
-                <!-- start heart button -->
-                <div
-                  class="comments-and-likes-container__bubble-comment--heart-icon-container"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="heart-icon"
-                  >
-                    <path
-                      fill="#f00000"
-                      d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"
-                    />
-                  </svg>
-                  <span class="comment-like-number">234</span>
-                </div>
-                <!-- end heart button -->
               </div>
-              <!-- end comment and like icon wrapper -->
-            </div>
-            <!-- end comment 1 -->
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
+                  >Reply</a
+                >
 
-            <!-- start comment 2 -->
-            <div class="comments-and-likes-container">
-              <!-- <div class=""> -->
-              <!-- start delete button -->
-              <div>
-                <a href="#" class="btn-remove delete-comment-btn">
-                  <!-- delete -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="delete-icon"
-                  >
-                    <path
-                      fill="white"
-                      d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
-                    />
-                  </svg>
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove delete-btn"
+                  >Delete
                 </a>
               </div>
-              <!-- end delete button -->
-              <!-- start comment and like icon wrapper -->
-              <div class="comments-and-likes-container__wrapper">
-                <!-- start comment bubble container-->
-                <div class="comments-and-likes-container__bubble-comment">
-                  <h4
-                    class="comments-and-likes-container__bubble-comment--title"
-                  >
-                    Donagote
-                  </h4>
-                  <p
-                    class="comments-and-likes-container__bubble-comment--description"
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur ipsa dolore ab suscipit....
+            </div>
+            <hr class="card-horizontal-line" />
+            <!-- end card 2 -->
+            <!-- start card 3 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/message-user-3.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="user message"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">Kamaliza</p>
+                  <p class="edit-text edit-text__written">
+                    I have project Idea
                   </p>
                 </div>
-                <!-- End comment bubble container-->
-
-                <!-- start heart button -->
-                <div
-                  class="comments-and-likes-container__bubble-comment--heart-icon-container"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="heart-icon"
-                  >
-                    <path
-                      fill="#f00000"
-                      d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"
-                    />
-                  </svg>
-                  <span class="comment-like-number">2</span>
-                </div>
-                <!-- end heart button -->
               </div>
-              <!-- end comment and like icon wrapper -->
-            </div>
-            <!-- end comment 2 -->
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
+                  >Reply</a
+                >
 
-            <!-- start comment 3 -->
-            <div class="comments-and-likes-container">
-              <!-- <div class=""> -->
-              <!-- start delete button -->
-              <div>
-                <a href="#" class="btn-remove delete-comment-btn">
-                  <!-- delete -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="delete-icon"
-                  >
-                    <path
-                      fill="white"
-                      d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
-                    />
-                  </svg>
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove delete-btn"
+                  >Delete
                 </a>
               </div>
-              <!-- end delete button -->
-              <!-- start comment and like icon wrapper -->
-              <div class="comments-and-likes-container__wrapper">
-                <!-- start comment bubble container-->
-                <div class="comments-and-likes-container__bubble-comment">
-                  <h4
-                    class="comments-and-likes-container__bubble-comment--title"
-                  >
-                    Jyu Grace Viole
-                  </h4>
-                  <p
-                    class="comments-and-likes-container__bubble-comment--description"
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur ipsa dolore ab suscipit asperiores molestiae
-                    vero error amet mollitia, quia nobis vitae doloribus
-                    architecto cum ipsum placeat distinctio recusandae sint.
-                  </p>
-                </div>
-                <!-- End comment bubble container-->
-
-                <!-- start heart button -->
-                <div
-                  class="comments-and-likes-container__bubble-comment--heart-icon-container"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="heart-icon"
-                  >
-                    <path
-                      fill="#f00000"
-                      d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"
-                    />
-                  </svg>
-                  <span class="comment-like-number">24</span>
-                </div>
-                <!-- end heart button -->
-              </div>
-              <!-- end comment and like icon wrapper -->
             </div>
-            <!-- end comment 3 -->
+            <hr class="card-horizontal-line" />
+            <!-- end card 4 -->
+            <!-- start card 5 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/message-user-4.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="user message"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">Huseni</p>
 
-            <!-- start comment 4 -->
-            <div class="comments-and-likes-container">
-              <!-- <div class=""> -->
-              <!-- start delete button -->
-              <div>
-                <a href="#" class="btn-remove delete-comment-btn">
-                  <!-- delete -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="delete-icon"
-                  >
-                    <path
-                      fill="white"
-                      d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
-                    />
-                  </svg>
+                  <p class="edit-text edit-text__written">Is really true?</p>
+                </div>
+              </div>
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
+                  >Reply</a
+                >
+
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove delete-btn"
+                  >Delete
                 </a>
               </div>
-              <!-- end delete button -->
-              <!-- start comment and like icon wrapper -->
-              <div class="comments-and-likes-container__wrapper">
-                <!-- start comment bubble container-->
-                <div class="comments-and-likes-container__bubble-comment">
-                  <h4
-                    class="comments-and-likes-container__bubble-comment--title"
-                  >
-                    Kanimba
-                  </h4>
-                  <p
-                    class="comments-and-likes-container__bubble-comment--description"
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur ipsa dolore ab suscipit asperiores molestiae
-                    vero error amet mollitia, quia nobis vitae doloribus
-                    architecto cum ipsum placeat distinctio recusandae sint.
-                  </p>
-                </div>
-                <!-- End comment bubble container-->
-
-                <!-- start heart button -->
-                <div
-                  class="comments-and-likes-container__bubble-comment--heart-icon-container"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="heart-icon"
-                  >
-                    <path
-                      fill="#f00000"
-                      d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"
-                    />
-                  </svg>
-                  <span class="comment-like-number">234</span>
-                </div>
-                <!-- end heart button -->
-              </div>
-              <!-- end comment and like icon wrapper -->
             </div>
-            <!-- end comment 4 -->
+            <hr class="card-horizontal-line" />
+            <!-- end card 5 -->
+            <!-- start card 6 -->
+            <div class="edit-container">
+              <!-- start image and text container -->
+              <div class="edit-container___img-and-text-container">
+                <!-- start image -->
+                <div class="edit-image-container">
+                  <img
+                    src="../images/message-user-5.png"
+                    class="edit-container___img-and-text-container--img"
+                    alt="user message"
+                  />
+                </div>
+                <!-- end image -->
+                <div class="edit-container___img-and-text-container--text">
+                  <p class="edit-text edit-text__title">Khubayibu</p>
+                  <!-- <p class="edit-text edit-text__title">
+                    <strong>Title: </strong> Did you know?
+                  </p> -->
+                  <!-- <p class="edit-text edit-text__body">
+                    <strong>Body: </strong>Lorem ipsum dolor sit amet
+                    consectetur...
+                  </p> -->
+                  <p class="edit-text edit-text__written">Git is easy?</p>
+                </div>
+              </div>
+              <!-- end image and text container -->
+              <div class="edit-btn-container">
+                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
+                  >Reply</a
+                >
 
-            <!--end comment and like blog container -->
+                <a
+                  href="./admin-panel--edit-upgrade.html"
+                  class="btn-remove delete-btn"
+                  >Delete
+                </a>
+              </div>
+            </div>
+            <hr class="card-horizontal-line" />
+            <!-- end card 6 -->
+
+            <!-- end edit container -->
+            <!-- end create new blog container -->
           </div>
           <!-- end dasboard wrapper -->
         </div>
