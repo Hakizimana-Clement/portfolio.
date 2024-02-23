@@ -30,10 +30,16 @@
       href="../styles/components/dashboard/admin-header.css"
     />
 
-    <!--comments blog style-->
+    <!--comment and like blog style-->
     <link
       rel="stylesheet"
       href="../styles/components/dashboard/admin-comments-blog.css"
+    />
+
+    <!--comment and like blog style-->
+    <link
+      rel="stylesheet"
+      href="../styles/components/dashboard/comment-and-like-page.css"
     />
 
     <!-- sidebar -->
@@ -334,89 +340,297 @@
         <div class="main-container__content">
           <!-- start dasboard wrapper -->
           <div class="main-container__content--dashboard-wrapper">
-            <h2 class="search-title">Comments and likes</h2>
-            <!-- start comment and like blog container -->
-            <!-- <div class="comments-and-likes-container"> -->
-            <!-- start heading-->
-            <!-- <div class="comments-and-likes-container__header">
-                <p>Blog Title</p>
-                <p>Comments</p>
-                <p>Likes</p>
-              </div> -->
-            <!-- end heading-->
-
-            <!-- start  comment and like card 1-->
-            <!-- <div class="comments-and-likes-container__header">
-                <h3>Did you know?</h3>
-                <h3>4</h3>
-                <h3>13</h3>
-              </div> -->
-            <!-- end comment and like card 1-->
-            <!-- </div> -->
-
-            <div class="comments-and-likes-container">
-              <table id="myTable">
-                <tr>
-                  <th>Blog title</th>
-                  <th>Comments</th>
-                  <th>Likes</th>
-                </tr>
-                <tr
-                  class="table-data"
-                  data-href=" comment-and-like-page-1.html "
+            <!-- start go back button -->
+            <div class="back-btn-container">
+              <a href="./admin-panel--comments-blog.html" class="back-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 512 512"
                 >
-                  <td>Did you know?</td>
-                  <td>4</td>
-                  <td>13</td>
-                </tr>
-
-                <tr
-                  class="table-data"
-                  data-href=" comment-and-like-page-1.html "
-                >
-                  <td>How Technology Can Help ...</td>
-                  <td>87</td>
-                  <td>82</td>
-                </tr>
-
-                <tr
-                  class="table-data"
-                  data-href=" comment-and-like-page-1.html "
-                >
-                  <td>The Future of Gaming: What ...</td>
-                  <td>102</td>
-                  <td>96</td>
-                </tr>
-
-                <tr
-                  class="table-data"
-                  data-href=" comment-and-like-page-1.html "
-                >
-                  <td>How to Protect Your Privacy ...</td>
-                  <td>3</td>
-                  <td>7</td>
-                </tr>
-
-                <tr
-                  class="table-data"
-                  data-href=" comment-and-like-page-1.html "
-                >
-                  <td>The Best Apps and Tools for ...</td>
-                  <td>62</td>
-                  <td>81</td>
-                </tr>
-
-                <tr
-                  class="table-data"
-                  data-href=" comment-and-like-page-1.html "
-                >
-                  <td>How to Build Your Own Website ...</td>
-
-                  <td>32</td>
-                  <td>12</td>
-                </tr>
-              </table>
+                  <path
+                    fill="none"
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="M244 400L100 256l144-144M120 256h292"
+                  />
+                </svg>
+                <span> back </span>
+              </a>
             </div>
+            <!-- end go back button -->
+
+            <h2 class="blog-title">
+              <span class="blog-title--heading"> Blog Title</span>
+              <span class="blog-title--title"> : Did You Know?</span>
+            </h2>
+
+            <!--start comment and like blog container -->
+            <!-- start comment 1 -->
+            <div class="comments-and-likes-container">
+              <!-- <div class=""> -->
+              <!-- start delete button -->
+              <div>
+                <a href="#" class="btn-remove delete-comment-btn">
+                  <!-- delete -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="delete-icon"
+                  >
+                    <path
+                      fill="white"
+                      d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <!-- end delete button -->
+              <!-- start comment and like icon wrapper -->
+              <div class="comments-and-likes-container__wrapper">
+                <!-- start comment bubble container-->
+                <div class="comments-and-likes-container__bubble-comment">
+                  <h4
+                    class="comments-and-likes-container__bubble-comment--title"
+                  >
+                    Karimu
+                  </h4>
+                  <p
+                    class="comments-and-likes-container__bubble-comment--description"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur ipsa dolore ab suscipit asperiores molestiae
+                    vero error amet mollitia, quia nobis vitae doloribus
+                    architecto cum ipsum placeat distinctio recusandae sint.
+                  </p>
+                </div>
+                <!-- End comment bubble container-->
+
+                <!-- start heart button -->
+                <div
+                  class="comments-and-likes-container__bubble-comment--heart-icon-container"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="heart-icon"
+                  >
+                    <path
+                      fill="#f00000"
+                      d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"
+                    />
+                  </svg>
+                  <span class="comment-like-number">234</span>
+                </div>
+                <!-- end heart button -->
+              </div>
+              <!-- end comment and like icon wrapper -->
+            </div>
+            <!-- end comment 1 -->
+
+            <!-- start comment 2 -->
+            <div class="comments-and-likes-container">
+              <!-- <div class=""> -->
+              <!-- start delete button -->
+              <div>
+                <a href="#" class="btn-remove delete-comment-btn">
+                  <!-- delete -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="delete-icon"
+                  >
+                    <path
+                      fill="white"
+                      d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <!-- end delete button -->
+              <!-- start comment and like icon wrapper -->
+              <div class="comments-and-likes-container__wrapper">
+                <!-- start comment bubble container-->
+                <div class="comments-and-likes-container__bubble-comment">
+                  <h4
+                    class="comments-and-likes-container__bubble-comment--title"
+                  >
+                    Donagote
+                  </h4>
+                  <p
+                    class="comments-and-likes-container__bubble-comment--description"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur ipsa dolore ab suscipit....
+                  </p>
+                </div>
+                <!-- End comment bubble container-->
+
+                <!-- start heart button -->
+                <div
+                  class="comments-and-likes-container__bubble-comment--heart-icon-container"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="heart-icon"
+                  >
+                    <path
+                      fill="#f00000"
+                      d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"
+                    />
+                  </svg>
+                  <span class="comment-like-number">2</span>
+                </div>
+                <!-- end heart button -->
+              </div>
+              <!-- end comment and like icon wrapper -->
+            </div>
+            <!-- end comment 2 -->
+
+            <!-- start comment 3 -->
+            <div class="comments-and-likes-container">
+              <!-- <div class=""> -->
+              <!-- start delete button -->
+              <div>
+                <a href="#" class="btn-remove delete-comment-btn">
+                  <!-- delete -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="delete-icon"
+                  >
+                    <path
+                      fill="white"
+                      d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <!-- end delete button -->
+              <!-- start comment and like icon wrapper -->
+              <div class="comments-and-likes-container__wrapper">
+                <!-- start comment bubble container-->
+                <div class="comments-and-likes-container__bubble-comment">
+                  <h4
+                    class="comments-and-likes-container__bubble-comment--title"
+                  >
+                    Jyu Grace Viole
+                  </h4>
+                  <p
+                    class="comments-and-likes-container__bubble-comment--description"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur ipsa dolore ab suscipit asperiores molestiae
+                    vero error amet mollitia, quia nobis vitae doloribus
+                    architecto cum ipsum placeat distinctio recusandae sint.
+                  </p>
+                </div>
+                <!-- End comment bubble container-->
+
+                <!-- start heart button -->
+                <div
+                  class="comments-and-likes-container__bubble-comment--heart-icon-container"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="heart-icon"
+                  >
+                    <path
+                      fill="#f00000"
+                      d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"
+                    />
+                  </svg>
+                  <span class="comment-like-number">24</span>
+                </div>
+                <!-- end heart button -->
+              </div>
+              <!-- end comment and like icon wrapper -->
+            </div>
+            <!-- end comment 3 -->
+
+            <!-- start comment 4 -->
+            <div class="comments-and-likes-container">
+              <!-- <div class=""> -->
+              <!-- start delete button -->
+              <div>
+                <a href="#" class="btn-remove delete-comment-btn">
+                  <!-- delete -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="delete-icon"
+                  >
+                    <path
+                      fill="white"
+                      d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <!-- end delete button -->
+              <!-- start comment and like icon wrapper -->
+              <div class="comments-and-likes-container__wrapper">
+                <!-- start comment bubble container-->
+                <div class="comments-and-likes-container__bubble-comment">
+                  <h4
+                    class="comments-and-likes-container__bubble-comment--title"
+                  >
+                    Kanimba
+                  </h4>
+                  <p
+                    class="comments-and-likes-container__bubble-comment--description"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur ipsa dolore ab suscipit asperiores molestiae
+                    vero error amet mollitia, quia nobis vitae doloribus
+                    architecto cum ipsum placeat distinctio recusandae sint.
+                  </p>
+                </div>
+                <!-- End comment bubble container-->
+
+                <!-- start heart button -->
+                <div
+                  class="comments-and-likes-container__bubble-comment--heart-icon-container"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="heart-icon"
+                  >
+                    <path
+                      fill="#f00000"
+                      d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"
+                    />
+                  </svg>
+                  <span class="comment-like-number">234</span>
+                </div>
+                <!-- end heart button -->
+              </div>
+              <!-- end comment and like icon wrapper -->
+            </div>
+            <!-- end comment 4 -->
+
             <!--end comment and like blog container -->
           </div>
           <!-- end dasboard wrapper -->
@@ -426,8 +640,5 @@
       <!-- end main container -->
     </main>
     <!-- </div> -->
-
-    <!-- comment table and like table script  -->
-    <script src="../src/comment-table-and-like.js"></script>
   </body>
 </html>

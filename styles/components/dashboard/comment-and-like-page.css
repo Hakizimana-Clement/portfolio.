@@ -1,0 +1,117 @@
+/* main container */
+.comments-and-likes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* align-items: baseline; */
+  gap: 0.4rem;
+
+  /* margin: 2rem 0 1rem; */
+  margin: 1rem 0;
+}
+
+/* blog titles */
+.blog-title {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--clr-text);
+  font-size: var(--size-lg);
+}
+.blog-title--heading {
+  text-decoration: underline;
+}
+
+/* back button */
+.back-btn-container {
+  margin-top: 0.5rem;
+}
+
+/* ************ back button ************/
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  text-decoration: none;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+/* ************************/
+/* ************ comments bubble ************/
+.comments-and-likes-container__bubble-comment {
+  padding: 0.5rem 1rem;
+  background: var(--clr-dashboard-comment-and-like-v2);
+  border-radius: 10px;
+}
+
+/* ************ delete btn************/
+.delete-comment-btn {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+}
+/* ************ delete icon ************/
+.delete-icon {
+  width: 30px;
+  height: 26px;
+}
+/* ************ heart container************/
+.comments-and-likes-container__bubble-comment--heart-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+/* ************ heart icon ************/
+.heart-icon {
+  font-size: 29px;
+}
+/* ************ comment like number************/
+.comment-like-number {
+  font-size: var(--size-sm);
+}
+
+/* ************ font size ************/
+/* blog title */
+.comments-and-likes-container__bubble-comment--title {
+  font-size: var(--size-base);
+  /* font-weight: 400; */
+}
+/* blog description */
+.comments-and-likes-container__bubble-comment--description {
+  font-size: var(--size-xs);
+  margin-top: 0.4rem;
+  font-weight: 200;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  blog-title {
+    font-size: var(--size-2xl);
+  }
+}
+
+/* sm */
+/* @media(min-width:640px){} */
+
+/* md */
+@media (min-width: 768px) {
+  /* title */
+  .comments-and-likes-container__bubble-comment--title {
+    font-size: var(--size-xl);
+  }
+  /* paragraph */
+  .comments-and-likes-container__bubble-comment--description {
+    font-size: var(--size-sm);
+  }
+}
+
+/* lg*/
+/* @media(min-width:1024px){} */
+
+/* xl*/
+/* @media(min-width:1280px){} */
+
+/* 2xl */
+/* @media(min-width:1536px){} */
