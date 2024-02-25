@@ -276,3 +276,17 @@ textarea {
 
 /* 2xl */
 /* @media(min-width:1536px){} */
+
+.error {
+  color: red;
+  font-weight: 600;
+}
+.success-message {
+  color: #00ff33;
+  font-weight: 600;
+  text-align: center;
+  background: #100d9d3d;
+  /* padding: 0.1rem; */
+  border-radius: 1px;
+  display: none;
+}

@@ -1171,32 +1171,30 @@
               <!-- End my info -->
               <!-- Start form -->
               <form class="contact-me__form">
-                <p class="container-me__form--error" hidden></p>
-
                 <div>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    id="name"
-                    required
-                  />
+                  <input type="text" placeholder="Full Name" id="name" />
                 </div>
+                <span class="error" id="name-error"></span>
                 <div>
-                  <input type="email" placeholder="Email" id="email" required />
+                  <input type="email" placeholder="Email" id="email" />
                 </div>
+                <span class="error" id="email-error"></span>
                 <div>
                   <textarea
                     name="message"
                     id="message"
                     placeholder="Type a message"
-                    required
                   ></textarea>
                 </div>
+                <span class="error" id="message-error"></span>
                 <div class="submit-btn btn">
                   <button>Submit</button>
                 </div>
-              </form>
 
+                <span class="success-message"
+                  >Thank you for sending message!</span
+                >
+              </form>
               <!-- End form -->
             </div>
           </div>
@@ -1321,6 +1319,9 @@
     <script src="./src/mobile-nav.js"></script>
     <!-- end form validation on contact form -->
 
+    <!-- start show form error  -->
+    <!-- <script src="./src/showErrorForms.js"></script> -->
+    <!-- end show form error  -->
     <!-- start form validation on contact form -->
     <script src="./src/contact-me-form-validation.js"></script>
     <!-- end form validation on contact form -->

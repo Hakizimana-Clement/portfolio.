@@ -1,32 +1,64 @@
-const names = document.querySelector("#name");
-const email = document.querySelector("#email");
-const message = document.querySelector("#message");
-const error = document.querySelector(".container-me__form--error");
-const form = document.querySelector(".contact-me__form");
+// contact form
+const contactForm = document.querySelector(".contact-me__form");
+const successMessageEl = document.querySelector(".success-message");
+// starting point of error
+let formError = {
+  errorName: "null",
+  errorEmail: "null",
+  errorMessage: "null",
+};
 
-form.addEventListener("submit", (e) => {
-  console.log("clicked");
-  let errors = [];
+// Function to display form errors
+const showFormErrors = (error) => {
+  document.querySelector("#name-error").textContent = error.errorName || "";
+  document.querySelector("#email-error").textContent = error.errorEmail || "";
+  document.querySelector("#message-error").textContent =
+    error.errorMessage || "";
+};
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  // names
-  if (names.value === "" || names.value === null) {
-    errors.push("Name is Required");
+  // State
+  let hasErrors = false;
+
+  // Validate name
+  if (e.target.elements.name.value.length === 0) {
+    formError.errorName = "Name should not be empty.";
+    hasErrors = true;
+  } else if (e.target.elements.name.value.length < 3) {
+    formError.errorName = "Name should have more than three characters.";
+    hasErrors = true;
+  } else {
+    formError.errorName = null;
   }
 
-  // email
-  if (email.value === "" || email.value === null) {
-    errors.push("Email is Required");
+  //  Validate email
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(e.target.elements.email.value)) {
+    formError.errorEmail = "Invalid email address.";
+    hasErrors = true;
+  } else {
+    formError.errorEmail = null;
   }
-  // message
 
-  if (message.value === "" || message.value === null) {
-    errors.push("message is Required");
+  // Validate message
+  if (e.target.elements.message.value.length === 0) {
+    formError.errorMessage = "Message should not be empty.";
+    hasErrors = true;
+  } else if (e.target.elements.message.value.length > 50) {
+    formError.errorMessage = "Message should not be have more than 50 words.";
+    hasErrors = true;
+  } else {
+    formError.errorMessage = null;
   }
-  // error pop up
-  if (errors.length > 0) {
-    // e.preventDefault();
-    error.toggleAttribute("hidden");
-    error.innerHTML = errors.join(", ");
+
+  // Show form errors
+  showFormErrors(formError);
+
+  if (!hasErrors) {
+    // Form submission logic here
+    console.log("Form submitted successfully!");
+    e.target.reset(); // Reset the form after successful submission
+    successMessageEl.style.display = "block";
   }
 });
-console.log("hello there");
