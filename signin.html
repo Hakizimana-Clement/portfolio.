@@ -21,9 +21,11 @@
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/components/header.css" />
-
     <link rel="stylesheet" href="styles/components/hero.css" />
+
+    <!-- login style -->
     <link rel="stylesheet" href="styles/components/login.css" />
+
     <link rel="stylesheet" href="styles/components/footer.css" />
     <link rel="stylesheet" href="styles/utils.css" />
     <!-- icons -->
@@ -160,13 +162,15 @@
                 <!-- name -->
                 <div class="signup-container__form-form--name forms">
                   <label for="email">Email: </label>
-                  <input type="text" id="email" />
+                  <input type="text" id="email" name="email" />
                 </div>
+                <span class="error" id="error-email"></span>
                 <!-- password-->
                 <div class="signup-container__form-form--password forms">
                   <label for="password">Password: </label>
-                  <input type="password" id="password" />
+                  <input type="password" id="password" name="password" />
                 </div>
+                <span class="error" id="error-password"></span>
                 <!-- Start remember and forget password  -->
                 <div
                   class="signup-container__form-form--password forms remember-me-form"
@@ -181,7 +185,6 @@
                     >
                   </div>
                 </div>
-
                 <!-- End remember and forget password  -->
                 <button class="btn form-login-btn">Login</button>
               </form>
@@ -262,7 +265,8 @@
       </div>
       <!-- End footer container -->
     </footer>
-    <!-- login script -->
+    <!-- start login form validation script -->
     <script src="./src/login.js"></script>
+    <!-- end login form validation script -->
   </body>
 </html>

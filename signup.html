@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/components/header.css" />
-
     <link rel="stylesheet" href="styles/components/hero.css" />
+
     <!-- signin -->
     <link rel="stylesheet" href="styles/components/signin.css" />
     <link rel="stylesheet" href="styles/components/footer.css" />
@@ -158,28 +158,46 @@
                 action="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/pages/admin-panel.html"
                 class="signup-container__form-form"
               >
-                <!-- name -->
+                <!-- start name -->
                 <div class="signup-container__form-form--name forms">
                   <label for="name">Full Name: </label>
-                  <input type="text" id="name" />
+                  <input type="text" id="name" name="name" />
                 </div>
-                <!-- email -->
+                <!-- end name -->
+                <!-- start error -->
+                <span class="error" id="name-error"></span>
+                <!-- end error -->
+                <!-- start email -->
                 <div class="signup-container__form-form--name forms">
                   <label for="email">Email: </label>
-                  <input type="text" id="email" />
+                  <input type="text" id="email" name="email" />
                 </div>
-
-                <!-- password-->
+                <!-- end email -->
+                <!-- start error -->
+                <span class="error" id="email-error"></span>
+                <!-- end error -->
+                <!-- start password-->
                 <div class="signup-container__form-form--password forms">
                   <label for="password">Password: </label>
-                  <input type="password" id="password" />
+                  <input type="password" id="password" name="password" />
                 </div>
-                <!-- password-->
+                <!-- end password-->
+                <!-- start error -->
+                <span class="error" id="password-error"></span>
+                <!-- end error -->
+                <!-- start confirm password-->
                 <div class="signup-container__form-form--password forms">
                   <label for="confirm-password">Confirm Password: </label>
-                  <input type="password" id="confirm-password" />
+                  <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirmPassword"
+                  />
                 </div>
-
+                <!-- end confirm password-->
+                <!-- start error -->
+                <span class="error" id="confirm-password-error"></span>
+                <!-- end error -->
                 <button class="btn form-login-btn">Sign Up</button>
               </form>
               <p class="form__create-new-account">
@@ -254,7 +272,9 @@
       <!-- End footer container -->
     </footer>
 
-    <!-- script -->
-    <script src="./src/signup.js"></script>
+    <!-- start signup form validation -->
+    <!-- <script src="./src/signup.js"></script> -->
+    <script src="./src/signup-form.js"></script>
+    <!-- end signup form validation -->
   </body>
 </html>
