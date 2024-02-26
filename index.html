@@ -249,26 +249,6 @@
         </div>
         <!--End hero container -->
       </section>
-      <!-- Error: this should not be here -->
-      <!-- Start scroll down button -->
-      <!-- <div class="scroll-btn__container">
-        <button class="scroll-btn__btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-            />
-          </svg>
-        </button>
-        <span class="scroll-btn__text"> Scroll </span>
-      </div> -->
       <!-- End scroll down button -->
       <!-- ################################################## -->
       <!-- ################ ABOUT SECTION ################### -->
@@ -516,54 +496,54 @@
               <!-- End Github link -->
             </div>
             <!-- End project container -->
-
-            <!-- Start next button container -->
-            <div class="projects-container__text-next-btn-containers">
-              <!-- Start next button -->
-              <div class="projects-container__text-next-btn-container">
-                <span
-                  class="projects-container__text-next-btn-container--number next-one"
-                  >01</span
-                >
-                <button
-                  class="projects-container__text-next-btn-container--btn"
-                ></button>
-              </div>
-              <!-- Start next button -->
-              <div class="projects-container__text-next-btn-container">
-                <span
-                  class="projects-container__text-next-btn-container--number"
-                  >02</span
-                >
-                <button
-                  class="projects-container__text-next-btn-container--btn no-yet-next"
-                ></button>
-              </div>
-
-              <!-- Start next button -->
-              <div class="projects-container__text-next-btn-container">
-                <span
-                  class="projects-container__text-next-btn-container--number"
-                  >03</span
-                >
-                <button
-                  class="projects-container__text-next-btn-container--btn no-yet-next"
-                ></button>
-              </div>
-              <!-- End next button -->
-              <!-- Start next button -->
-              <div class="projects-container__text-next-btn-container">
-                <span
-                  class="projects-container__text-next-btn-container--number"
-                  >04</span
-                >
-                <button
-                  class="projects-container__text-next-btn-container--btn no-yet-next"
-                ></button>
-              </div>
-              <!-- End next button -->
-            </div>
           </div>
+          <!-- Start next button  container -->
+          <div class="projects-container__text-next-btn-containers">
+            <!-- Start next button -->
+            <div class="projects-container__text-next-btn-container project-1">
+              <span
+                class="projects-container__text-next-btn-container--number next-one one-num"
+                >01</span
+              >
+              <button
+                class="projects-container__text-next-btn-container--btn one-num-btn"
+              ></button>
+            </div>
+            <!-- Start next button -->
+            <div class="projects-container__text-next-btn-container project-2">
+              <span
+                class="projects-container__text-next-btn-container--number two-num"
+                >02</span
+              >
+              <button
+                class="projects-container__text-next-btn-container--btn no-yet-next"
+              ></button>
+            </div>
+
+            <!-- Start next button -->
+            <div class="projects-container__text-next-btn-container project-3">
+              <span
+                class="projects-container__text-next-btn-container--number three-num"
+                >03</span
+              >
+              <button
+                class="projects-container__text-next-btn-container--btn no-yet-next"
+              ></button>
+            </div>
+            <!-- End next button -->
+            <!-- Start next button -->
+            <div class="projects-container__text-next-btn-container project-4">
+              <span
+                class="projects-container__text-next-btn-container--number four-num"
+                >04</span
+              >
+              <button
+                class="projects-container__text-next-btn-container--btn no-yet-next"
+              ></button>
+            </div>
+            <!-- End next button -->
+          </div>
+          <!-- end next button container -->
         </div>
         <!-- End next button container -->
 
@@ -1650,15 +1630,6 @@
       </div>
       <!-- End footer container -->
     </footer>
-    <!-- swipper JS -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
-    <!-- Swiper JS -->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-    <!-- swiper JS local -->
-    <script src="./src/swiper-bundle.min.js"></script>
-    <!-- slide -->
-    <!-- <script src="./src/slider-function.js"></script> -->
-    <script src="./src/slider-testing-function.js"></script>
 
     <!-- start form validation on contact form -->
     <script src="./src/mobile-nav.js"></script>
@@ -1667,45 +1638,13 @@
     <!-- start form validation on contact form -->
     <script src="./src/contact-me-form-validation.js"></script>
     <!-- end form validation on contact form -->
-    <!-- scroll script -->
-    <script>
-      // let scrollContainer = document.querySelector(".gallery");
-      // let backBtn = document.querySelector("#backBtn");
-      // let nextBtn = document.querySelector("#nextBtn");
 
-      // scrollContainer.addEventListener("wheel", (e) => {
-      //   e.preventDefault();
-      //   scrollContainer.scrollLeft += e.deltaY;
-      //   scrollContainer.style.scrollBehavior = "auto";
-      // });
+    <!-- start  slide scroll script -->
+    <script src="./src/slider-project-function.js"></script>
+    <!-- end slide scroll script -->
 
-      // nextBtn.addEventListener("click", () => {
-      //   scrollContainer.style.scrollBehavior = "smooth";
-      //   scrollContainer.scrollLeft += 900;
-      // });
-      // backBtn.addEventListener("click", () => {
-      //   scrollContainer.style.scrollBehavior = "smooth";
-      //   scrollContainer.scrollLeft -= 900;
-      // });
-
-      let scrollContainer = document.querySelector(".gallery");
-      let backBtn = document.querySelector("#backBtn");
-      let nextBtn = document.querySelector("#nextBtn");
-
-      scrollContainer.addEventListener("wheel", (e) => {
-        e.preventDefault();
-        scrollContainer.scrollLeft += e.deltaY;
-        scrollContainer.style.scrollBehavior = "auto";
-      });
-
-      nextBtn.addEventListener("click", () => {
-        scrollContainer.style.scrollBehavior = "smooth";
-        scrollContainer.scrollLeft += scrollContainer.offsetWidth; // Change scroll distance to width of one card container
-      });
-      backBtn.addEventListener("click", () => {
-        scrollContainer.style.scrollBehavior = "smooth";
-        scrollContainer.scrollLeft -= scrollContainer.offsetWidth; // Change scroll distance to width of one card container
-      });
-    </script>
+    <!-- start  slide scroll script -->
+    <script src="./src/slider-function.js"></script>
+    <!-- end slide scroll script -->
   </body>
 </html>
