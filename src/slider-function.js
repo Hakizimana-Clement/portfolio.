@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 console.log("test");
-// with group
+// with group and it's work sometime
 // // const swiper = new Swiper(".slide-content", {
 // const swiper = new Swiper(".swipper", {
 //   slidesPerView: 3,
