@@ -1,38 +1,26 @@
-console.log("test");
-const comments = [
-  {
-    blogTitle: "Did you know",
-    name: "Karimu",
-    comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Tempora rem quibusdam sed aut.",
-    liked: false,
-  },
-  {
-    blogTitle: "Did you know",
-    name: "Mike",
-    comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Tempora rem quibusdam sed aut.",
-    liked: false,
-  },
+// local storage
+let comments = [];
+const commentJSON = localStorage.getItem("comments");
 
-  {
-    blogTitle: "Did you know",
-    name: "Somi",
-    comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Tempora rem quibusdam sed aut.",
-    liked: false,
-  },
-];
+// checking if comment
+if (commentJSON !== null) {
+  comments = JSON.parse(commentJSON);
+}
+const commentForm = document.querySelector(".leave-comment__form-and-input");
+commentForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-// filters
+  const data = {
+    name: e.target.elements.name.value,
+    email: e.target.elements.email.value,
+    comment: e.target.elements.comment.value,
+  };
+  comments.push(data);
+  localStorage.setItem("comments", JSON.stringify(comments));
+  console.log("clicked");
+  commentForm.reset();
+});
 
-const filters = {
-  searchText: "",
-  like: false,
-};
-// render comment function
-const renderComments = (comments, filters) => {
-  const filteredComment = comments.filter((comment) => {
-    // return comment.name.toLowerCase().;
-  });
-};
+console.log(comments);
+
+const commentContainer = document.querySelector(".all-comments-container");

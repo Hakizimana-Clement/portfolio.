@@ -39,7 +39,7 @@ const renderBlogs = (blogsArray) => {
     const imgDiv = document.createElement("div");
     imgDiv.classList.add("edit-image-container");
     const blogImgEl = document.createElement("img");
-    blogImgEl.src = blog.image;
+    blogImgEl.src = blog.coverImage;
     imgDiv.append(blogImgEl);
     blogCard.append(imgDiv);
     // blogContainer.append(blogImgEl);
@@ -49,7 +49,7 @@ const renderBlogs = (blogsArray) => {
     textDiv.classList.add("edit-container___img-and-text-container--text");
     // blog title
     const pTitleEl = document.createElement("p");
-    pTitleEl.textContent = blog.title;
+    pTitleEl.innerHTML = `<strong>Title :</strong> ${blog.title}`;
     pTitleEl.classList.add("edit-text", "edit-text__title");
     textDiv.append(pTitleEl);
     blogCard.append(textDiv);
@@ -57,14 +57,15 @@ const renderBlogs = (blogsArray) => {
 
     // blog writer
     const pWriterEl = document.createElement("p");
-    pWriterEl.textContent = blog.writer;
+    pWriterEl.innerHTML = `<strong>Writer:</strong> ${blog.writer}`;
     pWriterEl.classList.add("edit-text", "edit-text__title");
     textDiv.append(pWriterEl);
     // blogContainer.append(pWriterEl);
 
     // blog paragraph
     const pBlogEl = document.createElement("p");
-    pBlogEl.textContent = blog.body;
+    pBlogEl.innerHTML = `<strong>Body :</strong> ${blog.body.slice(3, 65)}...`;
+    // pBlogEl.textContent = blog.body;
     pBlogEl.classList.add("edit-text", "edit-text__title");
     textDiv.append(pBlogEl);
     // blogContainer.append(pBlogEl);

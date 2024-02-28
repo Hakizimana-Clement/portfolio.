@@ -352,12 +352,24 @@
               />
               <!-- end title writter name-->
               <!-- start upload image-->
+              <label for="upload-image">Upload writer image</label>
               <input
                 type="file"
                 accept="image/*"
                 placeholder="upload image"
                 class="form-input new-blog-container-form__input-writter"
-                name="image"
+                name="writeImage"
+              />
+              <!-- end upload image-->
+              <!-- start upload image-->
+
+              <label for="upload-image-blog">Upload blog image</label>
+              <input
+                type="file"
+                accept="image/*"
+                placeholder="blog cover image"
+                class="form-input new-blog-container-form__input-writter"
+                name="coverImage"
               />
               <!-- end upload image-->
               <!--  start textarea  -->
@@ -396,6 +408,8 @@
     <script src="../src/rich-text-editor.js"></script>
     <!-- end rich text editor js -->
 
+    <!-- uuid script -->
+    <script src="../src/datas/uuidv4.js"></script>
     <!-- create blog -->
     <script src="../src/datas/create-new-blog.js"></script>
   </body>
