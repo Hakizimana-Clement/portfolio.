@@ -340,6 +340,7 @@
                 type="text"
                 placeholder="Title"
                 class="form-input new-blog-container-form__input-title"
+                name="title"
               />
               <!-- end title input -->
               <!-- start title writter name-->
@@ -347,6 +348,7 @@
                 type="text"
                 placeholder="Writter"
                 class="form-input new-blog-container-form__input-writter"
+                name="writer"
               />
               <!-- end title writter name-->
               <!-- start upload image-->
@@ -355,11 +357,15 @@
                 accept="image/*"
                 placeholder="upload image"
                 class="form-input new-blog-container-form__input-writter"
+                name="image"
               />
               <!-- end upload image-->
-
               <!--  start textarea  -->
-              <textarea class="new-blog-container-form__input-textarea">
+              <textarea
+                id="textarea"
+                class="new-blog-container-form__input-textarea"
+                name="body"
+              >
               </textarea>
               <!--  end textarea  -->
               <div class="add-new-blog-btn">
@@ -389,5 +395,8 @@
     <!-- start rich text editor js -->
     <script src="../src/rich-text-editor.js"></script>
     <!-- end rich text editor js -->
+
+    <!-- create blog -->
+    <script src="../src/datas/create-new-blog.js"></script>
   </body>
 </html>

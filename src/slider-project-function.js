@@ -19,7 +19,12 @@ project1.addEventListener("click", () => {
   projectImg.src = "../images/project-1.svg";
   projectParagraphs.textContent =
     "  Lorem ipsum dolor sit amet consectetur adipisicing eli  Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elittLorem ipsum dolor sit amet consectetur adipisicing elit... ";
-});
+
+  // one buton
+  document.querySelector(".one-num").style.color = "#fff";
+  document.querySelector(".one-num-btn").style.backgroundColor = "#fff";
+  document.querySelector(".two-num").style.color = "#5161f1";
+  });
 
 // project 2
 const project2 = document.querySelector(".project-2");
@@ -36,7 +41,6 @@ project2.addEventListener("click", () => {
   // one buton
   document.querySelector(".one-num").style.color = "#fff";
   document.querySelector(".one-num-btn").style.backgroundColor = "#fff";
-
   document.querySelector(".two-num").style.color = "#5161f1";
 });
 

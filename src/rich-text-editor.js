@@ -2,7 +2,11 @@ tinymce.init({
   selector: "textarea",
   skin: "oxide-dark",
   content_css: "dark",
-
+  setup: function (editor) {
+    editor.on("init", function (e) {
+      editor.getContent({ format: "text" });
+    });
+  },
   // skin: "../styles/components/dashboard/test.css",
   // content_css: "../styles/components/dashboard/admin-new-blog.css",
   toolbar:

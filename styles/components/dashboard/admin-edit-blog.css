@@ -159,3 +159,8 @@
 
 /* 2xl */
 /* @media(min-width:1536px){} */
+.no-message {
+  text-align: center;
+  font-size: var(--size-2xl);
+  margin-top: 5rem;
+}

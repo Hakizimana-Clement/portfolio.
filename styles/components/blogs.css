@@ -491,3 +491,6 @@
 
 /* 2xl */
 /* @media(min-width:1536px){} */
+.card-blog-link {
+  text-decoration: none;
+}
