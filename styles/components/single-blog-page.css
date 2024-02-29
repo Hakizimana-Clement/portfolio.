@@ -307,3 +307,24 @@ main {
 
 /* 2xl */
 /* @media(min-width:1536px){} */
+.blog-content-img-container {
+  width: 100%;
+  height: 100%;
+}
+.blog-content__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon-sizes {
+  display: block;
+  width: 34px;
+}
+.like-and-comment-container {
+  margin-top: 0.4rem;
+}
+.comment-buble {
+  width: 752px;
+  overflow: hidden;
+}

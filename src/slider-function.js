@@ -1,5 +1,3 @@
-console.log("hello world");
-
 let scrollContainer = document.querySelector(".gallery");
 let backBtn = document.querySelector("#backBtn");
 let nextBtn = document.querySelector("#nextBtn");

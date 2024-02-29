@@ -98,7 +98,10 @@
 /* image */
 .writer-image {
   /* width: 15%; */
-  width: 14%;
+  /* width: 14%; */
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
 }
 .writer {
   /* font-size: var(--size-sm); */
@@ -321,6 +324,7 @@
   padding: 12px;
   border-radius: 13px;
   box-shadow: 0px 2px 7px rgba(104, 116, 221, 0.25);
+  /* width: 463px; */
 }
 .card-image {
   position: relative;
@@ -493,4 +497,7 @@
 /* @media(min-width:1536px){} */
 .card-blog-link {
   text-decoration: none;
+}
+.icon-sizes {
+  width: 25px;
 }

@@ -178,36 +178,35 @@
             <!-- end blog title -->
 
             <!-- start blog paragraph-->
-            <p class="blog-content__paragraph">
+            <!-- <p class="blog-content__paragraph">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
               voluptate sunt, molestiae quae incidunt enim magnam eveniet.
-            </p>
+            </p> -->
             <!-- end blog paragraph-->
 
             <!-- start blog image -->
-            <img
-              class="blog-content__img"
-              src="images/blog-large-image-.svg"
-              alt="technology"
-            />
+            <div class="blog-content-img-container">
+              <img
+                class="blog-content__img"
+                src="images/blog-large-image-.svg"
+                alt="technology"
+              />
+            </div>
+
             <!-- end blog image -->
 
-            <p class="blog-content__paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <img
+            <!-- start blog paragraph-->
+            <div>
+              <p class="blog-content__paragraph"></p>
+            </div>
+            <!-- end blog paragraph-->
+            <!-- <img
               class="blog-content__img"
               src="images/blog-large-image-2.svg"
               alt="office"
-            />
+            /> -->
             <!-- start blog paragraph-->
-            <p class="blog-content__paragraph">
+            <!-- <p class="blog-content__paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -215,20 +214,20 @@
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            </p> -->
             <!-- end blog paragraph-->
             <!-- start blog paragraph-->
-            <p class="blog-content__paragraph">
+            <!-- <p class="blog-content__paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Et
               magnis dis parturient montes nascetur ridiculus mus mauris.
               Blandit volutpat maecenas volutpat blandit aliquam etiam. Non enim
               praesent elementum facilisis leo vel fringilla. Pharetra pharetra
               massa massa Lacus viverra vitae congue eu c
-            </p>
+            </p> -->
             <!-- end blog paragraph-->
             <!-- start blog paragraph-->
-            <p class="blog-content__paragraph">
+            <!-- <p class="blog-content__paragraph">
               et aliquam id diam maecensi vitae suscipit tellus. Nunc
               scelerisque viverra mauris in aliquam. Urna duis convallis
               convallis tellus id interdum velit laoreet id. Cum sociis natoque
@@ -237,7 +236,7 @@
               sagittis nisl. Sollicitudin tempor id eu nisl nunc mi ipsum
               faucibus. Turpis nunc eget lorem dolor sed. Ipsum a arcu cursus
               vitae congue mauris.
-            </p>
+            </p> -->
             <!-- end blog paragraph-->
 
             <!-- start writer and like button -->
@@ -248,13 +247,13 @@
                   src="images/blog-writer.svg"
                   alt="Migeli"
                 />
-                <p>Written By Migeli</p>
+                <p>Written By <span class="write-name">Migeli</span></p>
               </div>
               <div class="blog-content__writer-and-like-button--like-button">
-                <a
+                <div
                   class="blog-content__writer-and-like-button--like-button-link"
-                  href="#"
                 >
+                  <!-- href="#" -->
                   <img
                     class="blog-content__writer-and-like-button--like-img"
                     src="images/like-heart-icon.svg"
@@ -265,7 +264,7 @@
                   >
                     Like
                   </p>
-                </a>
+                </div>
               </div>
             </div>
             <!-- end write and like button -->
@@ -277,7 +276,10 @@
         <div class="blog-comments-container">
           <h3 class="comment-title">Comments</h3>
           <!-- ****************** testing ************************* -->
-          <div class="all-comments-container"></div>
+          <!-- <div class="all-comments-container"></div> -->
+          <!-- **************************************************** -->
+          <!-- ********************* Testing ******************************* -->
+          <div class="comment-testing"></div>
           <!-- **************************************************** -->
 
           <div class="comments-colors">
@@ -285,13 +287,13 @@
             <!-- start comment 1 -->
             <div class="blog-comment__main-container">
               <!-- start comment img -->
-              <div class="blog-comments-container__img">
+              <!-- <div class="blog-comments-container__img">
                 <img
                   class="blog-comments-container__img-img"
                   src="images/avatar-1.svg"
                   alt="mike"
                 />
-              </div>
+              </div> -->
               <!-- end comment img -->
               <!-- start comment  -->
               <div class="">
@@ -418,7 +420,6 @@
               <textarea
                 class="leave-comment__input textarea"
                 name="comment"
-                id="leave-comment"
                 placeholder="Content"
               ></textarea>
 
@@ -521,8 +522,10 @@
       <!-- End footer container -->
     </footer>
 
-    <!-- start comment script  -->
-    <script src="./src/datas/comments.js"></script>
-    <!-- end comment script  -->
+    <!-- uuid -->
+    <script src="./src/datas/uuidv4.js"></script>
+    <!-- start single blog page script  -->
+    <script src="./src/datas/single-blog-page.js"></script>
+    <!-- end csingle blog page script  -->
   </body>
 </html>

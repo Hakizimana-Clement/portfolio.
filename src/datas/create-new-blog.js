@@ -33,11 +33,15 @@ formEl.addEventListener("submit", (e) => {
         writerImage: reader1.result,
         coverImage: reader2.result,
         body: e.target.elements.body.value,
-        // comments part
-        commentUsername: "",
-        commentText: "",
-        commentEmail: "",
         like: false,
+        date: new Date().getTime(),
+        // comments part
+        comments: [],
+        // comments part
+        // commentUsername: "",
+        // commentText: "",
+        // commentEmail: "",
+        // commentid:
       };
       blogs.push(data);
       localStorage.setItem("blogs", JSON.stringify(blogs));
