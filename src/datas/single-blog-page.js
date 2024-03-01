@@ -11,7 +11,8 @@ const likeLinkEl = document.querySelector(
   ".blog-content__writer-and-like-button--like-button-link"
 );
 const commentFormEl = document.querySelector(".leave-comment__form-and-input");
-const commentMainContainer = document.querySelector(".comment-testing");
+const commentMainContainer = document.querySelector(".comments-colors");
+const noCommentPEl = document.querySelector(".no-comment");
 // remove # on id
 const blogId = location.hash.substring(1);
 
@@ -77,6 +78,7 @@ commentFormEl.addEventListener("submit", (e) => {
     commentUsername: e.target.elements.name.value,
     commentEmail: e.target.elements.email.value,
     commentText: e.target.elements.comment.value,
+    commentLiked: false,
   };
 
   const blogIndex = blogs.findIndex((blog) => blog.id === blogId);
@@ -101,43 +103,47 @@ const renderComments = (blogs) => {
   /////// Looping through comments ////////
   const blogIndex = blogs.findIndex((blog) => blog.id === blogId);
   if (blogIndex !== -1) {
+    // comment array
     const commentArr = blogs[blogIndex].comments;
-    commentArr.forEach((comment) => {
-      // comment card or container
-      const commentCard = document.createElement("div");
-      commentCard.classList.add("blog-comment__main-container");
+    if (commentArr.length === 0) {
+      noCommentPEl.textContent = "No Comments";
+    } else {
+      commentArr.forEach((comment) => {
+        // comment card or container
+        const commentCard = document.createElement("div");
+        commentCard.classList.add("blog-comment__main-container");
 
-      // empty div -> comment card
-      const commentHolderCard = document.createElement("div");
-      commentCard.append(commentHolderCard);
+        // empty div -> comment card
+        const commentHolderCard = document.createElement("div");
+        commentCard.append(commentHolderCard);
 
-      //******************* name and comment text *********************
-      // bubble comment
-      const commentBubbleTextContaner = document.createElement("div");
-      commentBubbleTextContaner.classList.add("comment-buble");
-      commentHolderCard.append(commentBubbleTextContaner);
+        //******************* name and comment text *********************
+        // bubble comment
+        const commentBubbleTextContaner = document.createElement("div");
+        commentBubbleTextContaner.classList.add("comment-buble");
+        commentHolderCard.append(commentBubbleTextContaner);
 
-      // name
-      const h4El = document.createElement("h4");
-      h4El.textContent = comment.commentUsername;
-      h4El.classList.add("comment-buble__title");
-      commentBubbleTextContaner.append(h4El);
+        // name
+        const h4El = document.createElement("h4");
+        h4El.textContent = comment.commentUsername;
+        h4El.classList.add("comment-buble__title");
+        commentBubbleTextContaner.append(h4El);
 
-      // comment text or paragraph
-      const pEl = document.createElement("p");
-      pEl.textContent = comment.commentText;
-      pEl.classList.add("comment-buble__paragraph");
-      commentBubbleTextContaner.append(pEl);
+        // comment text or paragraph
+        const pEl = document.createElement("p");
+        pEl.textContent = comment.commentText;
+        pEl.classList.add("comment-buble__paragraph");
+        commentBubbleTextContaner.append(pEl);
 
-      //******************* comment and like *********************
-      // comment and like container
-      const commentAndLikeContainer = document.createElement("div");
-      commentAndLikeContainer.classList.add("like-and-comment-container");
-      commentHolderCard.append(commentAndLikeContainer);
+        //******************* comment and like *********************
+        // comment and like container
+        const commentAndLikeContainer = document.createElement("div");
+        commentAndLikeContainer.classList.add("like-and-comment-container");
+        commentHolderCard.append(commentAndLikeContainer);
 
-      // like icon
-      const likeIcon = document.createElement("span");
-      likeIcon.innerHTML = `<svg
+        // like icon
+        const likeIcon = document.createElement("span");
+        likeIcon.innerHTML = `<svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -151,16 +157,32 @@ const renderComments = (blogs) => {
                           />
                           likeDiv.append(likeIcon);
                         </svg>`;
-      likeIcon.classList.add("icon-sizes");
-      commentAndLikeContainer.append(likeIcon);
+        likeIcon.classList.add("icon-sizes");
+        commentAndLikeContainer.append(likeIcon);
 
-      // like function
-      let isLiked = false;
-      likeIcon.addEventListener("click", () => {
-        isLiked = !isLiked;
-        console.log(isLiked);
-        if (isLiked) {
-          likeIcon.innerHTML = `<svg
+        // like function to change color (toggle)
+        // commentAndLikeContainer.textContent = "";
+        let isLiked = false;
+        likeIcon.addEventListener("click", () => {
+          isLiked = !isLiked;
+          console.log(isLiked);
+
+          // const commentId = comment.commentId;
+          // if (blogIndex !== -1) {
+          //   const commentIndex = blogs[blogIndex].comments.findIndex(
+          //     (comment) => comment.commentId === commentId
+          //   );
+          //   if (commentIndex !== -1) {
+          //     blogs[blogIndex].comments[commentIndex].commentLiked = isLiked;
+
+          //     // save in local storage
+          //     localStorage.setItem("blogs", JSON.stringify(blogs));
+          //     renderComments(blogs);
+          //   }
+          // }
+
+          if (isLiked) {
+            likeIcon.innerHTML = `<svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="red"
                           viewBox="0 0 24 24"
@@ -174,8 +196,8 @@ const renderComments = (blogs) => {
                           />
                           likeDiv.append(likeIcon);
                         </svg>`;
-        } else {
-          likeIcon.innerHTML = `<svg
+          } else {
+            likeIcon.innerHTML = `<svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -189,14 +211,15 @@ const renderComments = (blogs) => {
                           />
                           likeDiv.append(likeIcon);
                         </svg>`;
-        }
-      });
+          }
+        });
 
-      // reply coming soon
-      // add comment card to main comment card
-      commentMainContainer.append(commentCard);
-      console.log(comment);
-    });
+        // reply coming soon
+        // add comment card to main comment card
+        commentMainContainer.append(commentCard);
+        console.log(comment);
+      });
+    }
   }
 };
 renderComments(blogs);

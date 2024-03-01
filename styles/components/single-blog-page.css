@@ -328,3 +328,7 @@ main {
   width: 752px;
   overflow: hidden;
 }
+.no-comment {
+  text-align: center;
+  font-weight: 600;
+}

@@ -68,7 +68,11 @@ const renderBlogs = (blogsArr) => {
 
     //p
     const pEl = document.createElement("p");
-    pEl.textContent = `${blog.body.slice(3, 65)}...`;
+    console.log(blog.body);
+    const content = blog.body;
+    const cleanContent = content.replace(/<\/?p>/g, "");
+    // pEl.textContent = `${blog.body.slice(3, 65)}...`;
+    pEl.textContent = `${cleanContent}...`;
     // error
     pEl.classList.add("blogs-container__card-description", "description");
     cardContentDiv.append(pEl);

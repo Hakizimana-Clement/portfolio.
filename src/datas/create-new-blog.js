@@ -13,6 +13,12 @@ formEl.addEventListener("submit", (e) => {
   e.preventDefault();
   const id = uuidv4();
 
+  // // Get content from create blog from
+  // const bodyContent = e.target.elements.body.value;
+  // // remove <p> before save in local storage
+  // const cleanBodyContent = bodyContent.replace(/<\/?p>/g, "");
+  // console.log(cleanBodyContent);
+
   // reader 1 for writer image
   const reader1 = new FileReader();
   // reader 2 for cover image
@@ -37,6 +43,7 @@ formEl.addEventListener("submit", (e) => {
         date: new Date().getTime(),
         // comments part
         comments: [],
+        // body: cleanBodyContent,
         // comments part
         // commentUsername: "",
         // commentText: "",
