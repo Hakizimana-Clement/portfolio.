@@ -65,3 +65,10 @@
 
 /* 2xl */
 /* @media(min-width:1536px){} */
+.logout-link {
+  text-decoration: none;
+  font-size: var(--size-xl);
+}
+.logout-link:hover {
+  color: var(--clr-hover);
+}

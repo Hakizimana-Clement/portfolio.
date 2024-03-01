@@ -50,22 +50,22 @@
         <!-- Start link Area -->
         <ul class="header__menu">
           <li>
-            <a class="header__link" href="/index.html">Home</a>
+            <a class="header__link" href="./index.html">Home</a>
           </li>
           <li>
-            <a class="header__link" href="#about">About</a>
+            <a class="header__link" href="./index.html#about">About</a>
           </li>
           <li>
-            <a class="header__link" href="#skills">Skills</a>
+            <a class="header__link" href="./index.html#skills">Skills</a>
           </li>
           <li>
-            <a class="header__link" href="#works">Works</a>
+            <a class="header__link" href="./index.html#works">Works</a>
           </li>
           <li>
-            <a class="header__link" href="contact">Contact</a>
+            <a class="header__link" href="./index.html#contact">Contact</a>
           </li>
           <li>
-            <a class="header__link" href="#blogs">Blogs</a>
+            <a class="header__link" href="./index.html#blogss">Blogs</a>
           </li>
           <!-- <li>
             <a class="header__link" href="#signin">
@@ -289,25 +289,49 @@
           <div class="leave-comment__form">
             <form class="leave-comment__form-and-input">
               <div class="leave-comment__form-two-input">
-                <input
-                  class="leave-comment__input"
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                />
-                <input
-                  class="leave-comment__input"
-                  type="text"
-                  placeholder="Email"
-                  name="email"
-                />
-              </div>
-              <textarea
-                class="leave-comment__input textarea"
-                name="comment"
-                placeholder="Content"
-              ></textarea>
+                <!-- start name input -->
+                <div class="input-wrapper">
+                  <input
+                    class="leave-comment__input"
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                  />
 
+                  <!-- start name error -->
+                  <span class="error" id="name-error"></span>
+                  <!-- start name error -->
+                  <br />
+                </div>
+                <!-- end name input -->
+
+                <!-- start email input -->
+                <div class="input-wrapper">
+                  <input
+                    class="leave-comment__input"
+                    type="text"
+                    placeholder="Email"
+                    name="email"
+                  />
+
+                  <br />
+                  <!-- start email error -->
+                  <span class="error" id="email-error"></span>
+                  <!-- start email error -->
+                </div>
+                <!-- start email input -->
+              </div>
+              <div>
+                <textarea
+                  class="leave-comment__input textarea"
+                  name="comment"
+                  placeholder="Content"
+                ></textarea>
+
+                <!-- start email error -->
+                <span class="error" id="comment-text-error"></span>
+                <!-- start email error -->
+              </div>
               <p class="leave-comment__form__note-text">
                 All comments are moderated before being published
               </p>

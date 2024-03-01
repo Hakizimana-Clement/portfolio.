@@ -42,6 +42,8 @@ form.addEventListener("submit", (e) => {
   if (password.value !== confirmPassword.value) {
     messages.push("Enter your password in confirm field");
   }
+
+  console.log(messages);
   if (messages.length > 0) {
     e.preventDefault();
     errorEl.innerHTML = messages.join(", ");

@@ -13,6 +13,9 @@ const likeLinkEl = document.querySelector(
 const commentFormEl = document.querySelector(".leave-comment__form-and-input");
 const commentMainContainer = document.querySelector(".comments-colors");
 const noCommentPEl = document.querySelector(".no-comment");
+
+const errorEl = document.querySelector(".error");
+
 // remove # on id
 const blogId = location.hash.substring(1);
 
@@ -67,33 +70,95 @@ if (blogIndex !== -1) {
 }
 
 //********************** COMMENTS ********************* */
+
+// errors
+let formErrors = {
+  nameError: null,
+  emailError: null,
+  commentTextError: null,
+};
+
+// display error below input
+const showFormErrors = (error) => {
+  // name
+  document.querySelector("#name-error").textContent = error.nameError;
+
+  //email
+  document.querySelector("#email-error").textContent = error.emailError;
+  // comment text
+  document.querySelector("#comment-text-error").textContent =
+    error.commentTextError;
+};
+
 //********************** FORM ********************* */
 commentFormEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  //******* add comment in local storage *****************
+  //******* Form Validation *****************
+  // state
+  let hasErrors = false;
 
-  const newComment = {
-    commentId: uuidv4(),
-    commentUsername: e.target.elements.name.value,
-    commentEmail: e.target.elements.email.value,
-    commentText: e.target.elements.comment.value,
-    commentLiked: false,
-  };
+  const nameInput = e.target.elements.name.value.trim();
+  const emailInput = e.target.elements.email.value.trim();
+  const commentInput = e.target.elements.comment.value.trim();
 
-  const blogIndex = blogs.findIndex((blog) => blog.id === blogId);
-  // blog index found
-  if (blogIndex !== -1) {
-    // Here we targer the blog we want to update and then add comment in it.
-    blogs[blogIndex].comments.push(newComment);
-    // localstorage
-    localStorage.setItem("blogs", JSON.stringify(blogs));
-    renderComments(blogs);
-    commentFormEl.reset();
+  // validate name validation
+  if (nameInput.length === 0) {
+    formErrors.nameError = "Please enter your name";
+    hasErrors = true;
+  } else if (nameInput.length < 5) {
+    formErrors.nameError = "Name should be less than 5 character.";
+    hasErrors = true;
   } else {
-    console.log("Blog comment not found");
+    formErrors.nameError = null;
   }
 
+  // validate email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(emailInput)) {
+    formErrors.emailError = "Invalid email address.";
+    hasErrors = true;
+  } else {
+    formErrors.emailError = null;
+  }
+
+  // comment text validation
+  if (commentInput.length === 0) {
+    formErrors.commentTextError = "Please enter your comment";
+    hasErrors = true;
+  } else if (commentInput.length < 100) {
+    formErrors.commentTextError =
+      "Your comment should not be less than 100 character.";
+    hasErrors = true;
+  } else {
+    formErrors.commentTextError = null;
+  }
+
+  showFormErrors(formErrors);
+  if (!hasErrors) {
+    e.target.reset();
+    //******* add comment in local storage *****************
+    const newComment = {
+      commentId: uuidv4(),
+      commentUsername: e.target.elements.name.value.trim(),
+      commentEmail: e.target.elements.email.value.trim(),
+      commentText: e.target.elements.comment.value.trim(),
+      commentLiked: false,
+    };
+
+    const blogIndex = blogs.findIndex((blog) => blog.id === blogId);
+    // blog index found
+    if (blogIndex !== -1) {
+      // Here we targer the blog we want to update and then add comment in it.
+      blogs[blogIndex].comments.push(newComment);
+      // localstorage
+      localStorage.setItem("blogs", JSON.stringify(blogs));
+      renderComments(blogs);
+      commentFormEl.reset();
+    } else {
+      console.log("Blog comment not found");
+    }
+  }
   //************************************
 });
 // console.log(blogs);
@@ -217,7 +282,7 @@ const renderComments = (blogs) => {
         // reply coming soon
         // add comment card to main comment card
         commentMainContainer.append(commentCard);
-        console.log(comment);
+        // console.log(comment);
       });
     }
   }

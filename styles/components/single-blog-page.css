@@ -332,3 +332,13 @@ main {
   text-align: center;
   font-weight: 600;
 }
+
+.error {
+  font-size: var(--size-sm);
+  color: red;
+  font-weight: 600;
+  /* margin-top: 2rem; */
+}
+.input-wrapper {
+  width: 100%;
+}
