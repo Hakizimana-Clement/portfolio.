@@ -101,13 +101,12 @@ commentFormEl.addEventListener("submit", (e) => {
   const nameInput = e.target.elements.name.value.trim();
   const emailInput = e.target.elements.email.value.trim();
   const commentInput = e.target.elements.comment.value.trim();
-
   // validate name validation
   if (nameInput.length === 0) {
     formErrors.nameError = "Please enter your name";
     hasErrors = true;
-  } else if (nameInput.length < 5) {
-    formErrors.nameError = "Name should be less than 5 character.";
+  } else if (nameInput.length < 3) {
+    formErrors.nameError = "Name should be at least 3 character.";
     hasErrors = true;
   } else {
     formErrors.nameError = null;
@@ -126,23 +125,24 @@ commentFormEl.addEventListener("submit", (e) => {
   if (commentInput.length === 0) {
     formErrors.commentTextError = "Please enter your comment";
     hasErrors = true;
-  } else if (commentInput.length < 100) {
+  } else if (commentInput.length > 400) {
     formErrors.commentTextError =
-      "Your comment should not be less than 100 character.";
+      "Your comment should be less than 400 character.";
     hasErrors = true;
   } else {
     formErrors.commentTextError = null;
   }
 
   showFormErrors(formErrors);
+
   if (!hasErrors) {
     e.target.reset();
     //******* add comment in local storage *****************
     const newComment = {
       commentId: uuidv4(),
-      commentUsername: e.target.elements.name.value.trim(),
-      commentEmail: e.target.elements.email.value.trim(),
-      commentText: e.target.elements.comment.value.trim(),
+      commentUsername: nameInput,
+      commentEmail: emailInput,
+      commentText: commentInput,
       commentLiked: false,
     };
 
@@ -170,9 +170,12 @@ const renderComments = (blogs) => {
   if (blogIndex !== -1) {
     // comment array
     const commentArr = blogs[blogIndex].comments;
-    if (commentArr.length === 0) {
+    console.log(commentArr.length);
+    if (commentArr.length <= 0) {
+      commentMainContainer.style.padding = "1.5rem ";
       noCommentPEl.textContent = "No Comments";
     } else {
+      commentMainContainer.style.padding = "0";
       commentArr.forEach((comment) => {
         // comment card or container
         const commentCard = document.createElement("div");
@@ -185,7 +188,7 @@ const renderComments = (blogs) => {
         //******************* name and comment text *********************
         // bubble comment
         const commentBubbleTextContaner = document.createElement("div");
-        commentBubbleTextContaner.classList.add("comment-buble");
+        commentBubbleTextContaner.classList.add("comment-buble", "container");
         commentHolderCard.append(commentBubbleTextContaner);
 
         // name
@@ -282,9 +285,13 @@ const renderComments = (blogs) => {
         // reply coming soon
         // add comment card to main comment card
         commentMainContainer.append(commentCard);
+
         // console.log(comment);
       });
     }
   }
 };
+
+// render existing comment
+
 renderComments(blogs);

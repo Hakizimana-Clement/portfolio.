@@ -1,5 +1,3 @@
-console.log("home page");
-
 // html elements
 // const blogMainContainer = document.querySelector(".testing-blog-home");
 const blogMainContainer = document.querySelector(".gallery");
@@ -11,6 +9,8 @@ const blogJSON = localStorage.getItem("blogs");
 if (blogJSON !== null) {
   blogs = JSON.parse(blogJSON);
 } else {
+  document.querySelector(".gallery").style.justifyContent = "center";
+  document.querySelector(".gallery-wrapper").style.marginTop = "4rem";
   blogMainContainer.innerHTML = `<p>No Blogs</p>`;
 }
 
@@ -63,16 +63,28 @@ const renderBlogs = (blogsArr) => {
     // h2
     const h2El = document.createElement("h2");
     h2El.textContent = blog.title;
-    h2El.classList.add("name");
+    // h2El.classList.add("name");
+    h2El.classList.add("blogs-container__card-title");
     cardContentDiv.append(h2El);
 
-    //p
+    ///////////////////////////////////////////// paragraph //////////////////////////////////////
     const pEl = document.createElement("p");
-    console.log(blog.body);
+    // console.log(blog.body);
     const content = blog.body;
-    const cleanContent = content.replace(/<\/?p>/g, "");
-    // pEl.textContent = `${blog.body.slice(3, 65)}...`;
-    pEl.textContent = `${cleanContent}...`;
+    // const cleanContent = content.replace(/<\/?p>/g, "").slice(2, 65);
+    // // pEl.textContent = `${blog.body.slice(3, 65)}...`;
+    // pEl.textContent = `${cleanContent}...`;
+    // Remove <p> and </p> tags and HTML entity codes
+    const cleanContent = content
+      .replace(/<\/?p>/g, "")
+      .replace(/&amp;nbsp;/g, "")
+      .trim();
+
+    // Truncate the text if it's too long
+    const truncatedContent =
+      cleanContent.slice(0, 63) + (cleanContent.length > 63 ? "..." : "");
+    pEl.textContent = truncatedContent;
+
     // error
     pEl.classList.add("blogs-container__card-description", "description");
     cardContentDiv.append(pEl);
@@ -82,7 +94,7 @@ const renderBlogs = (blogsArr) => {
     commentAndLikeContainer.classList.add(
       "blogs-container__card-likes-and-comments-container"
     );
-
+    console.log(blog);
     // ////// WRITE CONTAINER///////
     // writer image, name and date container -> writer container
     const writeContainer = document.createElement("div");
@@ -191,7 +203,7 @@ const renderBlogs = (blogsArr) => {
     commentNum.classList.add("comment-number");
     commentDiv.append(commentNum);
 
-    console.log(blog);
+    // console.log(blog);
     // renders
     // card container -> start card
     blogContainer.append(linkContainer);
