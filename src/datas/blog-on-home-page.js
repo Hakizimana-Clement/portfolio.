@@ -68,12 +68,29 @@ const renderBlogs = (blogsArr) => {
     cardContentDiv.append(h2El);
 
     ///////////////////////////////////////////// paragraph //////////////////////////////////////
-    const pEl = document.createElement("p");
-    // console.log(blog.body);
+    // const pEl = document.createElement("p");
+    // // console.log(blog.body);
+    // const content = blog.body;
+    // // const cleanContent = content.replace(/<\/?p>/g, "").slice(2, 65);
+    // // // pEl.textContent = `${blog.body.slice(3, 65)}...`;
+    // // pEl.textContent = `${cleanContent}...`;
+    // // Remove <p> and </p> tags and HTML entity codes
+    // const cleanContent = content
+    //   .replace(/<\/?p>/g, "")
+    //   .replace(/&amp;nbsp;/g, "")
+    //   .trim();
+
+    // // Truncate the text if it's too long
+    // const truncatedContent =
+    //   cleanContent.slice(0, 63) + (cleanContent.length > 63 ? "..." : "");
+    // pEl.textContent = truncatedContent;
+
+    // // error
+    // pEl.classList.add("blogs-container__card-description", "description");
+    // cardContentDiv.append(pEl);
+    // Assume blog.body contains the text content from local storage
     const content = blog.body;
-    // const cleanContent = content.replace(/<\/?p>/g, "").slice(2, 65);
-    // // pEl.textContent = `${blog.body.slice(3, 65)}...`;
-    // pEl.textContent = `${cleanContent}...`;
+
     // Remove <p> and </p> tags and HTML entity codes
     const cleanContent = content
       .replace(/<\/?p>/g, "")
@@ -83,11 +100,17 @@ const renderBlogs = (blogsArr) => {
     // Truncate the text if it's too long
     const truncatedContent =
       cleanContent.slice(0, 63) + (cleanContent.length > 63 ? "..." : "");
+
+    // Create a paragraph element and set its text content
+    const pEl = document.createElement("p");
     pEl.textContent = truncatedContent;
 
-    // error
+    // Add classes to the paragraph element
     pEl.classList.add("blogs-container__card-description", "description");
+
+    // Append the paragraph element to the container
     cardContentDiv.append(pEl);
+
     // comment and likes
     // comment and like -> card content
     const commentAndLikeContainer = document.createElement("div");

@@ -103,6 +103,13 @@
     height: 30px;
   }
 }
+/* .mobile-sidebar-container {
+  position: absolute;
+  top: 4rem;
+
+  background-color: red;
+} */
+
 /* xs */
 /* @media(min-width:475px){} */
 
@@ -113,7 +120,11 @@
 /* @media(min-width:768px){} */
 
 /* lg*/
-/* @media(min-width:1024px){} */
+@media (min-width: 1024px) {
+  .mobile-sidebar-container {
+    display: none;
+  }
+}
 
 /* xl*/
 /* @media(min-width:1280px){} */

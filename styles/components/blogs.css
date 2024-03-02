@@ -512,3 +512,6 @@
 .card-content {
   margin-top: 1.5rem;
 }
+.card-img {
+  border-radius: 11px;
+}

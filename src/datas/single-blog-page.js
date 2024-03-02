@@ -172,8 +172,9 @@ const renderComments = (blogs) => {
     const commentArr = blogs[blogIndex].comments;
     console.log(commentArr.length);
     if (commentArr.length <= 0) {
-      commentMainContainer.style.padding = "1.5rem ";
       noCommentPEl.textContent = "No Comments";
+      commentMainContainer.style.padding = "1.5rem ";
+      renderComments(blog);
     } else {
       commentMainContainer.style.padding = "0";
       commentArr.forEach((comment) => {

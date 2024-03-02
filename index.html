@@ -30,6 +30,9 @@
     <!-- styles -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <!--start remove this is testing -->
+    <link rel="stylesheet" href="styles/components/header-test.css" />
+    <!--end  remove this is testing -->
     <link rel="stylesheet" href="styles/components/header.css" />
     <link rel="stylesheet" href="styles/components/hero.css" />
 
@@ -72,38 +75,58 @@
     <title>My portfolio</title>
   </head>
   <body>
-    <header class="header container">
-      <nav class="header__navbar">
-        <!-- Start link Area -->
-        <ul class="header__menu">
-          <li>
-            <a class="header__link" href="#hero">Home</a>
+    <!-- start navbar testing -->
+    <header class="testing-header">
+      <nav class="tesing-header__nav">
+        <!-- mobile nav -->
+        <ul class="tesing-header__nav-ul sidebar">
+          <li class="hideSidebar">
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+                class="menu-close-btn"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </a>
           </li>
+          <li><a class="mobile-nav___link" href="#hero">Home</a></li>
+          <li><a class="mobile-nav___link" href="#about">About</a></li>
+          <li><a class="mobile-nav___link" href="#skills">Skills</a></li>
+          <li><a class="mobile-nav___link" href="#works">Projects</a></li>
+          <li><a class="mobile-nav___link" href="#blogsss">Blogs</a></li>
+          <!-- contact -->
           <li>
-            <a class="header__link" href="#about">About</a>
+            <a class="mobile-nav___link contact-link" href="#contact"
+              >Contact</a
+            >
           </li>
-          <li>
-            <a class="header__link" href="#skills">Skills</a>
-          </li>
-          <li>
-            <a class="header__link" href="#works">Works</a>
-          </li>
-          <li>
-            <a class="header__link" href="#contact">Contact</a>
-          </li>
-          <li>
-            <a class="header__link" href="#blogss">Blogs</a>
-          </li>
-          <!-- <li>
-            <a class="header__link" href="#signin">
-              <div>
+          <!-- login button -->
+          <li class="mobile-nav___link">
+            <a
+              class="login-btn-no-background"
+              href="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/signin.html"
+            >
+              <!-- Start login button -->
+
+              <button class="login-btn btn">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6"
+                  class="header__signin--user-icon"
                 >
                   <path
                     stroke-linecap="round"
@@ -111,59 +134,85 @@
                     d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                   />
                 </svg>
-
-                <span>Sign</span>
-              </div>
+                <span class="login-btn--text">Sign In</span>
+              </button>
+              <!-- End login button -->
             </a>
-          </li> -->
+          </li>
         </ul>
-        <!-- End link Area -->
+        <!-- large screen nav -->
+        <ul class="tesing-header__nav-ul larger-screen-ul-list">
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#hero">Home</a>
+          </li>
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#about">About</a>
+          </li>
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#skills">Skills</a>
+          </li>
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#works">Projects</a>
+          </li>
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#blogss">Blogs</a>
+          </li>
 
-        <!-- Start login button -->
-        <a
-          class="header__link"
-          href="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/signin.html"
-        >
-          <button class="login-btn btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="header__signin--user-icon"
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#contact">Contact</a>
+          </li>
+          <!-- login button -->
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a
+              class="larger-screen-link"
+              href="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/signin.html"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              />
-            </svg>
-            <span class="login-btn--text">Sign In</span>
-          </button>
-        </a>
-        <!-- End login button -->
+              <!-- Start login button -->
 
-        <!-- Start menu icon button -->
-        <button class="header__bars">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        </button>
-        <!-- End menu icon button -->
+              <button class="login-btn btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="header__signin--user-icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+                <span class="login-btn--text">Sign In</span>
+              </button>
+              <!-- End login button -->
+            </a>
+          </li>
+
+          <!-- mobile icon -->
+          <li class="menu-btn-test showSidebar">
+            <span class="menu-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="menu-bar-icon-test"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </span>
+          </li>
+        </ul>
       </nav>
     </header>
-
+    <!-- end navbar testing -->
     <!-- ################################################## -->
     <!-- ################ Mobile navigation ################### -->
     <!-- ################################################## -->
@@ -1554,9 +1603,13 @@
     </footer>
     <script src="./src/swiper-bundle.min.js"></script>
 
-    <!-- start form validation on contact form -->
-    <script src="./src/mobile-nav.js"></script>
-    <!-- end form validation on contact form -->
+    <!-- start mobile navbar  -->
+    <!-- <script src="./src/mobile-nav.js"></script> -->
+    <!-- end mobile navbar  -->
+
+    <!-- start mobile navbar test -->
+    <script src="./src/mobile-nav-test.js"></script>
+    <!-- end mobile navbar test -->
 
     <!-- start form validation on contact form -->
     <script src="./src/contact-me-form-validation.js"></script>

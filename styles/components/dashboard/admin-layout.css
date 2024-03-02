@@ -59,6 +59,7 @@ aside,
   background-color: var(--clr-header-and-sidebar);
   grid-column: 1 / -1;
   padding: 0.5rem 0;
+  position: relative;
 }
 
 /* inner container */
@@ -90,6 +91,10 @@ aside,
   /* overflow: hidden; */
   height: 100vh;
   overflow-y: scroll;
+}
+.menu-notification__bell-icon {
+  width: 39px;
+  height: 26px;
 }
 
 /* aside {

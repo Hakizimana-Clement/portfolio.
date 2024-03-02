@@ -85,6 +85,7 @@
 
   <body class="container">
     <!-- <body> -->
+
     <!-- Start mobile menu bar -->
     <div class="mobile-menu">
       <div class="mobile-menu__container">
@@ -118,9 +119,216 @@
         </div>
         <!-- notification -->
       </div>
+      <!-- End mobile menu bar -->
+
+      <!-- start sidebar mobile  -->
+      <div class="mobile-sidebar-container">
+        <!-- start link container -->
+        <div class="mobile-sidebar-container__container-links">
+          <!-- start dashboard -->
+          <a
+            class="mobile-sidebar-container__container-link active-link--mobile"
+            href="./admin-panel.html"
+          >
+            <div
+              class="mobile-sidebar-container__container-link--icon-and-text-wrapper"
+            >
+              <!-- start icon -->
+              <ion-icon
+                name="speedometer-outline"
+                size="large"
+                class="dashboard-icon"
+                >dashboard icon</ion-icon
+              >
+              <!-- end icon -->
+              <!-- start text -->
+              <p class="sidebar-container__dashboard-link-text">Dashboard</p>
+              <!-- end text -->
+            </div>
+          </a>
+          <!-- end dashboard -->
+
+          <!-- Start New post (blog)-->
+          <a
+            class="mobile-sidebar-container__container-link active-link--mobile"
+            href="./admin-panel--new-blog.html"
+          >
+            <div
+              class="mobile-sidebar-container__container-link--icon-and-text-wrapper"
+            >
+              <!-- start icon -->
+              <ion-icon
+                name="add-circle-outline"
+                size="large"
+                class="dashboard-icon"
+              ></ion-icon>
+              <!-- end icon -->
+              <!-- start text -->
+              <p class="sidebar-container__dashboard-link-text">New Post</p>
+              <!-- end text -->
+            </div>
+          </a>
+          <!-- end New post (blog)-->
+
+          <!-- Start Edit post (blog)-->
+          <a
+            class="mobile-sidebar-container__container-link"
+            href="./admin-panel--edit-blog.html"
+          >
+            <div
+              class="mobile-sidebar-container__container-link--icon-and-text-wrapper"
+            >
+              <!-- start icon -->
+              <!-- start icon -->
+              <ion-icon name="create-outline" size="large"></ion-icon>
+              <!-- end icon -->
+              <!-- start text -->
+              <p class="sidebar-container__dashboard-link-text">Edit Post</p>
+              <!-- end text -->
+            </div>
+          </a>
+          <!-- End Edit post (blog)-->
+
+          <!-- Start Delete post (blog)-->
+          <a
+            class="mobile-sidebar-container__container-link"
+            href="./admin-panel--delete-blog.html"
+          >
+            <div
+              class="mobile-sidebar-container__container-link--icon-and-text-wrapper"
+            >
+              <!-- start icon -->
+              <ion-icon name="trash-outline" size="large"></ion-icon>
+              <!-- end icon -->
+              <!-- start text -->
+              <p class="sidebar-container__dashboard-link-text">Delete Post</p>
+              <!-- end text -->
+            </div>
+          </a>
+          <!-- End Delete post (blog)-->
+
+          <!-- Start message post (blog)-->
+          <a
+            class="mobile-sidebar-container__container-link"
+            href="./admin-panel--messages.html"
+          >
+            <div
+              class="mobile-sidebar-container__container-link--icon-and-text-wrapper"
+            >
+              <!-- start icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.7em"
+                height="1.7em"
+                viewBox="0 0 24 24"
+                class="iconify-icons"
+              >
+                <path
+                  fill="white"
+                  d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-2 12H6v-2h12zm0-3H6V9h12zm0-3H6V6h12z"
+                />
+              </svg>
+              <!-- end icon -->
+              <!-- start text -->
+              <p class="sidebar-container__dashboard-link-text">Message</p>
+              <!-- end text -->
+            </div>
+          </a>
+          <!-- End message post (blog)-->
+
+          <!-- Start comment post (blog)-->
+          <a
+            class="mobile-sidebar-container__container-link"
+            href="./admin-panel--comments-blog.html"
+          >
+            <div
+              class="mobile-sidebar-container__container-link--icon-and-text-wrapper"
+            >
+              <!-- start icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.7em"
+                height="1.7em"
+                viewBox="0 0 256 256"
+                class="iconify-icons"
+              >
+                <path
+                  fill="white"
+                  d="M208 20H72a36 36 0 0 0-36 36v168a12 12 0 0 0 12 12h144a12 12 0 0 0 0-24H60v-4a12 12 0 0 1 12-12h136a12 12 0 0 0 12-12V32a12 12 0 0 0-12-12m-12 152H72a35.59 35.59 0 0 0-12 2.06V56a12 12 0 0 1 12-12h124Z"
+                />
+              </svg>
+              <!-- end icon -->
+              <!-- start text -->
+              <p class="sidebar-container__dashboard-link-text">Comment</p>
+              <!-- end text -->
+            </div>
+          </a>
+          <!-- End comment post (blog)-->
+
+          <!-- Start page editor post (blog)-->
+          <a
+            class="mobile-sidebar-container__container-link"
+            href="./admin-panel--page-editor.html"
+          >
+            <div
+              class="mobile-sidebar-container__container-link--icon-and-text-wrapper"
+            >
+              <!-- start icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.7em"
+                height="1.7em"
+                viewBox="0 0 24 24"
+                class="iconify-icons"
+              >
+                <path
+                  fill="white"
+                  d="m19 1l-5 5v11l5-4.5zm2 4v13.5c-1.1-.35-2.3-.5-3.5-.5c-1.7 0-4.15.65-5.5 1.5V6c-1.45-1.1-3.55-1.5-5.5-1.5c-1.95 0-4.05.4-5.5 1.5v14.65c0 .25.25.5.5.5c.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5c1.35-.85 3.8-1.5 5.5-1.5c1.65 0 3.35.3 4.75 1.05c.1.05.15.05.25.05c.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1M10 18.41C8.75 18.09 7.5 18 6.5 18c-1.06 0-2.32.19-3.5.5V7.13c.91-.4 2.14-.63 3.5-.63c1.36 0 2.59.23 3.5.63z"
+                />
+              </svg>
+              <!-- end icon -->
+              <!-- start text -->
+              <p class="sidebar-container__dashboard-link-text">Page Editor</p>
+              <!-- end text -->
+            </div>
+          </a>
+          <!-- End page editor post (blog)-->
+
+          <!-- Start  search -->
+          <a
+            class="mobile-sidebar-container__container-link"
+            href="./admin-panel--search.html"
+          >
+            <div
+              class="mobile-sidebar-container__container-link--icon-and-text-wrapper"
+            >
+              <!-- start icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.7em"
+                height="1.7em"
+                viewBox="0 0 512 512"
+                class="iconify-icons"
+              >
+                <path
+                  fill="white"
+                  d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3M97.92 222.72a124.8 124.8 0 1 1 124.8 124.8a124.95 124.95 0 0 1-124.8-124.8"
+                />
+              </svg>
+              <!-- end icon -->
+              <!-- start text -->
+              <p class="sidebar-container__dashboard-link-text">Search</p>
+              <!-- end text -->
+            </div>
+          </a>
+          <!-- End search -->
+        </div>
+
+        <!-- end link container -->
+      </div>
+      <!-- end sidebar mobile-->
     </div>
     <!-- End mobile menu bar -->
-
     <aside>
       <div class="sidebar-container">
         <h2 class="sidebar-container__title">admin panel</h2>
@@ -649,5 +857,9 @@
       <!-- end main container -->
     </main>
     <!-- </div> -->
+
+    <!-- start admin sidebar script -->
+    <script src="../src/admin-sidebar-mobile.js"></script>
+    <!-- end admin sidebar script -->
   </body>
 </html>
