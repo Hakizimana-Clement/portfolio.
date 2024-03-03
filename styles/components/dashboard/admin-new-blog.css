@@ -96,3 +96,8 @@ body.mceContentBody {
 
 /* 2xl */
 /* @media(min-width:1536px){} */
+.error {
+  font-size: var(--size-base);
+  color: red;
+  font-weight: 600;
+}
