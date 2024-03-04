@@ -173,11 +173,11 @@ const renderBlogs = (blogsArr) => {
     const likeIcon = document.createElement("span");
     likeIcon.innerHTML = `<svg
                           xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
+                          fill= "#ff0000";
+                          stroke="white"
                           viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                        >
+                          stroke-width="1"
+                          >
                           <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -207,10 +207,10 @@ const renderBlogs = (blogsArr) => {
     const commentIcon = document.createElement("span");
     commentIcon.innerHTML = `    <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
+                          fill="#28396d"
+                          stroke="white"
                           viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
+                          stroke-width="1"
                         >
                           <path
                             stroke-linecap="round"

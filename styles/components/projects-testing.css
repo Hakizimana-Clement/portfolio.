@@ -194,6 +194,7 @@
 
   .project-test-wrapper__container {
     height: 57%;
+    /* height: 94%; */
   }
 
   .project-test-wrapper__container input:checked + label {
