@@ -50,7 +50,7 @@ formEl.addEventListener("submit", (e) => {
   // clean body before save in local storage
   const cleanBodyText = body
     .replace(/<\/?p>/g, "")
-    .replace(/&amp;nbsp;&nbsp;/g, "")
+    .replace(/&amp;nbsp;&nbsp;&rsquo;/g, "")
     .trim();
 
   // set upload max size
@@ -61,8 +61,8 @@ formEl.addEventListener("submit", (e) => {
   if (title.length === 0) {
     formErrors.titleError = "Please type bog title";
     hasErrors = true;
-  } else if (title.length > 20) {
-    formErrors.titleError = "Blog title must be less than 20 character";
+  } else if (title.length > 100) {
+    formErrors.titleError = "Blog title must be less than 100 character";
     hasErrors = true;
   } else {
     formErrors.titleError = null;
@@ -71,8 +71,8 @@ formEl.addEventListener("submit", (e) => {
   if (writer.length === 0) {
     formErrors.writerError = "Please type writer name";
     hasErrors = true;
-  } else if (writer.length > 9) {
-    formErrors.writerError = "writer name must be less than 9 character";
+  } else if (writer.length > 40) {
+    formErrors.writerError = "writer name must be less than 40 character";
     hasErrors = true;
   } else {
     formErrors.writerError = null;

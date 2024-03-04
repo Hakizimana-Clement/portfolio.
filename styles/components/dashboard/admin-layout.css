@@ -85,6 +85,41 @@ aside,
   /* width: 50px; */
   width: 45px;
 }
+/* *********** Setting ********************** */
+.dropdown {
+  display: none;
+  position: absolute;
+  background: #171a21;
+  top: 4rem;
+  width: 41%;
+  right: 0px;
+  border-radius: 10px;
+}
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.6rem 0;
+}
+.setting-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+.setting-icon {
+  font-size: 23px;
+}
+
+.dropdown-container__link {
+  text-decoration: none;
+}
+.dropdown-container__link:hover {
+  text-decoration: none;
+  color: var(--clr-hover);
+}
+
+/* ********************************* */
 /* this make dashbaord container data be fully in height */
 .main-container__content {
   /* height: 100%; */

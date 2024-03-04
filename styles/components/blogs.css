@@ -197,6 +197,9 @@
 }
 /* xs */
 /* @media(min-width:475px){} */
+.gallery-wrapper {
+  margin-top: 3rem;
+}
 
 /* sm */
 @media (min-width: 640px) {

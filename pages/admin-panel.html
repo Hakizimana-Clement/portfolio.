@@ -98,7 +98,7 @@
           </a>
           <!-- end bell notification -->
           <!-- start user image -->
-          <a href="">
+          <a href="" class="dropdown-main-container">
             <img
               class="menu-notification__img"
               src="../images/pro-circle.png"
@@ -108,17 +108,44 @@
           <!-- end user image -->
         </div>
         <!-- notification -->
-        <!-- <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            error aut nam doloribus libero, minus consequuntur? Repudiandae sed
-            praesentium, animi ea repellat ipsa? Assumenda maxime quod nesciunt
-            nulla voluptates architectl Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Molestiae corrupti quis soluta saepe dolores natus
-            et adipisci nisi maiores, tenetur minus, veritatis quisquam vitae
-            non hic odio quibusdam, vel officiis! o!
-          </p>
-        </div> -->
+        <!-- ******************** dropdown ******************** -->
+        <div class="dropdown">
+          <!-- start dropdown container -->
+          <div class="dropdown-container">
+            <!-- start setting link container -->
+            <a href="#" class="dropdown-container__link">
+              <!-- start setting container -->
+              <div class="setting-container">
+                <span>
+                  <ion-icon
+                    name="settings-outline"
+                    class="setting-icon"
+                  ></ion-icon>
+                </span>
+                <p>Setting</p>
+              </div>
+              <!-- end setting contaner -->
+            </a>
+            <!-- end setting link container -->
+
+            <!-- start logout container -->
+            <a href="../index.html" class="dropdown-container__link">
+              <!-- start setting container -->
+              <div class="setting-container">
+                <span>
+                  <ion-icon
+                    name="log-out-outline"
+                    class="setting-icon"
+                  ></ion-icon>
+                </span>
+                <p>Logout</p>
+              </div>
+              <!-- end setting contaner -->
+            </a>
+            <!-- start logout container -->
+          </div>
+          <!-- end dropdown container -->
+        </div>
       </div>
       <!-- End mobile menu bar -->
 
@@ -547,7 +574,9 @@
               </a>
               <!-- end bell icon -->
               <!-- start user image -->
-              <a class="main-container__header-wrapper-link" href="#">
+              <a
+                class="main-container__header-wrapper-link dropdown-main-container"
+              >
                 <img
                   class="main-container__header-wrapper--img"
                   src="../images/pro-circle.png"
@@ -556,7 +585,9 @@
               </a>
               <!-- end user image -->
 
-              <a class="logout-link" href="../index.html">Logout</a>
+              <a class="logout-link" href="../index.html">
+                <ion-icon name="log-out-outline" size="large"></ion-icon>
+              </a>
             </div>
             <!-- end notification -->
           </div>
@@ -702,6 +733,10 @@
       <!-- end main container -->
     </main>
     <!-- </div> -->
+
+    <!-- start admin sidebar script -->
+    <script src="../src/admin-setting-mobile.js"></script>
+    <!-- end admin sidebar script -->
     <!-- start admin sidebar script -->
     <script src="../src/admin-sidebar-mobile.js"></script>
     <!-- end admin sidebar script -->

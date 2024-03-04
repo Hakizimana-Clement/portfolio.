@@ -62,8 +62,8 @@ const renderBlogs = (blogsArr) => {
 
     // h2
     const h2El = document.createElement("h2");
-    h2El.textContent = blog.title;
-    // h2El.classList.add("name");
+    h2El.textContent =
+      blog.title.length > 24 ? `${blog.title.slice(0, 24)} ...` : blog.title;
     h2El.classList.add("blogs-container__card-title");
     cardContentDiv.append(h2El);
 
