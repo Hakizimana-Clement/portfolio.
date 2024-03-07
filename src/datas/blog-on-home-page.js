@@ -21,10 +21,12 @@ const renderBlogs = (blogsArr) => {
     const blogContainer = document.createElement("div");
     blogContainer.classList.add("card-container");
     // blog link container
+	  // This is blocked link
+      //`../../single-blog-page.html#${blog.id}`
     const linkContainer = document.createElement("a");
     linkContainer.setAttribute(
       "href",
-      `../../single-blog-page.html#${blog.id}`
+      `single-blog-page.html#${blog.id}`
     );
     linkContainer.classList.add("card-blog-link");
 
