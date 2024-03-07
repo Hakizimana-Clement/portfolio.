@@ -543,7 +543,8 @@
   }
 
   .card-container {
-    width: 32%;
+    /* width: 32%; */
+    width: 34%;
   }
   .card {
     /* width: 339px; */

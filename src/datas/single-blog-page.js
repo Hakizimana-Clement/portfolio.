@@ -207,7 +207,10 @@ const renderComments = (blogs) => {
       commentMainContainer.style.padding = "1.5rem ";
       renderComments(blog);
     } else {
+      // clean comment message
       noCommentPEl.textContent = "";
+      // clean container
+      commentMainContainer.innerHTML = "";
 
       commentMainContainer.style.padding = "0";
       commentArr.forEach((comment) => {
