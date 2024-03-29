@@ -17,7 +17,7 @@ const showFormErrors = (error) => {
 };
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  // console.log("");
   // State
   let hasErrors = false;
 

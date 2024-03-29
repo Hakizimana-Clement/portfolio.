@@ -34,7 +34,7 @@ if (blogJSON !== null) {
 const blog = blogs.find((blog) => blog.id === blogId);
 
 if (blog === undefined) {
-  location.assign("/index.html");
+  // location.assign("/index.html");
 }
 
 // **************************UPDATING PAGE CONTEXT **************************

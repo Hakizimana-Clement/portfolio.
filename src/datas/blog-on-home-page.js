@@ -1,18 +1,26 @@
 // html elements
-// const blogMainContainer = document.querySelector(".testing-blog-home");
 const blogMainContainer = document.querySelector(".gallery");
 
-// blogs and localstorage
-let blogs = [];
+const fetchBlogs = async () => {
+  const response = await fetch("http://localhost:4000/api/v1/blogs/");
 
-const blogJSON = localStorage.getItem("blogs");
-if (blogJSON !== null) {
-  blogs = JSON.parse(blogJSON);
-} else {
-  document.querySelector(".gallery").style.justifyContent = "center";
-  document.querySelector(".gallery-wrapper").style.marginTop = "4rem";
-  blogMainContainer.innerHTML = `<p>No Blogs</p>`;
-}
+  const json = await response.json();
+
+  if (!response.ok) {
+    console.log(json);
+    document.querySelector(".gallery").style.justifyContent = "center";
+    document.querySelector(".gallery-wrapper").style.marginTop = "4rem";
+    blogMainContainer.innerHTML = `<p>No Blogs</p>`;
+  }
+
+  if (response.ok) {
+    const allBlogs = json.blogs;
+    console.log(json);
+    console.log(allBlogs);
+    renderBlogs(allBlogs);
+  }
+};
+fetchBlogs();
 
 // render blog function
 const renderBlogs = (blogsArr) => {
@@ -21,13 +29,10 @@ const renderBlogs = (blogsArr) => {
     const blogContainer = document.createElement("div");
     blogContainer.classList.add("card-container");
     // blog link container
-	  // This is blocked link
-      //`../../single-blog-page.html#${blog.id}`
+    // This is blocked link
+    //`../../single-blog-page.html#${blog.id}`
     const linkContainer = document.createElement("a");
-    linkContainer.setAttribute(
-      "href",
-      `single-blog-page.html#${blog.id}`
-    );
+    linkContainer.setAttribute("href", `single-blog-page.html#${blog._id}`);
     linkContainer.classList.add("card-blog-link");
 
     // card
@@ -50,7 +55,7 @@ const renderBlogs = (blogsArr) => {
 
     // finale image
     const imgEl = document.createElement("img");
-    imgEl.src = blog.coverImage;
+    imgEl.src = blog.blogImage;
     imgEl.classList.add("card-img");
     oneImgDiv.append(imgEl);
     // *******************************************************
@@ -66,6 +71,7 @@ const renderBlogs = (blogsArr) => {
     const h2El = document.createElement("h2");
     h2El.textContent =
       blog.title.length > 24 ? `${blog.title.slice(0, 24)} ...` : blog.title;
+    // blog.title;
     h2El.classList.add("blogs-container__card-title");
     cardContentDiv.append(h2El);
 
@@ -91,15 +97,17 @@ const renderBlogs = (blogsArr) => {
     // pEl.classList.add("blogs-container__card-description", "description");
     // cardContentDiv.append(pEl);
     // Assume blog.body contains the text content from local storage
-    const content = blog.body;
+    const content = blog.content;
 
     // Remove <p> and </p> tags and HTML entity codes
-    const cleanContent = content
-      .replace(/<\/?p>/g, "")
-      .replace(/&amp;nbsp;/g, "")
-      .trim();
+    const cleanContent = content;
+
+    // .replace(/<\/?p>/g, "")
+    //   .replace(/&amp;nbsp;/g, "")
+    //   .trim();
 
     // Truncate the text if it's too long
+    // const truncatedContent = cleanContent;
     const truncatedContent =
       cleanContent.slice(0, 63) + (cleanContent.length > 63 ? "..." : "");
 
@@ -119,7 +127,7 @@ const renderBlogs = (blogsArr) => {
     commentAndLikeContainer.classList.add(
       "blogs-container__card-likes-and-comments-container"
     );
-    console.log(blog);
+    // console.log(blog);
     // ////// WRITE CONTAINER///////
     // writer image, name and date container -> writer container
     const writeContainer = document.createElement("div");
@@ -131,13 +139,21 @@ const renderBlogs = (blogsArr) => {
     cardContentDiv.append(commentAndLikeContainer);
     // write image
     const writeImg = document.createElement("img");
-    writeImg.src = blog.writerImage;
+
+    if (writeImg.src.length === 0) {
+      // default image when user don't use his / her image
+      writeImg.src = `data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="white" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2M8.5 9.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0m9.758 7.484A7.985 7.985 0 0 1 12 20a7.985 7.985 0 0 1-6.258-3.016C7.363 15.821 9.575 15 12 15s4.637.821 6.258 1.984"/></g></svg>`;
+    } else {
+      // writer image
+      writeImg.src = blog.writerImage;
+    }
     writeImg.classList.add("writer", "writer-image");
     writeContainer.append(writeImg);
 
     // write name
     const writeName = document.createElement("span");
-    writeName.textContent = blog.writer;
+    // writeName.textContent = blog.writer;
+    writeName.textContent = blog.writer.split(" ")[0];
     writeName.classList.add("writer", "writer-name");
     writeContainer.append(writeName);
 
@@ -152,7 +168,7 @@ const renderBlogs = (blogsArr) => {
     // writeDate.textContent = blog.date;
     // console.log(blog.date !== 0){};
     if (blog.date !== 0) {
-      writeDate.textContent = blog.date;
+      writeDate.textContent = blog.createdAt;
     } else {
       writeDate.textContent = "unkown";
     }
@@ -170,12 +186,16 @@ const renderBlogs = (blogsArr) => {
     likeDiv.classList.add(
       "blogs-container__card-likes-and-comments-container--comments-likes"
     );
-
+    // check icon when its has liked or not
+    let fillLikeColor = "none";
+    if (blog.likes.length > 0) {
+      fillLikeColor = "#ff0000";
+    }
     // like icon
     const likeIcon = document.createElement("span");
     likeIcon.innerHTML = `<svg
                           xmlns="http://www.w3.org/2000/svg"
-                          fill= "#ff0000";
+                          fill= "${fillLikeColor}";
                           stroke="white"
                           viewBox="0 0 24 24"
                           stroke-width="1"
@@ -196,7 +216,7 @@ const renderBlogs = (blogsArr) => {
     // dynamic
     // likeNum.textContent = blog.like.length
     // hard coded
-    likeNum.textContent = 250;
+    likeNum.textContent = blog.likes.length;
     likeDiv.append(likeNum);
     ////////////////////////////////////////
 
@@ -206,10 +226,16 @@ const renderBlogs = (blogsArr) => {
     commentAndLikeDiv.append(commentDiv);
 
     // comment icon
+
+    // check icon when its has liked or not
+    let fillCommentColor = "none";
+    if (blog.likes.length > 0) {
+      fillCommentColor = "#28396d";
+    }
     const commentIcon = document.createElement("span");
     commentIcon.innerHTML = `    <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          fill="#28396d"
+                          fill="${fillCommentColor}"
                           stroke="white"
                           viewBox="0 0 24 24"
                           stroke-width="1"
@@ -224,7 +250,7 @@ const renderBlogs = (blogsArr) => {
     commentDiv.append(commentIcon);
     // comment num
     const commentNum = document.createElement("span");
-    commentNum.textContent = 67;
+    commentNum.textContent = blog.comments.length;
     commentNum.classList.add("comment-number");
     commentDiv.append(commentNum);
 
@@ -237,4 +263,4 @@ const renderBlogs = (blogsArr) => {
   });
 };
 
-renderBlogs(blogs);
+// renderBlogs(blogs);
