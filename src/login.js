@@ -1,10 +1,21 @@
 const loginFormEl = document.querySelector(".signup-container__form-form");
 const showLoaderContainer = document.querySelector(".loader-container");
 
+function decodeJwt(token) {
+  const base64Payload = token.split(".")[1];
+  const payloadBuffer = window.atob(base64Payload, "base64");
+  return JSON.parse(payloadBuffer.toString());
+}
+
+// error form
+const formError = {
+  emailError: null,
+  passwordError: null,
+};
 const showFormErros = (error) => {
   // email
-  document.querySelector("#email-error").textContent = error.emailError || "";
-  document.querySelector("#password-error").textContent =
+  document.querySelector("#error-email").textContent = error.emailError || "";
+  document.querySelector("#error-password").textContent =
     error.passwordError || "";
 };
 
@@ -14,11 +25,6 @@ const showLoader = () => {
 
 const hideShowLoader = () => {
   showLoaderContainer.style.display = "none";
-};
-// error form
-const formError = {
-  emailError: null,
-  passwordError: null,
 };
 
 // function to display error
@@ -32,74 +38,118 @@ const showFormErrors = (error) => {
 loginFormEl.addEventListener("submit", async (e) => {
   // console.log("clicked");
   e.preventDefault();
+  // state
+  let hasErrors = false;
 
-  const userDataToLogin = {
-    email: e.target.elements.email.value,
-    password: e.target.elements.password.value,
-  };
-  console.log(userDataToLogin);
-  try {
-    const response = await fetch("http://localhost:4000/api/v1/users/login", {
-      method: "POST",
-      body: JSON.stringify(userDataToLogin),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const json = await response.json();
-    if (!response.ok) {
-      const error = json.error || "";
-      const errors = {
-        emailError: error.includes("email") ? error : "",
-        passwordError: error.includes("password") ? error : "",
-      };
-      showFormErros(errors);
-      hideShowLoader();
-    }
-
-    if (response.status === 201) {
-      showLoader();
-      // console.log("new user", json);
-      // signupFormEl.reset();
-      window.location.href = "signin.html";
-    }
-    console.log(json);
-  } catch (error) {
-    console.log(error);
+  // validate email
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (e.target.elements.email.value.length === 0) {
+    formError.emailError = "Email should not be empty";
+  } else if (!emailPattern.test(e.target.elements.email.value)) {
+    formError.emailError = "Invalid email address.";
+    hasErrors = true;
+  } else {
+    formError.emailError = null;
   }
 
-  // // state
-  // let hasErrors = false;
+  // // validate password
+  if (e.target.elements.password.value.length === 0) {
+    formError.passwordError = "Password should not be empty";
+    hasErrors = true;
+  } else if (e.target.elements.password.value.length < 8) {
+    formError.passwordError = "Password should not be less than 8 character";
+    hasErrors = true;
+  } else {
+    formError.passwordError = null;
+  }
 
-  // // validate email
-  // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // if (!emailPattern.test(e.target.elements.email.value)) {
-  //   formError.emailError = "Invalid email address.";
-  //   hasErrors = true;
-  // } else {
-  //   formError.emailError = null;
-  // }
+  // Show form errors
+  showFormErrors(formError);
 
-  // // // validate password
-  // if (e.target.elements.password.value.length === 0) {
-  //   formError.passwordError = "Password should not be empty";
-  //   hasErrors = true;
-  // } else if (e.target.elements.password.value.length <= 8) {
-  //   formError.passwordError = "Password should not be less than 8 character";
-  //   hasErrors = true;
-  // } else {
-  //   formError.passwordError = null;
-  // }
+  if (!hasErrors) {
+    try {
+      // user data to login
+      const loginUserData = {
+        email: e.target.elements.email.value,
+        password: e.target.elements.password.value,
+      };
 
-  // // Show form errors
-  // showFormErrors(formError);
+      // send to api for login
+      const response = await fetch("http://localhost:4000/api/v1/users/login", {
+        method: "POST",
+        body: JSON.stringify(loginUserData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-  // if (!hasErrors) {
-  //   // Form submission logic here
-  //   console.log("Form submitted successfully!");
-  //   e.target.reset(); // Reset the form after successful submission
-  //   location.assign(
-  //     "https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/pages/admin-panel.html"
-  //   );
+      const json = await response.json();
+
+      // no response
+      if (!response.ok) {
+        console.log(json);
+      }
+
+      if (response.ok) {
+        // show loader when user wait to login
+        showLoader();
+
+        const token = json.token;
+        // decoded toke
+        const decodedPayload = decodeJwt(token);
+
+        // store in localstorage
+        localStorage.setItem("userToken", token);
+        if (decodedPayload.role === "user") {
+          return location.assign("index.html");
+        }
+        if (decodedPayload.role === "admin") {
+          return location.assign("./pages/admin-panel.html");
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // const userDataToLogin = {
+  //   email: e.target.elements.email.value,
+  //   password: e.target.elements.password.value,
+  // };
+  // console.log(userDataToLogin);
+  // try {
+  //   const response = await fetch("http://localhost:4000/api/v1/users/login", {
+  //     method: "POST",
+  //     body: JSON.stringify(userDataToLogin),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   });
+  //   const json = await response.json();
+  //   if (!response.ok) {
+  //     const error = json.error || "";
+  //     const errors = {
+  //       emailError: error.includes("email") ? error : "",
+  //       passwordError: error.includes("password") ? error : "",
+  //     };
+  //     showFormErros(errors);
+  //     hideShowLoader();
+  //   }
+
+  //   if (response.status === 201) {
+  //     showLoader();
+  //     // console.log("new user", json);
+  //     // signupFormEl.reset();
+  //     window.location.href = "signin.html";
+  //   }
+  //   console.log(json);
+  // } catch (error) {
+  //   console.log(error);
   // }
 });
+
+// Form submission logic here
+// e.target.reset(); // Reset the form after successful submission
+// location.assign(
+//   "https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/pages/admin-panel.html"
+// );

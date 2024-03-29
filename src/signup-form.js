@@ -6,7 +6,7 @@ const showLoader = () => {
   showLoaderContainer.style.display = "flex";
 };
 
-const hideShowLoader = () => {
+const hideLoader = () => {
   showLoaderContainer.style.display = "none";
 };
 
@@ -122,6 +122,9 @@ signupFormEl.addEventListener("submit", async (e) => {
       }
     } catch (error) {
       console.log(error);
+      document.write("<div>something went wrong, wait a bit");
+      hideLoader();
+      return;
     }
   }
 });
