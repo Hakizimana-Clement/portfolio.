@@ -1,25 +1,39 @@
 // html elements
 const blogMainContainer = document.querySelector(".gallery");
+const loaderContainer = document.querySelector(".loader-container");
+const showLoader = () => {
+  loaderContainer.style.display = "flex";
+};
+
+const hideLoader = () => {
+  loaderContainer.style.display = "none";
+};
 
 const fetchBlogs = async () => {
-  const response = await fetch("http://localhost:4000/api/v1/blogs/");
+  try {
+    showLoader();
+    const response = await fetch("http://localhost:4000/api/v1/blogs/");
+    const json = await response.json();
 
-  const json = await response.json();
+    if (!response.ok) {
+      console.log(json);
+      document.querySelector(".gallery").style.justifyContent = "center";
+      document.querySelector(".gallery-wrapper").style.marginTop = "4rem";
+      blogMainContainer.innerHTML = `<p>No Blogs</p>`;
+    }
 
-  if (!response.ok) {
-    console.log(json);
-    document.querySelector(".gallery").style.justifyContent = "center";
-    document.querySelector(".gallery-wrapper").style.marginTop = "4rem";
-    blogMainContainer.innerHTML = `<p>No Blogs</p>`;
-  }
-
-  if (response.ok) {
-    const allBlogs = json.blogs;
-    console.log(json);
-    console.log(allBlogs);
-    renderBlogs(allBlogs);
+    if (response.ok) {
+      const allBlogs = json.blogs;
+      console.log(allBlogs);
+      renderBlogs(allBlogs);
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    hideLoader();
   }
 };
+
 fetchBlogs();
 
 // render blog function

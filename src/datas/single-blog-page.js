@@ -8,7 +8,6 @@ const toggleLikeIcon = document.querySelector(".like-icon-active");
 const h1El = document.querySelector(".blog-content__title");
 const imgEl = document.querySelector(".blog-content__img");
 const pEl = document.querySelector(".blog-content__paragraph");
-// const pEl = document.querySelectorAll(".blog-content__paragraph");
 const writeImage = document.querySelector(
   ".blog-content__writer-and-like-button--write-img"
 );
@@ -23,43 +22,27 @@ const errorEl = document.querySelector(".error");
 const paragraphContainer = document.querySelector(
   ".blog-content__paragraph--container"
 );
-
 const showloadercontainer = document.querySelector(".loader-container");
-
 const showLoader = () => {
   document.querySelector(".loader-container").style.display = "flex";
 };
-
 const hideShowLoader = () => {
   document.querySelector(".loader-container").style.display = "none";
 };
 // remove # on id
 const blogId = location.hash.substring(1);
-// hard coded
+// when no blog id in url redirect home page
+if (blogId.length === 0) {
+  location.assign("index.html");
+}
 
-// *********** localstorage ***************
-// let blogs = [];
-
-// const blogJSON = localStorage.getItem("blogs");
-
-// if (blogJSON !== null) {
-//   blogs = JSON.parse(blogJSON);
-// }
-// // **************************
-// // ********* checking id from localstorage is equal to id in hash ****************
-// const blog = blogs.find((blog) => blog.id === blogId);
-
-// if (blog === undefined) {
-//   // location.assign("/index.html");
-// }
-// **************************
 // ************************** CHECK USER TOKEN **************************
 const token = localStorage.getItem("userToken");
 if (!token) {
   console.error("Token not found in localStorage");
 }
-// console.log(token);
 
+// console.log(token);
 // if (token) {
 //   // check user jwt decoded function
 //   const decodedPayload = decodedJwt(token);
@@ -82,28 +65,45 @@ if (!token) {
 
 // **************************
 // statics
+// hard coded id
 // const blogId = "6606830935c27104c4a141a0";
+showLoader();
 const fetchSingleBlog = async () => {
   try {
-    // showLoader();
     const response = await fetch(
       `http://localhost:4000/api/v1/blogs/${blogId}`
     );
+
     const json = await response.json();
+
+    // redirect to home back when blog id doesn't exist and id is not equal to url
+    if (response.status === 404 || json.blog._id !== blogId) {
+      location.assign("index.html");
+    }
+
     if (!response.ok) {
+      // hideShowLoader();
+      showLoader();
       location.assign("index.html");
       console.log("blog id not found");
       console.log(json);
     }
+    console.log(response.status === 404);
 
     if (response.ok) {
       console.log(json);
       const blog = json;
-      console.log(blog);
+      // console.log(blog);
       updatePageContents(blog);
     }
   } catch (error) {
+    // console.log(response.status === 404);
+    // if (response.status === 404) {
+    //   location.assign("index.html");
+    // }
     console.log(error);
+  } finally {
+    hideShowLoader();
   }
 };
 
@@ -174,7 +174,7 @@ const updatePageContents = (blog) => {
 //////////////////////////////////////////////////////////////////////////////////////////////
 // fetch and then like
 //////////////////////////////////////////////////////////////////////////////////////////////
-const fetchToggleLike = async () => {
+const fetchToggleLike = async (blogId) => {
   try {
     showLoader();
     const response = await fetch(
@@ -195,30 +195,71 @@ const fetchToggleLike = async () => {
       console.log("error", json);
       return;
     }
-    hideShowLoader();
     const json = await response.json();
     console.log("like toggle successfully ", json);
     fetchSingleBlog();
   } catch (error) {
     console.log(error);
+  } finally {
+    hideShowLoader();
   }
 };
 
-// like icon button
-const isLiked = JSON.parse(localStorage.getItem("userLike")) || false;
+// // like state
+// const isLiked = localStorage.getItem("userLike");
+// // on mount
+// isLiked && toggleLikeIcon.classList.add("toggleLike");
+// // for saving like state and fetch page for like
+// const likeToggleIcon = () => {
+//   toggleLikeIcon.classList.toggle("toggleLike");
+//   if (toggleLikeIcon.classList.contains("toggleLike")) {
+//     localStorage.setItem("userLike", JSON.stringify(`[like-${blogId}]`));
+//   } else {
+//     localStorage.removeItem("userLike", JSON.stringify(`[like-${blogId}]`));
+//   }
+//   fetchToggleLike();
+// };
 
-if (isLiked) {
-  toggleLikeIcon.classList.add("toggleLike");
-}
-likeLinkEl.addEventListener("click", () => {
-  console.log("clicked");
+// like button clicked
+// likeLinkEl.addEventListener("click", likeToggleIcon);
 
-  const updateIsLiked = !isLiked;
-  toggleLikeIcon.classList.toggle("toggleLike");
-  fetchToggleLike();
+// const toggleLikeFunction = async (blogId) => {
+//   console.log(blogId);
+//   const isLiked =
+//     JSON.stringify(localStorage.getItem(`userLike-${blogId}`)) || false;
 
-  localStorage.setItem("userLike", JSON.stringify(updateIsLiked));
-});
+//   const updatedIsLiked = !isLiked;
+
+//   if (updatedIsLiked) {
+//     toggleLikeIcon.classList.add("toggleLike");
+//   } else {
+//     toggleLikeIcon.classList.remove("toggleLike");
+//   }
+//   await fetchToggleLike(blogId);
+//   localStorage.setItem(`userLike-${blogId}`, JSON.stringify(updatedIsLiked));
+// };
+
+// likeLinkEl.addEventListener("click", () => toggleLikeFunction(blogId));
+const toggleLikeFunction = async (blogId) => {
+  console.log(blogId);
+  const isLiked =
+    JSON.parse(localStorage.getItem(`userLike-${blogId}`)) || false; // Parse the stored value
+
+  const updatedIsLiked = !isLiked;
+
+  if (updatedIsLiked) {
+    toggleLikeIcon.classList.add("toggleLike");
+  } else {
+    toggleLikeIcon.classList.remove("toggleLike");
+  }
+
+  // Pass the blogId to fetchToggleLike
+  await fetchToggleLike(blogId); // Wait for the fetchToggleLike function to complete
+
+  localStorage.setItem(`userLike-${blogId}`, JSON.stringify(updatedIsLiked));
+};
+
+likeLinkEl.addEventListener("click", () => toggleLikeFunction(blogId));
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 //********************** COMMENTS ********************* */
@@ -226,54 +267,23 @@ likeLinkEl.addEventListener("click", () => {
 
 // errors
 let formErrors = {
-  // nameError: null,
-  // emailError: null,
   commentTextError: null,
 };
 
 // display error below input
 const showFormErrors = (error) => {
-  // name
-  // document.querySelector("#name-error").textContent = error.nameError;
-
-  //email
-  // document.querySelector("#email-error").textContent = error.emailError;
-  // comment text
   document.querySelector("#comment-text-error").textContent =
     error.commentTextError;
 };
 
 //********************** FORM ********************* */
-commentFormEl.addEventListener("submit", (e) => {
+const addComment = async (e) => {
   e.preventDefault();
 
   //******* Form Validation *****************
   // state
   let hasErrors = false;
-
-  // const nameInput = e.target.elements.name.value.trim();
-  // const emailInput = e.target.elements.email.value.trim();
   const commentInput = e.target.elements.comment.value.trim();
-  // validate name validation
-  // if (nameInput.length === 0) {
-  //   formErrors.nameError = "Please enter your name";
-  //   hasErrors = true;
-  // } else if (nameInput.length < 3) {
-  //   formErrors.nameError = "Name should be at least 3 character.";
-  //   hasErrors = true;
-  // } else {
-  //   formErrors.nameError = null;
-  // }
-
-  // validate email validation
-  // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // if (!emailPattern.test(emailInput)) {
-  //   formErrors.emailError = "Invalid email address.";
-  //   hasErrors = true;
-  // } else {
-  //   formErrors.emailError = null;
-  // }
-
   // comment text validation
   if (commentInput.length === 0) {
     formErrors.commentTextError = "Please enter your comment";
@@ -292,166 +302,179 @@ commentFormEl.addEventListener("submit", (e) => {
     e.target.reset();
     //******* add comment in local storage *****************
     const newComment = {
-      // commentId: uuidv4(),
-      // commentUsername: nameInput,
-      // commentEmail: emailInput,
-      commentText: commentInput,
-      //  commentLiked: false,
+      comment: commentInput,
     };
 
-    // const blogIndex = blogs.findIndex((blog) => blog.id === blogId);
-    // // blog index found
-    // if (blogIndex !== -1) {
-    //   // Here we targer the blog we want to update and then add comment in it.
-    //   blogs[blogIndex].comments.push(newComment);
-    //   // localstorage
-    //   localStorage.setItem("blogs", JSON.stringify(blogs));
-    //   renderComments(blogs);
-    //   commentFormEl.reset();
-    // } else {
-    //   console.log("Blog comment not found");
-    // }
-  }
-  //************************************
-});
-// console.log(blogs);
+    try {
+      const response = await fetch(
+        `http://localhost:4000/api/v1/blogs/${blogId}/comments`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "Application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(newComment),
+        }
+      );
+      const json = await response.json();
 
-//******* render comments on page *****************
-const renderComments = (blogs) => {
-  /////// Looping through comments ////////
-  const blogIndex = blogs.findIndex((blog) => blog.id === blogId);
-  if (blogIndex !== -1) {
-    // comment array
-    const commentArr = blogs[blogIndex].comments;
-    console.log(commentArr.length);
-    if (commentArr.length <= 0) {
-      noCommentPEl.textContent = "No Comments";
-      commentMainContainer.style.padding = "1.5rem ";
-      renderComments(blog);
-    } else {
-      // clean comment message
-      noCommentPEl.textContent = "";
-      // clean container
-      commentMainContainer.innerHTML = "";
-
-      commentMainContainer.style.padding = "0";
-      commentArr.forEach((comment) => {
-        // comment card or container
-        const commentCard = document.createElement("div");
-        commentCard.classList.add("blog-comment__main-container");
-
-        // empty div -> comment card
-        const commentHolderCard = document.createElement("div");
-        commentHolderCard.classList.add("container");
-        commentCard.append(commentHolderCard);
-
-        //******************* name and comment text *********************
-        // bubble comment
-        const commentBubbleTextContaner = document.createElement("div");
-        commentBubbleTextContaner.classList.add("comment-buble", "container");
-        commentHolderCard.append(commentBubbleTextContaner);
-
-        // name
-        const h4El = document.createElement("h4");
-        h4El.textContent = comment.commentUsername;
-        h4El.classList.add("comment-buble__title");
-        commentBubbleTextContaner.append(h4El);
-
-        // comment text or paragraph
-        const pEl = document.createElement("p");
-        pEl.textContent = comment.commentText;
-        pEl.classList.add("comment-buble__paragraph");
-        commentBubbleTextContaner.append(pEl);
-
-        //******************* comment and like *********************
-        // comment and like container
-        const commentAndLikeContainer = document.createElement("div");
-        commentAndLikeContainer.classList.add("like-and-comment-container");
-        commentHolderCard.append(commentAndLikeContainer);
-
-        // like icon
-        const likeIcon = document.createElement("span");
-        likeIcon.innerHTML = `<svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                          />
-                          likeDiv.append(likeIcon);
-                        </svg>`;
-        likeIcon.classList.add("icon-sizes");
-        commentAndLikeContainer.append(likeIcon);
-
-        // like function to change color (toggle)
-        // commentAndLikeContainer.textContent = "";
-        let isLiked = false;
-        likeIcon.addEventListener("click", () => {
-          isLiked = !isLiked;
-          console.log(isLiked);
-
-          // const commentId = comment.commentId;
-          // if (blogIndex !== -1) {
-          //   const commentIndex = blogs[blogIndex].comments.findIndex(
-          //     (comment) => comment.commentId === commentId
-          //   );
-          //   if (commentIndex !== -1) {
-          //     blogs[blogIndex].comments[commentIndex].commentLiked = isLiked;
-
-          //     // save in local storage
-          //     localStorage.setItem("blogs", JSON.stringify(blogs));
-          //     renderComments(blogs);
-          //   }
-          // }
-
-          if (isLiked) {
-            likeIcon.innerHTML = `<svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="red"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="white"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                          />
-                          likeDiv.append(likeIcon);
-                        </svg>`;
-          } else {
-            likeIcon.innerHTML = `<svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                          />
-                          likeDiv.append(likeIcon);
-                        </svg>`;
-          }
-        });
-
-        // reply coming soon
-        // add comment card to main comment card
-        commentMainContainer.append(commentCard);
-
-        // console.log(comment);
-      });
+      if (!response.ok) {
+        console.log("error", json.error);
+      }
+      if (response.ok) {
+        // console.log(json);
+        newComment.comment = "";
+        fetchComments();
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 };
 
-// render existing comment
+// comment from
+commentFormEl.addEventListener("submit", addComment);
 
+//*****************************************************************************************
+//******* Render comments on page *****************
+//*****************************************************************************************
+const fetchComments = async () => {
+  try {
+    showLoader();
+    const response = await fetch(
+      `http://localhost:4000/api/v1/blogs/${blogId}/comments`
+    );
+    const json = await response.json();
+
+    if (!response.ok) {
+      console.log(json);
+    }
+
+    if (response.ok) {
+      console.log("comments", json);
+      const commentsArray = json.comments;
+      renderComments(commentsArray);
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    hideShowLoader();
+  }
+};
+fetchComments();
+
+const renderComments = (blogs) => {
+  if (blogs.length <= 0) {
+    noCommentPEl.textContent = "No Comments";
+    commentMainContainer.style.padding = "1.5rem ";
+    renderComments(blogs);
+  } else {
+    // clean comment message
+    noCommentPEl.textContent = "";
+    // clean container
+    commentMainContainer.innerHTML = "";
+    commentMainContainer.style.padding = "0";
+
+    blogs.forEach((comment) => {
+      // comment card or container
+      const commentCard = document.createElement("div");
+      commentCard.classList.add("blog-comment__main-container");
+
+      // empty div -> comment card
+      const commentHolderCard = document.createElement("div");
+      commentHolderCard.classList.add("container");
+      commentCard.append(commentHolderCard);
+
+      //******************* name and comment text *********************
+      // bubble comment
+      const commentBubbleTextContaner = document.createElement("div");
+      commentBubbleTextContaner.classList.add("comment-buble", "container");
+      commentHolderCard.append(commentBubbleTextContaner);
+
+      // name
+      const h4El = document.createElement("h4");
+      h4El.textContent = comment.name;
+      h4El.classList.add("comment-buble__title");
+      commentBubbleTextContaner.append(h4El);
+
+      // comment text or paragraph
+      const pEl = document.createElement("p");
+      pEl.textContent = comment.comment;
+      pEl.classList.add("comment-buble__paragraph");
+      commentBubbleTextContaner.append(pEl);
+
+      //******************* comment and like *********************
+      // comment and like container
+      const commentAndLikeContainer = document.createElement("div");
+      commentAndLikeContainer.classList.add("like-and-comment-container");
+      commentHolderCard.append(commentAndLikeContainer);
+
+      // // like icon
+      // const likeIcon = document.createElement("span");
+      // likeIcon.innerHTML = `<svg
+      //                     xmlns="http://www.w3.org/2000/svg"
+      //                     fill="none"
+      //                     viewBox="0 0 24 24"
+      //                     stroke-width="1.5"
+      //                     stroke="currentColor"
+      //                   >
+      //                     <path
+      //                       stroke-linecap="round"
+      //                       stroke-linejoin="round"
+      //                       d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+      //                     />
+      //                     likeDiv.append(likeIcon);
+      //                   </svg>`;
+      // likeIcon.classList.add("icon-sizes");
+      // commentAndLikeContainer.append(likeIcon);
+
+      // // like function to change color (toggle)
+      // // commentAndLikeContainer.textContent = "";
+      // let isLiked = false;
+      // likeIcon.addEventListener("click", () => {
+      //   isLiked = !isLiked;
+      //   console.log(isLiked);
+
+      //   if (isLiked) {
+      //     likeIcon.innerHTML = `<svg
+      //                     xmlns="http://www.w3.org/2000/svg"
+      //                     fill="red"
+      //                     viewBox="0 0 24 24"
+      //                     stroke-width="1.5"
+      //                     stroke="white"
+      //                   >
+      //                     <path
+      //                       stroke-linecap="round"
+      //                       stroke-linejoin="round"
+      //                       d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+      //                     />
+      //                     likeDiv.append(likeIcon);
+      //                   </svg>`;
+      //   } else {
+      //     likeIcon.innerHTML = `<svg
+      //                     xmlns="http://www.w3.org/2000/svg"
+      //                     fill="none"
+      //                     viewBox="0 0 24 24"
+      //                     stroke-width="1.5"
+      //                     stroke="currentColor"
+      //                   >
+      //                     <path
+      //                       stroke-linecap="round"
+      //                       stroke-linejoin="round"
+      //                       d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+      //                     />
+      //                     likeDiv.append(likeIcon);
+      //                   </svg>`;
+      //   }
+      // });
+
+      // reply coming soon
+      // add comment card to main comment card
+      commentMainContainer.append(commentCard);
+    });
+  }
+};
+
+// renderComments();
 renderComments(blogs);

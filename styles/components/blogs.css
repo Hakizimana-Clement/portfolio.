@@ -449,6 +449,8 @@
 }
 
 .gallery-wrapper {
+  /* for loader */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -600,16 +602,26 @@
 /* @media(min-width:1536px){} */
 .loader-container {
   background-color: #2e335387;
-  height: 100vh;
+  /* background-color: #000000; */
   width: 100%;
-  position: fixed;
+  height: 100%;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 10000;
-  display: none;
+  /* display: none; */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* .gallery-wrapper {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
 .loader {
   width: 48px;
   height: 48px;
