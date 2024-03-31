@@ -365,6 +365,7 @@ const fetchComments = async () => {
 fetchComments();
 
 const renderComments = (blogs) => {
+  // console.log("cccccccccccccccc", blogs);
   if (blogs.length <= 0) {
     noCommentPEl.textContent = "No Comments";
     commentMainContainer.style.padding = "1.5rem ";
@@ -477,4 +478,4 @@ const renderComments = (blogs) => {
 };
 
 // renderComments();
-renderComments(blogs);
+renderComments();

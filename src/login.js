@@ -1,5 +1,7 @@
 const loginFormEl = document.querySelector(".signup-container__form-form");
 const showLoaderContainer = document.querySelector(".loader-container");
+const errorIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+class="toast-icons"><path fill="#3498db" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>`;
 
 function decodeJwt(token) {
   const base64Payload = token.split(".")[1];
@@ -43,9 +45,9 @@ loginFormEl.addEventListener("submit", async (e) => {
 
   // validate email
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (e.target.elements.email.value.length === 0) {
+  if (e.target.elements.email.value.trim().length === 0) {
     formError.emailError = "Email should not be empty";
-  } else if (!emailPattern.test(e.target.elements.email.value)) {
+  } else if (!emailPattern.test(e.target.elements.email.value.trim())) {
     formError.emailError = "Invalid email address.";
     hasErrors = true;
   } else {
@@ -53,10 +55,10 @@ loginFormEl.addEventListener("submit", async (e) => {
   }
 
   // // validate password
-  if (e.target.elements.password.value.length === 0) {
+  if (e.target.elements.password.value.trim().length === 0) {
     formError.passwordError = "Password should not be empty";
     hasErrors = true;
-  } else if (e.target.elements.password.value.length < 8) {
+  } else if (e.target.elements.password.value.trim().length < 8) {
     formError.passwordError = "Password should not be less than 8 character";
     hasErrors = true;
   } else {
@@ -88,6 +90,7 @@ loginFormEl.addEventListener("submit", async (e) => {
       // no response
       if (!response.ok) {
         console.log(json);
+        createToast(error, errorIcon, json.message, json.error);
       }
 
       if (response.ok) {

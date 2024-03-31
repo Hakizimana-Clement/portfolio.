@@ -74,6 +74,16 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     /> -->
+
+    <!-- start font for toastify -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- end font for toastify -->
+    <link rel="stylesheet" href="styles/toastify.css" />
     <!-- web title -->
     <title>My portfolio</title>
   </head>
@@ -1452,7 +1462,18 @@
           </button>
           <span class="scroll-btn__text">Scroll </span>
         </div> -->
+        <!-- ************************************************************************************ -->
+        <!-- ************************************************************************************ -->
+        <!-- ************************************************************************************ -->
+        <!-- ************************************************************************************ -->
+        <!-- <div class="notifications"></div> -->
         <!-- end scroll down button -->
+        <!-- <div class="toastify-button-container">
+          <button id="success">success</button>
+          <button id="error">error</button>
+          <button id="warning">warning</button>
+          <button id="info">info</button>
+        </div> -->
       </section>
     </main>
     <footer class="footer section container">
@@ -1539,7 +1560,11 @@
       </div>
       <!-- End footer container -->
     </footer>
+    <!-- start toastjs -->
+    <script src="./src/toast.js"></script>
+    <!-- end toastjs -->
 
+    <!-- start jose for decoded jwt -->
     <script
       type="module"
       src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
@@ -1547,6 +1572,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- end jose for decoded jwt -->
 
     <script src="./src/swiper-bundle.min.js"></script>
 
