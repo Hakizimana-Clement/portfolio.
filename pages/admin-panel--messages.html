@@ -77,11 +77,10 @@
     ></script>
 
     <!-- start rich text editor -->
-
-    <script
+    <!-- <script
       src="https://cdn.tiny.cloud/1/964vlttb0ciaqe0gr9g28j27qesxwii0a1deyaykh2v0bkhc/tinymce/6/tinymce.min.js"
       referrerpolicy="origin"
-    ></script>
+    ></script> -->
     <!--end  rich text editor -->
 
     <!-- web title -->
@@ -524,6 +523,9 @@
       </div>
     </aside>
     <main>
+      <div class="loader-container">
+        <span class="loader"></span>
+      </div>
       <!-- start main container -->
       <div class="main-container">
         <!-- start header  -->
@@ -597,193 +599,10 @@
               </a>
               <!-- </div> -->
             </div>
-            <!-- start create edit blog container -->
             <p class="edit-container__subtitle">All messages</p>
+            <!-- start create edit blog container -->
             <!-- start edit container -->
-            <!-- start card 1 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/message-user-1.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="user message"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">Karimu</p>
-
-                  <p class="edit-text edit-text__written">Git is easy?</p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a
-                  href="./admin-panel--messages-reply.html"
-                  class="btn edit-btn"
-                  >Reply</a
-                >
-
-                <a
-                  href="./admin-panel--delete-blog-confirm-message.html"
-                  class="btn-remove delete-btn"
-                  >Delete
-                </a>
-              </div>
-            </div>
-            <hr class="card-horizontal-line" />
-            <!-- end card 1 -->
-            <!-- start card 2 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/message-user-2.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="user message"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">Mutuyi</p>
-
-                  <p class="edit-text edit-text__written">
-                    This is awesome idea
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a
-                  href="./admin-panel--messages-reply.html"
-                  class="btn edit-btn"
-                  >Reply</a
-                >
-
-                <a
-                  href="./admin-panel--edit-upgrade.html"
-                  class="btn-remove delete-btn"
-                  >Delete
-                </a>
-              </div>
-            </div>
-            <hr class="card-horizontal-line" />
-            <!-- end card 2 -->
-            <!-- start card 3 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/message-user-3.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="user message"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">Kamaliza</p>
-                  <p class="edit-text edit-text__written">
-                    I have project Idea
-                  </p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
-                  >Reply</a
-                >
-
-                <a
-                  href="./admin-panel--edit-upgrade.html"
-                  class="btn-remove delete-btn"
-                  >Delete
-                </a>
-              </div>
-            </div>
-            <hr class="card-horizontal-line" />
-            <!-- end card 4 -->
-            <!-- start card 5 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/message-user-4.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="user message"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">Huseni</p>
-
-                  <p class="edit-text edit-text__written">Is really true?</p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
-                  >Reply</a
-                >
-
-                <a
-                  href="./admin-panel--edit-upgrade.html"
-                  class="btn-remove delete-btn"
-                  >Delete
-                </a>
-              </div>
-            </div>
-            <hr class="card-horizontal-line" />
-            <!-- end card 5 -->
-            <!-- start card 6 -->
-            <div class="edit-container">
-              <!-- start image and text container -->
-              <div class="edit-container___img-and-text-container">
-                <!-- start image -->
-                <div class="edit-image-container">
-                  <img
-                    src="../images/message-user-5.png"
-                    class="edit-container___img-and-text-container--img"
-                    alt="user message"
-                  />
-                </div>
-                <!-- end image -->
-                <div class="edit-container___img-and-text-container--text">
-                  <p class="edit-text edit-text__title">Khubayibu</p>
-                  <!-- <p class="edit-text edit-text__title">
-                    <strong>Title: </strong> Did you know?
-                  </p> -->
-                  <!-- <p class="edit-text edit-text__body">
-                    <strong>Body: </strong>Lorem ipsum dolor sit amet
-                    consectetur...
-                  </p> -->
-                  <p class="edit-text edit-text__written">Git is easy?</p>
-                </div>
-              </div>
-              <!-- end image and text container -->
-              <div class="edit-btn-container">
-                <a href="./admin-panel--edit-upgrade.html" class="btn edit-btn"
-                  >Reply</a
-                >
-
-                <a
-                  href="./admin-panel--edit-upgrade.html"
-                  class="btn-remove delete-btn"
-                  >Delete
-                </a>
-              </div>
-            </div>
-            <hr class="card-horizontal-line" />
-            <!-- end card 6 -->
-
+            <div class="edit-container--testing"></div>
             <!-- end edit container -->
             <!-- end create new blog container -->
           </div>
@@ -794,7 +613,22 @@
       <!-- end main container -->
     </main>
     <!-- </div> -->
+    <!-- start decoded jwt jose -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
+      integrity="sha512-6QjmtipbdTnGeda8w+/eHxIjEzKZGJtbTVFl8kWI7iyV92bpx/stdeD8w84iHllAPMOesjoYpKHi53fWOpUk9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- end decoded jwt jose -->
 
+    <!-- start jwt decoded -->
+    <script src="../src/decodedJwt.js"></script>
+    <!-- end jwt decoded -->
+    <!-- start message script -->
+    <script src="../src/datas/messages.js"></script>
+    <!-- end message script -->
     <!-- start admin sidebar script -->
     <script src="../src/admin-sidebar-mobile.js"></script>
     <!-- end admin sidebar script -->
