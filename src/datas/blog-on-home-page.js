@@ -182,7 +182,7 @@ const renderBlogs = (blogsArr) => {
     // writeDate.textContent = blog.date;
     // console.log(blog.date !== 0){};
     if (blog.date !== 0) {
-      writeDate.textContent = blog.createdAt;
+      writeDate.textContent = blog.createdAt.split("T")[0];
     } else {
       writeDate.textContent = "unkown";
     }

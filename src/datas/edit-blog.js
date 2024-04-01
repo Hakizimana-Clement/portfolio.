@@ -60,12 +60,14 @@ const fetchUpdateBlog = async (updateData) => {
     const formData = new FormData();
 
     // data to send to server
+    {
+      /* <input name="title">updateData.title</input> */
+    }
     formData.append("title", updateData.title);
     formData.append("writer", updateData.writer);
     formData.append("blogImage", updateData.blogImage);
     formData.append("content", updateData.content);
-
-    console.log(formData);
+    // console.log(formData);
     const response = await fetch(
       `http://localhost:4000/api/v1/blogs/${blogId}`,
       {
@@ -86,13 +88,10 @@ const fetchUpdateBlog = async (updateData) => {
 
     if (!response.ok) {
       hideLoader();
-      location.assign("index.html");
       console.log("blog id not found");
       console.log(json);
-
       return createToast(error, errorIcon, json.error, json.message);
     }
-    // console.log(response.status === 404);
 
     if (response.ok) {
       console.log(json);
@@ -178,7 +177,7 @@ const fetchUpdateBlog = async (updateData) => {
 const updateFormEl = document.querySelector(".new-blog-container-form");
 updateFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
-
+  console.log("clicked");
   // element
   const title = e.target.elements.title.value.trim();
   const writer = e.target.elements.writer.value.trim();

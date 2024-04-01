@@ -1,3 +1,6 @@
+.blog-content__paragraph--container {
+  width: 100%;
+}
 .blog,
 main {
   background-color: var(--clr-light);
@@ -235,6 +238,10 @@ main {
   font-weight: 100;
 }
 
+.blog-content__paragraph {
+  word-wrap: break-word;
+}
+
 /* xs */
 @media (min-width: 475px) {
   /* writer image container */
@@ -337,8 +344,10 @@ main {
     width: 20%;
     padding: 0.89rem;
   }
+  .blog-content__paragraph--container {
+    width: 100%;
+  }
 }
-
 /* xl*/
 /* @media(min-width:1280px){} */
 

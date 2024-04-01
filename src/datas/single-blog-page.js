@@ -116,7 +116,7 @@ fetchSingleBlog();
 // **************************************************************************
 const updatePageContents = (blog) => {
   // blog written data
-  blogData.textContent = blog.blog.createdAt;
+  blogData.textContent = blog.blog.createdAt.split("T")[0];
   // blogData.textContent = blog.blog.updatedAt;
   // blog likes number
   blogLikeNumber.textContent = blog.blog.likes.length;
@@ -149,7 +149,8 @@ const updatePageContents = (blog) => {
   const createParagraph = (text) => {
     const paragraph = document.createElement("p");
     paragraph.classList.add("blog-content__paragraph");
-    paragraph.textContent = text;
+    // paragraph.textContent = text;
+    paragraph.innerHTML = text;
     paragraphContainer.append(paragraph);
   };
 
@@ -320,6 +321,11 @@ const addComment = async (e) => {
         }
       );
       const json = await response.json();
+
+      if (json.status === 401) {
+        location.assign("signin.html");
+        // createToast("")
+      }
 
       if (!response.ok) {
         console.log("error", json.error);
