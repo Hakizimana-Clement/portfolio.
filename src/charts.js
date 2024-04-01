@@ -6,6 +6,7 @@ const likeEl = document.querySelector(".querries-box--paragraph__likes");
 const blogEl = document.querySelector(".querries-box--paragraph__blogs");
 const commentEl = document.querySelector(".querries-box--paragraph__comments");
 
+// check user token is valid and also is admin
 const token = localStorage.getItem("userToken");
 if (!token) {
   console.log("Token is missing. Redirecting to home page.");

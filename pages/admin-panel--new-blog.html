@@ -79,6 +79,9 @@
     <!--end  rich text editor -->
     <!-- ******************************************************************** -->
 
+    <!-- start font for toastify -->
+    <link rel="stylesheet" href="../styles/toastify.css" />
+    <!-- end font for toastify -->
     <!-- web title -->
     <title>Admin panel</title>
   </head>
@@ -561,7 +564,8 @@
             <h2 class="search-title">New blog</h2>
             <!-- start create new blog container -->
             <!-- <div class="new-blog-container"> -->
-            <form class="new-blog-container-form">
+            <!-- <form class="new-blog-container-form"> -->
+            <form class="new-blog-container-form" enctype="multipart/form-data">
               <!-- start title input -->
               <input
                 type="text"
@@ -585,21 +589,22 @@
               <!-- start error -->
               <span class="error" id="writer-error"></span>
               <!-- end error -->
+              <!-- ******************************** writet image ********************************** -->
               <!-- start upload image-->
-              <label for="upload-image">Upload writer image</label>
+              <!-- <label for="upload-image">Upload writer image</label>
               <input
                 type="file"
                 accept="image/*"
                 placeholder="upload image"
                 class="form-input new-blog-container-form__input-writter"
                 name="writeImage"
-              />
+              /> -->
               <!-- end upload image-->
 
               <!-- start error -->
-              <span class="error" id="writer-image-error"></span>
+              <!-- <span class="error" id="writer-image-error"></span> -->
               <!-- end error -->
-
+              <!-- ****************************************************************** -->
               <!-- start upload image-->
               <label for="upload-image-blog">Upload blog image</label>
               <input
@@ -647,9 +652,29 @@
         </div>
         <!-- end main -->
       </div>
+
+      <div class="notifications"></div>
       <!-- end main container -->
     </main>
     <!-- </div> -->
+
+    <!-- start toastjs -->
+    <script src="../src/toast.js"></script>
+    <!-- end toastjs -->
+
+    <!-- start decoded jwt jose -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
+      integrity="sha512-6QjmtipbdTnGeda8w+/eHxIjEzKZGJtbTVFl8kWI7iyV92bpx/stdeD8w84iHllAPMOesjoYpKHi53fWOpUk9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- end decoded jwt jose -->
+
+    <!-- start jwt decoded -->
+    <script src="../src/decodedJwt.js"></script>
+    <!-- end jwt decoded -->
 
     <!-- start admin sidebar script -->
     <script src="../src/admin-sidebar-mobile.js"></script>
