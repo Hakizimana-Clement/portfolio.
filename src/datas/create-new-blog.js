@@ -1,6 +1,9 @@
 const formEl = document.querySelector(".new-blog-container-form");
+
 const errorIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
 class="toast-icons"><path fill="#3498db" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>`;
+const successIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" class="toast-icons"><path fill="#0abf30" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896m-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.27 38.27 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336z"/></svg>
+         `;
 
 // check user token is valid and also is admin
 const token = localStorage.getItem("userToken");
@@ -20,14 +23,6 @@ if (!token) {
 
 const fetchCreateBlog = async (blogData) => {
   try {
-    // const formData = new FormData();
-    // formData.append("title", blogData.title);
-    // formData.append("writer", blogData.writer);
-    // formData.append("content", blogData.content);
-
-    // formData.append("blogImage", blogData.blogImage);
-
-    // console.log(formData);
     const formData = new FormData();
 
     // Append string data to the form data object
@@ -35,27 +30,25 @@ const fetchCreateBlog = async (blogData) => {
     formData.append("writer", blogData.writer);
     formData.append("content", blogData.content);
 
+    // console.log(formData);
     // Append file data to the form data object
     formData.append("blogImage", blogData.blogImage);
     const response = await fetch("http://localhost:4000/api/v1/blogs", {
       method: "POST",
       headers: {
-        // "Content-Type":
-        //   "multipart/form-data,boundary=---------------------------974767299852498929531610575",
         Authorization: `Bearer ${token}`,
       },
       body: formData,
-      // body: JSON.stringify(blogData),
     });
 
-    const json = await json();
+    const jsonData = await response.json();
 
     if (!response.ok) {
-      console.log("error ", json);
-      return createToast(error, errorIcon, json.message, json.error);
+      console.log("error ", jsonData);
+      return createToast(error, errorIcon, jsonData.error, jsonData.message);
     }
     if (response.ok) {
-      return createToast(error, errorIcon, json.message, json.error);
+      return createToast(error, successIcon, "Success", jsonData.message);
     }
   } catch (error) {
     console.log(error);
@@ -159,7 +152,7 @@ formEl.addEventListener("submit", (e) => {
 
   showFormErrors(formErrors);
   if (!hasErrors) {
-    console.log("pass");
+    // console.log("pass");
     e.target.reset();
     // save in local storage
     // reader 1 for writer image
