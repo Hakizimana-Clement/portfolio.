@@ -25,14 +25,14 @@ const fetchCreateBlog = async (blogData) => {
   try {
     const formData = new FormData();
 
-    // Append string data to the form data object
+    // data to send to server
     formData.append("title", blogData.title);
     formData.append("writer", blogData.writer);
     formData.append("content", blogData.content);
-
-    // console.log(formData);
-    // Append file data to the form data object
     formData.append("blogImage", blogData.blogImage);
+
+    console.log(formData);
+
     const response = await fetch("http://localhost:4000/api/v1/blogs", {
       method: "POST",
       headers: {
@@ -88,19 +88,26 @@ formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
   let hasErrors = false;
+
   /////////// Form Validation ////////////////////
   const title = e.target.elements.title.value.trim();
   const writer = e.target.elements.writer.value.trim();
-  const body = e.target.elements.body.value.trim();
   // const writeImage = e.target.elements.writeImage.files[0];
   const blogImage = e.target.elements.coverImage.files[0];
-
+  // const body = e.target.elements.body.value;
+  // const body = e.target.elements.body.getContent();
+  const body = tinymce.get("blogDescription");
+  // document.querySelector("#textarea").value;
   // clean body before save in local storage
-  const cleanBodyText = body
-    .replace(/<\/?p>/g, "")
-    .replace(/&amp;nbsp;&nbsp;&rsquo;/g, "")
-    .trim();
+  // const cleanBodyText = body.getContent();
 
+  const cleanBodyText = body.getContent(); // Replace 'textarea' with the ID of your textarea element
+
+  // .replace(/<\/?p>/g, "")
+  // .replace(/&amp;nbsp;&nbsp;&rsquo;/g, "")
+  // .trim();
+
+  console.log("dddddddddddddd", cleanBodyText);
   // set upload max size
   // 50MB
   const maxImgSize = 50 * 1024 * 1024;

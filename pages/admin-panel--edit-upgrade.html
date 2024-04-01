@@ -7,7 +7,6 @@
     <link
       rel="shortcut icon"
       href="../images/profile-picture.jpg"
-      .
       type="image/jpg"
     />
 
@@ -69,15 +68,23 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
  "
     ></script>
-
     <!-- ******************************************************************** -->
     <!-- start rich text editor -->
-    <script
+    <!-- <script
       src="https://cdn.tiny.cloud/1/964vlttb0ciaqe0gr9g28j27qesxwii0a1deyaykh2v0bkhc/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script> -->
+
+    <script
+      src="https://cdn.tiny.cloud/1/964vlttb0ciaqe0gr9g28j27qesxwii0a1deyaykh2v0bkhc/tinymce/7/tinymce.min.js"
       referrerpolicy="origin"
     ></script>
     <!--end  rich text editor -->
     <!-- ******************************************************************** -->
+
+    <!-- start font for toastify -->
+    <link rel="stylesheet" href="../styles/toastify.css" />
+    <!-- end font for toastify -->
 
     <!-- web title -->
     <title>Admin panel</title>
@@ -570,20 +577,26 @@
             </div>
             <!-- end go back button -->
             <h2 class="search-title">Edit This Article</h2>
+
+            <div class="loader-container">
+              <span class="loader"></span>
+            </div>
             <!-- start create new blog container -->
             <!-- <div class="new-blog-container"> -->
             <form class="new-blog-container-form">
               <!-- start title input -->
               <input
                 type="text"
-                placeholder="Did you know?"
+                placeholder="title"
+                name="title"
                 class="form-input new-blog-container-form__input-title"
               />
               <!-- end title input -->
               <!-- start title writter name-->
               <input
                 type="text"
-                placeholder=" U. Maniyozimukondiyako"
+                name="writer"
+                placeholder=" writer name"
                 class="form-input new-blog-container-form__input-writter"
               />
               <!-- end title writter name-->
@@ -591,15 +604,22 @@
               <input
                 type="file"
                 accept="image/*"
+                name="blogImage"
                 placeholder="upload image"
-                class="form-input new-blog-container-form__input-writter"
+                class="form-input new-blog-container-form__input-image"
               />
+              <!-- class="form-input new-blog-container-form__input-writter" -->
               <!-- end upload image-->
 
               <!--  start textarea  -->
-              <textarea class="new-blog-container-form__input-textarea">
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis cupiditate et omnis optio ab rem. Magnam, itaque vitae perferendis voluptatibus ipsam nulla illo nobis recusandae in tempora, adipisci tenetur alias.
+
+              <textarea
+                id="textarea"
+                class="new-blog-container-form__input-textarea"
+                name="body"
+              >
               </textarea>
+
               <!--  end textarea  -->
               <div class="add-new-blog-btn">
                 <div class="buttons-container">
@@ -627,15 +647,59 @@
         </div>
         <!-- end main -->
       </div>
+
+      <div class="notifications"></div>
       <!-- end main container -->
     </main>
+
+    <!-- start rich text editor js -->
+    <script src="../src/rich-text-editor.js"></script>
+    <!-- end rich text editor js -->
+
     <!-- </div> -->
+    <!-- start toastjs -->
+    <script src="../src/toast.js"></script>
+    <!-- end toastjs -->
+
+    <!-- start decoded jwt jose -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
+      integrity="sha512-6QjmtipbdTnGeda8w+/eHxIjEzKZGJtbTVFl8kWI7iyV92bpx/stdeD8w84iHllAPMOesjoYpKHi53fWOpUk9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- end decoded jwt jose -->
+
+    <!-- start jwt decoded -->
+    <script src="../src/decodedJwt.js"></script>
+    <!-- end jwt decoded -->
 
     <!-- start admin sidebar script -->
     <script src="../src/admin-sidebar-mobile.js"></script>
     <!-- end admin sidebar script -->
-    <!-- start rich text editor js -->
-    <script src="../src/rich-text-editor.js"></script>
-    <!-- end rich text editor js -->
+
+    <!-- start blog script -->
+    <script src="../src/datas/edit-blog.js"></script>
+    <!-- end blog script -->
+    <script>
+      tinymce.init({
+        selector: "textarea",
+        plugins:
+          "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker",
+        toolbar:
+          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat",
+        tinycomments_mode: "embedded",
+        tinycomments_author: "Author name",
+        mergetags_list: [
+          { value: "First.Name", title: "First Name" },
+          { value: "Email", title: "Email" },
+        ],
+        ai_request: (request, respondWith) =>
+          respondWith.string(() =>
+            Promise.reject("See docs to implement AI Assistant")
+          ),
+      });
+    </script>
   </body>
 </html>

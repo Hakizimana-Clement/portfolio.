@@ -42,6 +42,8 @@ if (!token) {
   console.error("Token not found in localStorage");
 }
 
+// const decodedPayload = decodedJwt(token);
+// console.log(decodedPayload);
 // console.log(token);
 // if (token) {
 //   // check user jwt decoded function
@@ -67,9 +69,9 @@ if (!token) {
 // statics
 // hard coded id
 // const blogId = "6606830935c27104c4a141a0";
-showLoader();
 const fetchSingleBlog = async () => {
   try {
+    showLoader();
     const response = await fetch(
       `http://localhost:4000/api/v1/blogs/${blogId}`
     );
@@ -82,8 +84,8 @@ const fetchSingleBlog = async () => {
     }
 
     if (!response.ok) {
-      // hideShowLoader();
-      showLoader();
+      hideShowLoader();
+      // showLoader();
       location.assign("index.html");
       console.log("blog id not found");
       console.log(json);

@@ -72,12 +72,16 @@
     ></script>
 
     <!-- start rich text editor -->
-
+    <!-- 
     <script
       src="https://cdn.tiny.cloud/1/964vlttb0ciaqe0gr9g28j27qesxwii0a1deyaykh2v0bkhc/tinymce/6/tinymce.min.js"
       referrerpolicy="origin"
-    ></script>
+    ></script> -->
     <!--end  rich text editor -->
+
+    <!-- start font for toastify -->
+    <link rel="stylesheet" href="../styles/toastify.css" />
+    <!-- end font for toastify -->
 
     <!-- web title -->
     <title>Admin panel</title>
@@ -563,6 +567,9 @@
           <div class="main-container__content--dashboard-wrapper">
             <h2 class="search-title">Edit blog</h2>
 
+            <div class="loader-container">
+              <span class="loader"></span>
+            </div>
             <!-- start create edit blog container -->
             <p class="edit-container__subtitle">All blog</p>
             <!-- start edit container -->
@@ -583,8 +590,28 @@
         <!-- end main -->
       </div>
       <!-- end main container -->
+
+      <div class="notifications"></div>
     </main>
     <!-- </div> -->
+
+    <!-- start toastjs -->
+    <script src="../src/toast.js"></script>
+    <!-- end toastjs -->
+
+    <!-- start decoded jwt jose -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
+      integrity="sha512-6QjmtipbdTnGeda8w+/eHxIjEzKZGJtbTVFl8kWI7iyV92bpx/stdeD8w84iHllAPMOesjoYpKHi53fWOpUk9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- end decoded jwt jose -->
+
+    <!-- start jwt decoded -->
+    <script src="../src/decodedJwt.js"></script>
+    <!-- end jwt decoded -->
 
     <!-- start admin sidebar script -->
     <script src="../src/admin-sidebar-mobile.js"></script>
