@@ -83,7 +83,8 @@ const renderBlogs = (blogsArr) => {
 
     // h2
     const h2El = document.createElement("h2");
-    h2El.textContent =
+    // h2El.textContent =
+    h2El.innerHTML =
       blog.title.length > 24 ? `${blog.title.slice(0, 24)} ...` : blog.title;
     // blog.title;
     h2El.classList.add("blogs-container__card-title");
@@ -113,6 +114,7 @@ const renderBlogs = (blogsArr) => {
     // Assume blog.body contains the text content from local storage
     const content = blog.content;
 
+    console.log(content);
     // Remove <p> and </p> tags and HTML entity codes
     const cleanContent = content;
 
@@ -127,7 +129,8 @@ const renderBlogs = (blogsArr) => {
 
     // Create a paragraph element and set its text content
     const pEl = document.createElement("p");
-    pEl.textContent = truncatedContent;
+    // pEl.textContent = truncatedContent;
+    pEl.innerHTML = truncatedContent;
 
     // Add classes to the paragraph element
     pEl.classList.add("blogs-container__card-description", "description");

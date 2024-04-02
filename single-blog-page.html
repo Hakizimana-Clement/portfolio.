@@ -51,6 +51,10 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
  "
     ></script>
+    <!-- start font for toastify -->
+    <link rel="stylesheet" href="./styles/toastify.css" />
+    <!-- end font for toastify -->
+
     <!-- web title -->
     <title>My portfolio</title>
   </head>
@@ -407,6 +411,7 @@
         <!-- End leave comment -->
         <!-- End blog container -->
       </section>
+      <div class="notifications"></div>
     </main>
 
     <footer class="footer section container">
@@ -494,14 +499,30 @@
       <!-- End footer container -->
     </footer>
 
-    <!-- start toastify -->
+    <!-- start toastify
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
+    ></script> -->
     <!-- end toastify -->
-    <!-- jwt decoded -->
+    <!-- start toastjs -->
+    <script src="./src/toast.js"></script>
+    <!-- end toastjs -->
+
+    <!-- start decoded jwt jose -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
+      integrity="sha512-6QjmtipbdTnGeda8w+/eHxIjEzKZGJtbTVFl8kWI7iyV92bpx/stdeD8w84iHllAPMOesjoYpKHi53fWOpUk9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- end decoded jwt jose -->
+
+    <!-- start jwt decoded -->
     <script src="./src/decodedJwt.js"></script>
+    <!-- end jwt decoded -->
+
     <!-- start mobile navbar test -->
     <script src="./src/mobile-nav-test.js"></script>
     <!-- end mobile navbar test -->

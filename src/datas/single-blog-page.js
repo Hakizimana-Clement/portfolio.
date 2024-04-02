@@ -1,3 +1,5 @@
+const errorIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+class="toast-icons"><path fill="#3498db" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>`;
 // elements
 // heading
 const blogData = document.querySelector(".blog-container__date-year");
@@ -37,11 +39,26 @@ if (blogId.length === 0) {
 }
 
 // ************************** CHECK USER TOKEN **************************
+// const token = localStorage.getItem("userToken");
+// if (!token) {
+//   console.error("Token not found in localStorage");
+// }
+
+// ************************** CHECK USER TOKEN **************************
 const token = localStorage.getItem("userToken");
 if (!token) {
-  console.error("Token not found in localStorage");
+  console.log("Token is missing.");
+  // location.assign("../signin.html");
+} else {
+  const decodedPayload = decodedJwt(token);
+  if (decodedPayload)
+    if (decodedPayload.role !== "user") {
+      console.log("User is not an login. Redirecting to login page.");
+      // location.assign("../signin.html");
+      localStorage.removeItem("userToken");
+    }
 }
-
+console.log(("token", token));
 // const decodedPayload = decodedJwt(token);
 // console.log(decodedPayload);
 // console.log(token);
@@ -115,6 +132,8 @@ fetchSingleBlog();
 // **************************UPDATING PAGE CONTEXT **************************
 // **************************************************************************
 const updatePageContents = (blog) => {
+  paragraphContainer.innerHTML = "";
+
   // blog written data
   blogData.textContent = blog.blog.createdAt.split("T")[0];
   // blogData.textContent = blog.blog.updatedAt;
@@ -142,37 +161,39 @@ const updatePageContents = (blog) => {
   // writer name
   writeName.textContent = blog.blog.writer;
   ///////////// rendering paragraph from local storage //////////
-  const paragraphContext = document.createElement("p");
-  // paragraphContext.textContent = blog.body;
-  // paragraphContainer.append(paragraphContext);
+  // const paragraphContext = document.createElement("p");
+  const paragraphContext = document.createElement("div");
+  paragraphContext.innerHTML = blog.blog.content;
+  paragraphContainer.append(paragraphContext);
 
-  const createParagraph = (text) => {
-    const paragraph = document.createElement("p");
-    paragraph.classList.add("blog-content__paragraph");
-    // paragraph.textContent = text;
-    paragraph.innerHTML = text;
-    paragraphContainer.append(paragraph);
-  };
+  // ************* create paragraph *************
+  // const createParagraph = (text) => {
+  //   const paragraph = document.createElement("p");
+  //   paragraph.classList.add("blog-content__paragraph");
+  //   // paragraph.textContent = text;
+  //   paragraph.innerHTML = text;
+  //   paragraphContainer.append(paragraph);
+  // };
 
-  const text = blog.blog.content;
-  const words = text.split(" ");
-  // console.log(words);
-  let paragraphText = "";
-  let paragraphCount = 0;
+  // const text = blog.blog.content;
+  // const words = text.split(" ");
+  // // console.log(words);
+  // let paragraphText = "";
+  // let paragraphCount = 0;
 
-  words.forEach((word) => {
-    if (paragraphText.length + word.length + 1 <= 300) {
-      paragraphText += word + " ";
-    } else {
-      createParagraph(paragraphText.trim());
-      paragraphText = word + " ";
-      paragraphCount++;
-    }
-  });
-  // create paragraph for the remaining text
-  if (paragraphText) {
-    createParagraph(paragraphText.trim());
-  }
+  // words.forEach((word) => {
+  //   if (paragraphText.length + word.length + 1 <= 300) {
+  //     paragraphText += word + " ";
+  //   } else {
+  //     createParagraph(paragraphText.trim());
+  //     paragraphText = word + " ";
+  //     paragraphCount++;
+  //   }
+  // });
+  // // create paragraph for the remaining text
+  // if (paragraphText) {
+  //   createParagraph(paragraphText.trim());
+  // }
 };
 //////////////////////////////////////////////////////////////////////////////////////////////
 // fetch and then like
@@ -190,17 +211,43 @@ const fetchToggleLike = async (blogId) => {
         },
       }
     );
-
-    if (!response.ok) {
-      hideShowLoader();
-      const json = await response.json();
-      console.error("Error toggling like ", json);
-      console.log("error", json);
+    const json = await response.json();
+    // unauthorized
+    if (json.status === "401") {
+      // hideLoader();
+      // createToast("info", "info","lllllllllll" ,"unauthorize");
+      // createToast("info", errorIcon, json.message, json.error);
+      createToast("info", errorIcon, "Please login", "Redirect to login page");
+      // setTimeout(() => {
+      // }, 3000);
+      location.assign("signin.html");
       return;
     }
-    const json = await response.json();
-    console.log("like toggle successfully ", json);
-    fetchSingleBlog();
+
+    // blog not found
+    if (json.status === "404") {
+      hideShowLoader();
+      console.error("Error toggling like ", json);
+      console.log("error", json);
+
+      createToast(
+        "info",
+        errorIcon,
+        "Blog not found",
+        "You can't like this blog"
+      );
+      return;
+    }
+
+    // blog liked
+    if (json.status === "201") {
+      hideShowLoader();
+
+      // createToast("info", errorIcon, "Like toggle", "Successfully");
+
+      console.log("like toggle successfully ", json);
+      fetchSingleBlog();
+    }
   } catch (error) {
     console.log(error);
   } finally {
@@ -302,7 +349,6 @@ const addComment = async (e) => {
   showFormErrors(formErrors);
 
   if (!hasErrors) {
-    e.target.reset();
     //******* add comment in local storage *****************
     const newComment = {
       comment: commentInput,
@@ -322,17 +368,30 @@ const addComment = async (e) => {
       );
       const json = await response.json();
 
-      if (json.status === 401) {
+      if (json.status === "401") {
+        // createToast("info", "info",json.error ,"unauthorize");
+        // createToast("info", errorIcon, json.message, json.error);
+        createToast(
+          "info",
+          errorIcon,
+          "Please login",
+          "Redirect to login page"
+        );
+
         location.assign("signin.html");
-        // createToast("")
+        // setTimeout(() => {
+        // location.assign("signin.html");
+        // }, 2000);
       }
 
       if (!response.ok) {
         console.log("error", json.error);
       }
-      if (response.ok) {
+      if (json.status === "201") {
         // console.log(json);
+        createToast("info", errorIcon, "Comment created", "Successfully");
         newComment.comment = "";
+        e.target.reset();
         fetchComments();
       }
     } catch (error) {

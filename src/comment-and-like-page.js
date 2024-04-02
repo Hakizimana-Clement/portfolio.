@@ -14,6 +14,8 @@ const blogId = location.hash.substring(1);
 if (blogId.length === 0) {
   location.assign("admin-panel--comments-blog.html");
 }
+
+// ************************** CHECK USER TOKEN **************************
 const token = localStorage.getItem("userToken");
 if (!token) {
   console.log("Token is missing. Redirecting to home page.");

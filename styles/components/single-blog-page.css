@@ -1,6 +1,12 @@
 .blog-content__paragraph--container {
   width: 100%;
+  word-wrap: break-word;
 }
+
+.blog-content__paragraph--container p {
+  font-weight: 400;
+}
+
 .blog,
 main {
   background-color: var(--clr-light);
