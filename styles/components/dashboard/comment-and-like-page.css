@@ -1,3 +1,23 @@
+/******* new added for make comment wider */
+.comments-and-likes-container__wrapper {
+  width: 100%;
+}
+.noCommentContainer {
+  text-align: center;
+  margin: 4rem 0;
+  font-size: 1.4rem;
+}
+.back-btn-like-container {
+  display: flex;
+  justify-content: space-between;
+}
+.back-btn-like-container--likes {
+  display: flex;
+  gap: 0.3rem;
+}
+
+/******
+
 /* main container */
 .comments-and-likes-container {
   display: flex;
@@ -8,7 +28,7 @@
   /* flex-wrap: wrap; */
 
   /* margin: 2rem 0 1rem; */
-  margin: 1rem 0;
+  margin: 1rem 0 4rem;
 }
 
 /* blog titles */
@@ -25,6 +45,9 @@
 /* back button */
 .back-btn-container {
   margin-top: 0.5rem;
+
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 /* ************ back button ************/

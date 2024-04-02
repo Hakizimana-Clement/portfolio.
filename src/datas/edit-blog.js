@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 console.log(blogId);
 // ************************** CHECK USER TOKEN **************************
-
 const token = localStorage.getItem("userToken");
 if (!token) {
   console.log("Token is missing. Redirecting to home page.");
