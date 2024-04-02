@@ -43,13 +43,16 @@ const fetchCreateBlog = async (blogData) => {
 
     console.log(formData);
 
-    const response = await fetch("http://localhost:4000/api/v1/blogs", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      body: formData,
-    });
+    const response = await fetch(
+      "https://mybrand-be-j4ci.onrender.com/api/v1/blogs",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      }
+    );
 
     const jsonData = await response.json();
 

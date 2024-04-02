@@ -73,13 +73,16 @@ contactForm.addEventListener("submit", (e) => {
 
 const sendQueryFetch = async (data) => {
   try {
-    const response = await fetch("http://localhost:4000/api/v1/queries", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const response = await fetch(
+      "https://mybrand-be-j4ci.onrender.com/api/v1/queries",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
     const json = await response.json();
 

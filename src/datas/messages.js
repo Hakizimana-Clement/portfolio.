@@ -31,11 +31,14 @@ console.log("message working");
 const fetchQueries = async () => {
   try {
     showLoader();
-    const response = await fetch("http://localhost:4000/api/v1/queries", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(
+      "https://mybrand-be-j4ci.onrender.com/api/v1/queries",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {

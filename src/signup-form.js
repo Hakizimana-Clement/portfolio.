@@ -103,7 +103,7 @@ signupFormEl.addEventListener("submit", async (e) => {
     try {
       showLoader();
       const response = await fetch(
-        // "http://localhost:4000/api/v1/users/signup",
+        // "https://mybrand-be-j4ci.onrender.com/api/v1/users/signup",
         "https://mybrand-be-j4ci.onrender.com/api/v1/users/signup",
         {
           method: "POST",

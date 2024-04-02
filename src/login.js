@@ -105,7 +105,7 @@ loginFormEl.addEventListener("submit", async (e) => {
       };
 
       // send to api for login
-      // const response = await fetch("http://localhost:4000/api/v1/users/login", {
+      // const response = await fetch("https://mybrand-be-j4ci.onrender.com/api/v1/users/login", {
       const response = await fetch(
         "https://mybrand-be-j4ci.onrender.com/api/v1/users/login",
         {
@@ -156,7 +156,7 @@ loginFormEl.addEventListener("submit", async (e) => {
   // };
   // console.log(userDataToLogin);
   // try {
-  //   const response = await fetch("http://localhost:4000/api/v1/users/login", {
+  //   const response = await fetch("https://mybrand-be-j4ci.onrender.com/api/v1/users/login", {
   //     method: "POST",
   //     body: JSON.stringify(userDataToLogin),
   //     headers: {

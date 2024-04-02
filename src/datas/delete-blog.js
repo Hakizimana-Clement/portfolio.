@@ -35,7 +35,7 @@ if (!token) {
 // const removeBlog = async (blogId) => {
 //   try {
 //     const response = await fetch(
-//       `http://localhost:4000/api/v1/blogs/${blogId}`,
+//       `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}`,
 //       {
 //         method: "DELETE",
 //         headers: {
@@ -66,7 +66,9 @@ if (!token) {
 const fetchBlogs = async () => {
   try {
     showLoader();
-    const response = await fetch("http://localhost:4000/api/v1/blogs/");
+    const response = await fetch(
+      "https://mybrand-be-j4ci.onrender.com/api/v1/blogs/"
+    );
     const json = await response.json();
 
     if (!response.ok) {

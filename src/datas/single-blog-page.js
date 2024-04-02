@@ -90,7 +90,7 @@ const fetchSingleBlog = async () => {
   try {
     showLoader();
     const response = await fetch(
-      // `http://localhost:4000/api/v1/blogs/${blogId}`
+      // `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}`
       `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}`
     );
 
@@ -203,7 +203,7 @@ const fetchToggleLike = async (blogId) => {
   try {
     showLoader();
     const response = await fetch(
-      // `http://localhost:4000/api/v1/blogs/${blogId}/likes`,
+      // `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
       `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
       {
         method: "POST",
@@ -358,7 +358,7 @@ const addComment = async (e) => {
 
     try {
       const response = await fetch(
-        // `http://localhost:4000/api/v1/blogs/${blogId}/comments`,
+        // `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/comments`,
         `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/comments`,
         {
           method: "POST",
@@ -413,7 +413,7 @@ const fetchComments = async () => {
   try {
     showLoader();
     const response = await fetch(
-      // `http://localhost:4000/api/v1/blogs/${blogId}/comments`
+      // `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/comments`
       `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/comments`
     );
     const json = await response.json();

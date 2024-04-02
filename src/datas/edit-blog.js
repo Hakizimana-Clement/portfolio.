@@ -68,7 +68,7 @@ const fetchUpdateBlog = async (updateData) => {
     formData.append("content", updateData.content);
     // console.log(formData);
     const response = await fetch(
-      `http://localhost:4000/api/v1/blogs/${blogId}`,
+      `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}`,
       {
         method: "PATCH",
         headers: {
@@ -149,7 +149,7 @@ const fetchUpdateBlog = async (updateData) => {
 //   try {
 //     showLoader();
 //     const response = await fetch(
-//       `http://localhost:4000/api/v1/blogs/${blogId}`
+//       `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}`
 //     );
 //     const json = await response.json();
 
@@ -207,7 +207,7 @@ const fetchBlogs = async () => {
   try {
     showLoader();
     const response = await fetch(
-      `http://localhost:4000/api/v1/blogs/${blogId}`
+      `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}`
     );
     const json = await response.json();
 
