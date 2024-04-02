@@ -21,10 +21,20 @@ if (!token) {
 }
 // console.log(token);
 
+// ************************** LOADER **************************
+const loaderContainer = document.querySelector(".loader-container");
+const showLoader = () => {
+  loaderContainer.style.display = "flex";
+};
+
+const hideLoader = () => {
+  loaderContainer.style.display = "none";
+};
+
 const fetchCreateBlog = async (blogData) => {
   try {
+    showLoader();
     const formData = new FormData();
-
     // data to send to server
     formData.append("title", blogData.title);
     formData.append("writer", blogData.writer);
@@ -44,6 +54,7 @@ const fetchCreateBlog = async (blogData) => {
     const jsonData = await response.json();
 
     if (!response.ok) {
+      hideLoader();
       console.log("error ", jsonData);
       return createToast(error, errorIcon, jsonData.error, jsonData.message);
     }
@@ -52,6 +63,8 @@ const fetchCreateBlog = async (blogData) => {
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    hideLoader();
   }
 };
 
