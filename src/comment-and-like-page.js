@@ -17,14 +17,14 @@ if (blogId.length === 0) {
 const token = localStorage.getItem("userToken");
 if (!token) {
   console.log("Token is missing. Redirecting to home page.");
-  // location.assign("../signin.html");
+  location.assign("../signin.html");
 } else {
   const decodedPayload = decodedJwt(token);
 
   if (decodedPayload)
     if (decodedPayload.role !== "admin") {
       console.log("User is not an admin. Redirecting to home page.");
-      // location.assign("../signin.html");
+      location.assign("../signin.html");
     }
 }
 
@@ -153,3 +153,11 @@ const renderComment = (comments) => {
 // ];
 
 // renderComment(test);
+// *************** LOGOUT *****************
+const logoutBtn = document.querySelector(".logout-link");
+
+logoutBtn.addEventListener("click", () => {
+  console.log("deleted btn clicked");
+  localStorage.removeItem("userToken");
+  location.assign("../index.html");
+});

@@ -103,3 +103,19 @@ const renderComments = (blogs) => {
   // Append table to container after adding header and rows
   mainTableContainer.appendChild(tableContainer);
 };
+
+// *************** LOGOUT *****************
+const logoutBtn = document.querySelector(".logout-link");
+
+logoutBtn.addEventListener("click", () => {
+  console.log("deleted btn clicked");
+  localStorage.removeItem("userToken");
+  location.assign("../index.html");
+});
+// edit page not found
+const pageNotFound = document.querySelector(".page-not-found");
+pageNotFound.addEventListener("click", () => {
+  document.querySelector(
+    ".main-container__content--dashboard-wrapper"
+  ).style.display = "none";
+});

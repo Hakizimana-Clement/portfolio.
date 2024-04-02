@@ -137,3 +137,11 @@ const renderQueries = (queries) => {
     messageContainerEl.appendChild(messageCard);
   });
 };
+// *************** LOGOUT *****************
+const logoutBtn = document.querySelector(".logout-link");
+
+logoutBtn.addEventListener("click", () => {
+  console.log("deleted btn clicked");
+  localStorage.removeItem("userToken");
+  location.assign("../index.html");
+});

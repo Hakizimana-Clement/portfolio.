@@ -346,7 +346,10 @@
           <!-- End dashboard -->
 
           <!-- Start New post (blog)-->
-          <a href="#" class="sidebar-container__dashboard-link">
+          <a
+            href="./admin-panel--new-blog.html"
+            class="sidebar-container__dashboard-link"
+          >
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <ion-icon
@@ -363,7 +366,10 @@
           <!-- End New post (blog)-->
 
           <!-- Start Edit post (blog)-->
-          <a href="#" class="sidebar-container__dashboard-link">
+          <a
+            href="./admin-panel--edit-blog.html"
+            class="sidebar-container__dashboard-link"
+          >
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <ion-icon name="create-outline" size="large"></ion-icon>
@@ -376,7 +382,10 @@
           <!-- End Edit post (blog)-->
 
           <!-- Start Delete post (blog)-->
-          <a href="#" class="sidebar-container__dashboard-link">
+          <a
+            href="./admin-panel--delete-blog.html"
+            class="sidebar-container__dashboard-link"
+          >
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <ion-icon name="trash-outline" size="large"></ion-icon>
@@ -389,7 +398,10 @@
           <!-- End Delete post (blog)-->
 
           <!-- Start message post (blog)-->
-          <a href="#" class="sidebar-container__dashboard-link">
+          <a
+            href="./admin-panel--messages.html"
+            class="sidebar-container__dashboard-link"
+          >
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <svg
@@ -414,7 +426,10 @@
           <!-- End message post (blog)-->
 
           <!-- Start comment post (blog)-->
-          <a href="#" class="sidebar-container__dashboard-link">
+          <a
+            href="./admin-panel--comments-blog.html"
+            class="sidebar-container__dashboard-link"
+          >
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <svg
@@ -438,7 +453,7 @@
           <!-- End comment post (blog)-->
 
           <!-- Start  page editor post -->
-          <a href="#" class="sidebar-container__dashboard-link">
+          <a class="sidebar-container__dashboard-link page-not-found">
             <div class="sidebar-container__dashboard-link-container">
               <!-- start icon -->
               <svg
@@ -529,6 +544,11 @@
                   alt="user image"
                 />
               </a>
+
+              <!-- <a class="logout-link" href="../index.html"> -->
+              <a class="logout-link">
+                <ion-icon name="log-out-outline" size="large"></ion-icon>
+              </a>
               <!-- end user image -->
             </div>
             <!-- end notification -->
@@ -562,9 +582,28 @@
       <!-- end main container -->
     </main>
     <!-- </div> -->
+    <!-- start toastjs -->
+    <script src="../src/toast.js"></script>
+    <!-- end toastjs -->
 
+    <!-- start decoded jwt jose -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
+      integrity="sha512-6QjmtipbdTnGeda8w+/eHxIjEzKZGJtbTVFl8kWI7iyV92bpx/stdeD8w84iHllAPMOesjoYpKHi53fWOpUk9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- end decoded jwt jose -->
+
+    <!-- start jwt decoded -->
+    <script src="../src/decodedJwt.js"></script>
+    <!-- end jwt decoded -->
     <!-- start admin sidebar script -->
     <script src="../src/admin-sidebar-mobile.js"></script>
     <!-- end admin sidebar script -->
+    <!-- start comment table and like script -->
+    <script src="../src/search.js"></script>
+    <!-- end comment table and like script -->
   </body>
 </html>
