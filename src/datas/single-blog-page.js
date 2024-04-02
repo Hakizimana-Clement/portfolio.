@@ -203,7 +203,8 @@ const fetchToggleLike = async (blogId) => {
   try {
     showLoader();
     const response = await fetch(
-      `http://localhost:4000/api/v1/blogs/${blogId}/likes`,
+      // `http://localhost:4000/api/v1/blogs/${blogId}/likes`,
+      `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
       {
         method: "POST",
         headers: {
@@ -218,11 +219,14 @@ const fetchToggleLike = async (blogId) => {
       // hideLoader();
       // createToast("info", "info","lllllllllll" ,"unauthorize");
       // createToast("info", errorIcon, json.message, json.error);
-      createToast("info", errorIcon, "Please login", "Redirect to login page");
       // setTimeout(() => {
       // }, 3000);
-      location.assign("signin.html");
-      return;
+      createToast("info", errorIcon, "Please login", "Redirect to login page");
+      // location.assign("signin.html");
+    } else if (json.message === "User not found") {
+      // createToast("info", errorIcon, json.message, json.error);
+      createToast("info", errorIcon, "Please login", "Redirect to login page");
+      // location.assign("signin.html");
     }
 
     // blog not found
@@ -230,22 +234,19 @@ const fetchToggleLike = async (blogId) => {
       hideShowLoader();
       console.error("Error toggling like ", json);
       console.log("error", json);
-
-      createToast(
-        "info",
-        errorIcon,
-        "Blog not found",
-        "You can't like this blog"
-      );
+      // createToast(
+      //   "info",
+      //   errorIcon,
+      //   "Blog not found",
+      //   "You can't like this blog"
+      // );
       return;
     }
 
     // blog liked
     if (json.status === "201") {
       hideShowLoader();
-
       // createToast("info", errorIcon, "Like toggle", "Successfully");
-
       console.log("like toggle successfully ", json);
       fetchSingleBlog();
     }
@@ -357,7 +358,8 @@ const addComment = async (e) => {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/v1/blogs/${blogId}/comments`,
+        // `http://localhost:4000/api/v1/blogs/${blogId}/comments`,
+        `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/comments`,
         {
           method: "POST",
           headers: {
@@ -379,10 +381,10 @@ const addComment = async (e) => {
           "Redirect to login page"
         );
 
-        location.assign("signin.html");
-        // setTimeout(() => {
         // location.assign("signin.html");
-        // }, 2000);
+        setTimeout(() => {
+          location.assign("signin.html");
+        }, 2000);
       }
 
       if (!response.ok) {
@@ -411,7 +413,8 @@ const fetchComments = async () => {
   try {
     showLoader();
     const response = await fetch(
-      `http://localhost:4000/api/v1/blogs/${blogId}/comments`
+      // `http://localhost:4000/api/v1/blogs/${blogId}/comments`
+      `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/comments`
     );
     const json = await response.json();
 

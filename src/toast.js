@@ -36,7 +36,7 @@ function createToast(type, icon, title, text) {
   // add on click
   notifications.appendChild(newToast);
   // remove after 5s
-  newToast.timeOut = setTimeout(() => newToast.remove(), 2000);
+  newToast.timeOut = setTimeout(() => newToast.remove(), 3000);
 }
 
 // success.addEventListener("click", () => {
