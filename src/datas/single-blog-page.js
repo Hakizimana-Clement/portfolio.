@@ -196,9 +196,9 @@ const updatePageContents = (blog) => {
   //   createParagraph(paragraphText.trim());
   // }
 };
-//////////////////////////////////////////////////////////////////////////////////////////////
-// fetch and then like
-//////////////////////////////////////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////////////////////////////
+// // fetch and then like
+// //////////////////////////////////////////////////////////////////////////////////////////////
 const fetchToggleLike = async (blogId) => {
   try {
     showLoader();
@@ -219,14 +219,16 @@ const fetchToggleLike = async (blogId) => {
       // hideLoader();
       // createToast("info", "info","lllllllllll" ,"unauthorize");
       // createToast("info", errorIcon, json.message, json.error);
-      // setTimeout(() => {
-      // }, 3000);
       createToast("info", errorIcon, "Please login", "Redirect to login page");
-      // location.assign("signin.html");
+      setTimeout(() => {
+        location.assign("signin.html");
+      }, 3000);
     } else if (json.message === "User not found") {
       // createToast("info", errorIcon, json.message, json.error);
       createToast("info", errorIcon, "Please login", "Redirect to login page");
-      // location.assign("signin.html");
+      setTimeout(() => {
+        location.assign("signin.html");
+      }, 3000);
     }
 
     // blog not found
@@ -256,6 +258,34 @@ const fetchToggleLike = async (blogId) => {
     hideShowLoader();
   }
 };
+
+// render like for like page
+const isBlogLiked = localStorage.getItem(`userLike-${blogId}`);
+// if we have true make it red
+console.log(isBlogLiked === "true");
+if (isBlogLiked === "true") {
+  toggleLikeIcon.classList.add("toggleLike");
+}
+const toggleLikeFunction = async (blogId) => {
+  console.log(blogId);
+  const isLiked =
+    JSON.parse(localStorage.getItem(`userLike-${blogId}`)) || false; // Parse the stored value
+
+  const updatedIsLiked = !isLiked;
+
+  if (updatedIsLiked) {
+    toggleLikeIcon.classList.add("toggleLike");
+  } else {
+    toggleLikeIcon.classList.remove("toggleLike");
+  }
+
+  // Pass the blogId to fetchToggleLike
+  await fetchToggleLike(blogId); // Wait for the fetchToggleLike function to complete
+
+  localStorage.setItem(`userLike-${blogId}`, JSON.stringify(updatedIsLiked));
+};
+
+likeLinkEl.addEventListener("click", () => toggleLikeFunction(blogId));
 
 // // like state
 // const isLiked = localStorage.getItem("userLike");
@@ -292,26 +322,6 @@ const fetchToggleLike = async (blogId) => {
 // };
 
 // likeLinkEl.addEventListener("click", () => toggleLikeFunction(blogId));
-const toggleLikeFunction = async (blogId) => {
-  console.log(blogId);
-  const isLiked =
-    JSON.parse(localStorage.getItem(`userLike-${blogId}`)) || false; // Parse the stored value
-
-  const updatedIsLiked = !isLiked;
-
-  if (updatedIsLiked) {
-    toggleLikeIcon.classList.add("toggleLike");
-  } else {
-    toggleLikeIcon.classList.remove("toggleLike");
-  }
-
-  // Pass the blogId to fetchToggleLike
-  await fetchToggleLike(blogId); // Wait for the fetchToggleLike function to complete
-
-  localStorage.setItem(`userLike-${blogId}`, JSON.stringify(updatedIsLiked));
-};
-
-likeLinkEl.addEventListener("click", () => toggleLikeFunction(blogId));
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 //********************** COMMENTS ********************* */
@@ -392,7 +402,7 @@ const addComment = async (e) => {
       }
       if (json.status === "201") {
         // console.log(json);
-        createToast("info", errorIcon, "Comment created", "Successfully");
+        // createToast("info", errorIcon, "Comment created", "Successfully");
         newComment.comment = "";
         e.target.reset();
         fetchComments();
@@ -550,3 +560,63 @@ const renderComments = (blogs) => {
 
 // renderComments();
 renderComments();
+/*
+It seems like there might be an issue with how the like button's toggle functionality is being handled. Let's break down the code and see if we can identify the problem:
+
+The toggleLikeFunction function is responsible for toggling the like button's appearance and making a POST request to the server to toggle the like status of the blog.
+
+The like status is stored in the browser's local storage with the key userLike-${blogId}. This status is retrieved when the function is called and updated accordingly after the like button is clicked.
+
+The likeLinkEl variable seems to represent the HTML element of the like button, and the click event listener is added to it to trigger the toggleLikeFunction when the like button is clicked.
+
+Based on the provided code, the issue could be caused by the following:
+
+The likeLinkEl variable might not be correctly referencing the HTML element of the like button. Ensure that it points to the correct element.
+
+There could be an error occurring in the fetchToggleLike function that prevents the like status from being updated correctly.
+
+To debug the issue:
+
+Check if the likeLinkEl variable correctly references the like button element.
+
+Add console.log statements to the toggleLikeFunction and fetchToggleLike functions to see if they are being called and if any errors are occurring.
+
+Verify that the server endpoint (/api/v1/blogs/${blogId}/likes) is correctly configured to handle the POST request and toggle the like status of the blog.
+
+Once you identify the specific cause of the issue, you can make the necessary adjustments to fix it. Let me know if you need further assistance!
+const toggleLikeFunction = async (blogId) => {
+  try {
+    const isLiked = JSON.parse(localStorage.getItem(`userLike-${blogId}`)) || false;
+    const updatedIsLiked = !isLiked;
+
+    if (updatedIsLiked) {
+      likeLinkEl.classList.add("toggleLike");
+    } else {
+      likeLinkEl.classList.remove("toggleLike");
+    }
+
+    const response = await fetch(`https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to toggle like");
+    }
+
+    localStorage.setItem(`userLike-${blogId}`, JSON.stringify(updatedIsLiked));
+  } catch (error) {
+    console.error("Error toggling like:", error);
+    // Handle error, e.g., show a toast message
+  }
+};
+
+likeLinkEl.addEventListener("click", () => toggleLikeFunction(blogId));
+
+
+
+
+*/
