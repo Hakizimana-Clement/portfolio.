@@ -117,7 +117,7 @@ const renderBlogs = (blogsArr) => {
     // Assume blog.body contains the text content from local storage
     const content = blog.content;
 
-    console.log(content);
+    // console.log(content);
     // Remove <p> and </p> tags and HTML entity codes
     const cleanContent = content;
 

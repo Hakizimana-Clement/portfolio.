@@ -12,7 +12,7 @@ function decodeJwt(token) {
 }
 
 // remove user token for fresh login
-localStorage.removeItem("userToken");
+// localStorage.removeItem("userToken");
 
 const showLoaderr = () => {
   loaderContainer.style.display = "flex";

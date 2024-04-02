@@ -88,6 +88,9 @@
     <title>My portfolio</title>
   </head>
   <body>
+    <div class="loader-container">
+      <span class="loader"></span>
+    </div>
     <!-- start navbar testing -->
     <header class="testing-header">
       <nav class="tesing-header__nav">
@@ -1289,9 +1292,6 @@
       <section id="blogss" class="blog3 section container">
         <h2 class="blog-title">Blogs</h2>
         <div class="gallery-wrapper">
-          <div class="loader-container">
-            <span class="loader"></span>
-          </div>
           <!--start container card -->
           <!-- back button -->
           <span id="backBtn">
@@ -1560,6 +1560,12 @@
       </div>
       <!-- End footer container -->
     </footer>
+
+    <!-- jwt decoded -->
+    <script src="./src/decodedJwt.js"></script>
+    <!-- track user token -->
+    <script src="./src/datas/userToken.js"></script>
+
     <!-- start toastjs -->
     <script src="./src/toast.js"></script>
     <!-- end toastjs -->
@@ -1596,10 +1602,5 @@
     <!-- start  slide scroll script -->
     <script src="./src/slider-function.js"></script>
     <!-- end slide scroll script -->
-
-    <!-- jwt decoded -->
-    <script src="./src/decodedJwt.js"></script>
-    <!-- track user token -->
-    <script src="./src/datas/userToken.js"></script>
   </body>
 </html>
