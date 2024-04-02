@@ -6,6 +6,7 @@ const blogContainer = document.querySelector(".all-blog-container-testing");
 // blogContainer.classList.add("edit-container");
 const noMessageEL = document.querySelector(".no-message");
 
+// *********************** LOADER ********************************************
 const loaderContainer = document.querySelector(".loader-container");
 const showLoader = () => {
   loaderContainer.style.display = "flex";

@@ -97,7 +97,8 @@ const fetchUpdateBlog = async (updateData) => {
       const blog = json;
       console.log(blog);
       // updatePageContents(blog);
-      return createToast(error, successIcon, "Blog update", "successfully");
+      createToast(error, successIcon, "Blog update", "successfully");
+      location.assign("admin-panel--edit-blog.html");
     }
   } catch (error) {
     console.log(error);

@@ -12,10 +12,21 @@ if (blogId.length === 0) {
   location.assign("index.html");
 }
 
+// *********************** LOADER ********************************************
+const loaderContainer = document.querySelector(".loader-container");
+const showLoader = () => {
+  loaderContainer.style.display = "flex";
+};
+
+const hideLoader = () => {
+  loaderContainer.style.display = "none";
+};
+
 // ************************** CHECK USER TOKEN **************************
 const token = localStorage.getItem("userToken");
 if (!token) {
   console.error("Token not found in localStorage");
+  location.assign("../index.html");
 }
 
 console.log(blogId);
@@ -29,6 +40,7 @@ deleteBtnEl.addEventListener("click", () => {
 const removeBlog = async (blogId) => {
   console.log(blogId);
   try {
+    showLoader();
     const response = await fetch(
       `http://localhost:4000/api/v1/blogs/${blogId}`,
       {
@@ -44,18 +56,23 @@ const removeBlog = async (blogId) => {
     console.log(json);
 
     if (json.status === "401") {
+      hideLoader();
       return createToast(error, errorIcon, json.error, json.message);
     }
     if (json.status === "404") {
+      hideLoader();
       return createToast(error, errorIcon, json.error, json.message);
     }
 
     if (json.status === "200") {
+      hideLoader();
       createToast(error, successIcon, "delete blog", "successfully");
       location.assign("admin-panel--delete-blog.html");
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    hideLoader();
   }
 };
 // *************** LOGOUT *****************
