@@ -28,10 +28,20 @@ if (!token) {
     }
 }
 
+// ************************** LOADER **************************
+const loaderContainer = document.querySelector(".loader-container");
+const showLoader = () => {
+  loaderContainer.style.display = "flex";
+};
+
+const hideLoader = () => {
+  loaderContainer.style.display = "none";
+};
+
 // ************************** FETCH COMMENTS **************************
 const fetchComments = async () => {
   try {
-    // showLoader();
+    showLoader();
     const response = await fetch(
       `http://localhost:4000/api/v1/blogs/${blogId}`
     );
@@ -41,6 +51,7 @@ const fetchComments = async () => {
 
     if (json.status === "404") {
       console.log(json);
+      hideLoader();
       return location.assign("admin-panel--comments-blog.html");
     }
 
@@ -53,12 +64,14 @@ const fetchComments = async () => {
       blogLikesEl.textContent = comment.blog.likes.length;
       titleEl.textContent = comment.blog.title;
       // commentNameEl.textContent = comment.blog.comments.name;
+
+      hideLoader();
       renderComment(comment.blog.comments);
     }
   } catch (error) {
     console.log(error);
   } finally {
-    // hideLoader();
+    hideLoader();
   }
 };
 fetchComments();
