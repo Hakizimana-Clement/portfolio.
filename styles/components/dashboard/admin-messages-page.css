@@ -37,7 +37,7 @@
 /* ********** unread message number text**************/
 .search-message-wrapper__unread-number {
   background-color: var(--clr-hover);
-  padding: 0.4rem 0.4rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 50%;
 }
 

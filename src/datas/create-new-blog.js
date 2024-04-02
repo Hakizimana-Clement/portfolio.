@@ -185,11 +185,21 @@ formEl.addEventListener("submit", (e) => {
       reader2.readAsDataURL(blogImage);
     }
   }
-  // if (writeImage) {
-  //   reader1.readAsDataURL(writeImage);
-  // }
-  // }
 });
+
+// *************** LOGOUT *****************
+const logoutBtn = document.querySelector(".logout-link");
+
+console.log("clicked");
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("userToken");
+  location.assign("../index.html");
+});
+
+// if (writeImage) {
+//   reader1.readAsDataURL(writeImage);
+// }
+// }
 
 // // validate write image
 // if (!writeImage) {

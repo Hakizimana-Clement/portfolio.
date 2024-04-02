@@ -1,4 +1,7 @@
 const messageContainerEl = document.querySelector(".edit-container--testing");
+const messageNumber = document.querySelector(
+  ".search-message-wrapper__unread-number"
+);
 // ************************** CHECK USER TOKEN **************************
 const token = localStorage.getItem("userToken");
 if (!token) {
@@ -13,7 +16,6 @@ if (!token) {
       location.assign("../signin.html");
     }
 }
-
 // ************************** LOADER **************************
 const loaderContainer = document.querySelector(".loader-container");
 const showLoader = () => {
@@ -43,6 +45,7 @@ const fetchQueries = async () => {
     if (response.ok) {
       const allQueries = json.querries;
       console.log(allQueries);
+      messageNumber.textContent = allQueries.length;
       renderQueries(allQueries);
     }
   } catch (error) {

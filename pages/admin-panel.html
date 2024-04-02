@@ -71,11 +71,18 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
  "
     ></script>
+    <!-- start font for toastify -->
+    <link rel="stylesheet" href="../styles/toastify.css" />
+    <!-- end font for toastify -->
+
     <!-- web title -->
     <title>Admin panel</title>
   </head>
 
   <body class="container">
+    <div class="loader-container">
+      <span class="loader"></span>
+    </div>
     <!-- Start mobile menu bar -->
     <div class="mobile-menu">
       <div class="mobile-menu__container">
@@ -585,7 +592,8 @@
               </a>
               <!-- end user image -->
 
-              <a class="logout-link" href="../index.html">
+              <!-- <a class="logout-link" href="../index.html"> -->
+              <a class="logout-link">
                 <ion-icon name="log-out-outline" size="large"></ion-icon>
               </a>
             </div>
@@ -730,9 +738,15 @@
         </div>
         <!-- end main -->
       </div>
+
+      <div class="notifications"></div>
       <!-- end main container -->
     </main>
     <!-- </div> -->
+
+    <!-- start toastjs -->
+    <script src="../src/toast.js"></script>
+    <!-- end toastjs -->
 
     <!-- start decoded jwt jose -->
     <script
@@ -746,6 +760,8 @@
 
     <!-- start jwt decoded -->
     <script src="../src/decodedJwt.js"></script>
+    <!-- end jwt decoded -->
+
     <!-- end jwt decoded -->
     <!-- start admin sidebar script -->
     <script src="../src/admin-setting-mobile.js"></script>

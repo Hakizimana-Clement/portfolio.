@@ -164,3 +164,11 @@ const renderBlogs = (blogsArray) => {
     blogContainer.append(mainContainer);
   });
 };
+// *************** LOGOUT *****************
+const logoutBtn = document.querySelector(".logout-link");
+
+console.log("clicked");
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("userToken");
+  location.assign("../index.html");
+});

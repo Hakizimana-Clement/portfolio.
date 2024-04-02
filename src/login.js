@@ -90,7 +90,7 @@ loginFormEl.addEventListener("submit", async (e) => {
       // no response
       if (!response.ok) {
         console.log(json);
-        createToast(error, errorIcon, json.message, json.error);
+        createToast(error, errorIcon, "Error", json.error);
       }
 
       if (response.ok) {

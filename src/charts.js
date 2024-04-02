@@ -1,3 +1,7 @@
+const errorIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+class="toast-icons"><path fill="#3498db" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>`;
+const successIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" class="toast-icons"><path fill="#0abf30" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896m-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.27 38.27 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336z"/></svg>`;
+
 const xValues = ["Querries", "Likes", "Blogs", "Comments"];
 const barColors = ["#ae33bc", "#a30303", "#a5a801", "#46dcb5"];
 // chart element
@@ -10,6 +14,12 @@ const commentEl = document.querySelector(".querries-box--paragraph__comments");
 const token = localStorage.getItem("userToken");
 if (!token) {
   console.log("Token is missing. Redirecting to home page.");
+  createToast(
+    "Info",
+    errorIcon,
+    "Token is missing",
+    "Redirecting to home page."
+  );
   location.assign("../index.html");
 } else {
   const decodedPayload = decodedJwt(token);
@@ -17,6 +27,13 @@ if (!token) {
   if (decodedPayload)
     if (decodedPayload.role !== "admin" || !token) {
       console.log("User is not an admin. Redirecting to home page.");
+
+      createToast(
+        "Info",
+        errorIcon,
+        "User is not an admin",
+        "Redirecting to home page."
+      );
       location.assign("../index.html");
     }
 }
@@ -27,9 +44,20 @@ const tokenMethod = {
   },
 };
 
+// ************************** LOADER **************************
+const loaderContainer = document.querySelector(".loader-container");
+const showLoader = () => {
+  loaderContainer.style.display = "flex";
+};
+
+const hideLoader = () => {
+  loaderContainer.style.display = "none";
+};
+
 // querries
 const fetchQueryNumber = async () => {
   try {
+    showLoader();
     const response = await fetch(
       "http://localhost:4000/api/v1/queries",
       tokenMethod
@@ -38,42 +66,53 @@ const fetchQueryNumber = async () => {
     return json.querries.length;
   } catch (error) {
     return 0;
+  } finally {
+    hideLoader();
   }
 };
 
 // like
 const fetchLikeNumber = async () => {
   try {
+    showLoader();
     const response = await fetch("http://localhost:4000/api/v1/likes");
     const json = await response.json();
     console.log(json);
     return json.likes.length;
   } catch (error) {
     return 0;
+  } finally {
+    hideLoader();
   }
 };
 
 // blogs
 const fetchBlogNumber = async () => {
   try {
+    showLoader();
     const response = await fetch("http://localhost:4000/api/v1/blogs");
     const json = await response.json();
     console.log(json);
     return json.blogs.length;
   } catch (error) {
     return 0;
+  } finally {
+    hideLoader();
   }
 };
 
 //comments
 const fetchCommentNumber = async () => {
   try {
+    showLoader();
     const response = await fetch("http://localhost:4000/api/v1/comments");
     const json = await response.json();
     console.log(json);
     return json.comments.length;
   } catch (error) {
     return 0;
+  } finally {
+    hideLoader();
   }
 };
 
@@ -123,3 +162,10 @@ const populateChart = async () => {
 };
 
 populateChart();
+const logoutBtn = document.querySelector(".logout-link");
+
+logoutBtn.addEventListener("click", () => {
+  console.log("clicked");
+  localStorage.removeItem("userToken");
+  location.assign("../index.html");
+});
