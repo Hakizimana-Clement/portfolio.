@@ -44,6 +44,9 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
  "
     ></script>
+    <!-- start font for toastify -->
+    <link rel="stylesheet" href="./styles/toastify.css" />
+    <!-- end font for toastify -->
     <!-- web title -->
     <title>My portfolio</title>
   </head>
@@ -202,10 +205,8 @@
             <div class="signup-container__form">
               <h1 class="signup-container__form-title">Sign Up</h1>
               <!-- start form -->
-              <form
-                action="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/pages/admin-panel.html"
-                class="signup-container__form-form"
-              >
+              <!-- action="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/pages/admin-panel.html" -->
+              <form class="signup-container__form-form">
                 <!-- start name -->
                 <div class="signup-container__form-form--name forms">
                   <label for="name">Full Name: </label>
@@ -264,6 +265,7 @@
           <!-- End signup container -->
         </div>
       </section>
+      <div class="notifications"></div>
     </main>
     <footer class="footer section container">
       <!-- start footer container -->
@@ -319,7 +321,9 @@
       </div>
       <!-- End footer container -->
     </footer>
-
+    <!-- start toastjs -->
+    <script src="./src/toast.js"></script>
+    <!-- end toastjs -->
     <!-- start signup form validation -->
     <script src="./src/mobile-nav.js"></script>
     <!-- end signup form validation -->

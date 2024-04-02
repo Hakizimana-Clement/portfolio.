@@ -1,3 +1,5 @@
+const errorIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+class="toast-icons"><path fill="#3498db" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>`;
 const signupFormEl = document.querySelector(".signup-container__form-form");
 const showLoaderContainer = document.querySelector(".loader-container");
 
@@ -95,13 +97,14 @@ signupFormEl.addEventListener("submit", async (e) => {
   };
   if (!hasErrors) {
     // Form submission logic here
-    console.log("login successfully!");
+    // console.log("login successfully!");
     e.target.reset();
 
     try {
       showLoader();
       const response = await fetch(
-        "http://localhost:4000/api/v1/users/signup",
+        // "http://localhost:4000/api/v1/users/signup",
+        "https://mybrand-be-j4ci.onrender.com/api/v1/users/signup",
         {
           method: "POST",
           body: JSON.stringify(userDataToSignup),
@@ -112,19 +115,35 @@ signupFormEl.addEventListener("submit", async (e) => {
       );
       const json = await response.json();
 
-      if (!response.ok) {
+      if (json.status === "409") {
         console.log(json);
+
+        createToast(error, errorIcon, "Error", json.error);
       }
-      if (response.status === 201) {
+
+      // if (json.status === "400") {
+      //   createToast(error, errorIcon, "Error", json.error);
+      // }
+      // validation
+      if (!response.ok) {
+        createToast(error, errorIcon, "Error", json.error);
+      }
+
+      if (json.message === "Signup successfully") {
         showLoader();
         console.log("new user", json);
-        window.location.href = "signin.html";
+        // window.location.href = "signin.html";
+        // createToast("red", errorIcon, "Error", json.error);
+        createToast("dfg", "info", "Create new account", "Successfully");
+        setTimeout(() => {
+          location.assign("signin.html");
+        }, 3000);
       }
     } catch (error) {
       console.log(error);
       document.write("<div>something went wrong, wait a bit");
+    } finally {
       hideLoader();
-      return;
     }
   }
 });
