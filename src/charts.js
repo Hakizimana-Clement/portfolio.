@@ -55,14 +55,17 @@ const hideLoader = () => {
 };
 
 // ************************** FETCHING **************************
+// querries
 const fetchQueryNumber = async () => {
   try {
     showLoader();
     const response = await fetch(
-      "http://localhost:4000/api/v1/queries",
+      "https://mybrand-be-j4ci.onrender.com/api/v1/queries",
       tokenMethod
     );
     const json = await response.json();
+    console.log(json);
+
     return json.querries.length;
   } catch (error) {
     return 0;
@@ -75,9 +78,13 @@ const fetchQueryNumber = async () => {
 const fetchLikeNumber = async () => {
   try {
     showLoader();
-    const response = await fetch("http://localhost:4000/api/v1/likes");
+    const response = await fetch(
+      "https://mybrand-be-j4ci.onrender.com/api/v1/likes"
+    );
     const json = await response.json();
     console.log(json);
+
+    console.log("likes", json.likes.length);
     return json.likes.length;
   } catch (error) {
     return 0;
@@ -90,9 +97,13 @@ const fetchLikeNumber = async () => {
 const fetchBlogNumber = async () => {
   try {
     showLoader();
-    const response = await fetch("http://localhost:4000/api/v1/blogs");
+    const response = await fetch(
+      "https://mybrand-be-j4ci.onrender.com/api/v1/blogs"
+    );
     const json = await response.json();
     console.log(json);
+
+    console.log("blogs", json.blogs.length);
     return json.blogs.length;
   } catch (error) {
     return 0;
@@ -105,9 +116,13 @@ const fetchBlogNumber = async () => {
 const fetchCommentNumber = async () => {
   try {
     showLoader();
-    const response = await fetch("http://localhost:4000/api/v1/comments");
+    const response = await fetch(
+      "https://mybrand-be-j4ci.onrender.com/api/v1/comments"
+    );
     const json = await response.json();
     console.log(json);
+
+    console.log("comments", json.comments.length);
     return json.comments.length;
   } catch (error) {
     return 0;
