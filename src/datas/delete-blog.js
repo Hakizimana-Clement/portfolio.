@@ -167,8 +167,8 @@ const renderBlogs = (blogsArray) => {
 // *************** LOGOUT *****************
 const logoutBtn = document.querySelector(".logout-link");
 
-console.log("clicked");
 logoutBtn.addEventListener("click", () => {
+  console.log("clicked");
   localStorage.removeItem("userToken");
   location.assign("../index.html");
 });
