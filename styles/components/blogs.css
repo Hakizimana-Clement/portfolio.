@@ -606,6 +606,13 @@
 
 /* background-color: #2e3353f0; */
 .loader-container {
+<<<<<<< HEAD
+=======
+  /* background-color: #2e335387; */
+  /* background-color: #000000; */
+
+  /* background-color: #2e3353f0; */
+>>>>>>> f35a4a8e3d6b470aa513280cd86b655e9f53289e
   background-color: #2e335387;
   width: 100%;
   /* height: 100%; */
