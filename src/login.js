@@ -16,10 +16,12 @@ function decodeJwt(token) {
 
 const showLoaderr = () => {
   loaderContainer.style.display = "flex";
+  document.body.style.overflow = "hidden";
 };
 
 const hideLoaderr = () => {
   loaderContainer.style.display = "none";
+  document.body.style.overflow = "";
 };
 // // ************************** CHECK USER TOKEN **************************
 // const token = localStorage.getItem("userToken");

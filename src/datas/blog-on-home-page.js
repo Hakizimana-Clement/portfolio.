@@ -3,10 +3,12 @@ const blogMainContainer = document.querySelector(".gallery");
 const loaderContainer = document.querySelector(".loader-container");
 const showLoader = () => {
   loaderContainer.style.display = "flex";
+  document.body.style.overflow = "hidden";
 };
 
 const hideLoader = () => {
   loaderContainer.style.display = "none";
+  document.body.style.overflow = "";
 };
 
 const fetchBlogs = async () => {
@@ -88,7 +90,9 @@ const renderBlogs = (blogsArr) => {
     const h2El = document.createElement("h2");
     // h2El.textContent =
     h2El.innerHTML =
-      blog.title.length > 24 ? `${blog.title.slice(0, 24)} ...` : blog.title;
+      blog.title.length > 24
+        ? `<strong>${blog.title.slice(0, 24)} ...</strong>`
+        : blog.title;
     // blog.title;
     h2El.classList.add("blogs-container__card-title");
     cardContentDiv.append(h2El);

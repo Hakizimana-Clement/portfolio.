@@ -6,10 +6,12 @@ const showLoaderContainer = document.querySelector(".loader-container");
 // display error below input
 const showLoader = () => {
   showLoaderContainer.style.display = "flex";
+  document.body.style.overflow = "hidden";
 };
 
 const hideLoader = () => {
   showLoaderContainer.style.display = "none";
+  document.body.style.overflow = "";
 };
 
 let formErrors = {

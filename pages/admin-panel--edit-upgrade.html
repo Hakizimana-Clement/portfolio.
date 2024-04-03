@@ -606,7 +606,6 @@
               <!-- start upload image-->
               <input
                 type="file"
-                accept="image/*"
                 name="blogImage"
                 placeholder="upload image"
                 class="form-input new-blog-container-form__input-image"
@@ -619,7 +618,7 @@
               <textarea
                 id="textarea"
                 class="new-blog-container-form__input-textarea"
-                name="body"
+                name="content"
               >
               </textarea>
 
@@ -629,7 +628,10 @@
                   <button class="delete-btn new-blog-container-form__input-btn">
                     Cancel
                   </button>
-                  <button class="btn new-blog-container-form__input-btn">
+                  <button
+                    type="submit"
+                    class="btn new-blog-container-form__input-btn"
+                  >
                     Upgrade
                   </button>
                 </div>

@@ -48,10 +48,12 @@ const tokenMethod = {
 const loaderContainer = document.querySelector(".loader-container");
 const showLoader = () => {
   loaderContainer.style.display = "flex";
+  document.body.style.overflow = "hidden";
 };
 
 const hideLoader = () => {
   loaderContainer.style.display = "none";
+  document.body.style.overflow = "";
 };
 
 // ************************** FETCHING **************************
