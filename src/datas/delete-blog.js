@@ -1,8 +1,12 @@
+const errorIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+class="toast-icons"><path fill="#3498db" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>`;
+const successIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" class="toast-icons"><path fill="#0abf30" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896m-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.27 38.27 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336z"/></svg>`;
 // select elements
 const blogContainer = document.querySelector(".all-blog-container-testing");
 // blogContainer.classList.add("edit-container");
 const noMessageEL = document.querySelector(".no-message");
 
+// *********************** LOADER ********************************************
 const loaderContainer = document.querySelector(".loader-container");
 const showLoader = () => {
   loaderContainer.style.display = "flex";
@@ -28,6 +32,38 @@ if (!token) {
       location.assign("../index.html");
     }
 }
+
+// // ******************* Remove blog************************
+// const removeBlog = async (blogId) => {
+//   try {
+//     const response = await fetch(
+//       `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}`,
+//       {
+//         method: "DELETE",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer ${token}`,
+//         },
+//       }
+//     );
+
+//     const json = await response.json();
+//     console.log(json);
+
+//     if (json.status === "401") {
+//       return createToast(error, errorIcon, json.error, json.message);
+//     }
+//     if (json.status === "404") {
+//       return createToast(error, errorIcon, json.error, json.message);
+//     }
+
+//     // if (json.status === "200") {
+//     //   return createToast(error, successIcon, "delete blog", "successfully");
+//     // }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 const fetchBlogs = async () => {
   try {
@@ -57,20 +93,7 @@ const fetchBlogs = async () => {
 
 fetchBlogs();
 
-// local storage
-// // blog arrays
-// let blogs = [];
-
-// // get data from local storage
-// const blogJSON = localStorage.getItem("blogs");
-// // check if data existing
-// if (blogJSON !== null) {
-//   blogs = JSON.parse(blogJSON);
-// } else {
-//   noMessageEL.textContent = "No Blogs";
-//   console.log("no data");
-// }
-
+// ******************* Render blog ************************
 const renderBlogs = (blogsArray) => {
   console.log(blogsArray);
   blogsArray.forEach((blog) => {
@@ -90,16 +113,17 @@ const renderBlogs = (blogsArray) => {
     // redirect to update page
     editBtnLink.setAttribute(
       "href",
-      `admin-panel--edit-upgrade.html#${blog._id}`
+      `admin-panel--delete-blog-confirm-message.html#${blog._id}`
     );
-    editBtnLink.classList.add("btn", "edit-btn");
-    editBtnLink.textContent = "edit";
+    editBtnLink.classList.add("btn", "btn-remove", "btn-remove-padding");
+    editBtnLink.textContent = "delete";
     // edit button for each blog according to id
-    editBtnLink.addEventListener("click", () => {
-      console.log("clicked");
-      // console.log(blog._id);
-      // editBlog(blog._id);
-    });
+    // editBtnLink.addEventListener("click", () => {
+    //   console.log("clicked");
+    //   // console.log(blog._id);
+    //   removeBlog(blog._id);
+    //   renderBlogs(blog);
+    // });
     btnContainer.append(editBtnLink);
 
     // blog img
@@ -145,12 +169,11 @@ const renderBlogs = (blogsArray) => {
     blogContainer.append(mainContainer);
   });
 };
-
 // *************** LOGOUT *****************
 const logoutBtn = document.querySelector(".logout-link");
 
 logoutBtn.addEventListener("click", () => {
-  console.log("logout btn clicked");
+  console.log("clicked");
   localStorage.removeItem("userToken");
   location.assign("../index.html");
 });

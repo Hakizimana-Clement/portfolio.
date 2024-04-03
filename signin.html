@@ -43,10 +43,17 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
  "
     ></script>
+
+    <!-- start font for toastify -->
+    <link rel="stylesheet" href="styles/toastify.css" />
+    <!-- end font for toastify -->
     <!-- web title -->
     <title>My portfolio</title>
   </head>
   <body>
+    <div class="loader-container">
+      <span class="loader"></span>
+    </div>
     <header class="header container">
       <nav class="header__navbar">
         <!-- Start link Area -->
@@ -210,6 +217,8 @@
           <!-- End signup container -->
         </div>
       </section>
+
+      <div class="notifications"></div>
     </main>
     <footer class="footer section container">
       <!-- start footer container -->
@@ -260,11 +269,29 @@
         </div>
         <!-- End Icon -->
         <small class="footer-container__copyright">
-          All Rights Reserved &#169; 2021 _H.Clement ❤
+          All Rights Reserved &#169; 2021 H.Clement ❤
         </small>
       </div>
       <!-- End footer container -->
     </footer>
+
+    <!-- start toastjs -->
+    <script src="./src/toast.js"></script>
+    <!-- end toastjs -->
+
+    <!-- start decoded jwt jose -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
+      integrity="sha512-6QjmtipbdTnGeda8w+/eHxIjEzKZGJtbTVFl8kWI7iyV92bpx/stdeD8w84iHllAPMOesjoYpKHi53fWOpUk9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- start jwt decoded -->
+    <script src="./src/decodedJwt.js"></script>
+    <!-- end jwt decoded -->
+    <!-- end decoded jwt jose -->
     <!-- start login form validation script -->
     <script src="./src/login.js"></script>
     <!-- end login form validation script -->

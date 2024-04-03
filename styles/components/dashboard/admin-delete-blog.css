@@ -61,7 +61,8 @@
 .edit-btn-container {
 }
 
-.edit-btn {
+.edit-btn,
+.btn-remove-padding {
   padding: 9px 18px;
   font-size: var(--size-xs);
 }
@@ -73,6 +74,14 @@
 .edit-container__subtitle::after {
   content: " _________________________";
 }
+.edit-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 11px; */
+  border-radius: 50%;
+}
+
 /* xs */
 @media (min-width: 475px) {
   /* edit container */
@@ -105,7 +114,8 @@
   .edit-image-container {
     display: block;
     width: 123px;
-    height: 112px;
+    height: 123px;
+    /* height: 112px; */
     object-fit: cover;
   }
 
@@ -137,6 +147,9 @@
   .edit-container___img-and-text-container--img {
     width: 30%;
   } */
+  .edit-container___img-and-text-container {
+    gap: 1rem;
+  }
 
   /* texts */
   .edit-text,
@@ -148,6 +161,11 @@
   .edit-btn {
     padding: 9px 25px;
   }
+
+  /* edit button  container*/
+  .edit-btn-container {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* xl*/
@@ -155,6 +173,9 @@
   .edit-container__subtitle::after {
     content: " ___________________________________________________________________________________________________________";
   }
+}
+.delete-btn {
+  background-color: red;
 }
 
 /* 2xl */

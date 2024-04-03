@@ -1,3 +1,12 @@
+.blog-content__paragraph--container {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.blog-content__paragraph--container p {
+  font-weight: 400;
+}
+
 .blog,
 main {
   background-color: var(--clr-light);
@@ -72,9 +81,20 @@ main {
   align-items: center;
   gap: 0.5rem;
 }
+/* writer image container */
+.blog-content__writer-and-like-button--write-img-container {
+  width: 45px;
+  height: 45px;
+  border: solid white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 /* writer image */
 .blog-content__writer-and-like-button--write-img {
-  width: 10%;
+  /* width: 10%; */
+  width: 100%;
+  object-fit: cover;
 }
 /* container */
 .blog-content__writer-and-like-button {
@@ -150,6 +170,7 @@ main {
 .comment-buble__paragraph {
   font-size: var(--size-sm);
   font-weight: normal;
+  word-wrap: break-word;
 }
 
 /* like link */
@@ -223,8 +244,18 @@ main {
   font-weight: 100;
 }
 
+.blog-content__paragraph {
+  word-wrap: break-word;
+}
+
 /* xs */
-/* @media(min-width:475px){} */
+@media (min-width: 475px) {
+  /* writer image container */
+  .blog-content__writer-and-like-button--write-img-container {
+    width: 60px;
+    height: 60px;
+  }
+}
 
 /* sm */
 @media (min-width: 640px) {
@@ -249,6 +280,12 @@ main {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* writer image container */
+  .blog-content__writer-and-like-button--write-img-container {
+    width: 65px;
+    height: 65px;
+  }
 }
 
 /* lg*/
@@ -267,17 +304,30 @@ main {
   .comment-bubble__reply-or-like--img {
     width: 4%;
   }
-  .blog-content__paragraph {
-    /* width: 83%; */
-  }
+  /* .blog-content__paragraph { */
+  /* width: 83%; */
+  /* } */
   .blog-content__title {
     font-size: var(--size-4xl);
   }
   .blog-content__paragraph {
     font-size: var(--size-xl);
   }
+
+  /* writer image container */
+  .blog-content__writer-and-like-button--write-img-container {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* writer image */
   .blog-content__writer-and-like-button--write-img {
-    width: 6%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .blog-content__writer-and-like-button--write-img {
+    /* width: 6%; */
   }
   /* .leave-comment__form {
     width: 42%;
@@ -300,8 +350,10 @@ main {
     width: 20%;
     padding: 0.89rem;
   }
+  .blog-content__paragraph--container {
+    width: 100%;
+  }
 }
-
 /* xl*/
 /* @media(min-width:1280px){} */
 
@@ -330,5 +382,110 @@ main {
 }
 .no-comment {
   text-align: center;
+  font-weight: 700;
+  font-size: var(--size-lg);
+}
+
+.error {
+  font-size: var(--size-sm);
+  color: red;
   font-weight: 600;
+  /* margin-top: 2rem; */
+}
+.input-wrapper {
+  width: 100%;
+}
+
+.like-icon-active {
+  /* width: 9%; work better on like icon */
+  width: 16%;
+  stroke: gray;
+  cursor: pointer;
+}
+
+.toggleLike {
+  fill: red;
+}
+
+/* 2xl */
+/* @media(min-width:1536px){} */
+.loader-container {
+  background-color: #2e335387;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* width: 100%; */
+/* height: 100%; */
+/* .loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: absolute;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+} */
+/* background: #ff3d00; */
+.loader {
+  border: 2px solid #fff;
+  width: 48px;
+  height: 48px;
+  background: #5161f180;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 24px solid;
+  border-color: transparent #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

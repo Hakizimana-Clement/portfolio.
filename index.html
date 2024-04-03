@@ -30,6 +30,9 @@
     <!-- styles -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <!--start remove this is testing -->
+    <link rel="stylesheet" href="styles/components/header-test.css" />
+    <!--end  remove this is testing -->
     <link rel="stylesheet" href="styles/components/header.css" />
     <link rel="stylesheet" href="styles/components/hero.css" />
 
@@ -37,6 +40,9 @@
 
     <link rel="stylesheet" href="styles/components/skills.css" />
 
+    <!-- start project testing -->
+    <link rel="stylesheet" href="styles/components/projects-testing.css" />
+    <!-- end project testing -->
     <link rel="stylesheet" href="styles/components/projects.css" />
 
     <link rel="stylesheet" href="styles/components/blogs.css" />
@@ -68,42 +74,88 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     /> -->
+
+    <!-- start font for toastify -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- end font for toastify -->
+    <link rel="stylesheet" href="styles/toastify.css" />
+
+    <!--*****************************************************************************************  -->
+    <!--*********************************REACT CDN **********************************************  -->
+    <!--*****************************************************************************************  -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <!--*********************************************************************************************  -->
+    <!--*********************************************************************************************  -->
+
     <!-- web title -->
     <title>My portfolio</title>
   </head>
   <body>
-    <header class="header container">
-      <nav class="header__navbar">
-        <!-- Start link Area -->
-        <ul class="header__menu">
-          <li>
-            <a class="header__link" href="#hero">Home</a>
+    <div class="loader-container">
+      <span class="loader"></span>
+    </div>
+    <!-- start navbar testing -->
+    <header class="testing-header">
+      <nav class="tesing-header__nav">
+        <!-- mobile nav -->
+        <ul class="tesing-header__nav-ul sidebar">
+          <li class="hideSidebar">
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+                class="menu-close-btn"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </a>
           </li>
+          <li><a class="mobile-nav___link" href="#hero">Home</a></li>
+          <li><a class="mobile-nav___link" href="#about">About</a></li>
+          <li><a class="mobile-nav___link" href="#skills">Skills</a></li>
+          <li><a class="mobile-nav___link" href="#works">Projects</a></li>
+          <li><a class="mobile-nav___link" href="#blogsss">blogs</a></li>
+          <!-- contact -->
           <li>
-            <a class="header__link" href="#about">About</a>
+            <a class="mobile-nav___link contact-link" href="#contact"
+              >Contact</a
+            >
           </li>
-          <li>
-            <a class="header__link" href="#skills">Skills</a>
-          </li>
-          <li>
-            <a class="header__link" href="#works">Works</a>
-          </li>
-          <li>
-            <a class="header__link" href="#contact">Contact</a>
-          </li>
-          <li>
-            <a class="header__link" href="#blogs">Blogs</a>
-          </li>
-          <!-- <li>
-            <a class="header__link" href="#signin">
-              <div>
+          <!-- login button -->
+          <li class="mobile-nav___link">
+            <a class="login-btn-no-background" href="signin.html">
+              <!-- href="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/signin.html" -->
+              <!-- Start login button -->
+
+              <button class="login-btn btn">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6"
+                  class="header__signin--user-icon"
                 >
                   <path
                     stroke-linecap="round"
@@ -111,59 +163,83 @@
                     d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                   />
                 </svg>
-
-                <span>Sign</span>
-              </div>
+                <span class="login-btn--text">Sign In</span>
+              </button>
+              <!-- End login button -->
             </a>
-          </li> -->
+          </li>
         </ul>
-        <!-- End link Area -->
+        <!-- large screen nav -->
+        <ul class="tesing-header__nav-ul larger-screen-ul-list">
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#hero">Home</a>
+          </li>
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#about">About</a>
+          </li>
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#skills">Skills</a>
+          </li>
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#works">Projects</a>
+          </li>
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#blogss">Blogs</a>
+          </li>
 
-        <!-- Start login button -->
-        <a
-          class="header__link"
-          href="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/signin.html"
-        >
-          <button class="login-btn btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="header__signin--user-icon"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              />
-            </svg>
-            <span class="login-btn--text">Sign In</span>
-          </button>
-        </a>
-        <!-- End login button -->
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="#contact">Contact</a>
+          </li>
+          <!-- login button -->
+          <li class="hideOnLargeScreen larger-screen-list">
+            <a class="larger-screen-link" href="signin.html">
+              <!-- href="https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/signin.html" -->
+              <!-- Start login button -->
 
-        <!-- Start menu icon button -->
-        <button class="header__bars">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        </button>
-        <!-- End menu icon button -->
+              <button class="login-btn btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="header__signin--user-icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+                <span class="login-btn--text">Sign In</span>
+              </button>
+              <!-- End login button -->
+            </a>
+          </li>
+
+          <!-- mobile icon -->
+          <li class="menu-btn-test showSidebar">
+            <span class="menu-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="menu-bar-icon-test"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </span>
+          </li>
+        </ul>
       </nav>
     </header>
-
+    <!-- end navbar testing -->
     <!-- ################################################## -->
     <!-- ################ Mobile navigation ################### -->
     <!-- ################################################## -->
@@ -348,7 +424,7 @@
                 <li>
                   <img
                     class="skills__container-img--list-icon"
-                    src="/images/white-and-black-expressjs-icon.svg"
+                    src="images/white-and-black-expressjs-icon.svg"
                     alt="Express JS icon "
                   />
                 </li>
@@ -402,448 +478,384 @@
       <!-- ################################################## -->
       <!-- ################ PROJECT SECTION ################### -->
       <!-- ################# -->
-      <!--****************** TESTING 3 project ************************** -->
-      <!-- <section id="work1" class="work1 section container"> -->
 
-      <section id="works" class="projects section container">
-        <h2 class="projects-container__tex-title--mobile">Projects</h2>
-        <!-- <h2>project test</h2> -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <!-- start project card 1 -->
-            <div class="swiper-slide">
-              <!-- Start project container -->
-              <div class="projects-container">
-                <!-- Start project container image -->
-                <div class="projects-container__image">
-                  <!-- img -->
-                  <img
-                    class="projects-container__image-img"
-                    src="images/project-1.svg"
-                    alt="simon game project"
-                  />
-                  <!-- next button -->
-                  <!-- <button class="projects-container__image-btn btn">
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="projects-container__image-btn-arrow"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                    </span>
-                  </button> -->
-                </div>
-                <!-- End project container image -->
-                <!-- this div holder all text container and next button container -->
-                <div>
-                  <!-- Start project containerText -->
-                  <div class="projects-container__text">
-                    <h2 class="projects-container__tex-title">Projects</h2>
-                    <h3 class="projects-container__tex-subtitle">Simon Game</h3>
-                    <p class="projects-container__tex-description">
+      <!--****************** TESTING 4 project ************************** -->
+      <section id="works" class="project-test section container">
+        <h2 class="project-test__title">Projects</h2>
+        <!-- start card container-->
+        <div class="project-test-wrapper">
+          <div class="project-test-wrapper__container">
+            <!-- Start card 1 -->
+            <input type="radio" name="slide" id="c1" checked />
+            <label for="c1" class="project-test-wrapper__container--card">
+              <div class="row">
+                <div class="icon">1</div>
+                <div class="description">
+                  <div class="description__text-container">
+                    <h4 class="description__text-container--title">
+                      Simon game
+                    </h4>
+                    <p class="description__text-container--paragraph">
                       An inquisitive Computer Science Engineering student,
                       skilled in leadership, seeking to leverage solid
                       development skills with focus on collaboration,
                       communication and passion.
                     </p>
-                    <!-- Start language build with -->
-                    <ul class="projects-container__tex-ul-container">
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >HTML</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >CSS3</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >JavaScript</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >ReactJS</span
-                        >
-                      </li>
-                    </ul>
-                    <!-- End language build with -->
-
-                    <!-- Start Github link -->
-                    <div class="projects-container__tex-github-link-container">
+                    <div class="description__text-container--lists-container">
                       <ul
-                        class="projects-container__tex-github-link-container--list"
+                        class="description__text-container--list build-language__list-container"
                       >
-                        <!-- github link -->
+                        <li class="build-language__list">HTML</li>
+                        <li class="build-language__list">CSS</li>
+                        <li class="build-language__list">JS</li>
+                        <li class="build-language__list">ReactJS</li>
+                        <li class="build-language__list">Typescript</li>
+                      </ul>
+
+                      <ul
+                        class="description__text-container--list github-and-live-web__list-container"
+                      >
                         <li>
-                          <a
-                            class="projects-container__tex-github-link-container--github-link"
-                            href="#"
-                          >
-                            <img
-                              src="images/github-liink.svg"
-                              alt="github link"
-                          /></a>
+                          <a href="#">
+                            <!-- start github -->
+                            <ion-icon
+                              name="logo-github"
+                              class="github-icon"
+                            ></ion-icon>
+                            <!-- end github -->
+
+                            <!-- <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              class="github-icon"
+                            >
+                              <g fill="none">
+                                <g clip-path="url(#akarIconsGithubFill0)">
+                                  <path
+                                    fill="white"
+                                    fill-rule="evenodd"
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12"
+                                    clip-rule="evenodd"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="akarIconsGithubFill0">
+                                    <path fill="#fff" d="M0 0h24v24H0z" />
+                                  </clipPath>
+                                </defs>
+                              </g>
+                            </svg> -->
+                          </a>
                         </li>
-                        <!-- live web link -->
                         <li>
-                          <a
-                            class="projects-container__tex-github-link-container--live-web-link"
-                            href="#"
-                            ><img
-                              src="images/live-web-link.svg"
-                              alt="live web link"
-                          /></a>
+                          <a href="#">
+                            <ion-icon
+                              name="link-outline"
+                              class="live-web-icon"
+                            ></ion-icon>
+                            <!-- <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              class="live-web-icon"
+                            >
+                              <path
+                                fill="none"
+                                stroke="white"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13.5 10.5L21 3m-5 0h5v5m0 6v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"
+                              />
+                            </svg> -->
+                          </a>
                         </li>
                       </ul>
                     </div>
-                    <!-- End Github link -->
                   </div>
-                  <!-- End project container -->
-                  <!-- Start next button  container -->
                 </div>
               </div>
-              <!-- end project container -->
-            </div>
-            <!-- end project card 1 -->
-            <!-- start project card 2 -->
-            <div class="swiper-slide">
-              <!-- Start project container -->
-              <div class="projects-container">
-                <!-- Start project container image -->
-                <div class="projects-container__image">
-                  <!-- img -->
-                  <img
-                    class="projects-container__image-img"
-                    src="images/project-2.jpg"
-                    alt="simon game project"
-                  />
-                  <!-- next button -->
-                  <!-- <button class="projects-container__image-btn btn">
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="projects-container__image-btn-arrow"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                    </span>
-                  </button> -->
-                </div>
-                <!-- End project container image -->
-                <!-- this div holder all text container and next button container -->
-                <div>
-                  <!-- Start project containerText -->
-                  <div class="projects-container__text">
-                    <h2 class="projects-container__tex-title">Projects</h2>
-                    <h3 class="projects-container__tex-subtitle">
-                      Book keeper
-                    </h3>
-                    <p class="projects-container__tex-description">
+            </label>
+            <!-- End card 1 -->
+
+            <!-- Start card 2 -->
+            <input type="radio" name="slide" id="c2" />
+            <label for="c2" class="project-test-wrapper__container--card">
+              <div class="row">
+                <div class="icon">2</div>
+                <div class="description">
+                  <div class="description__text-container">
+                    <h4 class="description__text-container--title">
+                      Book Kepper App
+                    </h4>
+                    <p class="description__text-container--paragraph">
                       An inquisitive Computer Science Engineering student,
                       skilled in leadership, seeking to leverage solid
                       development skills with focus on collaboration,
                       communication and passion.
                     </p>
-                    <!-- Start language build with -->
-                    <ul class="projects-container__tex-ul-container">
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >HTML</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >CSS3</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >JavaScript</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >ReactJS</span
-                        >
-                      </li>
-                    </ul>
-                    <!-- End language build with -->
-
-                    <!-- Start Github link -->
-                    <div class="projects-container__tex-github-link-container">
+                    <div class="description__text-container--lists-container">
                       <ul
-                        class="projects-container__tex-github-link-container--list"
+                        class="description__text-container--list build-language__list-container"
                       >
-                        <!-- github link -->
+                        <li class="build-language__list">HTML</li>
+                        <li class="build-language__list">CSS</li>
+                        <li class="build-language__list">JS</li>
+                        <li class="build-language__list">ReactJS</li>
+                        <li class="build-language__list">Typescript</li>
+                      </ul>
+
+                      <ul
+                        class="description__text-container--list github-and-live-web__list-container"
+                      >
                         <li>
-                          <a
-                            class="projects-container__tex-github-link-container--github-link"
-                            href="#"
-                          >
-                            <img
-                              src="images/github-liink.svg"
-                              alt="github link"
-                          /></a>
+                          <a href="#">
+                            <!-- start github -->
+                            <ion-icon
+                              name="logo-github"
+                              class="github-icon"
+                            ></ion-icon>
+                            <!-- end github -->
+
+                            <!-- <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              class="github-icon"
+                            >
+                              <g fill="none">
+                                <g clip-path="url(#akarIconsGithubFill0)">
+                                  <path
+                                    fill="white"
+                                    fill-rule="evenodd"
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12"
+                                    clip-rule="evenodd"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="akarIconsGithubFill0">
+                                    <path fill="#fff" d="M0 0h24v24H0z" />
+                                  </clipPath>
+                                </defs>
+                              </g>
+                            </svg> -->
+                          </a>
                         </li>
-                        <!-- live web link -->
                         <li>
-                          <a
-                            class="projects-container__tex-github-link-container--live-web-link"
-                            href="#"
-                            ><img
-                              src="images/live-web-link.svg"
-                              alt="live web link"
-                          /></a>
+                          <a href="#">
+                            <ion-icon
+                              name="link-outline"
+                              class="live-web-icon"
+                            ></ion-icon>
+                            <!-- <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              class="live-web-icon"
+                            >
+                              <path
+                                fill="none"
+                                stroke="white"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13.5 10.5L21 3m-5 0h5v5m0 6v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"
+                              />
+                            </svg> -->
+                          </a>
                         </li>
                       </ul>
                     </div>
-                    <!-- End Github link -->
                   </div>
-                  <!-- End project container -->
-                  <!-- Start next button  container -->
                 </div>
               </div>
-              <!-- end project container -->
-            </div>
-            <!-- end project card 2 -->
-            <!-- start project card 3 -->
-            <div class="swiper-slide">
-              <!-- Start project container -->
-              <div class="projects-container">
-                <!-- Start project container image -->
-                <div class="projects-container__image">
-                  <!-- img -->
-                  <img
-                    class="projects-container__image-img"
-                    src="images/project-3.jpg"
-                    alt="simon game project"
-                  />
-                  <!-- next button -->
-                  <!-- <button class="projects-container__image-btn btn">
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="projects-container__image-btn-arrow"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                    </span>
-                  </button> -->
-                </div>
-                <!-- End project container image -->
-                <!-- this div holder all text container and next button container -->
-                <div>
-                  <!-- Start project containerText -->
-                  <div class="projects-container__text">
-                    <h2 class="projects-container__tex-title">Projects</h2>
-                    <h3 class="projects-container__tex-subtitle">DJ App</h3>
-                    <p class="projects-container__tex-description">
+            </label>
+            <!-- End card 2 -->
+
+            <!-- Start card 3 -->
+            <input type="radio" name="slide" id="c3" />
+            <label for="c3" class="project-test-wrapper__container--card">
+              <div class="row">
+                <div class="icon">3</div>
+                <div class="description">
+                  <div class="description__text-container">
+                    <h4 class="description__text-container--title">
+                      MusiX App
+                    </h4>
+                    <p class="description__text-container--paragraph">
                       An inquisitive Computer Science Engineering student,
                       skilled in leadership, seeking to leverage solid
                       development skills with focus on collaboration,
                       communication and passion.
                     </p>
-                    <!-- Start language build with -->
-                    <ul class="projects-container__tex-ul-container">
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >HTML</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >CSS3</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >JavaScript</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >ReactJS</span
-                        >
-                      </li>
-                    </ul>
-                    <!-- End language build with -->
-
-                    <!-- Start Github link -->
-                    <div class="projects-container__tex-github-link-container">
+                    <div class="description__text-container--lists-container">
                       <ul
-                        class="projects-container__tex-github-link-container--list"
+                        class="description__text-container--list build-language__list-container"
                       >
-                        <!-- github link -->
+                        <li class="build-language__list">HTML</li>
+                        <li class="build-language__list">CSS</li>
+                        <li class="build-language__list">JS</li>
+                        <li class="build-language__list">ReactJS</li>
+                        <li class="build-language__list">Typescript</li>
+                      </ul>
+
+                      <ul
+                        class="description__text-container--list github-and-live-web__list-container"
+                      >
                         <li>
-                          <a
-                            class="projects-container__tex-github-link-container--github-link"
-                            href="#"
-                          >
-                            <img
-                              src="images/github-liink.svg"
-                              alt="github link"
-                          /></a>
+                          <a href="#">
+                            <!-- start github -->
+                            <ion-icon
+                              name="logo-github"
+                              class="github-icon"
+                            ></ion-icon>
+                            <!-- end github -->
+
+                            <!-- <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              class="github-icon"
+                            >
+                              <g fill="none">
+                                <g clip-path="url(#akarIconsGithubFill0)">
+                                  <path
+                                    fill="white"
+                                    fill-rule="evenodd"
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12"
+                                    clip-rule="evenodd"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="akarIconsGithubFill0">
+                                    <path fill="#fff" d="M0 0h24v24H0z" />
+                                  </clipPath>
+                                </defs>
+                              </g>
+                            </svg> -->
+                          </a>
                         </li>
-                        <!-- live web link -->
                         <li>
-                          <a
-                            class="projects-container__tex-github-link-container--live-web-link"
-                            href="#"
-                            ><img
-                              src="images/live-web-link.svg"
-                              alt="live web link"
-                          /></a>
+                          <a href="#">
+                            <ion-icon
+                              name="link-outline"
+                              class="live-web-icon"
+                            ></ion-icon>
+                            <!-- <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              class="live-web-icon"
+                            >
+                              <path
+                                fill="none"
+                                stroke="white"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13.5 10.5L21 3m-5 0h5v5m0 6v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"
+                              />
+                            </svg> -->
+                          </a>
                         </li>
                       </ul>
                     </div>
-                    <!-- End Github link -->
                   </div>
-                  <!-- End project container -->
-                  <!-- Start next button  container -->
                 </div>
               </div>
-              <!-- end project container -->
-            </div>
-            <!-- end project card 3 -->
-            <!-- start project card 4 -->
-            <div class="swiper-slide">
-              <!-- Start project container -->
-              <div class="projects-container">
-                <!-- Start project container image -->
-                <div class="projects-container__image">
-                  <!-- img -->
-                  <img
-                    class="projects-container__image-img"
-                    src="images/project-4.jpg"
-                    alt="simon game project"
-                  />
-                  <!-- next button -->
-                  <!-- <button class="projects-container__image-btn btn">
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="projects-container__image-btn-arrow"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                    </span>
-                  </button> -->
-                </div>
-                <!-- End project container image -->
-                <!-- this div holder all text container and next button container -->
-                <div>
-                  <!-- Start project containerText -->
-                  <div class="projects-container__text">
-                    <h2 class="projects-container__tex-title">Projects</h2>
-                    <h3 class="projects-container__tex-subtitle">Snake Game</h3>
-                    <p class="projects-container__tex-description">
+            </label>
+            <!-- End card 3 -->
+
+            <!-- Start card 4 -->
+            <input type="radio" name="slide" id="c4" />
+            <label for="c4" class="project-test-wrapper__container--card">
+              <div class="row">
+                <div class="icon">4</div>
+                <div class="description">
+                  <div class="description__text-container">
+                    <h4 class="description__text-container--title">
+                      Snake Game
+                    </h4>
+                    <p class="description__text-container--paragraph">
                       An inquisitive Computer Science Engineering student,
                       skilled in leadership, seeking to leverage solid
                       development skills with focus on collaboration,
                       communication and passion.
                     </p>
-                    <!-- Start language build with -->
-                    <ul class="projects-container__tex-ul-container">
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >HTML</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >CSS3</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >JavaScript</span
-                        >
-                      </li>
-                      <li class="projects-container__tex-list">
-                        <span class="projects-container__tex-list--text"
-                          >ReactJS</span
-                        >
-                      </li>
-                    </ul>
-                    <!-- End language build with -->
-
-                    <!-- Start Github link -->
-                    <div class="projects-container__tex-github-link-container">
+                    <div class="description__text-container--lists-container">
                       <ul
-                        class="projects-container__tex-github-link-container--list"
+                        class="description__text-container--list build-language__list-container"
                       >
-                        <!-- github link -->
+                        <li class="build-language__list">HTML</li>
+                        <li class="build-language__list">CSS</li>
+                        <li class="build-language__list">JS</li>
+                        <li class="build-language__list">ReactJS</li>
+                        <li class="build-language__list">Typescript</li>
+                      </ul>
+
+                      <ul
+                        class="description__text-container--list github-and-live-web__list-container"
+                      >
                         <li>
-                          <a
-                            class="projects-container__tex-github-link-container--github-link"
-                            href="#"
-                          >
-                            <img
-                              src="images/github-liink.svg"
-                              alt="github link"
-                          /></a>
+                          <a href="#">
+                            <!-- start github -->
+                            <ion-icon
+                              name="logo-github"
+                              class="github-icon"
+                            ></ion-icon>
+                            <!-- end github -->
+
+                            <!-- <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              class="github-icon"
+                            >
+                              <g fill="none">
+                                <g clip-path="url(#akarIconsGithubFill0)">
+                                  <path
+                                    fill="white"
+                                    fill-rule="evenodd"
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12"
+                                    clip-rule="evenodd"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="akarIconsGithubFill0">
+                                    <path fill="#fff" d="M0 0h24v24H0z" />
+                                  </clipPath>
+                                </defs>
+                              </g>
+                            </svg> -->
+                          </a>
                         </li>
-                        <!-- live web link -->
                         <li>
-                          <a
-                            class="projects-container__tex-github-link-container--live-web-link"
-                            href="#"
-                            ><img
-                              src="images/live-web-link.svg"
-                              alt="live web link"
-                          /></a>
+                          <a href="#">
+                            <ion-icon
+                              name="link-outline"
+                              class="live-web-icon"
+                            ></ion-icon>
+                            <!-- <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              class="live-web-icon"
+                            >
+                              <path
+                                fill="none"
+                                stroke="white"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13.5 10.5L21 3m-5 0h5v5m0 6v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"
+                              />
+                            </svg> -->
+                          </a>
                         </li>
                       </ul>
                     </div>
-                    <!-- End Github link -->
                   </div>
-                  <!-- End project container -->
-                  <!-- Start next button  container -->
                 </div>
               </div>
-              <!-- end project container -->
-            </div>
-            <!-- end project card 4 -->
+            </label>
+            <!-- End card 4 -->
           </div>
-          <div class="swiper-pagination swapper-btn"></div>
-          <div class="swiper-pagination swapper-btn"></div>
         </div>
+        <!-- end card container-->
+
         <!-- Start scroll down button -->
         <div class="scroll-btn__container">
           <button class="scroll-btn__btn">
@@ -865,6 +877,7 @@
         </div>
         <!-- End scroll down button -->
       </section>
+      <!--****************** ************************************* -->
 
       <!-- ################################################## -->
       <!-- ################ BLOGS SECTION ################### -->
@@ -1291,11 +1304,14 @@
         <!-- end scroll down button -->
       </section>
       <!--****************** TESTING 3 ************************** -->
-      <section id="blogs" class="blog3 section container">
+      <section id="blogss" class="blog3 section container">
         <h2 class="blog-title">Blogs</h2>
 
-        <!--start container card -->
+        <!-- <div class="loader-container-blog">
+          <span class="loader-blog"></span>
+        </div> -->
         <div class="gallery-wrapper">
+          <!--start container card -->
           <!-- back button -->
           <span id="backBtn">
             <svg
@@ -1465,8 +1481,21 @@
           </button>
           <span class="scroll-btn__text">Scroll </span>
         </div> -->
+        <!-- ************************************************************************************ -->
+        <!-- ************************************************************************************ -->
+        <!-- ************************************************************************************ -->
+        <!-- ************************************************************************************ -->
+        <!-- <div class="notifications"></div> -->
         <!-- end scroll down button -->
+        <!-- <div class="toastify-button-container">
+          <button id="success">success</button>
+          <button id="error">error</button>
+          <button id="warning">warning</button>
+          <button id="info">info</button>
+        </div> -->
       </section>
+
+      <div class="gallery"></div>
     </main>
     <footer class="footer section container">
       <!-- start footer container -->
@@ -1552,11 +1581,35 @@
       </div>
       <!-- End footer container -->
     </footer>
+
+    <!-- jwt decoded -->
+    <script src="./src/decodedJwt.js"></script>
+    <!-- track user token -->
+    <script src="./src/datas/userToken.js"></script>
+
+    <!-- start toastjs -->
+    <script src="./src/toast.js"></script>
+    <!-- end toastjs -->
+
+    <!-- start jose for decoded jwt -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jose/5.2.3/index.js"
+      integrity="sha512-6QjmtipbdTnGeda8w+/eHxIjEzKZGJtbTVFl8kWI7iyV92bpx/stdeD8w84iHllAPMOesjoYpKHi53fWOpUk9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- end jose for decoded jwt -->
+
     <script src="./src/swiper-bundle.min.js"></script>
 
-    <!-- start form validation on contact form -->
-    <script src="./src/mobile-nav.js"></script>
-    <!-- end form validation on contact form -->
+    <!-- start mobile navbar  -->
+    <!-- <script src="./src/mobile-nav.js"></script> -->
+    <!-- end mobile navbar  -->
+
+    <!-- start mobile navbar test -->
+    <script src="./src/mobile-nav-test.js"></script>
+    <!-- end mobile navbar test -->
 
     <!-- start form validation on contact form -->
     <script src="./src/contact-me-form-validation.js"></script>
@@ -1565,9 +1618,8 @@
     <!-- start  slide scroll script -->
     <script src="./src/slider-project-function.js"></script>
     <!-- end slide scroll script -->
-
     <!-- index.js -->
-    <script src="/src/datas/blog-on-home-page.js"></script>
+    <script src="./src/datas/blog-on-home-page.js"></script>
     <!-- start  slide scroll script -->
     <script src="./src/slider-function.js"></script>
     <!-- end slide scroll script -->

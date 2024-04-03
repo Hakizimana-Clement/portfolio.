@@ -17,11 +17,11 @@ const showFormErrors = (error) => {
 };
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  // State
+  console.log("clicked");
+  // // State
   let hasErrors = false;
 
-  // Validate name
+  // // Validate name
   if (e.target.elements.name.value.length === 0) {
     formError.errorName = "Name should not be empty.";
     hasErrors = true;
@@ -45,8 +45,8 @@ contactForm.addEventListener("submit", (e) => {
   if (e.target.elements.message.value.length === 0) {
     formError.errorMessage = "Message should not be empty.";
     hasErrors = true;
-  } else if (e.target.elements.message.value.length > 50) {
-    formError.errorMessage = "Message should not be have more than 50 words.";
+  } else if (e.target.elements.message.value.length > 400) {
+    formError.errorMessage = "Message should not be have more than 400 words.";
     hasErrors = true;
   } else {
     formError.errorMessage = null;
@@ -58,7 +58,40 @@ contactForm.addEventListener("submit", (e) => {
   if (!hasErrors) {
     // Form submission logic here
     console.log("Form submitted successfully!");
+    const queryData = {
+      name: e.target.elements.name.value,
+      email: e.target.elements.email.value,
+      message: e.target.elements.message.value,
+    };
+
+    // console.log(queryData);
+    sendQueryFetch(queryData);
     e.target.reset(); // Reset the form after successful submission
     successMessageEl.style.display = "block";
   }
 });
+
+const sendQueryFetch = async (data) => {
+  try {
+    const response = await fetch(
+      "https://mybrand-be-j4ci.onrender.com/api/v1/queries",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    const json = await response.json();
+
+    if (!response.ok) {
+      console.log(json);
+    }
+    console.log(response);
+    console.log(json);
+  } catch (error) {
+    console.log(error);
+  }
+};
