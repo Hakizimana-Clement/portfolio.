@@ -220,9 +220,9 @@ const fetchToggleLike = async (blogId) => {
       // createToast("info", "info","lllllllllll" ,"unauthorize");
       // createToast("info", errorIcon, json.message, json.error);
       createToast("info", errorIcon, "Please login", "Redirect to login page");
-      setTimeout(() => {
-        location.assign("signin.html");
-      }, 3000);
+      // setTimeout(() => {
+      location.assign("signin.html");
+      // }, 3000);
     } else if (json.message === "User not found") {
       // createToast("info", errorIcon, json.message, json.error);
       createToast("info", errorIcon, "Please login", "Redirect to login page");

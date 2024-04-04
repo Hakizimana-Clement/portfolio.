@@ -410,16 +410,17 @@ main {
 /* 2xl */
 /* @media(min-width:1536px){} */
 .loader-container {
-  background-color: #2e335387;
-  height: 100vh;
+  background-color: #2e3353e5;
   width: 100%;
-  position: fixed;
+  height: 100vh; /* Cover the entire viewport height */
+  position: fixed; /* Fix the loader container in place */
   top: 0;
   left: 0;
-  z-index: 10000;
-  display: none;
+  display: flex;
+  /* display: none; */
   justify-content: center;
   align-items: center;
+  z-index: 9999; /* Ensure the loader is on top of other content */
 }
 
 /* width: 100%; */

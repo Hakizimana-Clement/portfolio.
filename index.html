@@ -103,9 +103,12 @@
     <title>My portfolio</title>
   </head>
   <body>
-    <div class="loader-container">
+    <!-- <div class="loader-container">
       <span class="loader"></span>
-    </div>
+    </div> -->
+    <!-- <div class="loader-container">
+      <span class="loader"></span>
+    </div> -->
     <!-- start navbar testing -->
     <header class="testing-header">
       <nav class="tesing-header__nav">
@@ -1330,8 +1333,15 @@
             </svg>
           </span>
 
+          <!-- *************************************************** -->
+          <!-- *************************************************** -->
+          <!-- *************************************************** -->
           <!-- *********************** Testing **************************** -->
-          <div class="gallery"></div>
+          <!-- <div class="gallery"></div> -->
+
+          <div id="gallery" class="gallery"></div>
+          <!-- *************************************************** -->
+          <!-- *************************************************** -->
           <!-- *************************************************** -->
           <!-- next button -->
           <!-- <p id="nextBtn">></p> -->
@@ -1495,7 +1505,9 @@
         </div> -->
       </section>
 
-      <div class="gallery"></div>
+      <!-- <div id="gallery" class="gallery"></div> -->
+      <!-- <div id="blog-card" class="gallery"></div> -->
+      <!-- <div class="gallery"></div> -->
     </main>
     <footer class="footer section container">
       <!-- start footer container -->
@@ -1581,7 +1593,17 @@
       </div>
       <!-- End footer container -->
     </footer>
+    <!-- ************************************************************************************ -->
+    <!-- ************************************************************************************ -->
+    <!-- ****************************** start babel ******************************************* -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- ****************************** end babel ********************************************* -->
 
+    <!-- ********rendering blog card with react ******************************************* -->
+    <script src="./src/react/components/blogCard.js" type="text/babel"></script>
+    <!-- ************************************************************************* -->
+    <!-- ************************************************************************************ -->
+    <!-- ************************************************************************************ -->
     <!-- jwt decoded -->
     <script src="./src/decodedJwt.js"></script>
     <!-- track user token -->
@@ -1619,7 +1641,7 @@
     <script src="./src/slider-project-function.js"></script>
     <!-- end slide scroll script -->
     <!-- index.js -->
-    <script src="./src/datas/blog-on-home-page.js"></script>
+    <!-- <script src="./src/datas/blog-on-home-page.js"></script> -->
     <!-- start  slide scroll script -->
     <script src="./src/slider-function.js"></script>
     <!-- end slide scroll script -->

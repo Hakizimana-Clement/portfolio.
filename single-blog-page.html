@@ -55,13 +55,27 @@
     <link rel="stylesheet" href="./styles/toastify.css" />
     <!-- end font for toastify -->
 
+    <!--*****************************************************************************************  -->
+    <!--*********************************REACT CDN **********************************************  -->
+    <!--*****************************************************************************************  -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <!--*********************************************************************************************  -->
+    <!--*********************************************************************************************  -->
+
     <!-- web title -->
     <title>My portfolio</title>
   </head>
   <body>
-    <div class="loader-container">
+    <!-- <div class="loader-container">
       <span class="loader"></span>
-    </div>
+    </div> -->
 
     <!-- start navbar testing -->
     <header class="testing-header">
@@ -218,160 +232,39 @@
 
     <main>
       <section class="blog container">
-        <!-- Start blog container -->
-        <div class="blog-container">
-          <!-- start blog date container -->
-          <div class="blog-container__date">
-            <!-- start date -->
-            <div class="blog-container__date-text-and-icon">
-              <!-- date icon -->
-              <ion-icon name="calendar" size="small"></ion-icon>
-              <p class="blog-container__date-year">Jan 02 2024</p>
-            </div>
-            <!-- end date -->
-            <div class="comment-likes__main-container">
-              <!-- start comment and like date -->
-              <!-- likes -->
-              <div class="comment-likes__container">
-                <img
-                  class="blog-icons like-icon"
-                  src="images/like-heart-icon.svg"
-                  alt="like"
-                />
-                <span class="like-numbers"></span>
-              </div>
-              <!-- comment-->
-              <div class="comment-likes__container">
-                <img
-                  class="blog-icons comment-icon"
-                  src="images/comment.svg"
-                  alt="comment"
-                />
-                <span class="comment-numbers"></span>
-              </div>
-              <!-- End comment and like date -->
-            </div>
+        <!-- **************************************************** -->
+        <!-- *********************** BLOG PAGE AND LIKE ******************** -->
+        <!-- **************************************************** -->
+        <div id="blog-container-v2"></div>
+        <!-- **************************************************** -->
+        <!-- ***********************  LIKE ******************** -->
+        <!-- **************************************************** -->
+        <!-- {/* likes button */} -->
+        <!-- <div class="blog-content__writer-and-like-button--like-button">
+          <div class="blog-content__writer-and-like-button--like-button-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.2"
+              stroke="currentColor"
+              class="like-icon-active"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+              />
+            </svg>
+
+            <p class="blog-content__writer-and-like-button--like-button-text">
+              Like
+            </p>
           </div>
-          <!-- end date container -->
-
-          <!-- start blog content -->
-          <div class="blog-content">
-            <!-- start blog title -->
-            <h1 class="blog-content__title"></h1>
-            <!-- end blog title -->
-
-            <!-- start blog paragraph-->
-            <!-- <p class="blog-content__paragraph">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
-              voluptate sunt, molestiae quae incidunt enim magnam eveniet.
-            </p> -->
-            <!-- end blog paragraph-->
-
-            <!-- start blog image -->
-            <div class="blog-content-img-container">
-              <img class="blog-content__img" src="" alt="technology" />
-              <!-- src="images/blog-large-image-.svg" -->
-            </div>
-
-            <!-- end blog image -->
-
-            <!-- start blog paragraph-->
-            <div class="blog-content__paragraph--container">
-              <p class="blog-content__paragraph"></p>
-            </div>
-            <!-- end blog paragraph-->
-            <!-- <img
-              class="blog-content__img"
-              src="images/blog-large-image-2.svg"
-              alt="office"
-            /> -->
-            <!-- start blog paragraph-->
-            <!-- <p class="blog-content__paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p> -->
-            <!-- end blog paragraph-->
-            <!-- start blog paragraph-->
-            <!-- <p class="blog-content__paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Et
-              magnis dis parturient montes nascetur ridiculus mus mauris.
-              Blandit volutpat maecenas volutpat blandit aliquam etiam. Non enim
-              praesent elementum facilisis leo vel fringilla. Pharetra pharetra
-              massa massa Lacus viverra vitae congue eu c
-            </p> -->
-            <!-- end blog paragraph-->
-            <!-- start blog paragraph-->
-            <!-- <p class="blog-content__paragraph">
-              et aliquam id diam maecensi vitae suscipit tellus. Nunc
-              scelerisque viverra mauris in aliquam. Urna duis convallis
-              convallis tellus id interdum velit laoreet id. Cum sociis natoque
-              penatibus et magnis. Pretium viverra suspendisse potenti nullam ac
-              tortor vitae. Nisi quis eleifend quam adipiscing vitae proin
-              sagittis nisl. Sollicitudin tempor id eu nisl nunc mi ipsum
-              faucibus. Turpis nunc eget lorem dolor sed. Ipsum a arcu cursus
-              vitae congue mauris.
-            </p> -->
-            <!-- end blog paragraph-->
-
-            <!-- start writer and like button -->
-            <div class="blog-content__writer-and-like-button">
-              <div class="blog-content__writer-and-like-button--write">
-                <div
-                  class="blog-content__writer-and-like-button--write-img-container"
-                >
-                  <img
-                    class="blog-content__writer-and-like-button--write-img"
-                    src=""
-                    alt="write image"
-                  />
-                  <!-- src="images/blog-writer.svg" -->
-                </div>
-                <p>Written By <span class="write-name">Migeli</span></p>
-              </div>
-              <div class="blog-content__writer-and-like-button--like-button">
-                <div
-                  class="blog-content__writer-and-like-button--like-button-link"
-                >
-                  <!-- href="#" -->
-                  <!-- <img
-                    class="blog-content__writer-and-like-button--like-img"
-                    src="images/like-heart-icon.svg"
-                    alt="like"
-                  /> -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.2"
-                    stroke="currentColor"
-                    class="like-icon-active"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                    />
-                  </svg>
-
-                  <p
-                    class="blog-content__writer-and-like-button--like-button-text"
-                  >
-                    Like
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- end write and like button -->
-          </div>
-          <!-- end blog content -->
-        </div>
-
+        </div> -->
+        <!-- **************************************************** -->
+        <!-- *********************** COMMENT ******************** -->
+        <!-- **************************************************** -->
         <!-- start comment section -->
         <div class="blog-comments-container">
           <h3 class="comment-title">Comments</h3>
@@ -384,7 +277,7 @@
         <!-- end comment section -->
 
         <!-- start leave comment -->
-        <div class="leave-comment-container">
+        <!-- <div class="leave-comment-container">
           <h3 class="leave-comment-container__title">Leave a comment</h3>
           <div class="leave-comment__form">
             <form class="leave-comment__form-and-input">
@@ -395,9 +288,7 @@
                   placeholder="Content"
                 ></textarea>
 
-                <!-- start email error -->
                 <span class="error" id="comment-text-error"></span>
-                <!-- start email error -->
               </div>
               <p class="leave-comment__form__note-text">
                 All comments are moderated before being published
@@ -407,7 +298,7 @@
               </div>
             </form>
           </div>
-        </div>
+        </div> -->
         <!-- End leave comment -->
         <!-- End blog container -->
       </section>
@@ -527,7 +418,22 @@
     <script src="./src/mobile-nav-test.js"></script>
     <!-- end mobile navbar test -->
     <!-- start single blog page script  -->
-    <script src="./src/datas/single-blog-page.js"></script>
+    <!-- <script src="./src/datas/single-blog-page.js"></script> -->
     <!-- end csingle blog page script  -->
+
+    <!-- ************************************************************************************ -->
+    <!-- ************************************************************************************ -->
+    <!-- ****************************** start babel ******************************************* -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- ****************************** end babel ********************************************* -->
+
+    <!-- ********rendering blog card with react ******************************************* -->
+    <script
+      src="./src/react/components/single-blog-page-v2.js"
+      type="text/babel"
+    ></script>
+    <!-- ************************************************************************* -->
+    <!-- ************************************************************************************ -->
+    <!-- ************************************************************************************ -->
   </body>
 </html>
