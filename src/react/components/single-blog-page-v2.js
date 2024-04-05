@@ -68,7 +68,7 @@ console.log(("token", token));
 // **********************************************************************************************
 // *************************** blog details *************************************************
 // **********************************************************************************************
-const BlogDetails = ({ blog, toggleLike }) => {
+const BlogDetails = ({ blog, toggleLike, isLiked }) => {
   return (
     <>
       <div className="blog-container">
@@ -144,7 +144,10 @@ const BlogDetails = ({ blog, toggleLike }) => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
+                  // fill="none"
+                  {...(isLiked
+                    ? { fill: "red", stroke: "white" }
+                    : { fill: "none" })}
                   viewBox="0 0 24 24"
                   stroke-width="1.2"
                   stroke="currentColor"
@@ -174,83 +177,83 @@ const BlogDetails = ({ blog, toggleLike }) => {
 // **********************************************************************************************
 // *************************************** LIKE *************************************************
 // **********************************************************************************************
-const toggleLike = () => {
-  const blogId = location.hash.substring(1);
-  console.log("clicked");
+// const toggleLike = () => {
+//   const blogId = location.hash.substring(1);
+//   console.log("clicked");
 
-  useEffect(() => {
-    const fetchToggleLike = async (blogId) => {
-      try {
-        const response = await fetch(
-          // `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
-          `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        const json = await response.json();
-        // unauthorized
-        if (json.status === "401") {
-          // hideLoader();
-          // createToast("info", "info","lllllllllll" ,"unauthorize");
-          // createToast("info", errorIcon, json.message, json.error);
-          createToast(
-            "info",
-            errorIcon,
-            "Please login",
-            "Redirect to login page"
-          );
-          // setTimeout(() => {
-          location.assign("signin.html");
-          // }, 3000);
-        } else if (json.message === "User not found") {
-          // createToast("info", errorIcon, json.message, json.error);
-          createToast(
-            "info",
-            errorIcon,
-            "Please login",
-            "Redirect to login page"
-          );
-          setTimeout(() => {
-            location.assign("signin.html");
-          }, 3000);
-        }
+//   useEffect(() => {
+//     const fetchToggleLike = async (blogId) => {
+//       try {
+//         const response = await fetch(
+//           // `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
+//           `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
+//           {
+//             method: "POST",
+//             headers: {
+//               "Content-Type": "application/json",
+//               Authorization: `Bearer ${token}`,
+//             },
+//           }
+//         );
+//         const json = await response.json();
+//         // unauthorized
+//         if (json.status === "401") {
+//           // hideLoader();
+//           // createToast("info", "info","lllllllllll" ,"unauthorize");
+//           // createToast("info", errorIcon, json.message, json.error);
+//           createToast(
+//             "info",
+//             errorIcon,
+//             "Please login",
+//             "Redirect to login page"
+//           );
+//           // setTimeout(() => {
+//           location.assign("signin.html");
+//           // }, 3000);
+//         } else if (json.message === "User not found") {
+//           // createToast("info", errorIcon, json.message, json.error);
+//           createToast(
+//             "info",
+//             errorIcon,
+//             "Please login",
+//             "Redirect to login page"
+//           );
+//           setTimeout(() => {
+//             location.assign("signin.html");
+//           }, 3000);
+//         }
 
-        // blog not found
-        if (json.status === "404") {
-          // hideShowLoader();
-          console.error("Error toggling like ", json);
-          console.log("error", json);
-          // createToast(
-          //   "info",
-          //   errorIcon,
-          //   "Blog not found",
-          //   "You can't like this blog"
-          // );
-          return;
-        }
+//         // blog not found
+//         if (json.status === "404") {
+//           // hideShowLoader();
+//           console.error("Error toggling like ", json);
+//           console.log("error", json);
+//           // createToast(
+//           //   "info",
+//           //   errorIcon,
+//           //   "Blog not found",
+//           //   "You can't like this blog"
+//           // );
+//           return;
+//         }
 
-        // blog liked
-        if (json.status === "201") {
-          // hideShowLoader();
-          // createToast("info", errorIcon, "Like toggle", "Successfully");
-          console.log("like toggle successfully ", json);
-          fetchSingleBlog();
-        }
-      } catch (error) {
-        console.log(error);
-      } finally {
-        // hideShowLoader();
-      }
-    };
+//         // blog liked
+//         if (json.status === "201") {
+//           // hideShowLoader();
+//           // createToast("info", errorIcon, "Like toggle", "Successfully");
+//           console.log("like toggle successfully ", json);
+//           fetchSingleBlog();
+//         }
+//       } catch (error) {
+//         console.log(error);
+//       } finally {
+//         // hideShowLoader();
+//       }
+//     };
 
-    fetchToggleLike(blogId);
-  }, [blogId]);
-};
+//     fetchToggleLike(blogId);
+//   }, [blogId]);
+// };
 // **********************************************************************************************
 // *************************************** RENDERING COMMENT ***************************************
 // **********************************************************************************************
@@ -362,6 +365,7 @@ const SingleBlogPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [blog, setBlog] = useState(null);
   const [comments, setComments] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   // ******************************************* fetch blog ***********************************************
   useEffect(() => {
@@ -419,7 +423,7 @@ const SingleBlogPage = () => {
 
   // ************************************** fetch like or toggle like ************************************
   const toggleLike = async () => {
-    console.log("clicked");
+    console.log("like clicked");
 
     try {
       const response = await fetch(
@@ -475,11 +479,26 @@ const SingleBlogPage = () => {
       if (json.status === "201") {
         // createToast("info", errorIcon, "Like toggle", "Successfully");
         console.log("like toggle successfully ", json.message);
+        // setIsLiked(true);
+        setIsLiked((prevLike) => !prevLike);
+        // generate random number for differentiate user like blog
+        const randomNbr = Math.floor(Math.random() * 1000000);
+        // save in local storage
+        localStorage.setItem(`userLike-${randomNbr}-${blogId}`, !isLiked);
       }
     } catch (error) {
       console.log(error);
     }
   };
+  // check if blog liked
+  useEffect(() => {
+    // Check if the blog is already liked in local storage
+    const likedStatus = localStorage.getItem(`userLike-${blogId}`);
+    if (likedStatus) {
+      setIsLiked(JSON.parse(likedStatus));
+    }
+  }, [blogId]);
+
   return (
     <>
       {isLoading && !blog && (
@@ -488,7 +507,12 @@ const SingleBlogPage = () => {
         </div>
       )}
       {!isLoading && (
-        <BlogDetails key={blog._id} blog={blog} toggleLike={toggleLike} />
+        <BlogDetails
+          key={blog._id}
+          blog={blog}
+          toggleLike={toggleLike}
+          isLiked={isLiked}
+        />
       )}
       <div className="blog-comments-container">
         <h3 className="comment-title">Comments</h3>
