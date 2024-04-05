@@ -191,7 +191,6 @@ const RenderingComment = ({ comment }) => {
 // *************************************** CREATE COMMENT ***************************************
 // **********************************************************************************************
 const CommentInput = ({ blog, setComments }) => {
-  console.log(blog);
   const blogId = location.hash.substring(1);
   const [comment, setComment] = useState("");
   const [error, setError] = useState(null);

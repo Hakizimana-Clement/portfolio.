@@ -48,12 +48,16 @@ const BlogCardDetails = ({ blog }) => {
                 ? `${blog.title.slice(0, 24)} ...`
                 : blog.title}
             </h2>
-            <p className="blogs-container__card-description description">
-              {blog.content.length > 63
-                ? `${blog.content.slice(0, 63)} ...`
-                : blog.content}
-              {/* dangerouslySetInnerHTML={{ __html: blog.content }} */}
-            </p>
+            <p
+              className="blogs-container__card-description description"
+              dangerouslySetInnerHTML={{
+                __html:
+                  blog.content.length > 63
+                    ? `${blog.content.slice(0, 63)} ...`
+                    : blog.content,
+              }}
+            ></p>
+
             <div className="blogs-container__card-likes-and-comments-container">
               <div className="blogs-container__card-likes-and-comments-container--writer">
                 {/* image */}
