@@ -361,12 +361,14 @@ const CommentInput = ({ blog, setComments }) => {
 // **********************************************************************************************
 const SingleBlogPage = () => {
   const blogId = location.hash.substring(1);
-
-  const [isLoading, setIsLoading] = useState(true);
   const [blog, setBlog] = useState(null);
   const [comments, setComments] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
 
+  // loaders
+  const [isLoadingBlog, setIsLoadingBlog] = useState(true);
+  const [isLoadingComments, setIsLoadingComments] = useState(true);
+  const [likeLoading, setLikeLoading] = useState(false);
   // ******************************************* fetch blog ***********************************************
   useEffect(() => {
     const fetchBlog = async (id) => {
@@ -377,7 +379,6 @@ const SingleBlogPage = () => {
 
         if (!response.ok) {
           console.error("Error fetching blog:", response.status);
-          // Handle error
           return;
         }
 
@@ -386,7 +387,9 @@ const SingleBlogPage = () => {
       } catch (error) {
         console.error("Error fetching blog:", error);
       } finally {
-        setIsLoading(false);
+        // setIsLoading(false);
+        // document.body.style.overflow = "auto";
+        setIsLoadingBlog(false);
         document.body.style.overflow = "auto";
       }
     };
@@ -413,18 +416,22 @@ const SingleBlogPage = () => {
         setComments(json.comments);
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsLoadingComments(false);
+        document.body.style.overflow = "auto";
       }
     };
 
     if (blog) {
       fetchComment(blogId);
     }
+    document.body.style.overflow = "hidden";
   }, [blogId, blog]);
 
   // ************************************** fetch like or toggle like ************************************
   const toggleLike = async () => {
     console.log("like clicked");
-
+    setLikeLoading(true);
     try {
       const response = await fetch(
         `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
@@ -488,7 +495,12 @@ const SingleBlogPage = () => {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      // setIsLoading(false);
+      // document.body.style.overflow = "auto";
+      setLikeLoading(false);
     }
+    // document.body.style.overflow = "hidden";
   };
   // check if blog liked
   useEffect(() => {
@@ -501,12 +513,25 @@ const SingleBlogPage = () => {
 
   return (
     <>
-      {isLoading && !blog && (
+      {/* {isLoading && !blog && (
+        <div className="loader-container">
+          <span className="loader"></span>
+        </div>
+      )} */}
+      {(isLoadingBlog || isLoadingComments || likeLoading) && (
         <div className="loader-container">
           <span className="loader"></span>
         </div>
       )}
-      {!isLoading && (
+      {/* {!isLoading && (
+        <BlogDetails
+          key={blog._id}
+          blog={blog}
+          toggleLike={toggleLike}
+          isLiked={isLiked}
+        />
+      )} */}
+      {!isLoadingBlog && (
         <BlogDetails
           key={blog._id}
           blog={blog}
@@ -514,15 +539,26 @@ const SingleBlogPage = () => {
           isLiked={isLiked}
         />
       )}
-      <div className="blog-comments-container">
-        <h3 className="comment-title">Comments</h3>
 
+      {/* <div className="blog-comments-container">
+        <h3 className="comment-title">Comments</h3>
         {comments.map((comment) => (
           <RenderingComment key={comment._id} comment={comment} />
         ))}
-      </div>
+      </div> */}
+
+      {!isLoadingComments && (
+        <div className="blog-comments-container">
+          <h3 className="comment-title">Comments</h3>
+          {comments.map((comment) => (
+            <RenderingComment key={comment._id} comment={comment} />
+          ))}
+        </div>
+      )}
+
       {/* Pass setComments function to CommentInput */}
-      {blog && <CommentInput blog={blog} setComments={setComments} />}
+      {/* {blog && <CommentInput blog={blog} setComments={setComments} />} */}
+      {!isLoadingBlog && <CommentInput blog={blog} setComments={setComments} />}
     </>
   );
 };
@@ -625,15 +661,3 @@ ReactDOM.render(
   <SingleBlogPage />,
   document.getElementById("blog-container-v2")
 );
-
-{
-  /* <BlogDetails key={blog._id} blog={blog} /> */
-}
-{
-  /* <RenderingComment key={} /> */
-}
-{
-  /* {comments.map((comment) => (
-       <RenderingComment key={}
-      )}) */
-}
