@@ -125,8 +125,8 @@ const BlogCardDetails = ({ blog }) => {
 // Working and cover page
 ////////////////////////////////////////////////////////////////////
 const BlogCards = () => {
-  const [blogs, setBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     const fetchBlogs = async () => {
       try {

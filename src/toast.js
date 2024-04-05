@@ -1,4 +1,4 @@
-export function createToast(type, icon, title, text) {
+export default function createToast(type, icon, title, text) {
   let notifications = document.querySelector(".notifications");
 
   let newToast = document.createElement("div");
@@ -31,7 +31,7 @@ export function createToast(type, icon, title, text) {
           `;
   // add on click
   notifications.appendChild(newToast);
-  // remove after 5s
+  // remove after 3s
   newToast.timeOut = setTimeout(() => newToast.remove(), 3000);
 }
 
