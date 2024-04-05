@@ -68,7 +68,7 @@ console.log(("token", token));
 // **********************************************************************************************
 // *************************** blog details *************************************************
 // **********************************************************************************************
-const BlogDetails = ({ blog }) => {
+const BlogDetails = ({ blog, toggleLike }) => {
   return (
     <>
       <div className="blog-container">
@@ -138,7 +138,10 @@ const BlogDetails = ({ blog }) => {
             {/* likes button */}
             {/* ////////////////////////////////////////////////////////////////////////////////////////// */}
             <div className="blog-content__writer-and-like-button--like-button">
-              <div className="blog-content__writer-and-like-button--like-button-link">
+              <div
+                className="blog-content__writer-and-like-button--like-button-link"
+                onClick={toggleLike}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -171,6 +174,83 @@ const BlogDetails = ({ blog }) => {
 // **********************************************************************************************
 // *************************************** LIKE *************************************************
 // **********************************************************************************************
+const toggleLike = () => {
+  const blogId = location.hash.substring(1);
+  console.log("clicked");
+
+  useEffect(() => {
+    const fetchToggleLike = async (blogId) => {
+      try {
+        const response = await fetch(
+          // `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
+          `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const json = await response.json();
+        // unauthorized
+        if (json.status === "401") {
+          // hideLoader();
+          // createToast("info", "info","lllllllllll" ,"unauthorize");
+          // createToast("info", errorIcon, json.message, json.error);
+          createToast(
+            "info",
+            errorIcon,
+            "Please login",
+            "Redirect to login page"
+          );
+          // setTimeout(() => {
+          location.assign("signin.html");
+          // }, 3000);
+        } else if (json.message === "User not found") {
+          // createToast("info", errorIcon, json.message, json.error);
+          createToast(
+            "info",
+            errorIcon,
+            "Please login",
+            "Redirect to login page"
+          );
+          setTimeout(() => {
+            location.assign("signin.html");
+          }, 3000);
+        }
+
+        // blog not found
+        if (json.status === "404") {
+          // hideShowLoader();
+          console.error("Error toggling like ", json);
+          console.log("error", json);
+          // createToast(
+          //   "info",
+          //   errorIcon,
+          //   "Blog not found",
+          //   "You can't like this blog"
+          // );
+          return;
+        }
+
+        // blog liked
+        if (json.status === "201") {
+          // hideShowLoader();
+          // createToast("info", errorIcon, "Like toggle", "Successfully");
+          console.log("like toggle successfully ", json);
+          fetchSingleBlog();
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        // hideShowLoader();
+      }
+    };
+
+    fetchToggleLike(blogId);
+  }, [blogId]);
+};
 // **********************************************************************************************
 // *************************************** RENDERING COMMENT ***************************************
 // **********************************************************************************************
@@ -273,9 +353,9 @@ const CommentInput = ({ blog, setComments }) => {
     </>
   );
 };
-
-// Inside SingleBlogPage component
-
+// **********************************************************************************************
+// *************************************** SINGLE BLOG ***************************************
+// **********************************************************************************************
 const SingleBlogPage = () => {
   const blogId = location.hash.substring(1);
 
@@ -283,6 +363,7 @@ const SingleBlogPage = () => {
   const [blog, setBlog] = useState(null);
   const [comments, setComments] = useState([]);
 
+  // ******************************************* fetch blog ***********************************************
   useEffect(() => {
     const fetchBlog = async (id) => {
       try {
@@ -310,7 +391,7 @@ const SingleBlogPage = () => {
     document.body.style.overflow = "hidden";
   }, [blogId]);
 
-  // ******* fecth comment
+  // ******************************************* fetch comment ********************************************
   useEffect(() => {
     const fetchComment = async (id) => {
       try {
@@ -335,6 +416,70 @@ const SingleBlogPage = () => {
       fetchComment(blogId);
     }
   }, [blogId, blog]);
+
+  // ************************************** fetch like or toggle like ************************************
+  const toggleLike = async () => {
+    console.log("clicked");
+
+    try {
+      const response = await fetch(
+        `https://mybrand-be-j4ci.onrender.com/api/v1/blogs/${blogId}/likes`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const json = await response.json();
+      console.log(json);
+      if (json.status === "401") {
+        createToast(
+          "info",
+          errorIcon,
+          "Please login",
+          "Redirect to login page"
+        );
+        location.assign("signin.html");
+      } else if (json.message === "User not found") {
+        createToast(
+          "info",
+          errorIcon,
+          "Please login",
+          "Redirect to login page"
+        );
+        setTimeout(() => {
+          location.assign("signin.html");
+        }, 3000);
+      }
+      // blog not found
+      if (json.status === "404") {
+        hideShowLoader();
+        console.error("Error toggling like ", json);
+        console.log("error", json);
+        createToast(
+          "info",
+          errorIcon,
+          "Blog not found",
+          "Choose another blog to like"
+        );
+
+        setTimeout(() => {
+          location.assign("signin.html");
+        }, 3000);
+        return;
+      }
+      // blog liked
+      if (json.status === "201") {
+        // createToast("info", errorIcon, "Like toggle", "Successfully");
+        console.log("like toggle successfully ", json.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       {isLoading && !blog && (
@@ -342,7 +487,9 @@ const SingleBlogPage = () => {
           <span className="loader"></span>
         </div>
       )}
-      {!isLoading && <BlogDetails key={blog._id} blog={blog} />}
+      {!isLoading && (
+        <BlogDetails key={blog._id} blog={blog} toggleLike={toggleLike} />
+      )}
       <div className="blog-comments-container">
         <h3 className="comment-title">Comments</h3>
 
