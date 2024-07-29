@@ -17,8 +17,6 @@ const showFormErrors = (error) => {
 };
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("clicked");
-  // // State
   let hasErrors = false;
 
   // // Validate name
@@ -57,14 +55,12 @@ contactForm.addEventListener("submit", (e) => {
 
   if (!hasErrors) {
     // Form submission logic here
-    console.log("Form submitted successfully!");
     const queryData = {
       name: e.target.elements.name.value,
       email: e.target.elements.email.value,
       message: e.target.elements.message.value,
     };
 
-    // console.log(queryData);
     sendQueryFetch(queryData);
     e.target.reset(); // Reset the form after successful submission
     successMessageEl.style.display = "block";
@@ -89,8 +85,6 @@ const sendQueryFetch = async (data) => {
     if (!response.ok) {
       console.log(json);
     }
-    console.log(response);
-    console.log(json);
   } catch (error) {
     console.log(error);
   }

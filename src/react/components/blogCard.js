@@ -28,7 +28,6 @@ const BlogCardDetails = ({ blog }) => {
 
   // ******************************************************************
   const handleClick = (id) => {
-    console.log("clicked ", id);
     location.assign(`single-blog-page.html#${blog._id}`);
   };
 
@@ -140,10 +139,7 @@ const BlogCards = () => {
 
         const json = await response.json();
 
-        console.log(json);
-
         if (response.ok) {
-          // if (json.message === "success") {
           setBlogs(json.blogs);
         }
       } catch (error) {

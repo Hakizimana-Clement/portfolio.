@@ -1,5 +1,3 @@
-console.log("table working");
-
 // ************************** LOADER **************************
 const loaderContainer = document.querySelector(".loader-container");
 const showLoader = () => {

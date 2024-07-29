@@ -18,14 +18,12 @@ if (blogId.length === 0) {
 // ************************** CHECK USER TOKEN **************************
 const token = localStorage.getItem("userToken");
 if (!token) {
-  console.log("Token is missing. Redirecting to home page.");
   location.assign("../signin.html");
 } else {
   const decodedPayload = decodedJwt(token);
 
   if (decodedPayload)
     if (decodedPayload.role !== "admin") {
-      console.log("User is not an admin. Redirecting to home page.");
       location.assign("../signin.html");
     }
 }
@@ -51,10 +49,8 @@ const fetchComments = async () => {
     );
     const json = await response.json();
 
-    // console.log(json.blog._id !== blogId);
 
     if (json.status === "404") {
-      console.log(json);
       hideLoader();
       return location.assign("admin-panel--comments-blog.html");
     }
@@ -63,8 +59,6 @@ const fetchComments = async () => {
       // const blog = json.comments;
       const comment = json;
 
-      console.log(comment);
-      console.log(json);
       blogLikesEl.textContent = comment.blog.likes.length;
       titleEl.textContent = comment.blog.title;
       // commentNameEl.textContent = comment.blog.comments.name;
@@ -123,20 +117,6 @@ const renderComment = (comments) => {
       <p class="comments-and-likes-container__bubble-comment--description">${comment.comment}</p>
     `;
     commentContent.appendChild(commentBubbleContainer);
-
-    // Create heart button
-    // const heartButton = document.createElement("div");
-    // heartButton.classList.add(
-    //   "comments-and-likes-container__bubble-comment--heart-icon-container"
-    // );
-    // heartButton.innerHTML = `
-    //   <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="heart-icon">
-    //     <path fill="#f00000" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"/>
-    //   </svg>
-    //   <span class="comment-like-number">234</span>
-    // `;
-    // commentContent.appendChild(heartButton);
-
     // Append comment content to comment card container
     commentContainer.appendChild(commentContent);
 
@@ -144,19 +124,6 @@ const renderComment = (comments) => {
     mainCommentContainer.appendChild(commentContainer);
   });
 };
-
-// const test = [
-//   {
-//     name: "manzi",
-//     comment: "hello sir, keep it up.",
-//   },
-//   {
-//     name: "iradukunda",
-//     comment: "I have a project idea",
-//   },
-// ];
-
-// renderComment(test);
 // *************** LOGOUT *****************
 const logoutBtn = document.querySelector(".logout-link");
 

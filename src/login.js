@@ -11,9 +11,6 @@ function decodeJwt(token) {
   return JSON.parse(payloadBuffer.toString());
 }
 
-// remove user token for fresh login
-// localStorage.removeItem("userToken");
-
 const showLoaderr = () => {
   loaderContainer.style.display = "flex";
   document.body.style.overflow = "hidden";
@@ -24,20 +21,6 @@ const hideLoaderr = () => {
   document.body.style.overflow = "";
 };
 // // ************************** CHECK USER TOKEN **************************
-// const token = localStorage.getItem("userToken");
-// if (!token) {
-//   console.log("Token is missing.");
-//   // location.assign("../signin.html");
-// } else {
-//   const decodedPayload = decodedJwt(token);
-//   if (decodedPayload)
-//     if (decodedPayload.role !== "user") {
-//       console.log("User is not an login. Redirecting to login page.");
-//       // location.assign("../signin.html");
-//     }
-// }
-// console.log(("token", token));
-
 // error form
 const formError = {
   emailError: null,
@@ -107,7 +90,6 @@ loginFormEl.addEventListener("submit", async (e) => {
       };
 
       // send to api for login
-      // const response = await fetch("https://mybrand-be-j4ci.onrender.com/api/v1/users/login", {
       const response = await fetch(
         "https://mybrand-be-j4ci.onrender.com/api/v1/users/login",
         {
@@ -129,13 +111,9 @@ loginFormEl.addEventListener("submit", async (e) => {
       }
 
       if (response.ok) {
-        // show loader when user wait to login
-        // showLoader();
-
         const token = json.token;
         // decoded toke
         const decodedPayload = decodeJwt(token);
-
         // store in localstorage
         localStorage.setItem("userToken", token);
         if (decodedPayload.role === "user") {
@@ -151,45 +129,4 @@ loginFormEl.addEventListener("submit", async (e) => {
       hideLoaderr();
     }
   }
-
-  // const userDataToLogin = {
-  //   email: e.target.elements.email.value,
-  //   password: e.target.elements.password.value,
-  // };
-  // console.log(userDataToLogin);
-  // try {
-  //   const response = await fetch("https://mybrand-be-j4ci.onrender.com/api/v1/users/login", {
-  //     method: "POST",
-  //     body: JSON.stringify(userDataToLogin),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   });
-  //   const json = await response.json();
-  //   if (!response.ok) {
-  //     const error = json.error || "";
-  //     const errors = {
-  //       emailError: error.includes("email") ? error : "",
-  //       passwordError: error.includes("password") ? error : "",
-  //     };
-  //     showFormErros(errors);
-  //     hideShowLoader();
-  //   }
-
-  //   if (response.status === 201) {
-  //     showLoader();
-  //     // console.log("new user", json);
-  //     // signupFormEl.reset();
-  //     window.location.href = "signin.html";
-  //   }
-  //   console.log(json);
-  // } catch (error) {
-  //   console.log(error);
-  // }
 });
-
-// Form submission logic here
-// e.target.reset(); // Reset the form after successful submission
-// location.assign(
-//   "https://hakizimana-clement.github.io/my-brand-Clement-Hakizimana/pages/admin-panel.html"
-// );

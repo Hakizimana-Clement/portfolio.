@@ -11,11 +11,6 @@ dropdownContainer.addEventListener("mouseover", () => {
   });
 });
 
-// // close menu setting
-// dropdownContainer.addEventListener("mouseout", () => {
-//   console.log("working");
-//   showDropDownMenu.style.display = "none";
-// });
 
 showDropDownMenu.addEventListener("mouseout", () => {
   showDropDownMenu.style.display = "none";
