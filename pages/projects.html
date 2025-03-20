@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./images/profile-picture.jpg"
+      type="image/jpg"
+    />
+
+    <!-- google font [inter and spartan] -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- local swipper css -->
+    <link rel="stylesheet" href="../styles/swiper-bundle.css" />
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/components/header.css" />
+    <link rel="stylesheet" href="../styles/components/hero.css" />
+    <link rel="stylesheet" href="../styles/components/about.css" />
+    <link rel="stylesheet" href="../styles/components/skills.css" />
+    <link rel="stylesheet" href="../styles/components/projects.css" />
+    <link rel="stylesheet" href="../styles/components/blogs.css" />
+    <link rel="stylesheet" href="../styles/components/contact-me.css" />
+    <link rel="stylesheet" href="../styles/components/footer.css" />
+    <link rel="stylesheet" href="../styles/components/mobile-nav.css" />
+    <link rel="stylesheet" href="../styles/utils.css" />
+    <!-- icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+ "
+    ></script>
+    <title>Clement Hakizimana</title>
+  </head>
+  <body>
+    <header class="header container">
+      <nav class="header__navbar">
+        <!-- Start link Area -->
+        <ul class="header__menu">
+          <li>
+            <a class="header__link" href="../index.html">Home</a>
+          </li>
+          <li>
+            <a class="header__link" href="../index.html#about">About</a>
+          </li>
+          <li>
+            <a class="header__link" href="../index.html#skills">Skills</a>
+          </li>
+          <li>
+            <a class="header__link" href="./projects.html">Works</a>
+          </li>
+          <li>
+            <a class="header__link" href="../index.html#contact">Contact</a>
+          </li>
+        </ul>
+        <!-- End link Area -->
+
+        <!-- Start login button -->
+        <a
+          class="header__link"
+          target="_blank"
+          href="https://drive.google.com/file/d/1CkFWlanU-myeFlUF5STC7y8xemz18fKW/view"
+        >
+          <button class="login-btn btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="header__signin--user-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+              />
+            </svg>
+
+            <span class="login-btn--text">Resume</span>
+          </button>
+        </a>
+        <!-- End login button -->
+
+        <!-- Start menu icon button -->
+        <button class="header__bars">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <!-- End menu icon button -->
+      </nav>
+    </header>
+
+    <!-- ################################################## -->
+    <!-- ################ Mobile navigation ################### -->
+    <!-- ################################################## -->
+    <div class="mobile-nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li>
+            <a class="mobile-nav__link" href="../index.html#hero">Home</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="../index.html#about">About</a>
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="../index.html#skills">SKills</a>
+          </li>
+          <li><a class="mobile-nav__link" href="./projects.html">Works</a></li>
+          <li>
+            <a class="mobile-nav__link" href="../index.html#contact">Contact</a>
+          </li>
+          <li class="mobile-nav__link-line"></li>
+          <li>
+            <!-- Start login button -->
+            <a
+              class="header__link-mobile mobile-nav__link"
+              href="https://drive.google.com/file/d/1CkFWlanU-myeFlUF5STC7y8xemz18fKW/view"
+            >
+              <button class="login-btn btn login-btn-mobile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="header__signin--user-icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+                  />
+                </svg>
+
+                <span class="login-btn--text">Resume</span>
+              </button>
+            </a>
+            <!-- End login button -->
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section id="works" class="projects section container">
+        <h2 class="blog-title">Projects</h2>
+        <!-- **************************** Start blog container ****************************-->
+        <div class="blogs-container">
+          <!-- Start cards container -->
+          <div class="blogs-container__cards">
+            <!-- start card 2 container -->
+            <div class="blogs-container__cards-card">
+              <div
+                class="blogs-container__cards-card--image-and-text-container"
+              >
+                <!-- image -->
+                <a target="_blank" href="https://advizr.vercel.app/">
+                  <img
+                    class="blog-image"
+                    src="../images/advizr_app.png"
+                    alt="project image "
+                  />
+                </a>
+                <div class="blogs-container__cards-card--texts-container">
+                  <!-- title -->
+                  <a
+                    target="_blank"
+                    class="blogs-container__card-title"
+                    href="https://advizr.vercel.app/"
+                  >
+                    Advizr
+                  </a>
+                  <!-- description -->
+                  <p class="blogs-container__card-description">
+                    A web app that provides insightful, random advice to help
+                    you live a happier and wiser life. Built with React and
+                    powered by Appwrite for the backend, it delivers a seamless
+                    and inspiring user experience.
+                  </p>
+                  <!-- Start comment and like -->
+                  <div
+                    class="blogs-container__card-likes-and-comments-container"
+                  >
+                    <!-- writer -->
+                    <div class="project_link_container">
+                      <span class="project_link_container-text"
+                        >web application</span
+                      >
+                      <a
+                        target="_blank"
+                        href="https://github.com/Hakizimana-Clement/Advizr"
+                        class="project_link_container-img"
+                        ><img src="../images/github.svg" alt="github icon"
+                      /></a>
+                    </div>
+                    <div class="project_link_container">
+                      <span class="project_link_container-status"
+                        >Completed</span
+                      >
+                      <span class="project_link_container-status-text">
+                        4 months old
+                      </span>
+                    </div>
+
+                    <div class="project_type">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="like-icon"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                        />
+                      </svg>
+
+                      <span class="like-number">Full stack developer</span>
+                    </div>
+                    <!-- End comment and like -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End card 2 container -->
+
+            <!-- start card 3 container -->
+            <div class="blogs-container__cards-card">
+              <div
+                class="blogs-container__cards-card--image-and-text-container"
+              >
+                <!-- image -->
+                <a
+                  target="_blank"
+                  href="https://redesigning-fintech-website.vercel.app/"
+                >
+                  <img
+                    class="blog-image"
+                    src="../images/fintech.png"
+                    alt="blog image "
+                  />
+                </a>
+                <div class="blogs-container__cards-card--texts-container">
+                  <!-- title -->
+                  <a
+                    target="_blank"
+                    class="blogs-container__card-title"
+                    href="https://redesigning-fintech-website.vercel.app/"
+                  >
+                    FISDOM
+                  </a>
+                  <!-- description -->
+                  <p class="blogs-container__card-description">
+                    Empowering you to take control of your financial future.
+                    Whether it's safeguarding what matters most with the right
+                    insurance, making smart investments to help your wealth
+                    grow, or diversifying for long-term stability—our platform
+                    simplifies every step of your financial journey.
+                  </p>
+                  <!-- Start comment and like -->
+                  <div
+                    class="blogs-container__card-likes-and-comments-container"
+                  >
+                    <!-- writer -->
+                    <div class="project_link_container">
+                      <span class="project_link_container-text"
+                        >web application</span
+                      >
+                      <a
+                        target="_blank"
+                        href="https://github.com/Hakizimana-Clement/Redesigning-fintech-website"
+                        class="project_link_container-img"
+                        ><img src="../images/github.svg" alt="github"
+                      /></a>
+                    </div>
+                    <div class="project_link_container">
+                      <span class="project_link_container-status"
+                        >Completed</span
+                      >
+                      <span class="project_link_container-status-text">
+                        2 years old
+                      </span>
+                    </div>
+
+                    <div class="project_type">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="like-icon"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                        />
+                      </svg>
+
+                      <span class="like-number">Frontend developer</span>
+                    </div>
+                    <!-- End comment and like -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End card 3 container -->
+            <!-- Start card 1 container -->
+            <div class="blogs-container__cards-card">
+              <div
+                class="blogs-container__cards-card--image-and-text-container"
+              >
+                <!-- image -->
+                <a target="_blank" href="https://igitn.onrender.com/">
+                  <img
+                    class="blog-image"
+                    src="../images/IGITENGE_Style.png"
+                    alt="blog image "
+                  />
+                </a>
+                <div class="blogs-container__cards-card--texts-container">
+                  <!-- title -->
+                  <a
+                    target="_blank"
+                    class="blogs-container__card-title"
+                    href="https://igitn.onrender.com/"
+                  >
+                    IGITENGE STYLES
+                  </a>
+                  <!-- description -->
+                  <p class="blogs-container__card-description">
+                    A platform that connects buyers and sellers to easily trade
+                    unique and beautiful clothing from anywhere in the world.
+                    Simple, accessible, and empowering fashion lovers
+                    everywhere.
+                  </p>
+                  <!-- Start comment and like -->
+                  <div
+                    class="blogs-container__card-likes-and-comments-container"
+                  >
+                    <!-- writer -->
+                    <div class="project_link_container">
+                      <span class="project_link_container-text"
+                        >web application</span
+                      >
+                      <a
+                        target="_blank"
+                        href="https://github.com/Hakizimana-Clement/igitenge-style"
+                        class="project_link_container-img"
+                        ><img src="../images/github.svg" alt=""
+                      /></a>
+                    </div>
+                    <div class="project_link_container">
+                      <span class="project_link_container-status"
+                        >Completed</span
+                      >
+                      <span class="project_link_container-status-text">
+                        3 years old
+                      </span>
+                    </div>
+
+                    <div class="project_type">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="like-icon"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                        />
+                      </svg>
+
+                      <span class="like-number">Full stack developer</span>
+                    </div>
+                    <!-- End comment and like -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End card 1 container -->
+          </div>
+          <!-- End cards container -->
+        </div>
+        <!--**************************** End blog container ****************************-->
+        <br />
+        <br />
+        <!-- **************************** Start blog container ****************************-->
+        <div class="blogs-container">
+          <!-- Start cards container -->
+          <div class="blogs-container__cards">
+            <!-- Start card 1 container -->
+            <div class="blogs-container__cards-card">
+              <div
+                class="blogs-container__cards-card--image-and-text-container"
+              >
+                <!-- image -->
+                <a
+                  target="_blank"
+                  href="https://hakizimana-clement.github.io/play-Games/"
+                >
+                  <img
+                    class="blog-image"
+                    src="../images/amazing-gallery.png"
+                    alt="blog image "
+                  />
+                </a>
+                <div class="blogs-container__cards-card--texts-container">
+                  <!-- title -->
+                  <a
+                    target="_blank"
+                    class="blogs-container__card-title"
+                    href="https://hakizimana-clement.github.io/play-Games/"
+                  >
+                    Water & Land and Amazing Gallery 2D Game
+                  </a>
+                  <!-- description -->
+                  <p class="blogs-container__card-description">
+                    A bilingual (English & Kinyarwanda) web-based 2D game that
+                    enhances memory skills through interactive challenges. Built
+                    with HTML, CSS, JavaScript, and jQuery, it offers easy and
+                    hard difficulty modes for an engaging and enjoyable
+                    experience.
+                  </p>
+                  <!-- Start comment and like -->
+                  <div
+                    class="blogs-container__card-likes-and-comments-container"
+                  >
+                    <!-- writer -->
+                    <div class="project_link_container">
+                      <span class="project_link_container-text"
+                        >web application</span
+                      >
+                      <a
+                        target="_blank"
+                        href="https://github.com/Hakizimana-Clement/play-Games"
+                        class="project_link_container-img"
+                        ><img src="../images/github.svg" alt=""
+                      /></a>
+                    </div>
+                    <div class="project_link_container">
+                      <span class="project_link_container-status"
+                        >Completed</span
+                      >
+                      <span class="project_link_container-status-text">
+                        3 years old
+                      </span>
+                    </div>
+
+                    <div class="project_type">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="like-icon"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                        />
+                      </svg>
+
+                      <span class="like-number">Frontend developer</span>
+                    </div>
+                    <!-- End comment and like -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End card 1 container -->
+
+            <!-- start card 2 container -->
+            <div class="blogs-container__cards-card">
+              <div
+                class="blogs-container__cards-card--image-and-text-container"
+              >
+                <!-- image -->
+                <a
+                  target="_blank"
+                  href="https://hakizimana-clement.github.io/project-1.1---Beautifully-Rwanda/"
+                >
+                  <img
+                    class="blog-image"
+                    src="../images/beautifully_rwanda.png"
+                    alt="blog image "
+                  />
+                </a>
+                <div class="blogs-container__cards-card--texts-container">
+                  <!-- title -->
+                  <a
+                    target="_blank"
+                    class="blogs-container__card-title"
+                    href="https://hakizimana-clement.github.io/project-1.1---Beautifully-Rwanda/"
+                  >
+                    Beautifully Rwanda
+                  </a>
+                  <!-- description -->
+                  <p class="blogs-container__card-description">
+                    Explore the beauty of Rwanda with ease! This website is your
+                    go-to guide for planning an unforgettable journey. From
+                    must-visit attractions and local cuisine hotspots to
+                    cultural experiences and hidden gems, we offer insights on
+                    what to do, where to go, and what to savor during your
+                    visit.
+                  </p>
+                  <!-- Start comment and like -->
+                  <div
+                    class="blogs-container__card-likes-and-comments-container"
+                  >
+                    <!-- writer -->
+                    <div class="project_link_container">
+                      <span class="project_link_container-text"
+                        >web application</span
+                      >
+                      <a
+                        target="_blank"
+                        href="https://github.com/Hakizimana-Clement/project-1.1---Beautifully-Rwanda"
+                        class="project_link_container-img"
+                        ><img src="../images/github.svg" alt=""
+                      /></a>
+                    </div>
+                    <div class="project_link_container">
+                      <span class="project_link_container-status"
+                        >Completed</span
+                      >
+                      <span class="project_link_container-status-text">
+                        2 years old
+                      </span>
+                    </div>
+
+                    <div class="project_type">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="like-icon"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                        />
+                      </svg>
+
+                      <span class="like-number">Frontend developer</span>
+                    </div>
+                    <!-- End comment and like -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End card 2 container -->
+
+            <!-- start card 3 container -->
+            <div class="blogs-container__cards-card">
+              <div
+                class="blogs-container__cards-card--image-and-text-container"
+              >
+                <!-- image -->
+                <a
+                  target="_blank"
+                  href="https://redesigning-fintech-website.vercel.app/"
+                >
+                  <img
+                    class="blog-image"
+                    src="../images/fintech.png"
+                    alt="blog image "
+                  />
+                </a>
+                <div class="blogs-container__cards-card--texts-container">
+                  <!-- title -->
+                  <a
+                    target="_blank"
+                    class="blogs-container__card-title"
+                    href="https://redesigning-fintech-website.vercel.app/"
+                  >
+                    FISDOM
+                  </a>
+                  <!-- description -->
+                  <p class="blogs-container__card-description">
+                    Empowering you to take control of your financial future.
+                    Whether it's safeguarding what matters most with the right
+                    insurance, making smart investments to help your wealth
+                    grow, or diversifying for long-term stability—our platform
+                    simplifies every step of your financial journey.
+                  </p>
+                  <!-- Start comment and like -->
+                  <div
+                    class="blogs-container__card-likes-and-comments-container"
+                  >
+                    <!-- writer -->
+                    <div class="project_link_container">
+                      <span class="project_link_container-text"
+                        >web application</span
+                      >
+                      <a
+                        target="_blank"
+                        href="https://github.com/Hakizimana-Clement/Redesigning-fintech-website"
+                        class="project_link_container-img"
+                        ><img src="../images/github.svg" alt="github"
+                      /></a>
+                    </div>
+                    <div class="project_link_container">
+                      <span class="project_link_container-status"
+                        >Completed</span
+                      >
+                      <span class="project_link_container-status-text">
+                        2 years old
+                      </span>
+                    </div>
+
+                    <div class="project_type">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="like-icon"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                        />
+                      </svg>
+
+                      <span class="like-number">Frontend developer</span>
+                    </div>
+                    <!-- End comment and like -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End card 3 container -->
+          </div>
+          <!-- End cards container -->
+        </div>
+        <!--**************************** End blog container ****************************-->
+      </section>
+    </main>
+    <footer class="footer section container">
+      <!-- start footer container -->
+      <div class="footer-container">
+        <h4 class="footer-container__title">H.Clement</h4>
+        <!-- Start Icon -->
+        <div class="hero___container--img">
+          <ul class="hero___container--img-list">
+            <!-- twitter icon -->
+            <li>
+              <a class="hero__link" href="#">
+                <ion-icon name="logo-twitter" class="icons"></ion-icon>
+              </a>
+            </li>
+            <!-- github icon -->
+            <li>
+              <a class="hero__link" href="#">
+                <ion-icon name="logo-github" class="icons"></ion-icon>
+              </a>
+            </li>
+            <!-- linkedin icon -->
+            <li>
+              <a class="hero__link" href="#">
+                <ion-icon name="logo-linkedin" class="icons"></ion-icon>
+              </a>
+            </li>
+            <!-- instagram icon -->
+            <li>
+              <a class="hero__link" href="#">
+                <ion-icon name="logo-instagram" class="icons"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Icon -->
+
+        <small class="footer-container__copyright">
+          All Rights Reserved &#169; 2025 _H.Clement ❤
+        </small>
+      </div>
+      <!-- End footer container -->
+    </footer>
+
+    <!-- start form validation on contact form -->
+    <script src="../src/mobile-nav.js"></script>
+    <!-- end form validation on contact form -->
+  </body>
+</html>

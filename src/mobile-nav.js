@@ -32,12 +32,3 @@ mobileLinks.forEach((link) => {
     document.body.style.overflowY = "auto";
   });
 });
-
-// // link active when clicked
-// mobileLinks.forEach((link) => {
-//   link.addEventListener("click", () => {
-//     isMobileNavOpen = false;
-//     mobileNav.style.display = "none";
-//     document.body.style.overflowY = "auto";
-//   });
-// });

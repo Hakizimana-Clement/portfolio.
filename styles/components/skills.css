@@ -45,11 +45,13 @@
 .skills__container-img--list-icon {
   width: 55%;
 }
+.skills__list {
+  width: 40%;
+}
 /* image container */
 .skills__container--second-container {
   display: none;
 }
-
 /* xs */
 /* @media(min-width:475px){} */
 
@@ -96,6 +98,10 @@
     /* width: 75%; */
 
     width: 65%;
+  }
+
+  .add-technology {
+    width: 63%;
   }
 
   /* text */

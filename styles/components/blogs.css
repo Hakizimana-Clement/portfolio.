@@ -1,6 +1,4 @@
 .blogs {
-  /* padding: 0 1.5rem; */
-  /* text-align: center; */
   display: none;
 }
 
@@ -18,27 +16,25 @@
 
 /* blog card container */
 .blogs-container__cards {
-  /* border: 2px solid red; */
-  /* padding: 0 3rem; */
   padding: 0 2rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 /* one card */
 .blogs-container__cards-card {
-  /* border: 2px solid rebeccapurple; */
   border: 2px solid #2c467a;
   padding: 12px;
   border-radius: 13px;
   box-shadow: 0px 2px 7px rgba(104, 116, 221, 0.25);
+  /* width: 730px; */
 }
 .blogs-container__card-title {
   font-size: var(--size-3xl);
   color: var(--clr-light);
-  /* font-weight: 600; */
   font-weight: 400;
   text-decoration: none;
-  /*  color: var(--clr-hover);
-  margin-top: var(--size-4xl); */
   transition: all 0.2s;
 }
 
@@ -56,16 +52,13 @@
 }
 /* paragraph */
 .blogs-container__card-description {
-  /* font-size: var(--size-base); */
   font-size: var(--size-xl);
   color: var(--clr-text);
   margin-top: var(--size-xxs);
 }
 /* next button */
-/* .slide-button-container { */
 .slide-button-container-left {
   position: absolute;
-  /* left: 17px; */
   top: 208px;
   left: 6px;
 
@@ -82,7 +75,6 @@
 .blogs-container__card-likes-and-comments-container {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   margin-top: var(--size-2xl);
   gap: 0.85rem;
 }
@@ -97,14 +89,11 @@
 /* blog writer */
 /* image */
 .writer-image {
-  /* width: 15%; */
-  /* width: 14%; */
   width: 34px;
   height: 34px;
   border-radius: 50%;
 }
 .writer {
-  /* font-size: var(--size-sm); */
   font-size: var(--size-base);
 }
 
@@ -115,9 +104,8 @@
 }
 /* heart (like) icon */
 .like-icon {
-  /* width: 9%; work better on like icon */
-  width: 16%;
-  fill: red;
+  width: 4%;
+  fill: white;
   stroke: none;
   cursor: pointer;
 }
@@ -133,15 +121,8 @@
   align-items: center;
   gap: 0.2rem;
 }
+
 /* span text for previous button */
-.slide-button-container-left__prev {
-  /* display: inline-block; */
-  /* font-size: var(--size-sm); */
-  /* padding: 0.4rem; */
-  /* padding: 1rem; */
-  /* border: 1px solid white; */
-  /* border-radius: 50%; */
-}
 .right {
   position: absolute;
   top: 208px;
@@ -150,17 +131,6 @@
   border: 1px solid;
   border-radius: 50%;
 }
-/* right not working */
-/* .slide-button-container-right {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 1px solid #b9b9b9;
-  padding: 12px;
-}
-.slide-button-container-right__next {
-  width: 12%;
-} */
 
 /* card 2 */
 .card-2,
@@ -169,23 +139,15 @@
 }
 
 .next-slide-bublle-container {
-  /* position: absolute; */
-  /* top: 100%; */
-  /* right: 42%; */
-  /* right: 50%; */
   left: 157px;
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
-  /* background-color: white; */
-  /* width: 100px; */
 }
 
 .next-slide-bublle-container__item {
   display: inline-block;
-  /* width: 20px; */
-  /* height: 20px; */
 
   width: 14px;
   height: 14px;
@@ -201,21 +163,17 @@
 /* sm */
 @media (min-width: 640px) {
   .blogs-container__card-title {
-    /* font-size: var(--size-4xl); */
     font-size: var(--size-2xl);
   }
   .blogs-container__card-description {
-    /* font-size: var(--size-base); */
     font-size: var(--size-sm);
   }
   .writer {
-    /* font-size: var(--size-xl); */
     font-size: var(--size-sm);
   }
   .like-number,
   .comment-number {
     display: inline-block;
-    /* font-size: var(--size-2xl); */
     font-size: var(--size-xs);
   }
 
@@ -245,7 +203,7 @@
   }
   .blogs-container__cards {
     display: flex;
-    gap: var(--size-5xl);
+    flex-direction: column;
   }
   .blogs-container__card-title {
     font-size: var(--size-2xl);
@@ -269,6 +227,11 @@
   .card-2,
   .card-3 {
     display: block;
+  }
+
+  .blogs-container__cards {
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -298,8 +261,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: rgb(194, 194, 194); */
-  /* color; */
   display: none;
 }
 .slide-container {
@@ -308,30 +269,16 @@
   background-color: grey;
   padding: 40px 0;
 }
-
-.slide-content {
-  /* margin: 0 40px; */
-  /* margin: 0 298px; */
-  /* margin: 0 36%; */
-  /* margin: 0 31%; */
-  /* margin: 0 310px; */
-}
 .card {
   border-radius: 25px;
-  /* background-color: #fff; */
   padding: 1rem;
   border: 2px solid #2c467a;
   padding: 12px;
   border-radius: 13px;
   box-shadow: 0px 2px 7px rgba(104, 116, 221, 0.25);
-  /* width: 463px; */
 }
 .card-image {
   position: relative;
-
-  /* height: 150px;
-  width: 150px; */
-  /* width: 257px; */
   height: 257px;
 }
 
@@ -351,26 +298,13 @@
 }
 
 /* card wide */
-.swiper {
-  /* width: 100%; */
-  /* height: 100%; */
-}
-
 .swiper-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  /* gap: 3rem; */
-  /* margin: 0 8rem; */
   margin: 0 1rem;
-}
-
-.swiper-slide img {
-  /* display: block;
-  width: 100%; */
-  /* margin: 0 8rem; */
 }
 
 @media only screen and (min-width: 769px) {
@@ -413,13 +347,6 @@
 /* new test slie css working 95%*/
 /* ************************************************************** */
 
-/* .card-img-container { */
-/* .gallery{
-  width: 30%;
-} */
-.blog3 {
-  /* border: solid blue 2px; */
-}
 .gallery {
   width: 900px;
   display: flex;
@@ -428,10 +355,7 @@
 /*  */
 .card-container {
   width: 100%;
-  /* card width */
-  /* width: 50%; */
   display: grid;
-  /* grid-template-columns: auto auto auto; */
   grid-template-columns: auto;
   gap: 20px;
   padding: 20px;
@@ -454,9 +378,7 @@
 #nextBtn {
   width: 50px;
   cursor: pointer;
-  /* margin: 40px; */
   margin: 4px;
-  /* border: 1px red solid; */
 }
 
 .card {
@@ -504,4 +426,32 @@
 
 .card {
   width: 400px;
+}
+/* ***************** projects */
+.project_link_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project_link_container-img {
+  width: 7%;
+}
+
+.project_link_container-img:hover {
+  cursor: pointer;
+  background-color: var(--clr-hover);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.project_link_container-status {
+  background-color: #083e70;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+}
+
+.project_type {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 1rem 0;
 }
