@@ -28,7 +28,7 @@
   padding: 12px;
   border-radius: 13px;
   box-shadow: 0px 2px 7px rgba(104, 116, 221, 0.25);
-  /* width: 730px; */
+  width: 730px;
 }
 .blogs-container__card-title {
   font-size: var(--size-3xl);
